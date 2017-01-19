@@ -1,0 +1,15 @@
+{
+    "name": "Ryan Hails",
+    "email": "rhails@gmail.com",
+    "username": "rhails@gmail.com",
+    "password": "Whydoiforget!2",
+    "imap": {
+        "host": "imap.gmail.com",
+        "port": 993,
+        "secure": true
+    },
+    "smtp": {
+        "host": "smtp.gmail.com",
+        "ssl": true
+    }
+}
