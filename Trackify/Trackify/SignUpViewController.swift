@@ -55,6 +55,26 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.navigationController!.popViewController(animated: true)
     }
     
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        if (firstNameTextField.text == "") {
+            displayAlert("Missing First Name", message: "Please enter your first name.")
+        } else if (lastNameTextField.text == "") {
+            displayAlert("Missing Last Name", message: "Please enter your last name.")
+        } else if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
+            displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
+        } else if (passwordTextField.text == "") {
+            displayAlert("Missing Password", message: "Please enter a valid password.")
+        } else if (confirmTextField.text == "") {
+            displayAlert("Missing Password Confirmation", message: "Please confirm your password.")
+        } else if (passwordTextField.text! != confirmTextField.text!) {
+            displayAlert("Password Mismatch", message: "Please confirm your password.")
+            confirmTextField.text = ""
+        }
+    
+        // push data to AWS and sign in
+    }
+    
+    
     // set this class as the delegate for all user input text fields
     func setTextFieldDelegates() {
         firstNameTextField.delegate = self

@@ -46,6 +46,15 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Other Functions
     
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
+            displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
+        } else if (passwordTextField.text == "") {
+            displayAlert("Missing Password", message: "Please enter a valid password.")
+        }
+        // query AWS DB for login credentials
+    }
+
     func registerForKeyboardNotifications(){
         // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

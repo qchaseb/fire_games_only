@@ -61,6 +61,30 @@ extension UIViewController {
         self.view.endEditing(true)
         scrollView?.isScrollEnabled = false
     }
+    
+    // call this function when the user tries to submit a form without providing all required info
+    func displayAlert(_ title: String, message: String){
+        let alertVC = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(alertVC,
+                animated: true,
+                completion: nil)
+    }
+    
+    // this function checks a string to see if it conforms to email address formatting
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
 
 }
 
