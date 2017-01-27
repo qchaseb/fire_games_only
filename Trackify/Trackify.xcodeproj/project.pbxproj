@@ -11,7 +11,6 @@
 		0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74BDED1E39AB3D00FEE24A /* Helpers.swift */; };
 		0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */; };
 		0AB731051E396CC400098F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB731041E396CC400098F33 /* AppDelegate.swift */; };
-		0AB731071E396CC400098F33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB731061E396CC400098F33 /* ViewController.swift */; };
 		0AB7310A1E396CC400098F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB731081E396CC400098F33 /* Main.storyboard */; };
 		0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */; };
 		0AB7310F1E396CC400098F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB7310E1E396CC400098F33 /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 		0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0AB731011E396CC400098F33 /* Trackify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB731041E396CC400098F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0AB731061E396CC400098F33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0AB731091E396CC400098F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AB7310C1E396CC400098F33 /* Trackify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trackify.xcdatamodel; sourceTree = "<group>"; };
 		0AB7310E1E396CC400098F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +41,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A8FF04F1E3AC37800EDF52C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A74BDED1E39AB3D00FEE24A /* Helpers.swift */,
+				0AB731041E396CC400098F33 /* AppDelegate.swift */,
+				0AB7310E1E396CC400098F33 /* Assets.xcassets */,
+				0AB731131E396CC400098F33 /* Info.plist */,
+				0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0A8FF0501E3AC39700EDF52C /* Sign Up Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A74BDEB1E39A8FB00FEE24A /* WelcomeScreenViewController.swift */,
+				0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */,
+			);
+			name = "Sign Up Classes";
+			sourceTree = "<group>";
+		};
 		0AB730F81E396CC400098F33 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +81,10 @@
 		0AB731031E396CC400098F33 /* Trackify */ = {
 			isa = PBXGroup;
 			children = (
-				0AB731041E396CC400098F33 /* AppDelegate.swift */,
-				0AB731061E396CC400098F33 /* ViewController.swift */,
 				0AB731081E396CC400098F33 /* Main.storyboard */,
-				0A74BDEB1E39A8FB00FEE24A /* WelcomeScreenViewController.swift */,
-				0A74BDED1E39AB3D00FEE24A /* Helpers.swift */,
-				0AB7310E1E396CC400098F33 /* Assets.xcassets */,
-				0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */,
+				0A8FF0501E3AC39700EDF52C /* Sign Up Classes */,
 				0AB731101E396CC400098F33 /* LaunchScreen.storyboard */,
-				0AB731131E396CC400098F33 /* Info.plist */,
-				0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */,
+				0A8FF04F1E3AC37800EDF52C /* Supporting Files */,
 			);
 			path = Trackify;
 			sourceTree = "<group>";
@@ -150,7 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */,
-				0AB731071E396CC400098F33 /* ViewController.swift in Sources */,
 				0A74BDEC1E39A8FB00FEE24A /* WelcomeScreenViewController.swift in Sources */,
 				0AB731051E396CC400098F33 /* AppDelegate.swift in Sources */,
 				0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */,

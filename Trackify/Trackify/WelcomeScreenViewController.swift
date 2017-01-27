@@ -9,63 +9,63 @@
 import UIKit
 
 class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: - View Lifecycle Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAway()
-        self.registerForKeyboardNotifications()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.registerForKeyboardNotifications()
+        self.mainScrollView.isScrollEnabled = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.unregisterFromKeyboardNotifications()
+    }
+    
+    // MARK: - Variables
+    
     var activeField: UITextField?
+    
+    // MARK: - UI Elements
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
 
     @IBOutlet weak var mainScrollView: UIScrollView!
     
+    // MARK: - Other Functions
+    
     func registerForKeyboardNotifications(){
-        //Adding notifications for keyboard appearing
+        // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func deregisterFromKeyboardNotifications(){
-        //Removing notifications for keyboard appearing
+    func unregisterFromKeyboardNotifications(){
+        // Remove notifications for keyboard appearing
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    // called anytime the keyboard appears on screen
     func keyboardWasShown(notification: NSNotification){
-        //Need to calculate keyboard exact size due to Apple suggestions
-        self.mainScrollView.isScrollEnabled = true
-        var info = notification.userInfo!
-        // add 10 for slight buffer between text field and keyboard
-        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        keyboardSize?.height += CGFloat(10)
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
-        
-        self.mainScrollView.contentInset = contentInsets
-        self.mainScrollView.scrollIndicatorInsets = contentInsets
-        
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if let activeField = self.activeField {
-            if (!aRect.contains(activeField.frame.origin)){
-                self.mainScrollView.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
+        keyboardWasShownHelper(notification: notification, scrollView: mainScrollView, activeField: activeField)
     }
     
+    // called when the keyboard is about to be removed from the screen
     func keyboardWillBeHidden(notification: NSNotification){
-        //Once keyboard disappears, restore original positions
-        var info = notification.userInfo!
-        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        // add 10 for slight buffer between text field and keyboard
-        keyboardSize?.height += CGFloat(10)
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
-        self.mainScrollView.contentInset = contentInsets
-        self.mainScrollView.scrollIndicatorInsets = contentInsets
-        self.view.endEditing(true)
-        self.mainScrollView.isScrollEnabled = false
+        keyboardWillBeHiddenHelper(notification: notification, scrollView: mainScrollView, activeField: activeField)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField){
@@ -76,15 +76,14 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         activeField = nil
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+     // this function moves the cursor to the next text field upon hitting
+     // return in the current text field
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.restorationIdentifier == "emailTextField" {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
-    */
-
 }
