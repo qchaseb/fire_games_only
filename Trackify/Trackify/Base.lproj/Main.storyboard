@@ -79,7 +79,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="bFE-7j-ij4" kind="show" id="zip-S0-Kah"/>
+                                                            <segue destination="bFE-7j-ij4" kind="show" identifier="" id="zip-S0-Kah"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -133,6 +133,7 @@
                         <outlet property="emailTextField" destination="fT2-ri-wDO" id="Yk1-xi-jbd"/>
                         <outlet property="mainScrollView" destination="gzH-6p-HGb" id="ia4-Fn-3E4"/>
                         <outlet property="passwordTextField" destination="bQx-tB-Kwq" id="axy-fz-8hn"/>
+                        <segue destination="bFE-7j-ij4" kind="show" identifier="swipeToSignUp" id="I2e-0F-aje"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-8x-cfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -316,4 +317,7 @@
         <image name="trackify_icon" width="972" height="972"/>
         <image name="trackify_logo" width="1102" height="1357"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="I2e-0F-aje"/>
+    </inferredMetricsTieBreakers>
 </document>

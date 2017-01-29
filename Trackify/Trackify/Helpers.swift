@@ -88,3 +88,9 @@ extension UIViewController {
 
 }
 
+// String constants that are used in the storyboard
+struct Storyboard {
+    static let WelcomeEmailTextFieldIdentifier = "emailTextField"
+    static let WelcomeSwipeSegueIdentifier = "swipeToSignUp"
+}
+

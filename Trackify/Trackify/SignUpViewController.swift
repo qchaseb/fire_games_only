@@ -16,7 +16,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAway()
         self.setTextFieldDelegates()
-        
+        self.addSwipeGestureRecognizer()
         // Do any additional setup after loading the view.
     }
     
@@ -70,10 +70,21 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Password Mismatch", message: "Please confirm your password.")
             confirmTextField.text = ""
         }
+        
     
         // push data to AWS and sign in
     }
     
+    // allow user to swipe back to welcome screen
+    func addSwipeGestureRecognizer() {
+        let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeSegueToWelcomeScreen))
+        swipe.direction = UISwipeGestureRecognizerDirection.right
+        view.addGestureRecognizer(swipe)
+    }
+    
+    func swipeSegueToWelcomeScreen() {
+        self.navigationController!.popViewController(animated: true)
+    }
     
     // set this class as the delegate for all user input text fields
     func setTextFieldDelegates() {

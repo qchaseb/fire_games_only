@@ -17,6 +17,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAway()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        self.addSwipeGestureRecognizer()
 
         // Do any additional setup after loading the view.
     }
@@ -54,6 +55,17 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         }
         // query AWS DB for login credentials
     }
+    
+    // allow user to swipe to sign up screen
+    func addSwipeGestureRecognizer() {
+        let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeSegueToSignUp))
+        swipe.direction = UISwipeGestureRecognizerDirection.left
+        view.addGestureRecognizer(swipe)
+    }
+    
+    func swipeSegueToSignUp() {
+        performSegue(withIdentifier: Storyboard.WelcomeSwipeSegueIdentifier, sender: self)
+    }
 
     func registerForKeyboardNotifications(){
         // Add notifications for keyboard appearing
@@ -88,7 +100,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
      // this function moves the cursor to the next text field upon hitting
      // return in the current text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.restorationIdentifier == "emailTextField" {
+        if textField.restorationIdentifier == Storyboard.WelcomeEmailTextFieldIdentifier {
             passwordTextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
