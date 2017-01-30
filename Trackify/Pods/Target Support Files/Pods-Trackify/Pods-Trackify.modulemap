@@ -1,0 +1,6 @@
+framework module Pods_Trackify {
+  umbrella header "Pods-Trackify-umbrella.h"
+
+  export *
+  module * { export * }
+}

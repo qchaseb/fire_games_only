@@ -15,6 +15,7 @@
 		0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */; };
 		0AB7310F1E396CC400098F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB7310E1E396CC400098F33 /* Assets.xcassets */; };
 		0AB731121E396CC400098F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB731101E396CC400098F33 /* LaunchScreen.storyboard */; };
+		C3EE5D1E300CB8A52F03B4F9 /* Pods_Trackify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBBDF1D500830BA87A86F4A /* Pods_Trackify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		0AB7310E1E396CC400098F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB731111E396CC400098F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AB731131E396CC400098F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B447BB61D14DE3C6CFBF7AFB /* Pods-Trackify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trackify/Pods-Trackify.release.xcconfig"; sourceTree = "<group>"; };
+		CEC2F1D3B39EAD21DD827274 /* Pods-Trackify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trackify/Pods-Trackify.debug.xcconfig"; sourceTree = "<group>"; };
+		FEBBDF1D500830BA87A86F4A /* Pods_Trackify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trackify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3EE5D1E300CB8A52F03B4F9 /* Pods_Trackify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +72,8 @@
 			children = (
 				0AB731031E396CC400098F33 /* Trackify */,
 				0AB731021E396CC400098F33 /* Products */,
+				63535420DA73795598E5E9E7 /* Pods */,
+				597EBF7448078364F02FB272 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +96,23 @@
 			path = Trackify;
 			sourceTree = "<group>";
 		};
+		597EBF7448078364F02FB272 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEBBDF1D500830BA87A86F4A /* Pods_Trackify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63535420DA73795598E5E9E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2F1D3B39EAD21DD827274 /* Pods-Trackify.debug.xcconfig */,
+				B447BB61D14DE3C6CFBF7AFB /* Pods-Trackify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AB731161E396CC400098F33 /* Build configuration list for PBXNativeTarget "Trackify" */;
 			buildPhases = (
+				66609E4F1229C9323725F6B5 /* [CP] Check Pods Manifest.lock */,
 				0AB730FD1E396CC400098F33 /* Sources */,
 				0AB730FE1E396CC400098F33 /* Frameworks */,
 				0AB730FF1E396CC400098F33 /* Resources */,
+				003807A16F3C584ADCD95A76 /* [CP] Embed Pods Frameworks */,
+				AE8B6A5E3CC03075ED9FC3BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +183,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		003807A16F3C584ADCD95A76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trackify/Pods-Trackify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66609E4F1229C9323725F6B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE8B6A5E3CC03075ED9FC3BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trackify/Pods-Trackify-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AB730FD1E396CC400098F33 /* Sources */ = {
@@ -285,6 +360,7 @@
 		};
 		0AB731171E396CC400098F33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC2F1D3B39EAD21DD827274 /* Pods-Trackify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2FB622M7B2;
@@ -298,6 +374,7 @@
 		};
 		0AB731181E396CC400098F33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B447BB61D14DE3C6CFBF7AFB /* Pods-Trackify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2FB622M7B2;

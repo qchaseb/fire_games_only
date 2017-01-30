@@ -1,0 +1,47 @@
+PODS:
+  - AWSCognito (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSCognitoIdentityProvider (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSCore (2.5.0)
+  - AWSDynamoDB (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSEC2 (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSLambda (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSS3 (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSSES (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSSimpleDB (2.5.0):
+    - AWSCore (= 2.5.0)
+  - AWSSNS (2.5.0):
+    - AWSCore (= 2.5.0)
+
+DEPENDENCIES:
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSEC2
+  - AWSLambda
+  - AWSS3
+  - AWSSES
+  - AWSSimpleDB
+  - AWSSNS
+
+SPEC CHECKSUMS:
+  AWSCognito: 5a1af0c4b351de1ec8d523d3ed0aecce42dd630e
+  AWSCognitoIdentityProvider: 63c70d5e859fb34c202cf13b69bb3dc59d2d5a71
+  AWSCore: e9839d27ceaa2db75934a9c418630ce63c23e347
+  AWSDynamoDB: 81b3523f113dacf53c071965662b7056ad866709
+  AWSEC2: 2479ecdaad6741591a73de4a8dc2fa53cd624e4b
+  AWSLambda: e191f87a47d2f7916090e4b18f6099388054a75a
+  AWSS3: 3678dd99006ff77c825fb857fc7cbaca0db848c6
+  AWSSES: c043bdb1356aae06cdf792adfebbfc80432d0415
+  AWSSimpleDB: b03e1ade04b3f7f0043d5dad33eaa6c8eb9eee6c
+  AWSSNS: b2e3f080fa826e7ff2bcd52cb050c1592c439090
+
+PODFILE CHECKSUM: 9323a7deeb0ee0398f20207462aa65e631519e4a
+
+COCOAPODS: 1.2.0
