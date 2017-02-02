@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import AWSCore
+import AWSDynamoDB
+import AWSCognito
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -62,6 +65,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Missing Last Name", message: "Please enter your last name.")
         } else if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
+        } else if(userWithEmailExists(emailTextField.text!)) {
+            displayAlert("Invalid Email Address", message: "User with email address already exists.")
         } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
         } else if (confirmTextField.text == "") {
@@ -69,10 +74,54 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         } else if (passwordTextField.text! != confirmTextField.text!) {
             displayAlert("Password Mismatch", message: "Please confirm your password.")
             confirmTextField.text = ""
+        } else {
+            addUserToDB();
         }
         
     
         // push data to AWS and sign in
+    }
+    
+    func addUserToDB () {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let user = User()
+        user?.email_id = emailTextField.text
+        user?.password = passwordTextField.text
+        user?.first_name = firstNameTextField.text
+        user?.last_name = lastNameTextField.text
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        
+        dynamoDBObjectMapper.save(user!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as? NSError {
+                print("The request failed. Error: \(error)")
+            } else {
+                print("this is result: \(task.result)")
+                // Do something with task.result or perform other operations.
+            }
+            return nil
+        })
+    }
+    
+    func userWithEmailExists(_ email:String) -> Bool{
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        
+        var userExists = false;
+        // semaphore to waits until load call completes
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
+            if let error = task.error as? NSError {
+                print("The request failed. Error: \(error)")
+            }else if (task.result as? User) != nil {
+                userExists = true
+            }
+            sema.signal()
+            return nil
+        })
+        sema.wait()
+        return userExists
     }
     
     // allow user to swipe back to welcome screen

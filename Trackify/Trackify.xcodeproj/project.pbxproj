@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3374F11E43DFE60026265E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3374F01E43DFE60026265E /* User.swift */; };
 		0A74BDEC1E39A8FB00FEE24A /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74BDEB1E39A8FB00FEE24A /* WelcomeScreenViewController.swift */; };
 		0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74BDED1E39AB3D00FEE24A /* Helpers.swift */; };
 		0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3374F01E43DFE60026265E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0A74BDEB1E39A8FB00FEE24A /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		0A74BDED1E39AB3D00FEE24A /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3374F21E43E00F0026265E /* AWS Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A3374F01E43DFE60026265E /* User.swift */,
+			);
+			name = "AWS Classes";
+			sourceTree = "<group>";
+		};
 		0A8FF04F1E3AC37800EDF52C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				0AB731081E396CC400098F33 /* Main.storyboard */,
 				0A8FF0501E3AC39700EDF52C /* Sign Up Classes */,
 				0AB731101E396CC400098F33 /* LaunchScreen.storyboard */,
+				0A3374F21E43E00F0026265E /* AWS Classes */,
 				0A8FF04F1E3AC37800EDF52C /* Supporting Files */,
 			);
 			path = Trackify;
@@ -239,6 +250,7 @@
 			files = (
 				0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */,
 				0A74BDEC1E39A8FB00FEE24A /* WelcomeScreenViewController.swift in Sources */,
+				0A3374F11E43DFE60026265E /* User.swift in Sources */,
 				0AB731051E396CC400098F33 /* AppDelegate.swift in Sources */,
 				0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */,
 				0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */,

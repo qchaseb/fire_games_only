@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import AWSCore
+import AWSDynamoDB
+import AWSCognito
 
 class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
@@ -54,6 +57,10 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Missing Password", message: "Please enter a valid password.")
         }
         // query AWS DB for login credentials
+        if(successfulLogin(email: emailTextField.text!, password: passwordTextField.text!)) {
+            print("successful log in!")
+            //segue here to user's page or welcome screen
+        }
     }
     
     // allow user to swipe to sign up screen
@@ -106,5 +113,32 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    // function to check if user exist with email password combination exist
+    func successfulLogin(email:String, password:String) -> Bool{
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        var successful = false
+        // semaphore to waits until load call completes
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
+            if let error = task.error as? NSError {
+                print("The request failed. Error: \(error)")
+            }else if let res = task.result as? User {
+                if(res.email_id == email && res.password == password){
+                    successful = true
+                }else {
+                    self.displayAlert("Invalid Password", message: "Please try again.")
+                }
+            }else {
+                self.displayAlert("Invalid Email", message: "No account associated with email address.")
+            }
+            sema.signal()
+            return nil
+        })
+        sema.wait()
+        return successful
     }
 }
