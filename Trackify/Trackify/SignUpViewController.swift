@@ -14,7 +14,7 @@ import AWSCognito
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - View Lifecycle Functions
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAway()
@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstNameTextField: UITextField!
     
     @IBOutlet weak var lastNameTextField: UITextField!
-   
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -65,7 +65,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Missing Last Name", message: "Please enter your last name.")
         } else if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
-        } else if(userWithEmailExists(emailTextField.text!)) {
+        } else if (userWithEmailExists(emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "User with email address already exists.")
         } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
@@ -78,11 +78,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             addUserToDB();
         }
         
-    
+        
         // push data to AWS and sign in
     }
     
-    func addUserToDB () {
+    func addUserToDB() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let user = User()
         user?.email_id = emailTextField.text
@@ -103,7 +103,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    func userWithEmailExists(_ email:String) -> Bool{
+    func userWithEmailExists(_ email:String) -> Bool {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes
@@ -144,33 +144,33 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         confirmTextField.delegate = self
     }
     
-    func registerForKeyboardNotifications(){
+    func registerForKeyboardNotifications() {
         // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func unregisterFromKeyboardNotifications(){
+    func unregisterFromKeyboardNotifications() {
         // Remove notifications for keyboard appearing
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     // called anytime the keyboard appears on screen
-    func keyboardWasShown(notification: NSNotification){
+    func keyboardWasShown(notification: NSNotification) {
         keyboardWasShownHelper(notification: notification, scrollView: scrollView, activeField: activeField)
     }
     
     // called when the keyboard is about to be removed from the screen
-    func keyboardWillBeHidden(notification: NSNotification){
+    func keyboardWillBeHidden(notification: NSNotification) {
         keyboardWillBeHiddenHelper(notification: notification, scrollView: scrollView, activeField: activeField)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField){
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField){
+    func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
     
@@ -178,11 +178,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     // return in the current text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch (textField){
-            case firstNameTextField: lastNameTextField.becomeFirstResponder()
-            case lastNameTextField: emailTextField.becomeFirstResponder()
-            case emailTextField: passwordTextField.becomeFirstResponder()
-            case passwordTextField: confirmTextField.becomeFirstResponder()
-            default: textField.resignFirstResponder()
+        case firstNameTextField: lastNameTextField.becomeFirstResponder()
+        case lastNameTextField: emailTextField.becomeFirstResponder()
+        case emailTextField: passwordTextField.becomeFirstResponder()
+        case passwordTextField: confirmTextField.becomeFirstResponder()
+        default: textField.resignFirstResponder()
         }
         return true
     }

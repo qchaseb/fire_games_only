@@ -14,14 +14,14 @@ import AWSCognito
 class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - View Lifecycle Functions
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAway()
         emailTextField.delegate = self
         passwordTextField.delegate = self
         self.addSwipeGestureRecognizer()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -45,7 +45,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     
     // MARK: - Other Functions
@@ -73,39 +73,39 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     func swipeSegueToSignUp() {
         performSegue(withIdentifier: Storyboard.WelcomeSwipeSegueIdentifier, sender: self)
     }
-
-    func registerForKeyboardNotifications(){
+    
+    func registerForKeyboardNotifications() {
         // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func unregisterFromKeyboardNotifications(){
+    func unregisterFromKeyboardNotifications() {
         // Remove notifications for keyboard appearing
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     // called anytime the keyboard appears on screen
-    func keyboardWasShown(notification: NSNotification){
+    func keyboardWasShown(notification: NSNotification) {
         keyboardWasShownHelper(notification: notification, scrollView: mainScrollView, activeField: activeField)
     }
     
     // called when the keyboard is about to be removed from the screen
-    func keyboardWillBeHidden(notification: NSNotification){
+    func keyboardWillBeHidden(notification: NSNotification) {
         keyboardWillBeHiddenHelper(notification: notification, scrollView: mainScrollView, activeField: activeField)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField){
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField){
+    func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
     
-     // this function moves the cursor to the next text field upon hitting
-     // return in the current text field
+    // this function moves the cursor to the next text field upon hitting
+    // return in the current text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.restorationIdentifier == Storyboard.WelcomeEmailTextFieldIdentifier {
             passwordTextField.becomeFirstResponder()
@@ -116,7 +116,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     // function to check if user exist with email password combination exist
-    func successfulLogin(email:String, password:String) -> Bool{
+    func successfulLogin(email:String, password:String) -> Bool {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes
@@ -126,13 +126,13 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
             if let error = task.error as? NSError {
                 print("The request failed. Error: \(error)")
-            }else if let res = task.result as? User {
+            } else if let res = task.result as? User {
                 if(res.email_id == email && res.password == password){
                     successful = true
-                }else {
+                } else {
                     self.displayAlert("Invalid Password", message: "Please try again.")
                 }
-            }else {
+            } else {
                 self.displayAlert("Invalid Email", message: "No account associated with email address.")
             }
             sema.signal()
