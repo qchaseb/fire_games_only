@@ -39,6 +39,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Variables
     
     var activeField: UITextField?
+    var user :User?
     
     // MARK: - UI Elements
     
@@ -59,6 +60,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         // query AWS DB for login credentials
         if(successfulLogin(email: emailTextField.text!, password: passwordTextField.text!)) {
             print("successful log in!")
+            performSegue(withIdentifier: "LoginSuccess" , sender: nil)
             //segue here to user's page or welcome screen
         }
     }
@@ -128,6 +130,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
                 print("The request failed. Error: \(error)")
             } else if let res = task.result as? User {
                 if(res.email_id == email && res.password == password){
+                    self.user = res
                     successful = true
                 } else {
                     self.displayAlert("Invalid Password", message: "Please try again.")
@@ -140,5 +143,21 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         })
         sema.wait()
         return successful
+    }
+    
+    // prevents segue from happening until user is verified by the database
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (identifier == "LoginSuccess") {
+                return false
+        }
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LoginSuccess" {
+            if let destionartionVC = segue.destination as? SignedInUserViewController {
+                destionartionVC.user = user
+            }
+        }
     }
 }
