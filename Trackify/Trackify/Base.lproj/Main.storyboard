@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHA-k7-kaW">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LHA-k7-kaW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,7 +64,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signInButtonTapped:" destination="2wO-YJ-46B" eventType="touchUpInside" id="l9n-ew-HZy"/>
-                                                            <segue destination="xWl-pa-ueN" kind="show" identifier="LoginSuccess" id="pU0-0I-U40"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6U-0h-L3C">
@@ -135,6 +134,7 @@
                         <outlet property="mainScrollView" destination="gzH-6p-HGb" id="ia4-Fn-3E4"/>
                         <outlet property="passwordTextField" destination="bQx-tB-Kwq" id="axy-fz-8hn"/>
                         <segue destination="bFE-7j-ij4" kind="show" identifier="swipeToSignUp" id="I2e-0F-aje"/>
+                        <segue destination="xWl-pa-ueN" kind="show" identifier="loginSuccess" id="Wpd-1j-5jZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-8x-cfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,6 +195,23 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hm0-D8-Jlj">
+                                <rect key="frame" x="125" y="578" width="124" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.25266362720000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOutTapped:" destination="xWl-pa-ueN" eventType="touchUpInside" id="tg5-c6-QB7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -206,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ww8-q7-z3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="829.83508245877067"/>
+            <point key="canvasLocation" x="2437.5999999999999" y="909.89505247376314"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="CTA-eT-jZz">
@@ -355,6 +372,7 @@
                         <outlet property="lastNameTextField" destination="IaI-te-9sG" id="A32-gN-1Gn"/>
                         <outlet property="passwordTextField" destination="c3l-m8-SDn" id="rnE-sM-XyY"/>
                         <outlet property="scrollView" destination="8b7-yT-pOO" id="FEu-io-Edp"/>
+                        <segue destination="xWl-pa-ueN" kind="show" identifier="newUserSignInSegue" id="cLE-Rl-hSs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi7-8m-xbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,6 +404,7 @@
         <image name="trackify_logo" width="1102" height="1357"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cLE-Rl-hSs"/>
         <segue reference="I2e-0F-aje"/>
     </inferredMetricsTieBreakers>
 </document>

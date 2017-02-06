@@ -39,7 +39,14 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Variables
     
     var activeField: UITextField?
-    var user :User?
+    var user :User? {
+        didSet {
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.performSegue(withIdentifier: Storyboard.SignInSegue , sender: self)
+            }
+        }
+    }
     
     // MARK: - UI Elements
     
@@ -49,6 +56,10 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var mainScrollView: UIScrollView!
     
+    // a subview that will be added to our current view with a
+    // spinner, indicating we are attempting to retrieve data from AWS
+    var spinner = UIActivityIndicatorView()
+    
     // MARK: - Other Functions
     
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -56,12 +67,10 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
         } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
-        }
-        // query AWS DB for login credentials
-        if(successfulLogin(email: emailTextField.text!, password: passwordTextField.text!)) {
-            print("successful log in!")
-            performSegue(withIdentifier: "LoginSuccess" , sender: nil)
-            //segue here to user's page or welcome screen
+        } else {
+            // query AWS DB for login credentials
+            startSpinner(&spinner)
+            attemptLogin(email: emailTextField.text!, password: passwordTextField.text!)
         }
     }
     
@@ -118,45 +127,47 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     // function to check if user exist with email password combination exist
-    func successfulLogin(email:String, password:String) -> Bool {
+    func attemptLogin(email:String, password:String) {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes
-        var successful = false
-        // semaphore to waits until load call completes
+        
         let sema = DispatchSemaphore(value: 0)
         dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
             if let error = task.error as? NSError {
                 print("The request failed. Error: \(error)")
+                if (error.domain == NSURLErrorDomain) {
+                    DispatchQueue.main.async {
+                        self.displayAlert("No Network Connection", message: "Please try again.")
+                    }
+                }
             } else if let res = task.result as? User {
-                if(res.email_id == email && res.password == password){
+                if (res.email_id == email && res.password == password){
                     self.user = res
-                    successful = true
                 } else {
-                    self.displayAlert("Invalid Password", message: "Please try again.")
+                    DispatchQueue.main.async {
+                        self.displayAlert("Invalid Password", message: "Please try again.")
+                    }
                 }
             } else {
-                self.displayAlert("Invalid Email", message: "No account associated with email address.")
+                DispatchQueue.main.async {
+                    self.displayAlert("Invalid Email", message: "No account associated with email address.")
+                }
+            }
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
             }
             sema.signal()
             return nil
         })
         sema.wait()
-        return successful
-    }
-    
-    // prevents segue from happening until user is verified by the database
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if (identifier == "LoginSuccess") {
-                return false
-        }
-        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LoginSuccess" {
-            if let destionartionVC = segue.destination as? SignedInUserViewController {
-                destionartionVC.user = user
+        self.spinner.stopAnimating()
+        if segue.identifier == Storyboard.SignInSegue {
+            if let destinationVC = segue.destination as? SignedInUserViewController {
+                destinationVC.user = user
             }
         }
     }

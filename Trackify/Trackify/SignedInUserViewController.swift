@@ -13,6 +13,16 @@ class SignedInUserViewController: UIViewController {
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    
+    // a subview that will be added to our current view with a
+    // spinner, indicating we are attempting to retrieve data from AWS
+    var spinner = UIActivityIndicatorView()
+    
+    
+    @IBAction func logOutTapped(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+    }
+    
     var user : User?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +32,10 @@ class SignedInUserViewController: UIViewController {
         lastNameLabel.text = user?.last_name
         emailLabel.text = user?.email_id
         
+        startSpinner(&spinner)
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

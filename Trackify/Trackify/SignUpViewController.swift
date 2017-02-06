@@ -78,7 +78,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             addUserToDB();
         }
         
-        
         // push data to AWS and sign in
     }
     
@@ -114,7 +113,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
             if let error = task.error as? NSError {
                 print("The request failed. Error: \(error)")
-            }else if (task.result as? User) != nil {
+            } else if (task.result as? User) != nil {
                 userExists = true
             }
             sema.signal()
