@@ -110,5 +110,6 @@ struct Storyboard {
     static let SignInSegue = "signInSegue"
     static let NewUserSignInSegue = "newUserSignInSegue"
     static let FlightCell = "flightCell"
+    static let ManualEntrySegue = "manualEntrySegue"
 }
 

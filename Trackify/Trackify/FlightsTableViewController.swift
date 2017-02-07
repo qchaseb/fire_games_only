@@ -51,7 +51,7 @@ class FlightsTableViewController: UITableViewController {
         // set up title image
         let logo = #imageLiteral(resourceName: "trackify_white_title")
         let imageView = UIImageView(image: logo)
-        imageView.frame = CGRect(x:0, y:0, width:40, height:40)
+        imageView.frame = CGRect(x:0, y:0, width:44, height:44)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
@@ -60,6 +60,8 @@ class FlightsTableViewController: UITableViewController {
         settingsButton.image = #imageLiteral(resourceName: "menu_icon")
         settingsButton.tintColor = UIColor.white
         settingsButton.customView?.contentMode = .scaleAspectFit
+        settingsButton.target = self
+        settingsButton.action = #selector(self.settingsButtonTapped)
         self.navigationItem.leftBarButtonItem = settingsButton
         
         // set up manual entry button
@@ -67,6 +69,8 @@ class FlightsTableViewController: UITableViewController {
         addButton.image = #imageLiteral(resourceName: "plus_icon")
         addButton.tintColor = UIColor.white
         addButton.customView?.contentMode = .scaleAspectFit
+        addButton.target = self
+        addButton.action = #selector(self.manualEntryButtonTapped)
         self.navigationItem.rightBarButtonItem = addButton
         
         // set time and battery logos to be white
@@ -157,6 +161,15 @@ class FlightsTableViewController: UITableViewController {
         
         print("REFRESH")
         self.refreshController?.endRefreshing()
+    }
+    
+    func manualEntryButtonTapped() {
+        self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
+    }
+    
+    func settingsButtonTapped() {
+        // eventually add popover, but for now just sign out
+        self.navigationController!.popToRootViewController(animated: true)
     }
     
     /*
