@@ -38,8 +38,8 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Variables
     
-    var activeField: UITextField?
-    var user :User? {
+    fileprivate var activeField: UITextField?
+    fileprivate var user :User? {
         didSet {
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
@@ -58,7 +58,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     // a subview that will be added to our current view with a
     // spinner, indicating we are attempting to retrieve data from AWS
-    var spinner = UIActivityIndicatorView()
+    fileprivate var spinner = UIActivityIndicatorView()
     
     // MARK: - Other Functions
     
@@ -75,7 +75,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     // allow user to swipe to sign up screen
-    func addSwipeGestureRecognizer() {
+    fileprivate func addSwipeGestureRecognizer() {
         let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeSegueToSignUp))
         swipe.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipe)
@@ -85,13 +85,13 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: Storyboard.WelcomeSwipeSegueIdentifier, sender: self)
     }
     
-    func registerForKeyboardNotifications() {
+    fileprivate func registerForKeyboardNotifications() {
         // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func unregisterFromKeyboardNotifications() {
+    fileprivate func unregisterFromKeyboardNotifications() {
         // Remove notifications for keyboard appearing
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -127,7 +127,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     // function to check if user exist with email password combination exist
-    func attemptLogin(email:String, password:String) {
+    fileprivate func attemptLogin(email:String, password:String) {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes

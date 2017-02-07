@@ -36,9 +36,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Variables
     
-    var activeField: UITextField?
+    fileprivate var activeField: UITextField?
     
-    var newUser :User? {
+    fileprivate var newUser :User? {
         didSet {
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
@@ -95,7 +95,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // push data to AWS and sign in
     }
     
-    func addUserToDB() {
+    fileprivate func addUserToDB() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let user = User()
         user?.email_id = emailTextField.text
@@ -121,7 +121,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    func userWithEmailExists(_ email:String) -> Bool {
+    fileprivate func userWithEmailExists(_ email:String) -> Bool {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes
@@ -143,7 +143,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     // allow user to swipe back to welcome screen
-    func addSwipeGestureRecognizer() {
+    fileprivate func addSwipeGestureRecognizer() {
         let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeSegueToWelcomeScreen))
         swipe.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipe)
@@ -154,7 +154,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     // set this class as the delegate for all user input text fields
-    func setTextFieldDelegates() {
+    fileprivate func setTextFieldDelegates() {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         emailTextField.delegate = self
@@ -162,13 +162,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         confirmTextField.delegate = self
     }
     
-    func registerForKeyboardNotifications() {
+    fileprivate func registerForKeyboardNotifications() {
         // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func unregisterFromKeyboardNotifications() {
+    fileprivate func unregisterFromKeyboardNotifications() {
         // Remove notifications for keyboard appearing
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)

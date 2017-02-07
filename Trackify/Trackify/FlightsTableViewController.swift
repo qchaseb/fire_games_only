@@ -14,9 +14,9 @@ class FlightsTableViewController: UITableViewController {
     
     var user: User?
     
-    var flights: [Flight] = []
-    var df = DateFormatter()
-    var helpers = Helpers()
+    fileprivate var flights: [Flight] = []
+    fileprivate var df = DateFormatter()
+    fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,14 @@ class FlightsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUpNavigationBar()
+    }
+    
+    // Set up the UI for the navigation bar
+    fileprivate func setUpNavigationBar() {
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.barTintColor = helpers.themeColor
-
+        
         // set up title image
         let logo = #imageLiteral(resourceName: "trackify_white_title")
         let imageView = UIImageView(image: logo)
@@ -61,6 +66,7 @@ class FlightsTableViewController: UITableViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    fileprivate
     func setUpTestFlights() {
         var testFlight = Flight()
         testFlight.airline = "Southwest"
