@@ -38,6 +38,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var activeField: UITextField?
     
+    var newUser :User? {
+        didSet {
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.performSegue(withIdentifier: Storyboard.NewUserSignInSegue , sender: self)
+            }
+        }
+    }
+    
     // MARK: - UI Elements
     
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -51,6 +60,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    // a subview that will be added to our current view with a
+    // spinner, indicating we are attempting to retrieve data from AWS
+    var spinner = UIActivityIndicatorView()
     
     // MARK: - Other Functions
     
@@ -67,7 +80,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
         } else if (userWithEmailExists(emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "User with email address already exists.")
-        } else if (passwordTextField.text == "") {
+        } else if (passwordTextField.text == "") { 
             displayAlert("Missing Password", message: "Please enter a valid password.")
         } else if (confirmTextField.text == "") {
             displayAlert("Missing Password Confirmation", message: "Please confirm your password.")
@@ -75,6 +88,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Password Mismatch", message: "Please confirm your password.")
             confirmTextField.text = ""
         } else {
+            startSpinner(&spinner)
             addUserToDB();
         }
         
@@ -93,10 +107,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         dynamoDBObjectMapper.save(user!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
             if let error = task.error as? NSError {
-                print("The request failed. Error: \(error)")
+                if (error.domain == NSURLErrorDomain) {
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.displayAlert("No Network Connection", message: "Please try again.")
+                    }
+                }
             } else {
-                print("this is result: \(task.result)")
-                // Do something with task.result or perform other operations.
+                // success!
+                self.newUser = user
             }
             return nil
         })
@@ -184,5 +203,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         default: textField.resignFirstResponder()
         }
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.spinner.stopAnimating()
+        if segue.identifier == Storyboard.NewUserSignInSegue {
+            if let destinationVC = segue.destination as? SignedInUserViewController {
+                destinationVC.user = newUser
+            }
+        }
     }
 }

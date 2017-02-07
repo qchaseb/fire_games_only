@@ -135,7 +135,6 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         let sema = DispatchSemaphore(value: 0)
         dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
             if let error = task.error as? NSError {
-                print("The request failed. Error: \(error)")
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
                         self.displayAlert("No Network Connection", message: "Please try again.")
