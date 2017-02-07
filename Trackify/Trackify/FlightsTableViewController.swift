@@ -14,12 +14,25 @@ class FlightsTableViewController: UITableViewController {
     
     var user: User?
     
-    fileprivate var flights: [Flight] = []
+    fileprivate var flights: [Flight]? {
+        didSet {
+            self.tableView.reloadData()
+            self.refreshController?.endRefreshing()
+        }
+    }
+    
+    fileprivate var refreshController: UIRefreshControl?
+    
     fileprivate var df = DateFormatter()
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshController = UIRefreshControl()
+        self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
+        self.tableView.addSubview(refreshController!)
+        self.refreshController?.beginRefreshing()
         
         setUpTestFlights()
         // query for flights
@@ -66,8 +79,9 @@ class FlightsTableViewController: UITableViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    fileprivate
-    func setUpTestFlights() {
+    fileprivate func setUpTestFlights() {
+        flights = []
+        
         var testFlight = Flight()
         testFlight.airline = "Southwest"
         var dateString = "02-10-2017 10:00"
@@ -76,7 +90,7 @@ class FlightsTableViewController: UITableViewController {
         testFlight.departureAirport = "LGA"
         testFlight.destinationAirport = "SFO"
         testFlight.flightNumber = 3878
-        flights.append(testFlight)
+        flights!.append(testFlight)
         
         testFlight = Flight()
         testFlight.airline = "American"
@@ -86,7 +100,7 @@ class FlightsTableViewController: UITableViewController {
         testFlight.departureAirport = "SFO"
         testFlight.destinationAirport = "JFK"
         testFlight.flightNumber = 265
-        flights.append(testFlight)
+        flights!.append(testFlight)
         
         testFlight = Flight()
         testFlight.airline = "United"
@@ -96,7 +110,7 @@ class FlightsTableViewController: UITableViewController {
         testFlight.departureAirport = "JFK"
         testFlight.destinationAirport = "FLL"
         testFlight.flightNumber = 842
-        flights.append(testFlight)
+        flights!.append(testFlight)
         
         testFlight = Flight()
         testFlight.airline = "Delta"
@@ -106,7 +120,7 @@ class FlightsTableViewController: UITableViewController {
         testFlight.departureAirport = "MIA"
         testFlight.destinationAirport = "LGA"
         testFlight.flightNumber = 5436
-        flights.append(testFlight)
+        flights!.append(testFlight)
         
         testFlight = Flight()
         testFlight.airline = "Southwest"
@@ -116,7 +130,7 @@ class FlightsTableViewController: UITableViewController {
         testFlight.departureAirport = "JFK"
         testFlight.destinationAirport = "YYZ"
         testFlight.flightNumber = 1920
-        flights.append(testFlight)
+        flights!.append(testFlight)
     }
 
     // MARK: - Table view data source
@@ -126,18 +140,25 @@ class FlightsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flights.count
+        return flights!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell?
         if let flightCell = tableView.dequeueReusableCell(withIdentifier: Storyboard.FlightCell, for: indexPath) as? FlightTableViewCell {
-            flightCell.flight = flights[indexPath.row]
+            flightCell.flight = flights![indexPath.row]
             cell = flightCell
         }
         return cell!
     }
-
+    
+    func handleRefresh() {
+        // Reload data and update flights variable
+        
+        print("REFRESH")
+        self.refreshController?.endRefreshing()
+    }
+    
     /*
     // MARK: - Navigation
 
