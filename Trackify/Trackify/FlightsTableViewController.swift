@@ -39,7 +39,7 @@ class FlightsTableViewController: UITableViewController {
         
         // set up settings button
         let settingsButton = UIBarButtonItem()
-        settingsButton.image = #imageLiteral(resourceName: "gears_icon")
+        settingsButton.image = #imageLiteral(resourceName: "menu_icon")
         settingsButton.tintColor = UIColor.white
         settingsButton.customView?.contentMode = .scaleAspectFit
         self.navigationItem.leftBarButtonItem = settingsButton
