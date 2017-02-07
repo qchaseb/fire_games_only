@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -134,11 +135,122 @@
                         <outlet property="mainScrollView" destination="gzH-6p-HGb" id="ia4-Fn-3E4"/>
                         <outlet property="passwordTextField" destination="bQx-tB-Kwq" id="axy-fz-8hn"/>
                         <segue destination="bFE-7j-ij4" kind="show" identifier="swipeToSignUp" id="I2e-0F-aje"/>
+                        <segue destination="wlc-an-J5l" kind="show" identifier="signInSegue" id="Ty5-SC-zL6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-8x-cfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1719.2" y="152.47376311844079"/>
+        </scene>
+        <!--Flights Table View Controller-->
+        <scene sceneID="rBQ-nC-G7R">
+            <objects>
+                <tableViewController id="wlc-an-J5l" customClass="FlightsTableViewController" customModule="Trackify" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="uoj-eb-DhQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="9Sa-A8-BtV" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="176"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sa-A8-BtV" id="O7t-Oc-UoW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-TX-FW4">
+                                            <rect key="frame" x="8" y="8" width="359" height="106.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-qa-sLi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="209.5" height="106.5"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dSb-aV-0jN">
+                                                    <rect key="frame" x="219.5" y="0.0" width="139.5" height="106.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofY-K3-Bpp">
+                                                            <rect key="frame" x="39.5" y="0.0" width="60.5" height="35.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pep-2B-eX7">
+                                                            <rect key="frame" x="52" y="35.5" width="36" height="35.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-ev-huB">
+                                                            <rect key="frame" x="0.5" y="71" width="139" height="35.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ofY-K3-Bpp" firstAttribute="height" secondItem="Pep-2B-eX7" secondAttribute="height" id="4u7-Lx-q3H"/>
+                                                        <constraint firstItem="Pep-2B-eX7" firstAttribute="height" secondItem="b5U-ev-huB" secondAttribute="height" id="SDG-gv-k0P"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="35Q-qa-sLi" firstAttribute="width" secondItem="dSb-aV-0jN" secondAttribute="width" multiplier="3:2" id="8jd-ls-ilA"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-BJ-a4r">
+                                            <rect key="frame" x="8" y="114.5" width="359" height="53"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVQ-n3-WrW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="53"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-Gu-SO8">
+                                                    <rect key="frame" x="144" y="0.0" width="71.5" height="53"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REM-nw-xcH">
+                                                    <rect key="frame" x="215.5" y="0.0" width="143.5" height="53"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="REM-nw-xcH" firstAttribute="width" secondItem="yVQ-n3-WrW" secondAttribute="width" id="62Y-d4-RsE"/>
+                                                <constraint firstItem="REM-nw-xcH" firstAttribute="width" secondItem="aeh-Gu-SO8" secondAttribute="width" multiplier="2:1" id="o9K-5k-ZcB"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WYd-BJ-a4r" firstAttribute="height" secondItem="3ho-TX-FW4" secondAttribute="height" multiplier="1:2" id="NS6-cE-JXE"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="3ho-TX-FW4" secondAttribute="leading" id="Oxa-77-Gkj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3ho-TX-FW4" secondAttribute="trailing" id="WRv-2T-2Y4"/>
+                                        <constraint firstItem="WYd-BJ-a4r" firstAttribute="top" secondItem="3ho-TX-FW4" secondAttribute="bottom" id="YUT-rq-Roy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WYd-BJ-a4r" secondAttribute="trailing" id="df3-ey-HvU"/>
+                                        <constraint firstItem="WYd-BJ-a4r" firstAttribute="leading" secondItem="O7t-Oc-UoW" secondAttribute="leadingMargin" id="dlL-2k-S2g"/>
+                                        <constraint firstItem="3ho-TX-FW4" firstAttribute="top" secondItem="O7t-Oc-UoW" secondAttribute="topMargin" id="mdE-ub-nSr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WYd-BJ-a4r" secondAttribute="bottom" id="svy-Iw-Fc5"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Pep-2B-eX7" id="4ts-Vp-7Bd"/>
+                                    <outlet property="departureAirportLabel" destination="yVQ-n3-WrW" id="v5l-xJ-4JI"/>
+                                    <outlet property="destinationAirportLabel" destination="REM-nw-xcH" id="3c6-qd-cEQ"/>
+                                    <outlet property="flightLogoImageView" destination="35Q-qa-sLi" id="VW4-od-HRe"/>
+                                    <outlet property="flightNumberLabel" destination="b5U-ev-huB" id="oJC-sT-3jQ"/>
+                                    <outlet property="timeLabel" destination="ofY-K3-Bpp" id="gQc-Az-ZnK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wlc-an-J5l" id="b1R-Zg-r73"/>
+                            <outlet property="delegate" destination="wlc-an-J5l" id="5Ly-nh-P4K"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hpm-lM-ZSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2358" y="915"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="CTA-eT-jZz">
@@ -287,6 +399,7 @@
                         <outlet property="lastNameTextField" destination="IaI-te-9sG" id="A32-gN-1Gn"/>
                         <outlet property="passwordTextField" destination="c3l-m8-SDn" id="rnE-sM-XyY"/>
                         <outlet property="scrollView" destination="8b7-yT-pOO" id="FEu-io-Edp"/>
+                        <segue destination="wlc-an-J5l" kind="show" identifier="newUserSignInSegue" id="4l1-I7-UN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi7-8m-xbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,10 +427,12 @@
     </scenes>
     <resources>
         <image name="Back-100" width="100" height="100"/>
+        <image name="right_arrow_icon" width="100" height="100"/>
         <image name="trackify_icon" width="972" height="972"/>
         <image name="trackify_logo" width="1102" height="1357"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ty5-SC-zL6"/>
         <segue reference="I2e-0F-aje"/>
     </inferredMetricsTieBreakers>
 </document>

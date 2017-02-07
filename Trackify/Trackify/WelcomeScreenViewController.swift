@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import AWSCore
+import AWSDynamoDB
+import AWSCognito
 
 class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - View Lifecycle Functions
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAway()
         emailTextField.delegate = self
         passwordTextField.delegate = self
         self.addSwipeGestureRecognizer()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -36,14 +39,26 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Variables
     
     var activeField: UITextField?
+    var user :User? {
+        didSet {
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.performSegue(withIdentifier: Storyboard.SignInSegue , sender: self)
+            }
+        }
+    }
     
     // MARK: - UI Elements
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
+    
+    // a subview that will be added to our current view with a
+    // spinner, indicating we are attempting to retrieve data from AWS
+    var spinner = UIActivityIndicatorView()
     
     // MARK: - Other Functions
     
@@ -52,8 +67,11 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
         } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
+        } else {
+            // query AWS DB for login credentials
+            startSpinner(&spinner)
+            attemptLogin(email: emailTextField.text!, password: passwordTextField.text!)
         }
-        // query AWS DB for login credentials
     }
     
     // allow user to swipe to sign up screen
@@ -66,39 +84,39 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     func swipeSegueToSignUp() {
         performSegue(withIdentifier: Storyboard.WelcomeSwipeSegueIdentifier, sender: self)
     }
-
-    func registerForKeyboardNotifications(){
+    
+    func registerForKeyboardNotifications() {
         // Add notifications for keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func unregisterFromKeyboardNotifications(){
+    func unregisterFromKeyboardNotifications() {
         // Remove notifications for keyboard appearing
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     // called anytime the keyboard appears on screen
-    func keyboardWasShown(notification: NSNotification){
+    func keyboardWasShown(notification: NSNotification) {
         keyboardWasShownHelper(notification: notification, scrollView: mainScrollView, activeField: activeField)
     }
     
     // called when the keyboard is about to be removed from the screen
-    func keyboardWillBeHidden(notification: NSNotification){
+    func keyboardWillBeHidden(notification: NSNotification) {
         keyboardWillBeHiddenHelper(notification: notification, scrollView: mainScrollView, activeField: activeField)
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField){
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField){
+    func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
     
-     // this function moves the cursor to the next text field upon hitting
-     // return in the current text field
+    // this function moves the cursor to the next text field upon hitting
+    // return in the current text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.restorationIdentifier == Storyboard.WelcomeEmailTextFieldIdentifier {
             passwordTextField.becomeFirstResponder()
@@ -106,5 +124,50 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
+    }
+    
+    // function to check if user exist with email password combination exist
+    func attemptLogin(email:String, password:String) {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.load(User.self, hashKey: email, rangeKey: nil).continueWith(block: { (task:AWSTask!) -> AnyObject! in
+            if let error = task.error as? NSError {
+                if (error.domain == NSURLErrorDomain) {
+                    DispatchQueue.main.async {
+                        self.displayAlert("No Network Connection", message: "Please try again.")
+                    }
+                }
+            } else if let res = task.result as? User {
+                if (res.email_id == email && res.password == password){
+                    self.user = res
+                } else {
+                    DispatchQueue.main.async {
+                        self.displayAlert("Invalid Password", message: "Please try again.")
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.displayAlert("Invalid Email", message: "No account associated with email address.")
+                }
+            }
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+            }
+            sema.signal()
+            return nil
+        })
+        sema.wait()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.spinner.stopAnimating()
+        if segue.identifier == Storyboard.SignInSegue {
+            if let destinationVC = segue.destination as? FlightsTableViewController {
+                destinationVC.user = user
+            }
+        }
     }
 }

@@ -13,6 +13,7 @@ import UIKit
 
 class Helpers {
     // helper variables here
+    let themeColor = UIColor(red: 0/255, green: 80/255, blue:255/255, alpha: 1)
 }
 
 extension UIViewController {
@@ -85,12 +86,29 @@ extension UIViewController {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
-
+    
+    // this function sets up the attributes for the spinner and
+    // adds it to the display
+    func startSpinner(_ spinner: inout UIActivityIndicatorView) {
+        spinner = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        spinner.center = self.view.center
+        spinner.hidesWhenStopped = true
+        spinner.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 0.75)
+        spinner.layer.cornerRadius = 10
+        self.view.addSubview(spinner)
+        spinner.bringSubview(toFront: self.view)
+        spinner.startAnimating()
+    }
+    
 }
 
 // String constants that are used in the storyboard
 struct Storyboard {
     static let WelcomeEmailTextFieldIdentifier = "emailTextField"
     static let WelcomeSwipeSegueIdentifier = "swipeToSignUp"
+    static let SignInSegue = "signInSegue"
+    static let NewUserSignInSegue = "newUserSignInSegue"
+    static let FlightCell = "flightCell"
 }
 
