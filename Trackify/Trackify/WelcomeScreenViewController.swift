@@ -165,7 +165,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.spinner.stopAnimating()
         if segue.identifier == Storyboard.SignInSegue {
-            if let destinationVC = segue.destination as? SignedInUserViewController {
+            if let destinationVC = segue.destination as? FlightsTableViewController {
                 destinationVC.user = user
             }
         }

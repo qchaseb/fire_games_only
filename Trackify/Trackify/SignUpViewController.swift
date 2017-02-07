@@ -195,7 +195,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     // this function moves the cursor to the next text field upon hitting
     // return in the current text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch (textField){
+        switch (textField) {
         case firstNameTextField: lastNameTextField.becomeFirstResponder()
         case lastNameTextField: emailTextField.becomeFirstResponder()
         case emailTextField: passwordTextField.becomeFirstResponder()
@@ -208,7 +208,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.spinner.stopAnimating()
         if segue.identifier == Storyboard.NewUserSignInSegue {
-            if let destinationVC = segue.destination as? SignedInUserViewController {
+            if let destinationVC = segue.destination as? FlightsTableViewController {
                 destinationVC.user = newUser
             }
         }

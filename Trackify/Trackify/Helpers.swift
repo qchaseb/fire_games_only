@@ -13,7 +13,7 @@ import UIKit
 
 class Helpers {
     // helper variables here
-    let themeColor = UIColor(red: 0/255, green: 100/255, blue:255/255, alpha: 1)
+    let themeColor = UIColor(red: 0/255, green: 80/255, blue:255/255, alpha: 1)
 }
 
 extension UIViewController {
@@ -107,7 +107,8 @@ extension UIViewController {
 struct Storyboard {
     static let WelcomeEmailTextFieldIdentifier = "emailTextField"
     static let WelcomeSwipeSegueIdentifier = "swipeToSignUp"
-    static let SignInSegue = "loginSuccess"
+    static let SignInSegue = "signInSegue"
     static let NewUserSignInSegue = "newUserSignInSegue"
+    static let FlightCell = "flightCell"
 }
 
