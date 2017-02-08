@@ -31,7 +31,7 @@ class ManualEntryViewController: UIViewController {
         // set up title image
         let logo = #imageLiteral(resourceName: "trackify_white_title")
         let imageView = UIImageView(image: logo)
-        imageView.frame = CGRect(x:0, y:0, width:44, height:44)
+        imageView.frame = CGRect(x:0, y:0, width:50, height:50)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         

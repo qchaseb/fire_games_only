@@ -51,7 +51,7 @@ class FlightsTableViewController: UITableViewController {
         // set up title image
         let logo = #imageLiteral(resourceName: "trackify_white_title")
         let imageView = UIImageView(image: logo)
-        imageView.frame = CGRect(x:0, y:0, width:44, height:44)
+        imageView.frame = CGRect(x:0, y:0, width:50, height:50)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
@@ -99,7 +99,6 @@ class FlightsTableViewController: UITableViewController {
         testFlight = Flight()
         testFlight.airline = "American"
         dateString = "02-22-2017 16:15"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
         testFlight.date = df.date(from: dateString)
         testFlight.departureAirport = "SFO"
         testFlight.destinationAirport = "JFK"
@@ -107,11 +106,10 @@ class FlightsTableViewController: UITableViewController {
         flights!.append(testFlight)
         
         testFlight = Flight()
-        testFlight.airline = "United"
+        testFlight.airline = "Air Canada"
         dateString = "03-5-2017 07:45"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
         testFlight.date = df.date(from: dateString)
-        testFlight.departureAirport = "JFK"
+        testFlight.departureAirport = "YYZ"
         testFlight.destinationAirport = "FLL"
         testFlight.flightNumber = 842
         flights!.append(testFlight)
@@ -119,21 +117,55 @@ class FlightsTableViewController: UITableViewController {
         testFlight = Flight()
         testFlight.airline = "Delta"
         dateString = "03-12-2017 21:20"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
         testFlight.date = df.date(from: dateString)
         testFlight.departureAirport = "MIA"
-        testFlight.destinationAirport = "LGA"
+        testFlight.destinationAirport = "IAD"
         testFlight.flightNumber = 5436
         flights!.append(testFlight)
         
         testFlight = Flight()
-        testFlight.airline = "Southwest"
+        testFlight.airline = "United"
         dateString = "04-18-2017 6:30"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
         testFlight.date = df.date(from: dateString)
         testFlight.departureAirport = "JFK"
-        testFlight.destinationAirport = "YYZ"
+        testFlight.destinationAirport = "LAS"
         testFlight.flightNumber = 1920
+        flights!.append(testFlight)
+        
+        testFlight = Flight()
+        testFlight.airline = "Virgin America"
+        dateString = "06-13-2017 10:10"
+        testFlight.date = df.date(from: dateString)
+        testFlight.departureAirport = "ORD"
+        testFlight.destinationAirport = "SJC"
+        testFlight.flightNumber = 445
+        flights!.append(testFlight)
+        
+        testFlight = Flight()
+        testFlight.airline = "Sun Country"
+        dateString = "07-30-2017 6:50"
+        testFlight.date = df.date(from: dateString)
+        testFlight.departureAirport = "OAK"
+        testFlight.destinationAirport = "LAX"
+        testFlight.flightNumber = 672
+        flights!.append(testFlight)
+        
+        testFlight = Flight()
+        testFlight.airline = "Frontier"
+        dateString = "11-01-2017 14:00"
+        testFlight.date = df.date(from: dateString)
+        testFlight.departureAirport = "DFW"
+        testFlight.destinationAirport = "SEA"
+        testFlight.flightNumber = 188
+        flights!.append(testFlight)
+        
+        testFlight = Flight()
+        testFlight.airline = "Hawaiian"
+        dateString = "12-26-2017 7:20"
+        testFlight.date = df.date(from: dateString)
+        testFlight.departureAirport = "SFO"
+        testFlight.destinationAirport = "HNL"
+        testFlight.flightNumber = 160
         flights!.append(testFlight)
     }
 
