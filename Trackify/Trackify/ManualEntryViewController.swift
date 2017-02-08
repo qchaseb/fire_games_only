@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ManualEntryViewController: UIViewController {
+class ManualEntryViewController: UIViewController, UIPickerViewDelegate {
     
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAway()
+        self.scrollView.isScrollEnabled = false
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +24,8 @@ class ManualEntryViewController: UIViewController {
         super.viewWillAppear(animated)
         setUpNavigationBar()
     }
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // Set up the UI for the navigation bar
     fileprivate func setUpNavigationBar() {
@@ -36,13 +40,13 @@ class ManualEntryViewController: UIViewController {
         self.navigationItem.titleView = imageView
         
         // set up settings button
-        let backButton = UIBarButtonItem()
-        backButton.image = #imageLiteral(resourceName: "back_white_icon")
-        backButton.tintColor = UIColor.white
-        backButton.customView?.contentMode = .scaleAspectFit
-        backButton.target = self
-        backButton.action = #selector(self.backButtonTapped)
-        self.navigationItem.leftBarButtonItem = backButton
+        let cancelButton = UIBarButtonItem()
+        cancelButton.image = #imageLiteral(resourceName: "delete_white_icon")
+        cancelButton.tintColor = UIColor.white
+        cancelButton.customView?.contentMode = .scaleAspectFit
+        cancelButton.target = self
+        cancelButton.action = #selector(self.cancelButtonTapped)
+        self.navigationItem.leftBarButtonItem = cancelButton
         
         // set up manual entry button
         let doneButton = UIBarButtonItem()
@@ -55,7 +59,7 @@ class ManualEntryViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
-    func backButtonTapped() {
+    func cancelButtonTapped() {
         self.navigationController!.popViewController(animated: true)
     }
     
