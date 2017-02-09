@@ -11,7 +11,7 @@ import AWSDynamoDB
 
 class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var airline: String?
-    var flightNumber: Int?
+    var flightNumber: String?
     var date: Date?
     var departureAirport: String?
     var destinationAirport: String?

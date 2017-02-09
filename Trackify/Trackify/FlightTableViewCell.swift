@@ -15,6 +15,9 @@ class FlightTableViewCell: UITableViewCell {
     
     fileprivate var df = DateFormatter()
     
+
+    // populates the table cell with flight information. Assumes that no fields in the flight
+    // flight object are null
     var flight: Flight? {
         didSet {
             switch((flight?.airline)!) {
@@ -30,8 +33,7 @@ class FlightTableViewCell: UITableViewCell {
             timeLabel.text = df.string(from: (flight?.date)!)
             df.dateFormat = "MMMM dd, yyyy"
             dateLabel.text = df.string(from: (flight?.date)!)
-            flight?.flightNumber = 1234
-            flightNumberLabel.text = "#" + String(describing: (flight?.flightNumber!)!)
+            flightNumberLabel.text = "#" + (flight?.flightNumber!)!
             departureAirportLabel.text = flight?.departureAirport
             destinationAirportLabel.text = flight?.destinationAirport
         }
