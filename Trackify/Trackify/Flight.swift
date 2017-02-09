@@ -7,12 +7,28 @@
 //
 
 import Foundation
+import AWSDynamoDB
 
-class Flight {
+class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var airline: String?
     var flightNumber: Int?
     var date: Date?
     var departureAirport: String?
     var destinationAirport: String?
     var confirmation: String?
+    var email:String?
+    var datetime:String?
+        
+    class func dynamoDBTableName() -> String {
+        return "TrackifyFlightsTable"
+    }
+    
+    class func hashKeyAttribute() -> String {
+        return "email"
+    }
+    
+    class func rangeKeyAttribute() -> String {
+        return "datetime"
+    }
+
 }

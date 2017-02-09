@@ -24,11 +24,13 @@ class FlightTableViewCell: UITableViewCell {
                 case "American": flightLogoImageView.image = #imageLiteral(resourceName: "american_logo")
                 default:flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
             }
-            
+            df.dateFormat = "MM-dd-yyyy HH:mm"
+            flight?.date = df.date(from: (flight?.datetime)!)
             df.dateFormat = "h:mm a"
             timeLabel.text = df.string(from: (flight?.date)!)
             df.dateFormat = "MMMM dd, yyyy"
             dateLabel.text = df.string(from: (flight?.date)!)
+            flight?.flightNumber = 1234
             flightNumberLabel.text = "#" + String(describing: (flight?.flightNumber!)!)
             departureAirportLabel.text = flight?.departureAirport
             destinationAirportLabel.text = flight?.destinationAirport

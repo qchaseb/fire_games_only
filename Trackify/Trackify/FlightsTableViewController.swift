@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AWSDynamoDB
 
 class FlightsTableViewController: UITableViewController {
     
     // MARK: - Variables
     
     var user: User?
+    fileprivate var spinner = UIActivityIndicatorView()
     
     fileprivate var flights: [Flight]? {
         didSet {
@@ -36,6 +38,7 @@ class FlightsTableViewController: UITableViewController {
         
         setUpTestFlights()
         // query for flights
+        flights = loadFlights(email: (user?.email_id)!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +85,7 @@ class FlightsTableViewController: UITableViewController {
     fileprivate func setUpTestFlights() {
         flights = []
         
-        var testFlight = Flight()
+        var testFlight = Flight()!
         testFlight.airline = "Southwest"
         var dateString = "02-10-2017 10:00"
         df.dateFormat = "MM-dd-yyyy HH:mm"
@@ -157,6 +160,42 @@ class FlightsTableViewController: UITableViewController {
         
         print("REFRESH")
         self.refreshController?.endRefreshing()
+    }
+    
+    //gets all the flights assosiated with a given user and returns them in an array of flight objects
+    // should return in order
+    fileprivate func loadFlights(email:String) -> [Flight] {
+        var resultFlights = [Flight]()
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.filterExpression = "email = :id"
+        scanExpression.expressionAttributeValues = [":id": email]
+        print("\n\n\n\n\n in here!!!!\n\n\n\n\n")
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
+            .continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+                print("\n\n\n\n\n in here!!!!\n\n\n\n\n")
+                if let error = task.error as? NSError {
+                    if (error.domain == NSURLErrorDomain) {
+                        DispatchQueue.main.async {
+                            self.displayAlert("No Network Connection", message: "Couldn't load flights. Please try again.")
+                        }
+                    }
+                } else if let dbResults = task.result {
+                    for flight in dbResults.items as! [Flight] {
+                        print(flight)
+                        resultFlights.append(flight)
+                    }
+                }
+                sema.signal()
+                return nil
+            })
+
+        sema.wait()
+        return resultFlights
     }
     
     /*
