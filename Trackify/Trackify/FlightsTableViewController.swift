@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AWSDynamoDB
 
 class FlightsTableViewController: UITableViewController {
     
     // MARK: - Variables
     
     var user: User?
+    fileprivate var spinner = UIActivityIndicatorView()
     
     fileprivate var flights: [Flight]? {
         didSet {
@@ -33,9 +35,8 @@ class FlightsTableViewController: UITableViewController {
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
         self.refreshController?.beginRefreshing()
-        
-        setUpTestFlights()
-        // query for flights
+        // query for flights for the logged in user
+        flights = loadFlights(email: (user?.email_id)!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,60 +79,6 @@ class FlightsTableViewController: UITableViewController {
         UIApplication.shared.statusBarStyle = .default
         self.navigationController?.isNavigationBarHidden = true
     }
-    
-    fileprivate func setUpTestFlights() {
-        flights = []
-        
-        var testFlight = Flight()
-        testFlight.airline = "Southwest"
-        var dateString = "02-10-2017 10:00"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
-        testFlight.date = df.date(from: dateString)
-        testFlight.departureAirport = "LGA"
-        testFlight.destinationAirport = "SFO"
-        testFlight.flightNumber = 3878
-        flights!.append(testFlight)
-        
-        testFlight = Flight()
-        testFlight.airline = "American"
-        dateString = "02-22-2017 16:15"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
-        testFlight.date = df.date(from: dateString)
-        testFlight.departureAirport = "SFO"
-        testFlight.destinationAirport = "JFK"
-        testFlight.flightNumber = 265
-        flights!.append(testFlight)
-        
-        testFlight = Flight()
-        testFlight.airline = "United"
-        dateString = "03-5-2017 07:45"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
-        testFlight.date = df.date(from: dateString)
-        testFlight.departureAirport = "JFK"
-        testFlight.destinationAirport = "FLL"
-        testFlight.flightNumber = 842
-        flights!.append(testFlight)
-        
-        testFlight = Flight()
-        testFlight.airline = "Delta"
-        dateString = "03-12-2017 21:20"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
-        testFlight.date = df.date(from: dateString)
-        testFlight.departureAirport = "MIA"
-        testFlight.destinationAirport = "LGA"
-        testFlight.flightNumber = 5436
-        flights!.append(testFlight)
-        
-        testFlight = Flight()
-        testFlight.airline = "Southwest"
-        dateString = "04-18-2017 6:30"
-        df.dateFormat = "MM-dd-yyyy HH:mm"
-        testFlight.date = df.date(from: dateString)
-        testFlight.departureAirport = "JFK"
-        testFlight.destinationAirport = "YYZ"
-        testFlight.flightNumber = 1920
-        flights!.append(testFlight)
-    }
 
     // MARK: - Table view data source
 
@@ -154,9 +101,41 @@ class FlightsTableViewController: UITableViewController {
     
     func handleRefresh() {
         // Reload data and update flights variable
-        
-        print("REFRESH")
+        flights = loadFlights(email: (user?.email_id)!)
         self.refreshController?.endRefreshing()
+    }
+    
+    // gets all the flights assosiated with a given user and returns them in an array of flight objects
+    // returns flights in order of date. 
+    fileprivate func loadFlights(email:String) -> [Flight] {
+        var resultFlights = [Flight]()
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.filterExpression = "email = :id"
+        scanExpression.expressionAttributeValues = [":id": email]
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
+            .continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+                if let error = task.error as? NSError {
+                    if (error.domain == NSURLErrorDomain) {
+                        DispatchQueue.main.async {
+                            self.displayAlert("No Network Connection", message: "Couldn't load flights. Please try again.")
+                        }
+                    }
+                } else if let dbResults = task.result {
+                    for flight in dbResults.items as! [Flight] {
+                        resultFlights.append(flight)
+                    }
+                }
+                sema.signal()
+                return nil
+            })
+
+        sema.wait()
+        return resultFlights
     }
     
     /*
