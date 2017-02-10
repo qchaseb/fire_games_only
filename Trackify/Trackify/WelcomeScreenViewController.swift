@@ -63,13 +63,16 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Other Functions
     
     @IBAction func signInButtonTapped(_ sender: Any) {
+        startSpinner(&spinner)
         if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
+            spinner.stopAnimating()
         } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
+            spinner.stopAnimating()
         } else {
             // query AWS DB for login credentials
-            startSpinner(&spinner)
+//            startSpinner(&spinner)
             attemptLogin(email: emailTextField.text!, password: passwordTextField.text!)
         }
     }

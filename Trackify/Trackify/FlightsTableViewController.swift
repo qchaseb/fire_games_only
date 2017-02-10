@@ -14,8 +14,9 @@ class FlightsTableViewController: UITableViewController {
     
     var user: User?
     
-    fileprivate var flights: [Flight]? {
+    var flights: [Flight]? {
         didSet {
+            flights?.sort(by: { $0.date! < $1.date! })
             self.tableView.reloadData()
             self.refreshController?.endRefreshing()
         }
@@ -34,13 +35,23 @@ class FlightsTableViewController: UITableViewController {
         self.tableView.addSubview(refreshController!)
         self.refreshController?.beginRefreshing()
         
-        setUpTestFlights()
+        flights = []
+        
+//        setUpTestFlights()
         // query for flights
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if flights?.count == 0 {
+            displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
+        }
     }
     
     // Set up the UI for the navigation bar
@@ -84,7 +95,6 @@ class FlightsTableViewController: UITableViewController {
     }
     
     fileprivate func setUpTestFlights() {
-        flights = []
         
         var testFlight = Flight()
         testFlight.airline = "Southwest"
@@ -204,14 +214,16 @@ class FlightsTableViewController: UITableViewController {
         self.navigationController!.popToRootViewController(animated: true)
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Storyboard.ManualEntrySegue {
+            if let destinationVC = segue.destination as? ManualEntryViewController {
+                destinationVC.parentVC = self
+            }
+        }
+
     }
-    */
 
 }
