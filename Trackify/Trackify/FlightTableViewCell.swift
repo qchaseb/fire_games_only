@@ -15,6 +15,9 @@ class FlightTableViewCell: UITableViewCell {
     
     fileprivate var df = DateFormatter()
     
+
+    // populates the table cell with flight information. Assumes that no fields in the flight
+    // flight object are null
     var flight: Flight? {
         didSet {
             switch((flight?.airline)!) {
@@ -33,12 +36,13 @@ class FlightTableViewCell: UITableViewCell {
                 case "Hawaiian": flightLogoImageView.image = #imageLiteral(resourceName: "hawaiian_logo")
                 default:flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
             }
-            
+            df.dateFormat = "MM-dd-yyyy HH:mm"
+            flight?.date = df.date(from: (flight?.datetime)!)
             df.dateFormat = "h:mm a"
             timeLabel.text = df.string(from: (flight?.date)!)
             df.dateFormat = "MMMM d, yyyy"
             dateLabel.text = df.string(from: (flight?.date)!)
-            flightNumberLabel.text = "#" + String(describing: (flight?.flightNumber!)!)
+            flightNumberLabel.text = "#" + (flight?.flightNumber!)!
             departureAirportLabel.text = flight?.departureAirport
             destinationAirportLabel.text = flight?.destinationAirport
         }

@@ -108,9 +108,9 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             displayAlert("Invalid Confirmation Code", message: "Please enter a valid confirmation code.")
         } else {
             let flight = Flight()
-            flight.airline = airlines[airlinePicker.selectedRow(inComponent: 0)]
+            flight?.airline = airlines[airlinePicker.selectedRow(inComponent: 0)]
             
-            flight.flightNumber = Int(flightNumberTextField.text!)
+            flight?.flightNumber = flightNumberTextField.text
             
             df.dateFormat = "HH:mm"
             let timeString = df.string(from: timePicker.date)
@@ -118,16 +118,16 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             let dateString = df.string(from: datePicker.date)
             let dateTimeString = dateString + " " + timeString
             df.dateFormat = "MM-dd-yyyy HH:mm"
-            flight.date = df.date(from: dateTimeString)
+            flight?.date = df.date(from: dateTimeString)
             
-            flight.departureAirport = departureTextField.text
-            flight.destinationAirport = arrivalTextField.text
-            flight.confirmation = confirmationTextField.text
+            flight?.departureAirport = departureTextField.text
+            flight?.destinationAirport = arrivalTextField.text
+            flight?.confirmation = confirmationTextField.text
             
             // Push flight to DynamoDB here
             
             // Remove this manual flight pushing code after adding DynamoDB code
-            parentVC!.flights?.append(flight)
+            parentVC!.flights?.append(flight!)
             
             self.navigationController!.popViewController(animated: true)
         }
