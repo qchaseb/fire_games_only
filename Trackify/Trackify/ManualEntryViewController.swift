@@ -102,7 +102,8 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func doneButtonTapped() {
-        let today = Date()
+        // subtract five minutes to ensure the user can enter the current time for a flight
+        let today = Date().addingTimeInterval(-300)
         if flightNumberTextField.text == "" {
             displayAlert("Invalid Flight Number", message: "Please enter a valid flight number.")
         } else if datePicker.date < today {
@@ -116,7 +117,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         } else if flightExists(){
             displayAlert("Duplicate Flight", message: "This flight has already been added to the database.")
         } else {
-            // Push flight to DynamoDB here
+            // Push flight to DynamoDB
             startSpinner(&spinner)
             addFlightToDB()
         }

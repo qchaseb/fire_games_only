@@ -34,14 +34,14 @@ class FlightsTableViewController: UITableViewController {
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
-        
-        // query for flights for the logged in user
-        loadFlights(email: (user?.email_id)!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavigationBar()
+        
+        // query for flights for the logged in user
+        loadFlights(email: (user?.email_id)!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
