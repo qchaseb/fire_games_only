@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import AWSDynamoDB
 
 class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     fileprivate var helpers = Helpers()
-    
     fileprivate let airlines = ["Air Canada", "Alaska", "Allegiant", "American", "Delta", "Frontier", "Hawaiian", "JetBlue", "Southwest", "Spirit", "Sun Country", "United", "Virgin America"]
     fileprivate var activeField: UITextField?
     fileprivate let df = DateFormatter()
-    var parentVC: FlightsTableViewController?
+    fileprivate var spinner = UIActivityIndicatorView()
+    
+    fileprivate var success: Bool = false {
+        didSet {
+            DispatchQueue.main.async {
+                self.navigationController!.popViewController(animated: true)
+            }
+        }
+    }
+    
+    var userEmail: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +37,6 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.departureTextField.delegate = self
         self.arrivalTextField.delegate = self
         self.confirmationTextField.delegate = self
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +47,6 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.registerForKeyboardNotifications()
-      
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -106,31 +113,89 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             displayAlert("Invalid Arrival Airport Code", message: "Please enter a valid arrival airport code.")
         } else if confirmationTextField.text == "" {
             displayAlert("Invalid Confirmation Code", message: "Please enter a valid confirmation code.")
+        } else if flightExists(){
+            displayAlert("Duplicate Flight", message: "This flight has already been added to the database.")
         } else {
-            let flight = Flight()
-            flight?.airline = airlines[airlinePicker.selectedRow(inComponent: 0)]
-            
-            flight?.flightNumber = flightNumberTextField.text
-            
-            df.dateFormat = "HH:mm"
-            let timeString = df.string(from: timePicker.date)
-            df.dateFormat = "MM-dd-yyyy"
-            let dateString = df.string(from: datePicker.date)
-            let dateTimeString = dateString + " " + timeString
-            df.dateFormat = "MM-dd-yyyy HH:mm"
-            flight?.date = df.date(from: dateTimeString)
-            
-            flight?.departureAirport = departureTextField.text
-            flight?.destinationAirport = arrivalTextField.text
-            flight?.confirmation = confirmationTextField.text
-            
             // Push flight to DynamoDB here
-            
-            // Remove this manual flight pushing code after adding DynamoDB code
-            parentVC!.flights?.append(flight!)
-            
-            self.navigationController!.popViewController(animated: true)
+            startSpinner(&spinner)
+            addFlightToDB()
         }
+    }
+    
+    fileprivate func getDateTimeString() -> String? {
+        df.dateFormat = "HH:mm"
+        let timeString = df.string(from: timePicker.date)
+        df.dateFormat = "MM-dd-yyyy"
+        let dateString = df.string(from: datePicker.date)
+        return dateString + " " + timeString
+    }
+    
+    fileprivate func addFlightToDB() {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        let flight = Flight()
+        flight?.airline = airlines[airlinePicker.selectedRow(inComponent: 0)]
+        flight?.flightNumber = flightNumberTextField.text
+        flight?.datetime = self.getDateTimeString()
+        flight?.email = userEmail
+        flight?.departureAirport = departureTextField.text
+        flight?.destinationAirport = arrivalTextField.text
+        flight?.confirmation = confirmationTextField.text
+        
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        
+        dynamoDBObjectMapper.save(flight!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as? NSError {
+                if (error.domain == NSURLErrorDomain) {
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.displayAlert("No Network Connection", message: "Please try again.")
+                    }
+                }
+            } else {
+                // success!
+                self.success = true
+            }
+            return nil
+        })
+    }
+    
+    // gets all the flights assosiated with a given user and returns them in an array of flight objects
+    // returns flights in order of date.
+    fileprivate func flightExists() -> Bool {
+        let dateTime = getDateTimeString()
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.filterExpression = "email = :id"
+        scanExpression.expressionAttributeValues = [":id": userEmail ?? ""]
+        
+        var flightExists = false
+        
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
+            .continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+                if let error = task.error as? NSError {
+                    if (error.domain == NSURLErrorDomain) {
+                        print("The request failed. Error: \(error)")
+                    }
+                } else if let dbResults = task.result {
+                    for flight in dbResults.items as! [Flight] {
+                        if flight.datetime == dateTime {
+                            flightExists = true
+                            break
+                        }
+                    }
+                }
+                sema.signal()
+                return nil
+            })
+        
+        sema.wait()
+        return flightExists
     }
     
     // MARK: - Text Field movement functions
@@ -178,6 +243,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         return true
     }
     
+    // This function limits the number of characters allowed in certain text fields
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var validTextField = false
         var maxChars = 0
@@ -198,7 +264,6 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         return true
     }
-
     
     // MARK: - Picker View delegates and data source functions
     

@@ -14,11 +14,10 @@ class FlightsTableViewController: UITableViewController {
     // MARK: - Variables
     
     var user: User?
-    fileprivate var spinner = UIActivityIndicatorView()
     
     var flights: [Flight]? {
         didSet {
-            flights?.sort(by: { $0.date! < $1.date! })
+            flights?.sort(by: { $0.getDate()! < $1.getDate()! })
             self.tableView.reloadData()
             self.refreshController?.endRefreshing()
         }
@@ -35,14 +34,9 @@ class FlightsTableViewController: UITableViewController {
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
-        self.refreshController?.beginRefreshing()
-        
-//        flights = []
-        
-//        setUpTestFlights()
         
         // query for flights for the logged in user
-        flights = loadFlights(email: (user?.email_id)!)
+        loadFlights(email: (user?.email_id)!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,91 +91,6 @@ class FlightsTableViewController: UITableViewController {
         UIApplication.shared.statusBarStyle = .default
         self.navigationController?.isNavigationBarHidden = true
     }
-    
-//    fileprivate func setUpTestFlights() {
-//        
-//        var testFlight = Flight()
-//        testFlight.airline = "Southwest"
-//        var dateString = "02-10-2017 10:00"
-//        df.dateFormat = "MM-dd-yyyy HH:mm"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "LGA"
-//        testFlight.destinationAirport = "SFO"
-//        testFlight.flightNumber = 3878
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "American"
-//        dateString = "02-22-2017 16:15"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "SFO"
-//        testFlight.destinationAirport = "JFK"
-//        testFlight.flightNumber = 265
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "Air Canada"
-//        dateString = "03-5-2017 07:45"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "YYZ"
-//        testFlight.destinationAirport = "FLL"
-//        testFlight.flightNumber = 842
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "Delta"
-//        dateString = "03-12-2017 21:20"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "MIA"
-//        testFlight.destinationAirport = "IAD"
-//        testFlight.flightNumber = 5436
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "United"
-//        dateString = "04-18-2017 6:30"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "JFK"
-//        testFlight.destinationAirport = "LAS"
-//        testFlight.flightNumber = 1920
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "Virgin America"
-//        dateString = "06-13-2017 10:10"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "ORD"
-//        testFlight.destinationAirport = "SJC"
-//        testFlight.flightNumber = 445
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "Sun Country"
-//        dateString = "07-30-2017 6:50"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "OAK"
-//        testFlight.destinationAirport = "LAX"
-//        testFlight.flightNumber = 672
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "Frontier"
-//        dateString = "11-01-2017 14:00"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "DFW"
-//        testFlight.destinationAirport = "SEA"
-//        testFlight.flightNumber = 188
-//        flights!.append(testFlight)
-//        
-//        testFlight = Flight()
-//        testFlight.airline = "Hawaiian"
-//        dateString = "12-26-2017 7:20"
-//        testFlight.date = df.date(from: dateString)
-//        testFlight.departureAirport = "SFO"
-//        testFlight.destinationAirport = "HNL"
-//        testFlight.flightNumber = 160
-//        flights!.append(testFlight)
-//    }
 
     // MARK: - Table view data source
 
@@ -196,7 +105,7 @@ class FlightsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell?
         if let flightCell = tableView.dequeueReusableCell(withIdentifier: Storyboard.FlightCell, for: indexPath) as? FlightTableViewCell {
-            flightCell.flight = flights![indexPath.row]
+            flightCell.flight = flights?[indexPath.row]
             cell = flightCell
         }
         return cell!
@@ -204,7 +113,7 @@ class FlightsTableViewController: UITableViewController {
     
     func handleRefresh() {
         // Reload data and update flights variable
-        flights = loadFlights(email: (user?.email_id)!)
+        loadFlights(email: (user?.email_id)!)
         self.refreshController?.endRefreshing()
     }
     
@@ -219,7 +128,7 @@ class FlightsTableViewController: UITableViewController {
     
     // gets all the flights assosiated with a given user and returns them in an array of flight objects
     // returns flights in order of date. 
-    fileprivate func loadFlights(email:String) -> [Flight] {
+    fileprivate func loadFlights(email:String) {
         var resultFlights = [Flight]()
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
@@ -247,7 +156,7 @@ class FlightsTableViewController: UITableViewController {
             })
 
         sema.wait()
-        return resultFlights
+        self.flights = resultFlights
     }
     
     // MARK: - Navigation
@@ -256,7 +165,7 @@ class FlightsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ManualEntrySegue {
             if let destinationVC = segue.destination as? ManualEntryViewController {
-                destinationVC.parentVC = self
+                destinationVC.userEmail = user?.email_id
             }
         }
 
