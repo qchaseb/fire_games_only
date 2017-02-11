@@ -101,12 +101,20 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.navigationController!.popViewController(animated: true)
     }
     
-    func doneButtonTapped() {
+    fileprivate func dateIsBeforeToday(date: Date) -> Bool {
         // subtract five minutes to ensure the user can enter the current time for a flight
-        let today = Date().addingTimeInterval(-300)
+        let today = Date()
+        
+        df.dateFormat = "MM-dd-yyyy"
+        let dateString = df.string(from: date)
+        let todayString = df.string(from: today)
+        return dateString < todayString
+    }
+    
+    func doneButtonTapped() {
         if flightNumberTextField.text == "" {
             displayAlert("Invalid Flight Number", message: "Please enter a valid flight number.")
-        } else if datePicker.date < today {
+        } else if dateIsBeforeToday(date: datePicker.date) {
             displayAlert("Past Date Entered", message: "Please enter a future date.")
         } else if departureTextField.text == "" {
             displayAlert("Invalid Departure Airport Code", message: "Please enter a valid departure airport code.")
