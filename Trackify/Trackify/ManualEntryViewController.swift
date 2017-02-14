@@ -102,7 +102,6 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     fileprivate func dateIsBeforeToday(date: Date) -> Bool {
-        // subtract five minutes to ensure the user can enter the current time for a flight
         let today = Date()
         
         df.dateFormat = "MM-dd-yyyy"
@@ -159,7 +158,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
-                        self.displayAlert("No Network Connection", message: "Please try again.")
+                        self.displayAlert("Poor Network Connection", message: "Please try again.")
                     }
                 }
             } else {
@@ -186,7 +185,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         let sema = DispatchSemaphore(value: 0)
         dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
-            .continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+            .continueWith(block: {(task:AWSTask!) -> AnyObject! in
                 if let error = task.error as? NSError {
                     if (error.domain == NSURLErrorDomain) {
                         print("The request failed. Error: \(error)")

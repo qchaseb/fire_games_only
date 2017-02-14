@@ -110,7 +110,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
                         self.spinner.stopAnimating()
-                        self.displayAlert("No Network Connection", message: "Please try again.")
+                        self.displayAlert("Poor Network Connection", message: "Please try again.")
                     }
                 }
             } else {

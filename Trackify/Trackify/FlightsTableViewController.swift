@@ -9,7 +9,7 @@
 import UIKit
 import AWSDynamoDB
 
-class FlightsTableViewController: UITableViewController {
+class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     // MARK: - Variables
     
@@ -22,6 +22,9 @@ class FlightsTableViewController: UITableViewController {
             self.refreshController?.endRefreshing()
         }
     }
+    
+    var menuVC: MenuViewController?
+    let BOUNDS_OFFSET: CGFloat = 64
     
     fileprivate var refreshController: UIRefreshControl?
     
@@ -64,14 +67,14 @@ class FlightsTableViewController: UITableViewController {
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
         
-        // set up settings button
-        let settingsButton = UIBarButtonItem()
-        settingsButton.image = #imageLiteral(resourceName: "menu_icon")
-        settingsButton.tintColor = UIColor.white
-        settingsButton.customView?.contentMode = .scaleAspectFit
-        settingsButton.target = self
-        settingsButton.action = #selector(self.settingsButtonTapped)
-        self.navigationItem.leftBarButtonItem = settingsButton
+        // set up menu button
+        let menuButton = UIBarButtonItem()
+        menuButton.image = #imageLiteral(resourceName: "menu_icon")
+        menuButton.tintColor = UIColor.white
+        menuButton.customView?.contentMode = .scaleAspectFit
+        menuButton.target = self
+        menuButton.action = #selector(self.menuButtonTapped(_:))
+        self.navigationItem.leftBarButtonItem = menuButton
         
         // set up manual entry button
         let addButton = UIBarButtonItem()
@@ -111,6 +114,13 @@ class FlightsTableViewController: UITableViewController {
         return cell!
     }
     
+    // move the settings menu if the user scrolls while it is open
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if menuVC != nil {
+            menuVC!.view.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY+BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        }
+    }
+    
     func handleRefresh() {
         // Reload data and update flights variable
         loadFlights(email: (user?.email_id)!)
@@ -121,15 +131,11 @@ class FlightsTableViewController: UITableViewController {
         self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
     }
     
-    func settingsButtonTapped() {
-        // eventually add popover, but for now just sign out
-        self.navigationController!.popToRootViewController(animated: true)
-    }
-    
     // gets all the flights assosiated with a given user and returns them in an array of flight objects
     // returns flights in order of date. 
     fileprivate func loadFlights(email:String) {
         var resultFlights = [Flight]()
+        var errorOccurred = false
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
@@ -139,11 +145,12 @@ class FlightsTableViewController: UITableViewController {
         scanExpression.expressionAttributeValues = [":id": email]
         let sema = DispatchSemaphore(value: 0)
         dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
-            .continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+            .continueWith(block: {(task:AWSTask!) -> AnyObject! in
                 if let error = task.error as? NSError {
+                    errorOccurred = true
                     if (error.domain == NSURLErrorDomain) {
                         DispatchQueue.main.async {
-                            self.displayAlert("No Network Connection", message: "Couldn't load flights. Please try again.")
+                            self.displayAlert("Poor Network Connection", message: "Couldn't load flights. Please try again.")
                         }
                     }
                 } else if let dbResults = task.result {
@@ -156,7 +163,83 @@ class FlightsTableViewController: UITableViewController {
             })
 
         sema.wait()
-        self.flights = resultFlights
+        if (!errorOccurred) {
+            self.flights = resultFlights
+        } else {
+            DispatchQueue.main.async {
+                self.refreshController?.endRefreshing()
+            }
+        }
+    }
+    
+    // MARK: - Slider Menu Delegate Functions
+    // Adapted from: https://github.com/ashishkakkad8/AKSwiftSlideMenu
+    
+    func slideMenuItemSelectedAtIndex(_ index: Int) {
+        let topViewController : UIViewController = self.navigationController!.topViewController!
+        print("View Controller is : \(topViewController) \n", terminator: "")
+        switch(index){
+        case 0:
+            print("Account Button Tapped")
+            
+            // self.openViewControllerBasedOnIdentifier("Account")
+            
+            break
+        case 1:
+            print("Log Out Tapped")
+            self.navigationController!.popToRootViewController(animated: true)
+            
+            break
+        default:
+            print("default\n", terminator: "")
+        }
+    }
+    
+    func openViewControllerBasedOnIdentifier(_ strIdentifier:String) {
+        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
+        
+        let topViewController : UIViewController = self.navigationController!.topViewController!
+        
+        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
+            print("Same VC")
+        } else {
+            self.navigationController!.pushViewController(destViewController, animated: true)
+        }
+    }
+    
+    // open or close slider menu with animation
+    func menuButtonTapped(_ sender : UIButton) {
+        if menuVC != nil {
+            // hide menu if it is already being displayed
+            self.slideMenuItemSelectedAtIndex(-1)
+            
+            let settingsMenuView : UIView = view.subviews.last!
+            
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                var frameMenu : CGRect = settingsMenuView.frame
+                frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
+                settingsMenuView.frame = frameMenu
+                settingsMenuView.layoutIfNeeded()
+                settingsMenuView.backgroundColor = UIColor.clear
+            }, completion: { (finished) -> Void in
+                settingsMenuView.removeFromSuperview()
+            })
+            
+            menuVC = nil
+        } else {
+            menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
+            menuVC?.menuButton = sender
+            menuVC?.delegate = self
+            self.view.addSubview((menuVC?.view)!)
+            self.addChildViewController(menuVC!)
+            menuVC?.view.layoutIfNeeded()
+            
+            menuVC?.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: self.view.bounds.minY+BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.menuVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY+self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            }, completion:nil)
+        }
     }
     
     // MARK: - Navigation
@@ -168,7 +251,6 @@ class FlightsTableViewController: UITableViewController {
                 destinationVC.userEmail = user?.email_id
             }
         }
-
     }
 
 }
