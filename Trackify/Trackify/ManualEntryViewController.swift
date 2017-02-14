@@ -102,7 +102,6 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     fileprivate func dateIsBeforeToday(date: Date) -> Bool {
-        // subtract five minutes to ensure the user can enter the current time for a flight
         let today = Date()
         
         df.dateFormat = "MM-dd-yyyy"

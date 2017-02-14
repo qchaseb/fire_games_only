@@ -170,12 +170,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 self.refreshController?.endRefreshing()
             }
         }
-//        if (self.flights?.count)! > 0 && resultFlights.count == 0 {
-//            self.flights
-//        } else {
-//            self.flights = resultFlights
-//        }
-    
     }
     
     // MARK: - Slider Menu Delegate Functions
