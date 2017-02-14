@@ -24,7 +24,7 @@ class FlightTableViewCell: UITableViewCell {
                 case "Alaska": flightLogoImageView.image = #imageLiteral(resourceName: "alaska_logo")
                 case "Spirit": flightLogoImageView.image = #imageLiteral(resourceName: "spirit_logo")
                 case "Frontier": flightLogoImageView.image = #imageLiteral(resourceName: "frontier_logo")
-                case "Jetblue": flightLogoImageView.image = #imageLiteral(resourceName: "jetblue_logo")
+                case "JetBlue": flightLogoImageView.image = #imageLiteral(resourceName: "jetblue_logo")
                 case "Allegiant": flightLogoImageView.image = #imageLiteral(resourceName: "allegiant_logo")
                 case "Sun Country": flightLogoImageView.image = #imageLiteral(resourceName: "sun_country_logo")
                 case "Hawaiian": flightLogoImageView.image = #imageLiteral(resourceName: "hawaiian_logo")

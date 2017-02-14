@@ -140,7 +140,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             if let error = task.error as? NSError {
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
-                        self.displayAlert("No Network Connection", message: "Please try again.")
+                        self.displayAlert("Poor Network Connection", message: "Please try again.")
                     }
                 }
             } else if let res = task.result as? User {

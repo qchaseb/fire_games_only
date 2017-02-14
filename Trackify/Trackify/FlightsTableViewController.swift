@@ -135,6 +135,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     // returns flights in order of date. 
     fileprivate func loadFlights(email:String) {
         var resultFlights = [Flight]()
+        var errorOccurred = false
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
@@ -144,11 +145,12 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         scanExpression.expressionAttributeValues = [":id": email]
         let sema = DispatchSemaphore(value: 0)
         dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
-            .continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+            .continueWith(block: {(task:AWSTask!) -> AnyObject! in
                 if let error = task.error as? NSError {
+                    errorOccurred = true
                     if (error.domain == NSURLErrorDomain) {
                         DispatchQueue.main.async {
-                            self.displayAlert("No Network Connection", message: "Couldn't load flights. Please try again.")
+                            self.displayAlert("Poor Network Connection", message: "Couldn't load flights. Please try again.")
                         }
                     }
                 } else if let dbResults = task.result {
@@ -161,7 +163,19 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             })
 
         sema.wait()
-        self.flights = resultFlights
+        if (!errorOccurred) {
+            self.flights = resultFlights
+        } else {
+            DispatchQueue.main.async {
+                self.refreshController?.endRefreshing()
+            }
+        }
+//        if (self.flights?.count)! > 0 && resultFlights.count == 0 {
+//            self.flights
+//        } else {
+//            self.flights = resultFlights
+//        }
+    
     }
     
     // MARK: - Slider Menu Delegate Functions
