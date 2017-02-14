@@ -31,6 +31,11 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         self.mainScrollView.isScrollEnabled = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.unregisterFromKeyboardNotifications()
