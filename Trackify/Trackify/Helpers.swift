@@ -14,6 +14,7 @@ import UIKit
 class Helpers {
     // helper variables here
     let themeColor = UIColor(red: 0/255, green: 80/255, blue:255/255, alpha: 1)
+    let menuColor = UIColor(red: 207/255, green: 207/255, blue: 209/255, alpha: 1)
 }
 
 extension UIViewController {
