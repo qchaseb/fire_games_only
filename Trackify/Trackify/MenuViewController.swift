@@ -1,9 +1,9 @@
 //
 //  MenuViewController.swift
-//  AKSwiftSlideMenu
+//  Trackify
 //
-//  Created by Ashish on 21/09/15.
-//  Copyright (c) 2015 Kode. All rights reserved.
+//  Created by Scott Buttinger on 2/12/17.
+//  Copyright © 2017 Fire Apps Only. All rights reserved.
 //
 
 import UIKit
