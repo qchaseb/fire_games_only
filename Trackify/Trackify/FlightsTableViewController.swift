@@ -18,6 +18,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     var flights: [Flight]? {
         didSet {
             flights?.sort(by: { $0.getDate()! < $1.getDate()! })
+            flights = flights?.filter({ $0.getDate()! > Date()})
             self.tableView.reloadData()
             self.refreshController?.endRefreshing()
         }
