@@ -34,6 +34,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.passwordTextField.text = ""
     }
     
     override func viewDidDisappear(_ animated: Bool) {
