@@ -104,7 +104,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     fileprivate func dateIsBeforeToday(date: Date) -> Bool {
         let today = Date()
         
-        df.dateFormat = "MM-dd-yyyy"
+        df.dateFormat = "yyyy-MM-dd"
         let dateString = df.string(from: date)
         let todayString = df.string(from: today)
         return dateString < todayString
