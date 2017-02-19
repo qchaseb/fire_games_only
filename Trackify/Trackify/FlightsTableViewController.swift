@@ -115,6 +115,33 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if let flightCell = tableView.cellForRow(at: indexPath) as? FlightTableViewCell {
+                let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+                let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+                updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+                let sema = DispatchSemaphore(value: 0)
+                dynamoDBObjectMapper.remove(flightCell.flight!).continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+                    if let error = task.error as? NSError {
+                        print("Remove failed. Error: \(error)")
+                    } else {
+                        print("Item removed")
+                    }
+                    sema.signal()
+                    return nil
+                })
+                sema.wait()
+                handleRefresh()
+            }
+            
+        }
+    }
+    
     // move the settings menu if the user scrolls while it is open
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if menuVC != nil {
