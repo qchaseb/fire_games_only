@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A3374F11E43DFE60026265E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3374F01E43DFE60026265E /* User.swift */; };
+		0A4633CE1E5AA6A200E4DFFA /* LoadAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */; };
 		0A743C2A1E495B65006A33F4 /* FlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A743C291E495B65006A33F4 /* FlightsTableViewController.swift */; };
 		0A743C2C1E495D45006A33F4 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A743C2B1E495D45006A33F4 /* FlightTableViewCell.swift */; };
 		0A743C2E1E495D77006A33F4 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A743C2D1E495D77006A33F4 /* Flight.swift */; };
@@ -16,6 +17,10 @@
 		0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */; };
 		0A9736A61E4A8114006B945C /* ManualEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9736A51E4A8114006B945C /* ManualEntryViewController.swift */; };
 		0AA556DC1E5144FF00D69AE2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA556DB1E5144FF00D69AE2 /* MenuViewController.swift */; };
+		0AA8ADD01E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCC1E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift */; };
+		0AA8ADD11E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCD1E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift */; };
+		0AA8ADD21E5AB6CD0080301B /* SavedUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCE1E5AB6CD0080301B /* SavedUser+CoreDataClass.swift */; };
+		0AA8ADD31E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCF1E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift */; };
 		0AB731051E396CC400098F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB731041E396CC400098F33 /* AppDelegate.swift */; };
 		0AB7310A1E396CC400098F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB731081E396CC400098F33 /* Main.storyboard */; };
 		0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */; };
@@ -26,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0A3374F01E43DFE60026265E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadAppViewController.swift; sourceTree = "<group>"; };
 		0A743C291E495B65006A33F4 /* FlightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsTableViewController.swift; sourceTree = "<group>"; };
 		0A743C2B1E495D45006A33F4 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		0A743C2D1E495D77006A33F4 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
@@ -34,6 +40,10 @@
 		0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0A9736A51E4A8114006B945C /* ManualEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntryViewController.swift; sourceTree = "<group>"; };
 		0AA556DB1E5144FF00D69AE2 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0AA8ADCC1E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedFlight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0AA8ADCD1E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedFlight+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0AA8ADCE1E5AB6CD0080301B /* SavedUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0AA8ADCF1E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0AB731011E396CC400098F33 /* Trackify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB731041E396CC400098F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB731091E396CC400098F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,7 +85,6 @@
 				0AB731041E396CC400098F33 /* AppDelegate.swift */,
 				0AB7310E1E396CC400098F33 /* Assets.xcassets */,
 				0AB731131E396CC400098F33 /* Info.plist */,
-				0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -83,6 +92,7 @@
 		0A8FF0501E3AC39700EDF52C /* Sign Up Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */,
 				0A74BDEB1E39A8FB00FEE24A /* WelcomeScreenViewController.swift */,
 				0A74BDEF1E3A8F4900FEE24A /* SignUpViewController.swift */,
 			);
@@ -98,6 +108,18 @@
 				0A743C2B1E495D45006A33F4 /* FlightTableViewCell.swift */,
 			);
 			name = "Flight Classes";
+			sourceTree = "<group>";
+		};
+		0AA8ADC31E5AB18F0080301B /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				0AA8ADCC1E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift */,
+				0AA8ADCD1E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift */,
+				0AA8ADCE1E5AB6CD0080301B /* SavedUser+CoreDataClass.swift */,
+				0AA8ADCF1E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift */,
+				0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		0AB730F81E396CC400098F33 = {
@@ -125,6 +147,7 @@
 				0A9736A41E49B95B006B945C /* Flight Classes */,
 				0A8FF0501E3AC39700EDF52C /* Sign Up Classes */,
 				0A3374F21E43E00F0026265E /* Object Classes */,
+				0AA8ADC31E5AB18F0080301B /* Core Data */,
 				0A8FF04F1E3AC37800EDF52C /* Supporting Files */,
 			);
 			path = Trackify;
@@ -271,8 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA8ADD01E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift in Sources */,
 				0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */,
+				0AA8ADD31E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift in Sources */,
 				0A74BDEC1E39A8FB00FEE24A /* WelcomeScreenViewController.swift in Sources */,
+				0A4633CE1E5AA6A200E4DFFA /* LoadAppViewController.swift in Sources */,
+				0AA8ADD21E5AB6CD0080301B /* SavedUser+CoreDataClass.swift in Sources */,
 				0A3374F11E43DFE60026265E /* User.swift in Sources */,
 				0A743C2E1E495D77006A33F4 /* Flight.swift in Sources */,
 				0AA556DC1E5144FF00D69AE2 /* MenuViewController.swift in Sources */,
@@ -280,6 +307,7 @@
 				0A743C2C1E495D45006A33F4 /* FlightTableViewCell.swift in Sources */,
 				0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */,
 				0A743C2A1E495B65006A33F4 /* FlightsTableViewController.swift in Sources */,
+				0AA8ADD11E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift in Sources */,
 				0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */,
 				0A9736A61E4A8114006B945C /* ManualEntryViewController.swift in Sources */,
 			);
