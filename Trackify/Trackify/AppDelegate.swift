@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import AWSCore
-import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,17 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        // authorizing notifications
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-            if settings.authorizationStatus != .authorized {
-                let options: UNAuthorizationOptions = [.alert, .sound];
-                UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
-                    if !granted {
-                        print("Something went wrong")
-                    }
-                }
-            }
-        }
 
         let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USWest2, identityPoolId: "us-west-2:b22ab65b-16cc-42ad-aef9-0f084915f2e6")
         let configuration = AWSServiceConfiguration(region: .USWest2, credentialsProvider: credentialProvider)

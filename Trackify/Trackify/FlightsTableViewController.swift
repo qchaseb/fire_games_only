@@ -8,17 +8,23 @@
 
 import UIKit
 import AWSDynamoDB
-import UserNotifications
+import CoreData
 
 class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     // MARK: - Variables
     var user: User?
+    fileprivate var initialFlights = true
     
     var flights: [Flight]? {
         didSet {
             flights?.sort(by: { $0.getDate()! < $1.getDate()! })
             flights = flights?.filter({ $0.getDate()! > Date()})
+            if (!initialFlights) {
+                for flight in flights! {
+                    addFlightToCoreData(flight: flight)
+                }
+            }
             self.tableView.reloadData()
             self.refreshController?.endRefreshing()
         }
@@ -27,42 +33,19 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     var menuVC: MenuViewController?
     let BOUNDS_OFFSET: CGFloat = 64
     
+    // get managed object context from delegate
+    var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    
     fileprivate var refreshController: UIRefreshControl?
     fileprivate var df = DateFormatter()
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UNUserNotificationCenter.current().delegate = self
+        self.initialFlights = false
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
-    }
-    
-    private func scheduleLocalNotification(flight: Flight) {
-        // Create Notification Content
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = flight.flightNumber!
-        notificationContent.subtitle = flight.airline!
-        notificationContent.body = String(format: "Flight from %@ and %@", flight.departureAirport!, flight.destinationAirport!)
-        notificationContent.sound = UNNotificationSound.default()
-        
-        //Configure datetime
-        let date = flight.getDate()
-        let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents(in: .current, from: date!)
-        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        let calendarTrigger=UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-        
-        // Create Notification Request
-        let notificationRequest = UNNotificationRequest(identifier: flight.confirmation!, content: notificationContent, trigger: calendarTrigger)
-        
-        // Add Request to User Notification Center
-        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-            if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,10 +58,14 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if flights?.count == 0 {
             displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
         }
+    }
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     // Set up the UI for the navigation bar
@@ -182,11 +169,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                     }
                 } else if let dbResults = task.result {
                     for flight in dbResults.items as! [Flight] {
-                        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-                            if settings.authorizationStatus == .authorized {
-                                self.scheduleLocalNotification(flight: flight)
-                            }
-                        }
                         resultFlights.append(flight)
                     }
                 }
@@ -219,11 +201,46 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             break
         case 1:
             print("Log Out Tapped")
+            removeFromCoreData(managedObjectContext!)
             self.navigationController!.popToRootViewController(animated: true)
             
             break
         default:
             print("default\n", terminator: "")
+        }
+    }
+    
+    func addFlightToCoreData(flight: Flight) {
+        managedObjectContext?.perform {
+            SavedFlight.addFlight(flight.email!, airline: flight.airline!, flightNumber: flight.flightNumber!, departureAirport: flight.departureAirport!, destinationAirport: flight.destinationAirport!, confirmation: flight.confirmation!, datetime: flight.datetime!, inManagedObjectContext: self.managedObjectContext!)
+            do {
+                try self.managedObjectContext?.save()
+            } catch let error {
+                print("error saving signed in user: \(error)")
+            }
+        }
+    }
+    
+    // this function is called when a user signs out
+    // it removes them from core data so that upon re-opening the app,
+    // a new user must sign in or create an account
+    func removeFromCoreData (_ context: NSManagedObjectContext) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedUser")
+        request.predicate = NSPredicate(format: "TRUEPREDICATE")
+        var fetchedObjects: [NSManagedObject]?
+        context.perform {
+            fetchedObjects = (try? context.fetch(request)) as? [NSManagedObject]
+            if fetchedObjects != nil {
+                // we found the signed in user, delete it
+                for object in fetchedObjects! {
+                    context.delete(object)
+                    do {
+                        try context.save()
+                    } catch let error {
+                        print("Couldn't save Core Data after deletion: \(error)")
+                    }
+                }
+            }
         }
     }
     
@@ -285,10 +302,4 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
 
-}
-
-extension FlightsTableViewController: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
-    }
 }

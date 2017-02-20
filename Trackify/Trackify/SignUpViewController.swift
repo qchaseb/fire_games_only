@@ -42,10 +42,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         didSet {
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
+                self.addUserToCoreData()
                 self.performSegue(withIdentifier: Storyboard.NewUserSignInSegue , sender: self)
             }
         }
     }
+    
+    // get managed object context from delegate
+    var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     // MARK: - UI Elements
     
@@ -140,6 +144,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         })
         sema.wait()
         return userExists
+    }
+    
+    // this function clears out any currently signed in user info and adds the new users
+    // so that if they leave the app and reopen it, they remain signed in
+    fileprivate func addUserToCoreData() {
+        managedObjectContext?.perform {
+            SavedUser.addSignedInUser((self.newUser?.email_id)!, firstName: (self.newUser?.first_name)!, lastName: (self.newUser?.last_name)!, password: (self.newUser?.password)!, inManagedObjectContext: self.managedObjectContext!)
+            do {
+                try self.managedObjectContext?.save()
+            } catch let error {
+                print("error saving signed in user: \(error)")
+            }
+        }
     }
     
     // allow user to swipe back to welcome screen
