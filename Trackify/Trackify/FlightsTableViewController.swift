@@ -8,11 +8,11 @@
 
 import UIKit
 import AWSDynamoDB
+import UserNotifications
 
 class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     // MARK: - Variables
-    
     var user: User?
     
     var flights: [Flight]? {
@@ -28,16 +28,41 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     let BOUNDS_OFFSET: CGFloat = 64
     
     fileprivate var refreshController: UIRefreshControl?
-    
     fileprivate var df = DateFormatter()
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UNUserNotificationCenter.current().delegate = self
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
+    }
+    
+    private func scheduleLocalNotification(flight: Flight) {
+        // Create Notification Content
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = flight.flightNumber!
+        notificationContent.subtitle = flight.airline!
+        notificationContent.body = String(format: "Flight from %@ and %@", flight.departureAirport!, flight.destinationAirport!)
+        notificationContent.sound = UNNotificationSound.default()
+        
+        //Configure datetime
+        let date = flight.getDate()
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date!)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        let calendarTrigger=UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+        
+        // Create Notification Request
+        let notificationRequest = UNNotificationRequest(identifier: flight.confirmation!, content: notificationContent, trigger: calendarTrigger)
+        
+        // Add Request to User Notification Center
+        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,6 +160,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     // gets all the flights assosiated with a given user and returns them in an array of flight objects
     // returns flights in order of date. 
     fileprivate func loadFlights(email:String) {
+
         var resultFlights = [Flight]()
         var errorOccurred = false
         
@@ -156,6 +182,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                     }
                 } else if let dbResults = task.result {
                     for flight in dbResults.items as! [Flight] {
+                        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                            if settings.authorizationStatus == .authorized {
+                                self.scheduleLocalNotification(flight: flight)
+                            }
+                        }
                         resultFlights.append(flight)
                     }
                 }
@@ -254,4 +285,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
 
+}
+
+extension FlightsTableViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
 }
