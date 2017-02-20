@@ -156,10 +156,35 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 })
                 sema.wait()
                 if (!errorOccurred) {
+                    removeFlightFromCoreData(datetime: (flightCell.flight?.datetime!)!)
                     handleRefresh()
                 }
             }
             
+        }
+    }
+    
+    fileprivate func removeFlightFromCoreData(datetime: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedFlight")
+        let context = self.managedObjectContext!
+        request.predicate = NSPredicate(format: "TRUEPREDICATE")
+        var fetchedObjects: [NSManagedObject]?
+        context.perform {
+            fetchedObjects = (try? context.fetch(request)) as? [NSManagedObject]
+            if fetchedObjects != nil {
+                for object in fetchedObjects! {
+                    let savedFlight = object as! SavedFlight
+                    if savedFlight.datetime == datetime {
+                        // we found the flight, delete it
+                        context.delete(object)
+                        do {
+                            try context.save()
+                        } catch let error {
+                            print("Couldn't save Core Data after deletion: \(error)")
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -237,7 +262,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             break
         case 1:
             print("Log Out Tapped")
-            removeFromCoreData(managedObjectContext!)
+            removeUserFromCoreData()
             self.navigationController!.popToRootViewController(animated: true)
             
             break
@@ -260,8 +285,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     // this function is called when a user signs out
     // it removes them from core data so that upon re-opening the app,
     // a new user must sign in or create an account
-    func removeFromCoreData (_ context: NSManagedObjectContext) {
+    func removeUserFromCoreData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedUser")
+        let context = self.managedObjectContext!
         request.predicate = NSPredicate(format: "TRUEPREDICATE")
         var fetchedObjects: [NSManagedObject]?
         context.perform {
