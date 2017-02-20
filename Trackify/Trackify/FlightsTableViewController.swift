@@ -115,6 +115,42 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if let flightCell = tableView.cellForRow(at: indexPath) as? FlightTableViewCell {
+                let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+                let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+                updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+                let sema = DispatchSemaphore(value: 0)
+                var errorOccurred = false
+                dynamoDBObjectMapper.remove(flightCell.flight!).continueWith(block: {(task:AWSTask!) -> AnyObject! in
+                    if let error = task.error as? NSError {
+                        errorOccurred = true
+                        print("Remove failed. Error: \(error)")
+                        if (error.domain == NSURLErrorDomain) {
+                            DispatchQueue.main.async {
+                                self.displayAlert("Poor Network Connection", message: "Couldn't delete flight. Please try again.")
+                            }
+                        }
+                    } else {
+                        print("Item removed")
+                    }
+                    sema.signal()
+                    return nil
+                })
+                sema.wait()
+                if (!errorOccurred) {
+                    handleRefresh()
+                }
+            }
+            
+        }
+    }
+    
     // move the settings menu if the user scrolls while it is open
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if menuVC != nil {
