@@ -126,9 +126,16 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
                 updateMapperConfig.saveBehavior = .updateSkipNullAttributes
                 let sema = DispatchSemaphore(value: 0)
-                dynamoDBObjectMapper.remove(flightCell.flight!).continueOnSuccessWith(block: {(task:AWSTask!) -> AnyObject! in
+                var errorOccurred = false
+                dynamoDBObjectMapper.remove(flightCell.flight!).continueWith(block: {(task:AWSTask!) -> AnyObject! in
                     if let error = task.error as? NSError {
+                        errorOccurred = true
                         print("Remove failed. Error: \(error)")
+                        if (error.domain == NSURLErrorDomain) {
+                            DispatchQueue.main.async {
+                                self.displayAlert("Poor Network Connection", message: "Couldn't delete flight. Please try again.")
+                            }
+                        }
                     } else {
                         print("Item removed")
                     }
@@ -136,7 +143,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                     return nil
                 })
                 sema.wait()
-                handleRefresh()
+                if (!errorOccurred) {
+                    handleRefresh()
+                }
             }
             
         }
