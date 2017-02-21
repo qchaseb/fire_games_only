@@ -112,5 +112,7 @@ struct Storyboard {
     static let NewUserSignInSegue = "newUserSignInSegue"
     static let FlightCell = "flightCell"
     static let ManualEntrySegue = "manualEntrySegue"
+    static let WelcomeScreenSegue = "welcomeScreenSegue"
+    static let PreviouslySignedInSegue = "previouslySignedInSegue"
 }
 

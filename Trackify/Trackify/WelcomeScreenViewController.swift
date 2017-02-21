@@ -10,6 +10,7 @@ import UIKit
 import AWSCore
 import AWSDynamoDB
 import AWSCognito
+import CoreData
 
 class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
@@ -33,7 +34,6 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
         self.passwordTextField.text = ""
     }
     
@@ -45,14 +45,20 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Variables
     
     fileprivate var activeField: UITextField?
-    fileprivate var user :User? {
+    fileprivate var user: User? {
         didSet {
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
+                self.addUserToCoreData()
                 self.performSegue(withIdentifier: Storyboard.SignInSegue , sender: self)
             }
         }
     }
+    
+    fileprivate var helpers = Helpers()
+    
+    // get managed object context from delegate
+    var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     // MARK: - UI Elements
     
@@ -78,7 +84,6 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             spinner.stopAnimating()
         } else {
             // query AWS DB for login credentials
-//            startSpinner(&spinner)
             attemptLogin(email: emailTextField.text!, password: passwordTextField.text!)
         }
     }
@@ -169,6 +174,19 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             return nil
         })
         sema.wait()
+    }
+    
+    // this function clears out any currently signed in user info and adds the new users
+    // so that if they leave the app and reopen it, they remain signed in
+    fileprivate func addUserToCoreData() {
+        managedObjectContext?.perform {
+            SavedUser.addSignedInUser((self.user?.email_id)!, firstName: (self.user?.first_name)!, lastName: (self.user?.last_name)!, password: (self.user?.password)!, inManagedObjectContext: self.managedObjectContext!)
+            do {
+                try self.managedObjectContext?.save()
+            } catch let error {
+                print("error saving signed in user: \(error)")
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
