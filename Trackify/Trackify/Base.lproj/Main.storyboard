@@ -24,15 +24,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-aZ-mpp">
-                                <rect key="frame" x="127" y="298" width="121" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-aZ-mpp">
+                                <rect key="frame" x="16" y="317" width="343" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gkM-aZ-mpp" secondAttribute="trailing" id="7YW-fF-cyT"/>
+                            <constraint firstItem="gkM-aZ-mpp" firstAttribute="centerY" secondItem="aYg-1V-T2I" secondAttribute="centerY" id="VVz-rZ-yBn"/>
+                            <constraint firstItem="gkM-aZ-mpp" firstAttribute="leading" secondItem="aYg-1V-T2I" secondAttribute="leadingMargin" id="uL6-UW-FPb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4zM-Qf-35C"/>
                     <connections>
