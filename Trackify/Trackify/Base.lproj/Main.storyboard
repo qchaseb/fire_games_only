@@ -191,7 +191,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sa-A8-BtV" id="O7t-Oc-UoW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-TX-FW4">
@@ -289,7 +289,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpm-lM-ZSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2357.5999999999999" y="914.392803598201"/>
+            <point key="canvasLocation" x="2342" y="1066"/>
         </scene>
         <!--Manual Entry View Controller-->
         <scene sceneID="fBO-FD-OEn">
@@ -325,7 +325,7 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_blue" translatesAutoresizingMaskIntoConstraints="NO" id="dge-E0-rnS">
-                                                <rect key="frame" x="0.0" y="339.5" width="54" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="339" width="54" height="53.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dge-E0-rnS" secondAttribute="height" id="Xbm-Xd-SPx"/>
                                                 </constraints>
@@ -363,13 +363,13 @@
                                                         </constraints>
                                                     </stackView>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="5P8-7m-mac">
-                                                        <rect key="frame" x="0.0" y="131" width="279.5" height="128.5"/>
+                                                        <rect key="frame" x="0.0" y="130.5" width="279.5" height="128.5"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="508231699.79842597">
                                                             <!--2017-02-08 07:28:19 +0000-->
                                                         </date>
                                                     </datePicker>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EGG-8j-4T0">
-                                                        <rect key="frame" x="0.0" y="261.5" width="279.5" height="129"/>
+                                                        <rect key="frame" x="0.0" y="261" width="279.5" height="129"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="508231699.79842597">
                                                             <!--2017-02-08 07:28:19 +0000-->
                                                         </date>
@@ -423,7 +423,7 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_blue" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-fL-bKR">
-                                                <rect key="frame" x="-0.5" y="207.5" width="54" height="54"/>
+                                                <rect key="frame" x="-0.5" y="207" width="54" height="54"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="SaO-fL-bKR" secondAttribute="height" id="eLh-jf-XoU"/>
                                                 </constraints>
@@ -488,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-iB-d9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3445.5999999999999" y="913.49325337331345"/>
+            <point key="canvasLocation" x="3559" y="1066"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="CTA-eT-jZz">
@@ -677,7 +677,7 @@
                                         <rect key="frame" x="0.0" y="22" width="281.5" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyR-zb-hcp" id="pI8-2e-eW7">
-                                            <rect key="frame" x="0.0" y="0.0" width="281.5" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="281.5" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-bI-YKh">
@@ -741,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi7-kJ-6TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="1030"/>
+            <point key="canvasLocation" x="1217" y="1066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DwG-TY-DHg">
