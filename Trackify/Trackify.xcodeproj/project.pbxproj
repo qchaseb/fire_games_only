@@ -21,6 +21,7 @@
 		0AA8ADD11E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCD1E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift */; };
 		0AA8ADD21E5AB6CD0080301B /* SavedUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCE1E5AB6CD0080301B /* SavedUser+CoreDataClass.swift */; };
 		0AA8ADD31E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADCF1E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift */; };
+		0AA8ADD51E62386E0080301B /* FlightOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8ADD41E62386E0080301B /* FlightOptionsViewController.swift */; };
 		0AB731051E396CC400098F33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB731041E396CC400098F33 /* AppDelegate.swift */; };
 		0AB7310A1E396CC400098F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB731081E396CC400098F33 /* Main.storyboard */; };
 		0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 		0AA8ADCD1E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedFlight+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0AA8ADCE1E5AB6CD0080301B /* SavedUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0AA8ADCF1E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0AA8ADD41E62386E0080301B /* FlightOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightOptionsViewController.swift; sourceTree = "<group>"; };
 		0AB731011E396CC400098F33 /* Trackify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB731041E396CC400098F33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB731091E396CC400098F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				0A9736A51E4A8114006B945C /* ManualEntryViewController.swift */,
 				0A743C291E495B65006A33F4 /* FlightsTableViewController.swift */,
 				0AA556DB1E5144FF00D69AE2 /* MenuViewController.swift */,
+				0AA8ADD41E62386E0080301B /* FlightOptionsViewController.swift */,
 				0A743C2B1E495D45006A33F4 /* FlightTableViewCell.swift */,
 			);
 			name = "Flight Classes";
@@ -303,6 +306,7 @@
 				0A3374F11E43DFE60026265E /* User.swift in Sources */,
 				0A743C2E1E495D77006A33F4 /* Flight.swift in Sources */,
 				0AA556DC1E5144FF00D69AE2 /* MenuViewController.swift in Sources */,
+				0AA8ADD51E62386E0080301B /* FlightOptionsViewController.swift in Sources */,
 				0AB731051E396CC400098F33 /* AppDelegate.swift in Sources */,
 				0A743C2C1E495D45006A33F4 /* FlightTableViewCell.swift in Sources */,
 				0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */,

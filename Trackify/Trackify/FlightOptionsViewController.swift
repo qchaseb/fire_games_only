@@ -1,44 +1,35 @@
 //
-//  MenuViewController.swift
+//  FlightOptionsViewController.swift
 //  Trackify
 //
-//  Created by Scott Buttinger on 2/12/17.
+//  Created by Scott Buttinger on 2/25/17.
 //  Copyright © 2017 Fire Apps Only. All rights reserved.
 //
 
 import UIKit
 
-protocol SlideMenuDelegate {
-    func slideMenuItemSelected(_ option: String)
-}
+class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     /**
-    *  Array to display menu options
-    */
+     *  Array to display menu options
+     */
     @IBOutlet var menuTable : UITableView!
     
     /**
-    *  Transparent button to hide menu
-    */
+     *  Transparent button to hide menu
+     */
     @IBOutlet var transparentSideButton : UIButton!
     
     /**
-    *  Arrays containing menu options and images
-    */
-    var menuOptions = ["Account", "Sign Out", "Cancel"]
+     *  Arrays containing menu options and images
+     */
+    var menuOptions = ["Edit", "Share", "Export", "Cancel"]
     
-    var menuImages = [#imageLiteral(resourceName: "user_icon_black"), #imageLiteral(resourceName: "exit_icon_black"), #imageLiteral(resourceName: "delete_black_icon")]
-    
-    /**
-    *  Menu button which was tapped to display the menu
-    */
-    var menuButton : UIButton!
+    var menuImages = [#imageLiteral(resourceName: "user_icon_black"), #imageLiteral(resourceName: "share_icon_black"), #imageLiteral(resourceName: "export_icon_black"), #imageLiteral(resourceName: "delete_black_icon")]
     
     /**
-    *  Delegate of the MenuVC
-    */
+     *  Delegate of the MenuVC
+     */
     var delegate : SlideMenuDelegate?
     
     override func viewDidLoad() {
@@ -46,12 +37,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuTable.tableFooterView = UIView()
         
         self.menuTable.backgroundColor = UIColor.clear
-//        self.menuTable.alpha = 0.9
+        self.menuTable.alpha = 0.9
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!) {
-        menuButton.tag = 0
-        
         if (self.delegate != nil) {
             var option = menuOptions[Int(button.tag)]
             if(button == self.transparentSideButton){
@@ -61,20 +50,21 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         let delegateVC = delegate as? FlightsTableViewController
-        delegateVC?.menuVC = nil
+        delegateVC?.optionsVC = nil
+        delegateVC?.tableView.isScrollEnabled = true
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: (delegateVC?.view.bounds.minY)! + (delegateVC?.BOUNDS_OFFSET)!, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
+            self.view.frame = CGRect(x: UIScreen.main.bounds.size.width, y: (delegateVC?.view.bounds.minY)! + (delegateVC?.BOUNDS_OFFSET)!, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
             self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor.clear
-            }, completion: { (finished) -> Void in
-                self.view.removeFromSuperview()
-                self.removeFromParentViewController()
+        }, completion: { (finished) -> Void in
+            self.view.removeFromSuperview()
+            self.removeFromParentViewController()
         })
         
         delegateVC?.blurEffectView?.removeFromSuperview()
         delegateVC?.blurEffectView = nil
-        delegateVC?.tableView.isScrollEnabled = true
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,4 +101,5 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+
 }

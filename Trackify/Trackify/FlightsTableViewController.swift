@@ -31,7 +31,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     }
     
     var menuVC: MenuViewController?
+    var optionsVC: FlightOptionsViewController?
     let BOUNDS_OFFSET: CGFloat = 64
+    
+    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+    var blurEffectView: UIVisualEffectView?
     
     // get managed object context from delegate
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -195,6 +199,25 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let flight = flights?[indexPath.row]
+        addBlurView()
+        tableView.isScrollEnabled = false
+        optionsVC = self.storyboard!.instantiateViewController(withIdentifier: "FlightOptionsViewController") as? FlightOptionsViewController
+        optionsVC?.delegate = self
+        self.view.addSubview((optionsVC?.view)!)
+        self.addChildViewController(optionsVC!)
+        optionsVC?.view.layoutIfNeeded()
+        
+        optionsVC?.view.frame=CGRect(x: UIScreen.main.bounds.size.width, y: self.view.bounds.minY+BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY+self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        }, completion:nil)
+
+        
+    }
+    
     func handleRefresh() {
         // Reload data and update flights variable
         loadFlights(email: (user?.email_id)!)
@@ -250,24 +273,22 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     // MARK: - Slider Menu Delegate Functions
     // Adapted from: https://github.com/ashishkakkad8/AKSwiftSlideMenu
     
-    func slideMenuItemSelectedAtIndex(_ index: Int) {
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        print("View Controller is : \(topViewController) \n", terminator: "")
-        switch(index){
-        case 0:
+    func slideMenuItemSelected(_ option: String) {
+        switch(option){
+        case "Account":
             print("Account Button Tapped")
             
             // self.openViewControllerBasedOnIdentifier("Account")
             
             break
-        case 1:
+        case "Sign Out":
             print("Log Out Tapped")
             removeUserFromCoreData()
             self.navigationController!.popToRootViewController(animated: true)
             
             break
         default:
-            print("default\n", terminator: "")
+            print("default")
         }
     }
     
@@ -322,7 +343,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     func menuButtonTapped(_ sender : UIButton) {
         if menuVC != nil {
             // hide menu if it is already being displayed
-            self.slideMenuItemSelectedAtIndex(-1)
+            self.slideMenuItemSelected("")
             
             let settingsMenuView : UIView = view.subviews.last!
             
@@ -335,9 +356,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             }, completion: { (finished) -> Void in
                 settingsMenuView.removeFromSuperview()
             })
-            
             menuVC = nil
+            blurEffectView?.removeFromSuperview()
+            blurEffectView = nil
+            tableView.isScrollEnabled = true
         } else {
+            addBlurView()
+            tableView.isScrollEnabled = false
             menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
             menuVC?.menuButton = sender
             menuVC?.delegate = self
@@ -351,6 +376,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 self.menuVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY+self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
             }, completion:nil)
         }
+    }
+    
+    fileprivate func addBlurView() {
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView?.frame = view.bounds
+        blurEffectView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView!)
     }
     
     // MARK: - Navigation
