@@ -19,13 +19,26 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     fileprivate var success: Bool = false {
         didSet {
+            if (editFlight != nil) {
+                removeFlightFromCoreData((editFlight?.datetime)!)
+            }
             DispatchQueue.main.async {
                 self.navigationController!.popViewController(animated: true)
             }
         }
     }
     
+    fileprivate var deleteSuccess: Bool = false {
+        didSet {
+            addFlightToDB()
+        }
+    }
+    
+    var editFlight: Flight?
+    
     var userEmail: String?
+    
+    var removeFlightFromCoreData: (_ dateTime: String) -> Void = {_ in }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +50,25 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.departureTextField.delegate = self
         self.arrivalTextField.delegate = self
         self.confirmationTextField.delegate = self
+        
+        if (editFlight != nil) {
+            let row = airlines.index(of: (editFlight?.airline)!)
+            airlinePicker.selectRow(row!, inComponent: 0, animated: true)
+            flightNumberTextField.text = editFlight?.flightNumber
+            departureTextField.text = editFlight?.departureAirport
+            arrivalTextField.text = editFlight?.destinationAirport
+            confirmationTextField.text = editFlight?.confirmation
+            datePicker.date = (editFlight?.getDate())!
+            timePicker.date = (editFlight?.getDate())!
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavigationBar()
+        if (editFlight != nil) {
+            titleLabel.text = "Update Flight"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,6 +89,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var flightNumberTextField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // Set up the UI for the navigation bar
     fileprivate func setUpNavigationBar() {
@@ -121,7 +149,14 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             displayAlert("Invalid Arrival Airport Code", message: "Please enter a valid arrival airport code.")
         } else if confirmationTextField.text == "" {
             displayAlert("Invalid Confirmation Code", message: "Please enter a valid confirmation code.")
-        } else if flightExists(){
+        } else if editFlight != nil {
+            startSpinner(&spinner)
+            if self.getDateTimeString() != editFlight?.datetime {
+                removeFlightFromDB()
+            } else {
+                addFlightToDB()
+            }
+        } else if flightExists() {
             displayAlert("Duplicate Flight", message: "This flight has already been added to the database.")
         } else {
             // Push flight to DynamoDB
@@ -138,6 +173,30 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         return dateString + " " + timeString
     }
     
+    fileprivate func removeFlightFromDB() {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.remove(editFlight!).continueWith(block: {(task:AWSTask!) -> AnyObject! in
+            if let error = task.error as? NSError {
+                print("Remove failed. Error: \(error)")
+                if (error.domain == NSURLErrorDomain) {
+                    DispatchQueue.main.async {
+                        self.spinner.stopAnimating()
+                        self.displayAlert("Poor Network Connection", message: "Couldn't update flight. Please try again.")
+                    }
+                }
+            } else {
+                // success!
+                self.deleteSuccess = true
+            }
+            sema.signal()
+            return nil
+        })
+        sema.wait()
+    }
+
     fileprivate func addFlightToDB() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         

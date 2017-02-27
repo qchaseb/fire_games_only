@@ -484,6 +484,7 @@
                         <outlet property="flightNumberTextField" destination="5wZ-5N-Tmx" id="ek9-nM-mO6"/>
                         <outlet property="scrollView" destination="hBy-rK-C1d" id="ET5-6W-RF7"/>
                         <outlet property="timePicker" destination="5P8-7m-mac" id="U1D-kn-lta"/>
+                        <outlet property="titleLabel" destination="022-vS-Tu7" id="3ly-MH-NFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-iB-d9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,7 +681,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-bI-YKh">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-bI-YKh">
                                                     <rect key="frame" x="8" y="13.5" width="354" height="26.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZLb-uH-CpZ">
@@ -690,7 +691,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7g-Sq-0XK">
-                                                            <rect key="frame" x="42" y="0.0" width="312" height="26.5"/>
+                                                            <rect key="frame" x="52" y="0.0" width="302" height="26.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -889,7 +890,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="379" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DOc-ld-oai">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="DOc-ld-oai">
                                                     <rect key="frame" x="8" y="14" width="350" height="26"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2U-A8-g1W">
@@ -899,7 +900,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10y-ZT-WfG">
-                                                            <rect key="frame" x="41" y="0.0" width="309" height="26"/>
+                                                            <rect key="frame" x="51" y="0.0" width="299" height="26"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -965,7 +966,7 @@
         <image name="trackify_logo" width="1102" height="1357"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="P07-ZW-GJj"/>
         <segue reference="I2e-0F-aje"/>
+        <segue reference="4l1-I7-UN5"/>
     </inferredMetricsTieBreakers>
 </document>

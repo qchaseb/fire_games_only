@@ -38,6 +38,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     var optionsBlurEffectView: UIVisualEffectView?
     var menuBlurEffectView: UIVisualEffectView?
     
+    fileprivate var editingFlight: Bool = false
+    
     // get managed object context from delegate
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
@@ -234,6 +236,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     }
     
     func manualEntryButtonTapped() {
+        editingFlight = false
         self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
     }
     
@@ -298,6 +301,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             break
         case "Edit":
             print("Edit Button Tapped")
+            editingFlight = true
+            self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
         case "Share":
             print("Share Button Tapped")
@@ -345,17 +350,17 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
     
-    func openViewControllerBasedOnIdentifier(_ strIdentifier:String) {
-        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-        
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        
-        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-            print("Same VC")
-        } else {
-            self.navigationController!.pushViewController(destViewController, animated: true)
-        }
-    }
+//    func openViewControllerBasedOnIdentifier(_ strIdentifier:String) {
+//        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
+//        
+//        let topViewController : UIViewController = self.navigationController!.topViewController!
+//        
+//        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
+//            print("Same VC")
+//        } else {
+//            self.navigationController!.pushViewController(destViewController, animated: true)
+//        }
+//    }
     
     // open or close slider menu with animation
     func menuButtonTapped(_ sender : UIButton) {
@@ -432,6 +437,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         if segue.identifier == Storyboard.ManualEntrySegue {
             if let destinationVC = segue.destination as? ManualEntryViewController {
                 destinationVC.userEmail = user?.email_id
+                if (editingFlight) {
+                    destinationVC.editFlight = optionsVC?.flight
+                }
+                destinationVC.removeFlightFromCoreData = self.removeFlightFromCoreData
             }
         }
     }
