@@ -35,7 +35,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     let BOUNDS_OFFSET: CGFloat = 64
     
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
-    var blurEffectView: UIVisualEffectView?
+    var optionsBlurEffectView: UIVisualEffectView?
+    var menuBlurEffectView: UIVisualEffectView?
     
     // get managed object context from delegate
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -200,19 +201,27 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let flight = flights?[indexPath.row]
-        addBlurView()
+        let flight = flights?[indexPath.row]
+        addBlurView(forMenu: false)
         tableView.isScrollEnabled = false
         optionsVC = self.storyboard!.instantiateViewController(withIdentifier: "FlightOptionsViewController") as? FlightOptionsViewController
         optionsVC?.delegate = self
+        optionsVC?.flight = flight
         self.view.addSubview((optionsVC?.view)!)
         self.addChildViewController(optionsVC!)
         optionsVC?.view.layoutIfNeeded()
         
-        optionsVC?.view.frame=CGRect(x: UIScreen.main.bounds.size.width, y: self.view.bounds.minY+BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        optionsVC?.view.frame=CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY+self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            if self.view.bounds.minY > 0 {
+                self.optionsVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+            } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
+                self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+            } else {
+                self.optionsVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            }
+            
         }, completion:nil)
 
         
@@ -282,13 +291,22 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             
             break
         case "Sign Out":
-            print("Log Out Tapped")
+            print("Sign Out Tapped")
             removeUserFromCoreData()
             self.navigationController!.popToRootViewController(animated: true)
             
             break
+        case "Edit":
+            print("Edit Button Tapped")
+            break
+        case "Share":
+            print("Share Button Tapped")
+            break
+        case "Export":
+            print("Export Button Tapped")
+            break
         default:
-            print("default")
+            print("Cancel tapped")
         }
     }
     
@@ -357,11 +375,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 settingsMenuView.removeFromSuperview()
             })
             menuVC = nil
-            blurEffectView?.removeFromSuperview()
-            blurEffectView = nil
+            menuBlurEffectView?.removeFromSuperview()
+            menuBlurEffectView = nil
             tableView.isScrollEnabled = true
         } else {
-            addBlurView()
+            addBlurView(forMenu: true)
             tableView.isScrollEnabled = false
             menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
             menuVC?.menuButton = sender
@@ -370,19 +388,41 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             self.addChildViewController(menuVC!)
             menuVC?.view.layoutIfNeeded()
             
-            menuVC?.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: self.view.bounds.minY+BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            // make sure the menu appears at the correct y value within the table view
+            // this value changes depending on how far the user has scrolled
+            if self.view.bounds.minY > 0 {
+                self.menuVC?.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+            } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
+                self.menuVC?.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+            } else {
+                self.menuVC?.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            }
             
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                self.menuVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY+self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                if self.view.bounds.minY > 0 {
+                    self.menuVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+                } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
+                    self.menuVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+                } else {
+                    self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+                }
             }, completion:nil)
         }
     }
     
-    fileprivate func addBlurView() {
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView?.frame = view.bounds
-        blurEffectView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(blurEffectView!)
+    fileprivate func addBlurView(forMenu: Bool) {
+        if forMenu {
+            menuBlurEffectView = UIVisualEffectView(effect: blurEffect)
+            menuBlurEffectView?.frame = view.bounds
+            menuBlurEffectView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.addSubview(menuBlurEffectView!)
+        } else {
+            optionsBlurEffectView = UIVisualEffectView(effect: blurEffect)
+            optionsBlurEffectView?.frame = view.bounds
+            optionsBlurEffectView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.addSubview(optionsBlurEffectView!)
+        }
+        
     }
     
     // MARK: - Navigation

@@ -46,7 +46,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuTable.tableFooterView = UIView()
         
         self.menuTable.backgroundColor = UIColor.clear
-//        self.menuTable.alpha = 0.9
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!) {
@@ -64,7 +63,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         delegateVC?.menuVC = nil
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.view.frame = CGRect(x: -UIScreen.main.bounds.size.width, y: (delegateVC?.view.bounds.minY)! + (delegateVC?.BOUNDS_OFFSET)!, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
+            
+            if (delegateVC?.view.bounds.minY)! > 0 {
+                self.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: (delegateVC?.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: (delegateVC?.view.bounds.maxY)!)
+            } else if self.view.bounds.minY > -(delegateVC?.BOUNDS_OFFSET)! {
+                self.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: (delegateVC?.view.bounds.minY)! + (delegateVC?.BOUNDS_OFFSET)!, width: UIScreen.main.bounds.size.width, height: (delegateVC?.view.bounds.maxY)!)
+            } else {
+                self.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            }
             self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor.clear
             }, completion: { (finished) -> Void in
@@ -72,9 +78,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.removeFromParentViewController()
         })
         
-        delegateVC?.blurEffectView?.removeFromSuperview()
-        delegateVC?.blurEffectView = nil
-        delegateVC?.tableView.isScrollEnabled = true
+        delegateVC?.menuBlurEffectView?.removeFromSuperview()
+        delegateVC?.menuBlurEffectView = nil
+        if delegateVC?.optionsVC == nil {
+           delegateVC?.tableView.isScrollEnabled = true
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

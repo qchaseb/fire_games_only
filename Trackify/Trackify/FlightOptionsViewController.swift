@@ -23,21 +23,27 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
     /**
      *  Arrays containing menu options and images
      */
-    var menuOptions = ["Edit", "Share", "Export", "Cancel"]
+    var menuOptions = ["Flight", "Edit", "Share", "Export", "Cancel"]
     
-    var menuImages = [#imageLiteral(resourceName: "user_icon_black"), #imageLiteral(resourceName: "share_icon_black"), #imageLiteral(resourceName: "export_icon_black"), #imageLiteral(resourceName: "delete_black_icon")]
+    var menuImages = [nil, #imageLiteral(resourceName: "edit_icon_black"), #imageLiteral(resourceName: "share_icon_black"), #imageLiteral(resourceName: "export_icon_black"), #imageLiteral(resourceName: "delete_black_icon")]
+    
+    var flight: Flight?
     
     /**
      *  Delegate of the MenuVC
      */
     var delegate : SlideMenuDelegate?
     
+    fileprivate var flightCellHeight: CGFloat?
+    fileprivate var menuCellHeight: CGFloat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         menuTable.tableFooterView = UIView()
         
         self.menuTable.backgroundColor = UIColor.clear
-        self.menuTable.alpha = 0.9
+        flightCellHeight = self.view.frame.height/4.25
+        menuCellHeight = self.view.frame.height/6
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!) {
@@ -54,7 +60,7 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
         delegateVC?.tableView.isScrollEnabled = true
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            self.view.frame = CGRect(x: UIScreen.main.bounds.size.width, y: (delegateVC?.view.bounds.minY)! + (delegateVC?.BOUNDS_OFFSET)!, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
+            self.view.frame = CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height)
             self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor.clear
         }, completion: { (finished) -> Void in
@@ -62,26 +68,36 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
             self.removeFromParentViewController()
         })
         
-        delegateVC?.blurEffectView?.removeFromSuperview()
-        delegateVC?.blurEffectView = nil
+        delegateVC?.optionsBlurEffectView?.removeFromSuperview()
+        delegateVC?.optionsBlurEffectView = nil
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
+        var cell: UITableViewCell?
         
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        cell.layoutMargins = UIEdgeInsets.zero
-        cell.preservesSuperviewLayoutMargins = false
-        cell.backgroundColor = UIColor.clear
+        if indexPath.row == 0 {
+            if let flightCell = tableView.dequeueReusableCell(withIdentifier: Storyboard.FlightCell, for: indexPath) as? FlightTableViewCell {
+                flightCell.flight = flight!
+                cell = flightCell
+            }
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
+            let optionLabel : UILabel = cell!.contentView.viewWithTag(101) as! UILabel
+            let iconImageView : UIImageView = cell!.contentView.viewWithTag(100) as! UIImageView
+            
+            iconImageView.image = menuImages[indexPath.row]
+            optionLabel.text = menuOptions[indexPath.row]
+        }
         
-        let optionLabel : UILabel = cell.contentView.viewWithTag(101) as! UILabel
-        let iconImageView : UIImageView = cell.contentView.viewWithTag(100) as! UIImageView
         
-        iconImageView.image = menuImages[indexPath.row]
-        optionLabel.text = menuOptions[indexPath.row]
         
-        return cell
+        cell!.selectionStyle = UITableViewCellSelectionStyle.none
+        cell!.layoutMargins = UIEdgeInsets.zero
+        cell!.preservesSuperviewLayoutMargins = false
+        cell!.backgroundColor = UIColor.clear
+        
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -95,7 +111,10 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height/6
+        if indexPath.row == 0 {
+            return flightCellHeight ?? self.view.bounds.height/4.25
+        }
+        return menuCellHeight ?? self.view.bounds.height/6
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
