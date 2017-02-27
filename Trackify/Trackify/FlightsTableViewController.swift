@@ -382,7 +382,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             menuVC = nil
             menuBlurEffectView?.removeFromSuperview()
             menuBlurEffectView = nil
-            tableView.isScrollEnabled = true
+            if (optionsVC == nil) {
+               tableView.isScrollEnabled = true
+            }
         } else {
             addBlurView(forMenu: true)
             tableView.isScrollEnabled = false

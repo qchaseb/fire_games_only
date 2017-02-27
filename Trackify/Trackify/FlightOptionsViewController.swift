@@ -42,8 +42,6 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
         menuTable.tableFooterView = UIView()
         
         self.menuTable.backgroundColor = UIColor.clear
-        flightCellHeight = self.view.frame.height/4.25
-        menuCellHeight = self.view.frame.height/6
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!) {
@@ -112,9 +110,10 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return flightCellHeight ?? self.view.bounds.height/4.25
+            return UIScreen.main.bounds.size.height/4.25
         }
-        return menuCellHeight ?? self.view.bounds.height/6
+        return UIScreen.main.bounds.size.height/6
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

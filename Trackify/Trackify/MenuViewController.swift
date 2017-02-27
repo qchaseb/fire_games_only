@@ -113,7 +113,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height/6
+        return UIScreen.main.bounds.size.height/6
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
