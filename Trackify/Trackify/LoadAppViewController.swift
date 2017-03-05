@@ -14,7 +14,7 @@ class LoadAppViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SwiftSpinner.show("Loading")
+        SwiftSpinner.show("Loading Trackify")
     }
     
     override func viewDidAppear(_ animated: Bool) {

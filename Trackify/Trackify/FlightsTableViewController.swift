@@ -10,6 +10,7 @@ import UIKit
 import AWSDynamoDB
 import CoreData
 import EventKit
+import SwiftSpinner
 
 class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
@@ -142,6 +143,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             if let flightCell = tableView.cellForRow(at: indexPath) as? FlightTableViewCell {
+                SwiftSpinner.show("Deleting Flight")
                 let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
                 let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
                 updateMapperConfig.saveBehavior = .updateSkipNullAttributes
@@ -153,6 +155,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                         print("Remove failed. Error: \(error)")
                         if (error.domain == NSURLErrorDomain) {
                             DispatchQueue.main.async {
+                                SwiftSpinner.hide()
                                 self.displayAlert("Poor Network Connection", message: "Couldn't delete flight. Please try again.")
                             }
                         }
@@ -193,6 +196,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                     }
                 }
             }
+        }
+        DispatchQueue.main.async {
+            SwiftSpinner.hide()
         }
     }
     

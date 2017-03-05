@@ -11,6 +11,7 @@ import AWSCore
 import AWSDynamoDB
 import AWSCognito
 import CoreData
+import SwiftSpinner
 
 class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
@@ -42,13 +43,17 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         self.unregisterFromKeyboardNotifications()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SwiftSpinner.hide()
+    }
+    
     // MARK: - Variables
     
     fileprivate var activeField: UITextField?
     fileprivate var user: User? {
         didSet {
             DispatchQueue.main.async {
-                self.spinner.stopAnimating()
                 self.addUserToCoreData()
                 self.performSegue(withIdentifier: Storyboard.SignInSegue , sender: self)
             }
@@ -68,22 +73,16 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var mainScrollView: UIScrollView!
     
-    // a subview that will be added to our current view with a
-    // spinner, indicating we are attempting to retrieve data from AWS
-    fileprivate var spinner = UIActivityIndicatorView()
-    
     // MARK: - Other Functions
     
     @IBAction func signInButtonTapped(_ sender: Any) {
-        startSpinner(&spinner)
         if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
-            spinner.stopAnimating()
         } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
-            spinner.stopAnimating()
         } else {
             // query AWS DB for login credentials
+            SwiftSpinner.show("Attempting Sign In")
             attemptLogin(email: emailTextField.text!, password: passwordTextField.text!)
         }
     }
@@ -168,7 +167,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             DispatchQueue.main.async {
-                self.spinner.stopAnimating()
+                SwiftSpinner.hide()
             }
             sema.signal()
             return nil
@@ -190,7 +189,6 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.spinner.stopAnimating()
         if segue.identifier == Storyboard.SignInSegue {
             if let destinationVC = segue.destination as? FlightsTableViewController {
                 destinationVC.user = user

@@ -10,6 +10,7 @@ import UIKit
 import AWSCore
 import AWSDynamoDB
 import AWSCognito
+import SwiftSpinner
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -34,6 +35,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.unregisterFromKeyboardNotifications()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SwiftSpinner.hide()
+    }
+    
     // MARK: - Variables
     
     fileprivate var activeField: UITextField?
@@ -41,7 +47,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     fileprivate var newUser :User? {
         didSet {
             DispatchQueue.main.async {
-                self.spinner.stopAnimating()
                 self.addUserToCoreData()
                 self.performSegue(withIdentifier: Storyboard.NewUserSignInSegue , sender: self)
             }
@@ -64,10 +69,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    // a subview that will be added to our current view with a
-    // spinner, indicating we are attempting to retrieve data from AWS
-    var spinner = UIActivityIndicatorView()
     
     // MARK: - Other Functions
     
@@ -92,7 +93,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Password Mismatch", message: "Please confirm your password.")
             confirmTextField.text = ""
         } else {
-            startSpinner(&spinner)
+            SwiftSpinner.show("Creating Account")
             addUserToDB();
         }
         
@@ -113,7 +114,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             if let error = task.error as? NSError {
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
-                        self.spinner.stopAnimating()
+                        SwiftSpinner.hide()
                         self.displayAlert("Poor Network Connection", message: "Please try again.")
                     }
                 }
@@ -223,7 +224,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.spinner.stopAnimating()
         if segue.identifier == Storyboard.NewUserSignInSegue {
             if let destinationVC = segue.destination as? FlightsTableViewController {
                 destinationVC.user = newUser
