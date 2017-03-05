@@ -26,7 +26,6 @@
 		0AB7310A1E396CC400098F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB731081E396CC400098F33 /* Main.storyboard */; };
 		0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */; };
 		0AB7310F1E396CC400098F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB7310E1E396CC400098F33 /* Assets.xcassets */; };
-		0AB731121E396CC400098F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB731101E396CC400098F33 /* LaunchScreen.storyboard */; };
 		C3EE5D1E300CB8A52F03B4F9 /* Pods_Trackify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBBDF1D500830BA87A86F4A /* Pods_Trackify.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +50,6 @@
 		0AB731091E396CC400098F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AB7310C1E396CC400098F33 /* Trackify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trackify.xcdatamodel; sourceTree = "<group>"; };
 		0AB7310E1E396CC400098F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0AB731111E396CC400098F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AB731131E396CC400098F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B447BB61D14DE3C6CFBF7AFB /* Pods-Trackify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trackify/Pods-Trackify.release.xcconfig"; sourceTree = "<group>"; };
 		CEC2F1D3B39EAD21DD827274 /* Pods-Trackify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trackify/Pods-Trackify.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 		0A8FF04F1E3AC37800EDF52C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0AB731101E396CC400098F33 /* LaunchScreen.storyboard */,
 				0A74BDED1E39AB3D00FEE24A /* Helpers.swift */,
 				0AB731041E396CC400098F33 /* AppDelegate.swift */,
 				0AB7310E1E396CC400098F33 /* Assets.xcassets */,
@@ -236,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AB731121E396CC400098F33 /* LaunchScreen.storyboard in Resources */,
 				0AB7310F1E396CC400098F33 /* Assets.xcassets in Resources */,
 				0AB7310A1E396CC400098F33 /* Main.storyboard in Resources */,
 			);
@@ -326,14 +322,6 @@
 				0AB731091E396CC400098F33 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0AB731101E396CC400098F33 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0AB731111E396CC400098F33 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

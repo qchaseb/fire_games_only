@@ -13,4 +13,5 @@ target :'Trackify' do
     pod 'AWSSES'
     pod 'AWSSimpleDB'
     pod 'AWSSNS'
+    pod 'SwiftSpinner'
 end

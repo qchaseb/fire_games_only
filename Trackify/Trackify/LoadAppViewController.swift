@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import SwiftSpinner
 
 class LoadAppViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        SwiftSpinner.show("Loading")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -23,6 +25,11 @@ class LoadAppViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SwiftSpinner.hide()
     }
     
     fileprivate var user: User?

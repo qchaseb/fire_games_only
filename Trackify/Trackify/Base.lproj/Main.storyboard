@@ -24,18 +24,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-aZ-mpp">
-                                <rect key="frame" x="16" y="317" width="343" height="33.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trackify_logo" translatesAutoresizingMaskIntoConstraints="NO" id="HEi-4J-u3J">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="gkM-aZ-mpp" secondAttribute="trailing" id="7YW-fF-cyT"/>
-                            <constraint firstItem="gkM-aZ-mpp" firstAttribute="centerY" secondItem="aYg-1V-T2I" secondAttribute="centerY" id="VVz-rZ-yBn"/>
-                            <constraint firstItem="gkM-aZ-mpp" firstAttribute="leading" secondItem="aYg-1V-T2I" secondAttribute="leadingMargin" id="uL6-UW-FPb"/>
+                            <constraint firstItem="PY0-ge-IYq" firstAttribute="top" secondItem="HEi-4J-u3J" secondAttribute="bottom" id="Y1V-iK-c17"/>
+                            <constraint firstItem="HEi-4J-u3J" firstAttribute="leading" secondItem="aYg-1V-T2I" secondAttribute="leadingMargin" id="ZYh-Ae-ceg"/>
+                            <constraint firstItem="HEi-4J-u3J" firstAttribute="top" secondItem="Mur-sF-b7I" secondAttribute="bottom" id="ir9-Np-URa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HEi-4J-u3J" secondAttribute="trailing" id="sSA-Nb-W5G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4zM-Qf-35C"/>
@@ -972,7 +970,7 @@
         <image name="trackify_logo" width="1102" height="1357"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="P07-ZW-GJj"/>
         <segue reference="I2e-0F-aje"/>
-        <segue reference="4l1-I7-UN5"/>
     </inferredMetricsTieBreakers>
 </document>
