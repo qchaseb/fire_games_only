@@ -18,6 +18,7 @@ PODS:
     - AWSCore (= 2.5.0)
   - AWSSNS (2.5.0):
     - AWSCore (= 2.5.0)
+  - SwiftSpinner (1.1.0)
 
 DEPENDENCIES:
   - AWSCognito
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - AWSSES
   - AWSSimpleDB
   - AWSSNS
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
   AWSCognito: 5a1af0c4b351de1ec8d523d3ed0aecce42dd630e
@@ -41,7 +43,8 @@ SPEC CHECKSUMS:
   AWSSES: c043bdb1356aae06cdf792adfebbfc80432d0415
   AWSSimpleDB: b03e1ade04b3f7f0043d5dad33eaa6c8eb9eee6c
   AWSSNS: b2e3f080fa826e7ff2bcd52cb050c1592c439090
+  SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
 
-PODFILE CHECKSUM: 9323a7deeb0ee0398f20207462aa65e631519e4a
+PODFILE CHECKSUM: 611e9d1d4c189ac066dd823fc3586e13790dec14
 
 COCOAPODS: 1.2.0
