@@ -29,7 +29,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
     var menuOptions = ["Account", "Sign Out", "Cancel"]
     
-    var menuImages = [#imageLiteral(resourceName: "user_icon_black"), #imageLiteral(resourceName: "exit_icon_black"), #imageLiteral(resourceName: "delete_black_icon")]
+    var menuImages = [#imageLiteral(resourceName: "user_icon_blue"), #imageLiteral(resourceName: "exit_icon_blue"), #imageLiteral(resourceName: "delete_blue_icon")]
     
     /**
     *  Menu button which was tapped to display the menu

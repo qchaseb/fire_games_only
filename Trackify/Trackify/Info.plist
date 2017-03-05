@@ -58,5 +58,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Allow Trackify to add a flight event to your calendar.</string>
 </dict>
 </plist>

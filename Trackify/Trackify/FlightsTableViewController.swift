@@ -9,6 +9,7 @@
 import UIKit
 import AWSDynamoDB
 import CoreData
+import EventKit
 
 class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
@@ -304,28 +305,92 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             editingFlight = true
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
+            
+        case "Add to Calendar":
+            print("Add to Calendar Tapped")
+            addFlightToCalendar(flight: (optionsVC?.flight!)!)
+            break
         case "Share":
             print("Share Button Tapped")
             break
         case "Export":
             print("Export Button Tapped")
-            displayShareSheet()
+            displayShareSheet(flight: (optionsVC?.flight!)!)
             break
         default:
             print("Cancel tapped")
         }
     }
     
-    fileprivate func displayShareSheet() {
+    fileprivate func displayShareSheet(flight: Flight) {
         var shareContent = "Here are the details for my upcoming flight:\n\n"
-        shareContent += ("Flight:\t" + (optionsVC?.flight?.airline)! + " #" + (optionsVC?.flight?.flightNumber)! + "\n")
-        shareContent += ("Time:\t" + (optionsVC?.flight?.getTimeString())! + "\n")
-        shareContent += ("Date:\t" + (optionsVC?.flight?.getDateString())! + "\n")
-        shareContent += ("From:\t" + (optionsVC?.flight?.departureAirport)! + "\n")
-        shareContent += ("To:\t\t" + (optionsVC?.flight?.destinationAirport)! + "\n\n")
+        shareContent += ("Flight:\t" + flight.airline! + " #" + flight.flightNumber! + "\n")
+        shareContent += ("Time:\t" + flight.getTimeString()! + "\n")
+        shareContent += ("Date:\t" + flight.getDateString()! + "\n")
+        shareContent += ("From:\t" + flight.departureAirport! + "\n")
+        shareContent += ("To:\t\t" + flight.destinationAirport! + "\n\n")
         shareContent += "Shared from Trackify."
         let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
         present(activityViewController, animated: true, completion: {})
+    }
+    
+    fileprivate func addFlightToCalendar(flight: Flight) {
+        let eventStore : EKEventStore = EKEventStore()
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            
+            if (granted) && (error == nil) {
+                print("granted \(granted)")
+                print("error \(error)")
+                
+                let calendar = Calendar(identifier: .gregorian)
+                let startDate = flight.getDate()!
+                let endDate = calendar.date(byAdding: Calendar.Component.hour, value: 1, to: startDate)!
+                
+                // check to see if this event has already been added to the user's calendar
+                let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+                let existingEvents = eventStore.events(matching: predicate)
+                for event in existingEvents {
+                    if event.title == (flight.airline! + " #" + flight.flightNumber!) && event.startDate == startDate {
+                        DispatchQueue.main.async {
+                            self.displayAlert("Duplicate Calendar Event", message: "This flight has already been added to your calendar!")
+                        }
+                        return
+                    }
+                }
+                
+                // event does not yet exist in the calendar
+                
+                let event:EKEvent = EKEvent(eventStore: eventStore)
+                event.title = flight.airline! + " #" + flight.flightNumber!
+                event.startDate = flight.getDate()!
+                event.endDate = endDate
+                var notesStr = ""
+                notesStr += ("Flight:\t" + flight.airline! + " #" + flight.flightNumber! + "\n")
+                notesStr += ("Time:\t" + flight.getTimeString()! + "\n")
+                notesStr += ("Date:\t" + flight.getDateString()! + "\n")
+                notesStr += ("From:\t" + flight.departureAirport! + "\n")
+                notesStr += ("To:\t\t" + flight.destinationAirport! + "\n")
+                notesStr += ("Confirmation:\t" + flight.confirmation! + "\n\n")
+                event.notes = notesStr
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let error as NSError {
+                    print("failed to save event with error : \(error)")
+                }
+                print("Saved Event")
+                DispatchQueue.main.async {
+                    self.displayAlert("Calendar Event Created", message: "Successfully added the selected flight's details to your calendar.")
+                }
+            }
+            else{
+                
+                print("failed to save event with error : \(error) or access not granted")
+                DispatchQueue.main.async {
+                    self.displayAlert("Calendar Error", message: "Could not add the selected flight to your calendar. Please verify that Trackify has permission to access your calendar and try again. ")
+                }
+            }
+        }
     }
     
     fileprivate func addFlightToCoreData(flight: Flight) {
