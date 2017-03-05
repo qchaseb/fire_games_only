@@ -44,7 +44,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     fileprivate var refreshController: UIRefreshControl?
-    fileprivate var df = DateFormatter()
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
@@ -53,6 +52,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -309,13 +309,26 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             break
         case "Export":
             print("Export Button Tapped")
+            displayShareSheet()
             break
         default:
             print("Cancel tapped")
         }
     }
     
-    func addFlightToCoreData(flight: Flight) {
+    fileprivate func displayShareSheet() {
+        var shareContent = "Here are the details for my upcoming flight:\n\n"
+        shareContent += ("Flight:\t" + (optionsVC?.flight?.airline)! + " #" + (optionsVC?.flight?.flightNumber)! + "\n")
+        shareContent += ("Time:\t" + (optionsVC?.flight?.getTimeString())! + "\n")
+        shareContent += ("Date:\t" + (optionsVC?.flight?.getDateString())! + "\n")
+        shareContent += ("From:\t" + (optionsVC?.flight?.departureAirport)! + "\n")
+        shareContent += ("To:\t\t" + (optionsVC?.flight?.destinationAirport)! + "\n\n")
+        shareContent += "Shared from Trackify."
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    
+    fileprivate func addFlightToCoreData(flight: Flight) {
         managedObjectContext?.perform {
             SavedFlight.addFlight(flight.email!, airline: flight.airline!, flightNumber: flight.flightNumber!, departureAirport: flight.departureAirport!, destinationAirport: flight.destinationAirport!, confirmation: flight.confirmation!, datetime: flight.datetime!, inManagedObjectContext: self.managedObjectContext!)
             do {
@@ -329,7 +342,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     // this function is called when a user signs out
     // it removes them from core data so that upon re-opening the app,
     // a new user must sign in or create an account
-    func removeUserFromCoreData() {
+    fileprivate func removeUserFromCoreData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedUser")
         let context = self.managedObjectContext!
         request.predicate = NSPredicate(format: "TRUEPREDICATE")
@@ -349,18 +362,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             }
         }
     }
-    
-//    func openViewControllerBasedOnIdentifier(_ strIdentifier:String) {
-//        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-//        
-//        let topViewController : UIViewController = self.navigationController!.topViewController!
-//        
-//        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-//            print("Same VC")
-//        } else {
-//            self.navigationController!.pushViewController(destViewController, animated: true)
-//        }
-//    }
     
     // open or close slider menu with animation
     func menuButtonTapped(_ sender : UIButton) {
