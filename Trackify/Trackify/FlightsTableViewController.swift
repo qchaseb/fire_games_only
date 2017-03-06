@@ -9,6 +9,8 @@
 import UIKit
 import AWSDynamoDB
 import CoreData
+import EventKit
+import SwiftSpinner
 
 class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
@@ -44,7 +46,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     fileprivate var refreshController: UIRefreshControl?
-    fileprivate var df = DateFormatter()
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
@@ -53,6 +54,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -141,6 +143,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             if let flightCell = tableView.cellForRow(at: indexPath) as? FlightTableViewCell {
+                SwiftSpinner.show("Deleting Flight")
                 let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
                 let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
                 updateMapperConfig.saveBehavior = .updateSkipNullAttributes
@@ -152,6 +155,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                         print("Remove failed. Error: \(error)")
                         if (error.domain == NSURLErrorDomain) {
                             DispatchQueue.main.async {
+                                SwiftSpinner.hide()
                                 self.displayAlert("Poor Network Connection", message: "Couldn't delete flight. Please try again.")
                             }
                         }
@@ -192,6 +196,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                     }
                 }
             }
+        }
+        DispatchQueue.main.async {
+            SwiftSpinner.hide()
         }
     }
     
@@ -304,18 +311,95 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             editingFlight = true
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
+            
+        case "Add to Calendar":
+            print("Add to Calendar Tapped")
+            addFlightToCalendar(flight: (optionsVC?.flight!)!)
+            break
         case "Share":
             print("Share Button Tapped")
             break
         case "Export":
             print("Export Button Tapped")
+            displayShareSheet(flight: (optionsVC?.flight!)!)
             break
         default:
             print("Cancel tapped")
         }
     }
     
-    func addFlightToCoreData(flight: Flight) {
+    fileprivate func displayShareSheet(flight: Flight) {
+        var shareContent = "Here are the details for my upcoming flight:\n\n"
+        shareContent += ("Flight:\t" + flight.airline! + " #" + flight.flightNumber! + "\n")
+        shareContent += ("Time:\t" + flight.getTimeString()! + "\n")
+        shareContent += ("Date:\t" + flight.getDateString()! + "\n")
+        shareContent += ("From:\t" + flight.departureAirport! + "\n")
+        shareContent += ("To:\t\t" + flight.destinationAirport! + "\n\n")
+        shareContent += "Shared from Trackify."
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    
+    fileprivate func addFlightToCalendar(flight: Flight) {
+        let eventStore : EKEventStore = EKEventStore()
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            
+            if (granted) && (error == nil) {
+                print("granted \(granted)")
+                print("error \(error)")
+                
+                let calendar = Calendar(identifier: .gregorian)
+                let startDate = flight.getDate()!
+                let endDate = calendar.date(byAdding: Calendar.Component.hour, value: 1, to: startDate)!
+                
+                // check to see if this event has already been added to the user's calendar
+                let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+                let existingEvents = eventStore.events(matching: predicate)
+                for event in existingEvents {
+                    if event.title == (flight.airline! + " #" + flight.flightNumber!) && event.startDate == startDate {
+                        DispatchQueue.main.async {
+                            self.displayAlert("Duplicate Calendar Event", message: "This flight has already been added to your calendar!")
+                        }
+                        return
+                    }
+                }
+                
+                // event does not yet exist in the calendar
+                
+                let event:EKEvent = EKEvent(eventStore: eventStore)
+                event.title = flight.airline! + " #" + flight.flightNumber!
+                event.startDate = flight.getDate()!
+                event.endDate = endDate
+                var notesStr = ""
+                notesStr += ("Flight:\t" + flight.airline! + " #" + flight.flightNumber! + "\n")
+                notesStr += ("Time:\t" + flight.getTimeString()! + "\n")
+                notesStr += ("Date:\t" + flight.getDateString()! + "\n")
+                notesStr += ("From:\t" + flight.departureAirport! + "\n")
+                notesStr += ("To:\t\t" + flight.destinationAirport! + "\n")
+                notesStr += ("Confirmation:\t" + flight.confirmation! + "\n\n")
+                event.notes = notesStr
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let error as NSError {
+                    print("failed to save event with error : \(error)")
+                }
+                print("Saved Event")
+                DispatchQueue.main.async {
+                    self.displayAlert("Calendar Event Created", message: "Successfully added the selected flight's details to your calendar.")
+                }
+            }
+            else{
+                
+                print("failed to save event with error : \(error) or access not granted")
+                DispatchQueue.main.async {
+                    self.displayAlert("Calendar Error", message: "Could not add the selected flight to your calendar. Please verify that Trackify has permission to access your calendar and try again. ")
+                }
+            }
+        }
+    }
+    
+    fileprivate func addFlightToCoreData(flight: Flight) {
         managedObjectContext?.perform {
             SavedFlight.addFlight(flight.email!, airline: flight.airline!, flightNumber: flight.flightNumber!, departureAirport: flight.departureAirport!, destinationAirport: flight.destinationAirport!, confirmation: flight.confirmation!, datetime: flight.datetime!, inManagedObjectContext: self.managedObjectContext!)
             do {
@@ -329,7 +413,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     // this function is called when a user signs out
     // it removes them from core data so that upon re-opening the app,
     // a new user must sign in or create an account
-    func removeUserFromCoreData() {
+    fileprivate func removeUserFromCoreData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedUser")
         let context = self.managedObjectContext!
         request.predicate = NSPredicate(format: "TRUEPREDICATE")
@@ -349,18 +433,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             }
         }
     }
-    
-//    func openViewControllerBasedOnIdentifier(_ strIdentifier:String) {
-//        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-//        
-//        let topViewController : UIViewController = self.navigationController!.topViewController!
-//        
-//        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-//            print("Same VC")
-//        } else {
-//            self.navigationController!.pushViewController(destViewController, animated: true)
-//        }
-//    }
     
     // open or close slider menu with animation
     func menuButtonTapped(_ sender : UIButton) {

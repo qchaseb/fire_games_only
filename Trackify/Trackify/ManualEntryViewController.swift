@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSDynamoDB
+import SwiftSpinner
 
 class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -15,7 +16,6 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     fileprivate let airlines = ["Air Canada", "Alaska", "Allegiant", "American", "Delta", "Frontier", "Hawaiian", "JetBlue", "Southwest", "Spirit", "Sun Country", "United", "Virgin America"]
     fileprivate var activeField: UITextField?
     fileprivate let df = DateFormatter()
-    fileprivate var spinner = UIActivityIndicatorView()
     
     fileprivate var success: Bool = false {
         didSet {
@@ -79,6 +79,11 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.unregisterFromKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SwiftSpinner.hide()
     }
     
     @IBOutlet weak var departureTextField: UITextField!
@@ -150,7 +155,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         } else if confirmationTextField.text == "" {
             displayAlert("Invalid Confirmation Code", message: "Please enter a valid confirmation code.")
         } else if editFlight != nil {
-            startSpinner(&spinner)
+            SwiftSpinner.show("Updating Flight")
             if self.getDateTimeString() != editFlight?.datetime {
                 removeFlightFromDB()
             } else {
@@ -160,7 +165,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             displayAlert("Duplicate Flight", message: "This flight has already been added to the database.")
         } else {
             // Push flight to DynamoDB
-            startSpinner(&spinner)
+            SwiftSpinner.show("Adding New Flight")
             addFlightToDB()
         }
     }
@@ -183,7 +188,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
                 print("Remove failed. Error: \(error)")
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
-                        self.spinner.stopAnimating()
+                        SwiftSpinner.hide()
                         self.displayAlert("Poor Network Connection", message: "Couldn't update flight. Please try again.")
                     }
                 }
@@ -216,7 +221,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
             if let error = task.error as? NSError {
                 if (error.domain == NSURLErrorDomain) {
                     DispatchQueue.main.async {
-                        self.spinner.stopAnimating()
+                        SwiftSpinner.hide()
                         self.displayAlert("Poor Network Connection", message: "Please try again.")
                     }
                 }
