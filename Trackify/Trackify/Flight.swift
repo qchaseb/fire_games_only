@@ -31,7 +31,8 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             self.dateString = df.string(from: self.date!)
         }
     }
-        
+    var identifiers: Set<String>?
+
     class func dynamoDBTableName() -> String {
         return "TrackifyFlightsTable"
     }

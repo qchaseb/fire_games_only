@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSDynamoDB
+import UserNotifications
 import SwiftSpinner
 
 class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
@@ -155,6 +156,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         } else if confirmationTextField.text == "" {
             displayAlert("Invalid Confirmation Code", message: "Please enter a valid confirmation code.")
         } else if editFlight != nil {
+            removeNotificationsFromNotificationCenter(flight: editFlight!)
             SwiftSpinner.show("Updating Flight")
             if self.getDateTimeString() != editFlight?.datetime {
                 removeFlightFromDB()
@@ -170,6 +172,16 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
     }
     
+    func removeNotificationsFromNotificationCenter(flight: Flight) {
+        if(flight.identifiers == nil){
+            return
+        } else {
+            for id in flight.identifiers! {
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+            }
+        }
+    }
+
     fileprivate func getDateTimeString() -> String? {
         df.dateFormat = "HH:mm"
         let timeString = df.string(from: timePicker.date)
