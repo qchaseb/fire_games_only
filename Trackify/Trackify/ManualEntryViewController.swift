@@ -39,7 +39,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     var userEmail: String?
     
     var removeFlightFromCoreData: (_ dateTime: String) -> Void = {_ in }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAway()
@@ -201,7 +201,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         })
         sema.wait()
     }
-
+    
     fileprivate func addFlightToDB() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         
@@ -319,7 +319,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var validTextField = false
         var maxChars = 0
-
+        
         if textField == departureTextField || textField == arrivalTextField {
             validTextField = true
             maxChars = 3

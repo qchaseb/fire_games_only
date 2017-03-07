@@ -15,30 +15,30 @@ protocol SlideMenuDelegate {
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     /**
-    *  Array to display menu options
-    */
+     *  Array to display menu options
+     */
     @IBOutlet var menuTable : UITableView!
     
     /**
-    *  Transparent button to hide menu
-    */
+     *  Transparent button to hide menu
+     */
     @IBOutlet var transparentSideButton : UIButton!
     
     /**
-    *  Arrays containing menu options and images
-    */
+     *  Arrays containing menu options and images
+     */
     var menuOptions = ["Account", "Sign Out", "Cancel"]
     
     var menuImages = [#imageLiteral(resourceName: "user_icon_blue"), #imageLiteral(resourceName: "exit_icon_blue"), #imageLiteral(resourceName: "delete_blue_icon")]
     
     /**
-    *  Menu button which was tapped to display the menu
-    */
+     *  Menu button which was tapped to display the menu
+     */
     var menuButton : UIButton!
     
     /**
-    *  Delegate of the MenuVC
-    */
+     *  Delegate of the MenuVC
+     */
     var delegate : SlideMenuDelegate?
     
     override func viewDidLoad() {
@@ -73,15 +73,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor.clear
-            }, completion: { (finished) -> Void in
-                self.view.removeFromSuperview()
-                self.removeFromParentViewController()
+        }, completion: { (finished) -> Void in
+            self.view.removeFromSuperview()
+            self.removeFromParentViewController()
         })
         
         delegateVC?.menuBlurEffectView?.removeFromSuperview()
         delegateVC?.menuBlurEffectView = nil
         if delegateVC?.optionsVC == nil {
-           delegateVC?.tableView.isScrollEnabled = true
+            delegateVC?.tableView.isScrollEnabled = true
         }
     }
     
