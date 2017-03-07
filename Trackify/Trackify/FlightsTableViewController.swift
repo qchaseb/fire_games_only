@@ -11,6 +11,7 @@ import AWSDynamoDB
 import CoreData
 import EventKit
 import SwiftSpinner
+import UserNotifications
 
 class FlightsTableViewController: UITableViewController, SlideMenuDelegate, UpdateUserDelegate {
     
@@ -54,6 +55,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
+        UNUserNotificationCenter.current().delegate = self
         
     }
     
@@ -72,6 +74,60 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
+    func scheduleLocalNotifications(flight: Flight) {
+        //create notification dates
+        let date = flight.getDate()
+        let calendar = Calendar(identifier: .gregorian)
+        let flight_components = calendar.dateComponents(in: .current, from: date!)
+        let new_date24 = flight_components.calendar?.date(byAdding: .day, value: -1, to: date!)
+        let new_date12 = flight_components.calendar?.date(byAdding: .hour, value: -12, to: date!)
+        let new_date6 = flight_components.calendar?.date(byAdding: .hour, value: -6, to: date!)
+        let new_date1 = flight_components.calendar?.date(byAdding: .hour, value: -1, to: date!)
+        let arr_Dates = [new_date24, new_date12, new_date6, new_date1]
+
+        //notification content
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = flight.flightNumber!
+        notificationContent.subtitle = flight.airline!
+        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon.",
+                                          flight.departureAirport!, flight.destinationAirport!)
+        notificationContent.sound = UNNotificationSound.default()
+
+        //dateformatter
+        let df = DateFormatter()
+        df.dateFormat = ("MM-dd-yyyy HH:mm")
+
+        //make notification for each date and store in UNUserNotificationCenter
+        for time in arr_Dates {
+            let date_string = df.string(from: time!)
+            let components = calendar.dateComponents(in: .current, from: time!)
+            let newComponents = DateComponents(calendar: calendar, timeZone: .current,
+                                               month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+            let calendarTrigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+            let identifier = (user?.email_id)! + date_string
+            let notificationRequest = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: calendarTrigger)
+            UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+                if let error = error {
+                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                }
+            }
+
+            //save identifier in flight object
+            if(flight.identifiers == nil){
+                flight.identifiers = Set<String>()
+            }
+            (flight.identifiers)!.insert(identifier)
+        }
+
+        //print pending notification request ids
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print("These are pending requests in scheduling after scheduling: ")
+                print(request.identifier)
+            }
+        })
+    }
+
     override func willMove(toParentViewController parent: UIViewController?) {
         super.willMove(toParentViewController: parent)
         self.navigationController?.isNavigationBarHidden = true
@@ -170,8 +226,18 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                     removeFlightFromCoreData(datetime: (flightCell.flight?.datetime!)!)
                     handleRefresh()
                 }
+                removeNotificationsFromNotificationCenter(flight: flightCell.flight!)
             }
-            
+        }
+    }
+
+    func removeNotificationsFromNotificationCenter(flight: Flight) {
+        if(flight.identifiers == nil){
+            return
+        } else {
+            for id in flight.identifiers! {
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+            }
         }
     }
     
@@ -273,6 +339,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                 } else if let dbResults = task.result {
                     for flight in dbResults.items as! [Flight] {
                         resultFlights.append(flight)
+                        if (flight.getDate()! > Date()){
+                            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                                if settings.authorizationStatus == .authorized {
+                                    self.scheduleLocalNotifications(flight: flight)
+                                }
+                            }
+                        }
                     }
                 }
                 sema.signal()
@@ -529,4 +602,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
+}
+
+extension FlightsTableViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
 }
