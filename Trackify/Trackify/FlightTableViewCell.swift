@@ -9,26 +9,26 @@
 import UIKit
 
 class FlightTableViewCell: UITableViewCell {
-
+    
     // populates the table cell with flight information. Assumes that no fields in the flight
     // flight object are null
     var flight: Flight? {
         didSet {
             switch((flight?.airline)!) {
-                case "Southwest": flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
-                case "Delta": flightLogoImageView.image = #imageLiteral(resourceName: "delta_logo")
-                case "United": flightLogoImageView.image = #imageLiteral(resourceName: "united_logo")
-                case "American": flightLogoImageView.image = #imageLiteral(resourceName: "american_logo")
-                case "Virgin America": flightLogoImageView.image = #imageLiteral(resourceName: "virgin_logo")
-                case "Air Canada": flightLogoImageView.image = #imageLiteral(resourceName: "air_canada_logo")
-                case "Alaska": flightLogoImageView.image = #imageLiteral(resourceName: "alaska_logo")
-                case "Spirit": flightLogoImageView.image = #imageLiteral(resourceName: "spirit_logo")
-                case "Frontier": flightLogoImageView.image = #imageLiteral(resourceName: "frontier_logo")
-                case "JetBlue": flightLogoImageView.image = #imageLiteral(resourceName: "jetblue_logo")
-                case "Allegiant": flightLogoImageView.image = #imageLiteral(resourceName: "allegiant_logo")
-                case "Sun Country": flightLogoImageView.image = #imageLiteral(resourceName: "sun_country_logo")
-                case "Hawaiian": flightLogoImageView.image = #imageLiteral(resourceName: "hawaiian_logo")
-                default:flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
+            case "Southwest": flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
+            case "Delta": flightLogoImageView.image = #imageLiteral(resourceName: "delta_logo")
+            case "United": flightLogoImageView.image = #imageLiteral(resourceName: "united_logo")
+            case "American": flightLogoImageView.image = #imageLiteral(resourceName: "american_logo")
+            case "Virgin America": flightLogoImageView.image = #imageLiteral(resourceName: "virgin_logo")
+            case "Air Canada": flightLogoImageView.image = #imageLiteral(resourceName: "air_canada_logo")
+            case "Alaska": flightLogoImageView.image = #imageLiteral(resourceName: "alaska_logo")
+            case "Spirit": flightLogoImageView.image = #imageLiteral(resourceName: "spirit_logo")
+            case "Frontier": flightLogoImageView.image = #imageLiteral(resourceName: "frontier_logo")
+            case "JetBlue": flightLogoImageView.image = #imageLiteral(resourceName: "jetblue_logo")
+            case "Allegiant": flightLogoImageView.image = #imageLiteral(resourceName: "allegiant_logo")
+            case "Sun Country": flightLogoImageView.image = #imageLiteral(resourceName: "sun_country_logo")
+            case "Hawaiian": flightLogoImageView.image = #imageLiteral(resourceName: "hawaiian_logo")
+            default:flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
             }
             
             timeLabel.text = flight?.getTimeString()

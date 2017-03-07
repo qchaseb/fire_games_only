@@ -9,7 +9,7 @@
 import UIKit
 
 class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     /**
      *  Array to display menu options
      */
@@ -119,5 +119,5 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
 }

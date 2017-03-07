@@ -12,7 +12,7 @@ import CoreData
 import EventKit
 import SwiftSpinner
 
-class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
+class FlightsTableViewController: UITableViewController, SlideMenuDelegate, UpdateUserDelegate {
     
     // MARK: - Variables
     var user: User?
@@ -47,7 +47,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     fileprivate var refreshController: UIRefreshControl?
     fileprivate var helpers = Helpers()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialFlights = false
@@ -116,17 +116,17 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         UIApplication.shared.statusBarStyle = .default
         self.navigationController?.isNavigationBarHidden = true
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flights!.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell?
         if let flightCell = tableView.dequeueReusableCell(withIdentifier: Storyboard.FlightCell, for: indexPath) as? FlightTableViewCell {
@@ -232,7 +232,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             }
             
         }, completion:nil)
-
+        
         
     }
     
@@ -248,9 +248,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     }
     
     // gets all the flights assosiated with a given user and returns them in an array of flight objects
-    // returns flights in order of date. 
+    // returns flights in order of date.
     fileprivate func loadFlights(email:String) {
-
+        
         var resultFlights = [Flight]()
         var errorOccurred = false
         
@@ -278,7 +278,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 sema.signal()
                 return nil
             })
-
+        
         sema.wait()
         if (!errorOccurred) {
             self.flights = resultFlights
@@ -296,8 +296,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         switch(option){
         case "Account":
             print("Account Button Tapped")
-            
-            // self.openViewControllerBasedOnIdentifier("Account")
+            self.performSegue(withIdentifier: Storyboard.AccountSettingsSegue , sender: self)
             
             break
         case "Sign Out":
@@ -328,6 +327,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
     
+    // displays a modal share sheet view with links to various other apps
     fileprivate func displayShareSheet(flight: Flight) {
         var shareContent = "Here are the details for my upcoming flight:\n\n"
         shareContent += ("Flight:\t" + flight.airline! + " #" + flight.flightNumber! + "\n")
@@ -340,6 +340,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         present(activityViewController, animated: true, completion: {})
     }
     
+    // adds a calendar event to the user's calendar if possible
+    // detects and prevents the addition of duplicate events
     fileprivate func addFlightToCalendar(flight: Flight) {
         let eventStore : EKEventStore = EKEventStore()
         eventStore.requestAccess(to: .event) { (granted, error) in
@@ -388,9 +390,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 DispatchQueue.main.async {
                     self.displayAlert("Calendar Event Created", message: "Successfully added the selected flight's details to your calendar.")
                 }
-            }
-            else{
-                
+            } else {
                 print("failed to save event with error : \(error) or access not granted")
                 DispatchQueue.main.async {
                     self.displayAlert("Calendar Error", message: "Could not add the selected flight to your calendar. Please verify that Trackify has permission to access your calendar and try again. ")
@@ -434,6 +434,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
     
+    // for UpdateAccountDelegate
+    func updateUser(newUser: User) {
+        self.user = newUser
+    }
+    
     // open or close slider menu with animation
     func menuButtonTapped(_ sender : UIButton) {
         if menuVC != nil {
@@ -455,7 +460,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             menuBlurEffectView?.removeFromSuperview()
             menuBlurEffectView = nil
             if (optionsVC == nil) {
-               tableView.isScrollEnabled = true
+                tableView.isScrollEnabled = true
             }
         } else {
             addBlurView(forMenu: true)
@@ -501,11 +506,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             optionsBlurEffectView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.addSubview(optionsBlurEffectView!)
         }
-        
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.ManualEntrySegue {
@@ -516,7 +520,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 }
                 destinationVC.removeFlightFromCoreData = self.removeFlightFromCoreData
             }
+        } else if segue.identifier == Storyboard.AccountSettingsSegue {
+            if let destinationVC = segue.destination as? SignUpViewController {
+                destinationVC.editableUser = self.user
+                destinationVC.delegate = self
+                destinationVC.removeUserFromCoreData = self.removeUserFromCoreData
+            }
         }
     }
-
+    
 }

@@ -21,7 +21,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAway()
         self.setTextFieldDelegates()
         self.addSwipeGestureRecognizer()
-        // Do any additional setup after loading the view.
+        
+        if editableUser != nil {
+            setUpNavigationBar()
+            self.backButton.isHidden = true
+            self.emailTextField.text = editableUser?.email_id
+            self.firstNameTextField.text = editableUser?.first_name
+            self.lastNameTextField.text = editableUser?.last_name
+            self.titleLabel.text = "Update Account"
+            self.emailTextField.isUserInteractionEnabled = false
+            self.signUpButton.setTitle("Save", for: .normal)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,19 +52,31 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Variables
     
+    var delegate: UpdateUserDelegate?
+    
     fileprivate var activeField: UITextField?
     
-    fileprivate var newUser :User? {
+    fileprivate var newUser: User? {
         didSet {
             DispatchQueue.main.async {
                 self.addUserToCoreData()
-                self.performSegue(withIdentifier: Storyboard.NewUserSignInSegue , sender: self)
+                if self.editableUser == nil {
+                    self.performSegue(withIdentifier: Storyboard.NewUserSignInSegue , sender: self)
+                } else {
+                    self.delegate?.updateUser(newUser: self.newUser!)
+                    self.navigationController!.popViewController(animated: true)
+                }
+                
             }
         }
     }
     
     // get managed object context from delegate
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    
+    var editableUser: User?
+    
+    var removeUserFromCoreData: () -> Void = {_ in }
     
     // MARK: - UI Elements
     
@@ -70,7 +92,31 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     // MARK: - Other Functions
+    
+    // Set up the UI for the navigation bar
+    fileprivate func setUpNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        // set time and battery logos to be white
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        // set up title image
+        let logo = #imageLiteral(resourceName: "trackify_white_title")
+        let imageView = UIImageView(image: logo)
+        imageView.frame = CGRect(x:0, y:0, width:50, height:50)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+    }
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController!.popViewController(animated: true)
@@ -83,21 +129,27 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Missing Last Name", message: "Please enter your last name.")
         } else if (emailTextField.text == "" || !isValidEmail(testStr: emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "Please enter a valid email address.")
-        } else if (userWithEmailExists(emailTextField.text!)) {
+        } else if (editableUser == nil && userWithEmailExists(emailTextField.text!)) {
             displayAlert("Invalid Email Address", message: "User with email address already exists.")
-        } else if (passwordTextField.text == "") { 
+        } else if (passwordTextField.text == "") {
             displayAlert("Missing Password", message: "Please enter a valid password.")
         } else if (confirmTextField.text == "") {
             displayAlert("Missing Password Confirmation", message: "Please confirm your password.")
         } else if (passwordTextField.text! != confirmTextField.text!) {
             displayAlert("Password Mismatch", message: "Please confirm your password.")
             confirmTextField.text = ""
+        } else if editableUser != nil {
+            // updating user
+            SwiftSpinner.show("Updating Account")
+            removeUserFromCoreData()
+            addUserToDB()
+            
         } else {
+            // adding new user
+            // push data to AWS and sign in
             SwiftSpinner.show("Creating Account")
             addUserToDB();
         }
-        
-        // push data to AWS and sign in
     }
     
     fileprivate func addUserToDB() {
@@ -215,7 +267,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch (textField) {
         case firstNameTextField: lastNameTextField.becomeFirstResponder()
-        case lastNameTextField: emailTextField.becomeFirstResponder()
+        case lastNameTextField: if editableUser == nil { emailTextField.becomeFirstResponder() }
+        else { passwordTextField.becomeFirstResponder() }
         case emailTextField: passwordTextField.becomeFirstResponder()
         case passwordTextField: confirmTextField.becomeFirstResponder()
         default: textField.resignFirstResponder()
@@ -230,4 +283,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+}
+
+protocol UpdateUserDelegate {
+    func updateUser(newUser: User)
 }
