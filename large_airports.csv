@@ -1,0 +1,3118 @@
+iata_code,iso_region,municipality,name,iso_country
+WKK,US-AK,Aleknagik,Aleknagik / New Airport,US
+HIR,SB-CT,Honiara,Honiara International Airport,SB
+MUA,SB-WE,,Munda Airport,SB
+PPE,MX-SON,Puerto Peñasco,Mar de Cortés International Airport,MX
+INU,NR-14,Yaren District,Nauru International Airport,NR
+BUA,PG-NSB,Buka Island,Buka Airport,PG
+CMU,PG-CPK,Kundiawa,Chimbu Airport,PG
+DAU,PG-WPD,Daru,Daru Airport,PG
+GKA,PG-EHG,Goronka,Goroka Airport,PG
+GUR,PG-MBA,Gurney,Gurney Airport,PG
+PNP,PG-NPP,Popondetta,Girua Airport,PG
+HKN,PG-WBK,Hoskins,Kimbe Airport,PG
+KMA,PG-GPK,Kerema,Kerema Airport,PG
+KVG,PG-NIK,Kavieng,Kavieng Airport,PG
+MAG,PG-MPM,Madang,Madang Airport,PG
+HGU,PG-WHM,Mount Hagen,Mount Hagen Kagamuga Airport,PG
+MDU,PG-SHM,Mendi,Mendi Airport,PG
+MAS,PG-MRL,Manus Island,Momote Airport,PG
+LAE,PG-MPL,Lae,Nadzab Airport,PG
+POM,PG-NCD,Port Moresby,Port Moresby Jacksons International Airport,PG
+RAB,PG-EBR,Tokua,Tokua Airport,PG
+VAI,PG-SAN,Vanimo,Vanimo Airport,PG
+WBM,PG-EPW,,Wapenamanda Airport,PG
+WWK,PG-ESW,Wewak,Wewak International Airport,PG
+BCW,MZ-I,Benguera Island,Benguera Island Airport,MZ
+JEG,GL-U-A,Aasiaat,Aasiaat Airport,GL
+UAK,GL-U-A,Narsarsuaq,Narsarsuaq Airport,GL
+GOH,GL-U-A,Nuuk,Godthaab / Nuuk Airport,GL
+SFJ,GL-U-A,Kangerlussuaq,Kangerlussuaq Airport,GL
+THU,GL-U-A,Thule,Thule Air Base,GL
+AEY,IS-6,Akureyri,Akureyri Airport,IS
+EGS,IS-7,Egilsstaðir,Egilsstaðir Airport,IS
+HFN,IS-8,Höfn,Hornafjörður Airport,IS
+HZK,IS-6,Húsavík,Húsavík Airport,IS
+IFJ,IS-4,Ísafjörður,Ísafjörður Airport,IS
+KEF,IS-2,Reykjavík,Keflavik International Airport,IS
+RKV,IS-1,Reykjavik,Reykjavik Airport,IS
+PRN,XK-01,Prishtina,Priština International Airport,XK
+BGK,BZ-SC,Big Creek,Big Creek Airport,BZ
+CUK,BZ-BZ,Caye Caulker,Caye Caulker Airport,BZ
+CYC,BZ-BZ,Caye Chapel,Caye Chapel Airport,BZ
+CZH,BZ-CZL,Corozal,Corozal Municipal Airport,BZ
+DGA,BZ-SC,Dangriga,Dangriga Airport,BZ
+PLJ,BZ-SC,Placencia,Placencia Airport,BZ
+PND,BZ-TOL,Punta Gorda,Punta Gorda Airport,BZ
+SJX,BZ-CZL,Sartaneja,Sartaneja Airport,BZ
+SPR,BZ-CY,San Pedro,San Pedro Airport,BZ
+TZA,BZ-BZ,Belize City,Belize City Municipal Airport,BZ
+,CA-U-A,,Cyll,CA
+ZQZ,CN-13,Zhangjiakou,Zhangjiakou Ningyuan Airport,CN
+BSD,CN-53,,Baoshan Yunduan Airport,CN
+LNJ,CN-53,Lincang,Lintsang Airfield,CN
+RKZ,CN-54,Xigazê,Shigatse Air Base,CN
+PZI,CN-51,Panzhihua,Bao'anying Airport,CN
+FUO,CN-44,Foshan,Foshan Shadi Airport,CN
+HUZ,CN-44,Huizhou,Huizhou Airport,CN
+JGS,CN-36,Ji'an,Jinggangshan Airport,CN
+AEB,CN-45,Baise,Baise Youjiang Airport,CN
+AAT,CN-65,Altay,Altay Air Base,CN
+THQ,CN-62,Tianshui,Tianshui Maijishan Airport,CN
+YZY,CN-62,Zhangye,Zhangye Ganzhou Airport,CN
+DDG,CN-21,Dandong,Dandong Airport,CN
+GEC,CY-03,Geçitkale,Geçitkale Air Base,CY
+YAC,CA-ON,Cat Lake,Cat Lake Airport,CA
+YAG,CA-ON,Fort Frances,Fort Frances Municipal Airport,CA
+YAM,CA-ON,Sault Ste Marie,Sault Ste Marie Airport,CA
+XKS,CA-ON,Kasabonika,Kasabonika Airport,CA
+YKG,CA-QC,Kangirsuk,Kangirsuk Airport,CA
+YAT,CA-ON,Attawapiskat,Attawapiskat Airport,CA
+,CA-MB,Lac Du Bonnet,Lac Du Bonnet Airport,CA
+YAY,CA-NL,St. Anthony,St. Anthony Airport,CA
+YAZ,CA-BC,Tofino,Tofino / Long Beach Airport,CA
+YBB,CA-NU,Kugaaruk,Kugaaruk Airport,CA
+YBC,CA-QC,Baie-Comeau,Baie Comeau Airport,CA
+QBC,CA-BC,Bella Coola,Bella Coola Airport,CA
+YBE,CA-SK,Uranium City,Uranium City Airport,CA
+YBY,CA-AB,Bonnyville,Bonnyville Airport,CA
+YBG,CA-QC,Bagotville,CFB Bagotville,CA
+YBK,CA-NU,Baker Lake,Baker Lake Airport,CA
+YBL,CA-BC,Campbell River,Campbell River Airport,CA
+XTL,CA-MB,Tadoule Lake,Tadoule Lake Airport,CA
+YBR,CA-MB,Brandon,Brandon Municipal Airport,CA
+YBT,CA-MB,Brochet,Brochet Airport,CA
+YBV,CA-MB,Berens River,Berens River Airport,CA
+YBX,CA-QC,Lourdes-De-Blanc-Sablon,Lourdes de Blanc Sablon Airport,CA
+YRF,CA-NL,Cartwright,Cartwright Airport,CA
+YCB,CA-NU,Cambridge Bay,Cambridge Bay Airport,CA
+YCD,CA-BC,Nanaimo,Nanaimo Airport,CA
+YCG,CA-BC,Castlegar,Castlegar/West Kootenay Regional Airport,CA
+YCH,CA-NB,Miramichi,Miramichi Airport,CA
+YCL,CA-NB,Charlo,Charlo Airport,CA
+YCO,CA-NU,Kugluktuk,Kugluktuk Airport,CA
+YCS,CA-NU,Chesterfield Inlet,Chesterfield Inlet Airport,CA
+YCY,CA-NU,Clyde River,Clyde River Airport,CA
+YDA,CA-YT,Dawson City,Dawson City Airport,CA
+YDF,CA-NL,Deer Lake,Deer Lake Airport,CA
+YDN,CA-MB,Dauphin,Dauphin Barker Airport,CA
+YDP,CA-NL,Nain,Nain Airport,CA
+YDQ,CA-BC,Dawson Creek,Dawson Creek Airport,CA
+YEG,CA-AB,Edmonton,Edmonton International Airport,CA
+YEK,CA-NU,Arviat,Arviat Airport,CA
+YER,CA-ON,Fort Severn,Fort Severn Airport,CA
+YEV,CA-NT,Inuvik,Inuvik Mike Zubko Airport,CA
+YFA,CA-ON,Fort Albany,Fort Albany Airport,CA
+YFB,CA-NU,Iqaluit,Iqaluit Airport,CA
+YFC,CA-NB,Fredericton,Fredericton Airport,CA
+YFH,CA-ON,Fort Hope,Fort Hope Airport,CA
+YFO,CA-MB,Flin Flon,Flin Flon Airport,CA
+YFS,CA-NT,Fort Simpson,Fort Simpson Airport,CA
+YMN,CA-NL,Makkovik,Makkovik Airport,CA
+YGB,CA-BC,Texada,Texada Gillies Bay Airport,CA
+YGH,CA-NT,Fort Good Hope,Fort Good Hope Airport,CA
+YGK,CA-ON,Kingston,Kingston Norman Rogers Airport,CA
+YGL,CA-QC,La Grande Rivière,La Grande Rivière Airport,CA
+YGO,CA-MB,Gods Lake Narrows,Gods Lake Narrows Airport,CA
+YGP,CA-QC,Gaspé,Gaspé (Michel-Pouliot) Airport,CA
+YGR,CA-QC,Îles-de-la-Madeleine,Îles-de-la-Madeleine Airport,CA
+YGT,CA-NU,Igloolik,Igloolik Airport,CA
+YGW,CA-QC,Kuujjuarapik,Kuujjuarapik Airport,CA
+YGX,CA-MB,Gillam,Gillam Airport,CA
+YGZ,CA-NU,Grise Fiord,Grise Fiord Airport,CA
+YQC,CA-QC,Quaqtaq,Quaqtaq Airport,CA
+YHD,CA-ON,Dryden,Dryden Regional Airport,CA
+YNS,CA-QC,Nemiscau,Nemiscau Airport,CA
+YHI,CA-NT,Ulukhaktok,Ulukhaktok Holman Airport,CA
+YHK,CA-NU,Gjoa Haven,Gjoa Haven Airport,CA
+YHM,CA-ON,Hamilton,John C. Munro Hamilton International Airport,CA
+YHO,CA-NL,Hopedale,Hopedale Airport,CA
+YHR,CA-QC,Chevery,Chevery Airport,CA
+YHU,CA-QC,Montréal,Montréal / Saint-Hubert Airport,CA
+YHY,CA-NT,Hay River,Hay River / Merlyn Carter Airport,CA
+YHZ,CA-NS,Halifax,Halifax / Stanfield International Airport,CA
+YIK,CA-QC,Ivujivik,Ivujivik Airport,CA
+YIO,CA-NU,Pond Inlet,Pond Inlet Airport,CA
+YIV,CA-MB,Island Lake,Island Lake Airport,CA
+YJT,CA-NL,Stephenville,Stephenville Airport,CA
+YKA,CA-BC,Kamloops,Kamloops Airport,CA
+LAK,CA-NT,Aklavik,Aklavik/Freddie Carmichael Airport,CA
+YKF,CA-ON,Kitchener,Waterloo Airport,CA
+YWB,CA-QC,Kangiqsujuaq,Kangiqsujuaq (Wakeham Bay) Airport,CA
+YKL,CA-QC,Schefferville,Schefferville Airport,CA
+AKV,CA-QC,Akulivik,Akulivik Airport,CA
+YKQ,CA-QC,Waskaganish,Waskaganish Airport,CA
+YPJ,CA-QC,Aupaluk,Aupaluk Airport,CA
+YLC,CA-NU,Kimmirut,Kimmirut Airport,CA
+YLH,CA-ON,Lansdowne House,Lansdowne House Airport,CA
+YSG,CA-NT,Lutselk'e,Lutselk'e Airport,CA
+YLL,CA-AB,Lloydminster,Lloydminster Airport,CA
+XGR,CA-QC,Kangiqsualujjuaq,Kangiqsualujjuaq (Georges River) Airport,CA
+YLW,CA-BC,Kelowna,Kelowna International Airport,CA
+YMH,CA-NL,Mary's Harbour,Mary's Harbour Airport,CA
+YMM,CA-AB,Fort McMurray,Fort McMurray Airport,CA
+YMO,CA-ON,Moosonee,Moosonee Airport,CA
+YMT,CA-QC,Chibougamau,Chapais Airport,CA
+YUD,CA-QC,Umiujaq,Umiujaq Airport,CA
+YNA,CA-QC,Natashquan,Natashquan Airport,CA
+YNC,CA-QC,Wemindji,Wemindji Airport,CA
+YNE,CA-MB,Norway House,Norway House Airport,CA
+YNL,CA-SK,Points North Landing,Points North Landing Airport,CA
+YOC,CA-YT,Old Crow,Old Crow Airport,CA
+YOH,CA-MB,Oxford House,Oxford House Airport,CA
+YOJ,CA-AB,High Level,High Level Airport,CA
+YOP,CA-AB,Rainbow Lake,Rainbow Lake Airport,CA
+YOW,CA-ON,Ottawa,Ottawa Macdonald-Cartier International Airport,CA
+YPA,CA-SK,Prince Albert,Prince Albert Glass Field,CA
+YPC,CA-NT,Paulatuk,Paulatuk (Nora Aliqatchialuk Ruben) Airport,CA
+YPE,CA-AB,Peace River,Peace River Airport,CA
+YPH,CA-QC,Inukjuak,Inukjuak Airport,CA
+YPL,CA-ON,Pickle Lake,Pickle Lake Airport,CA
+YPM,CA-ON,Pikangikum,Pikangikum Airport,CA
+YPO,CA-ON,Peawanuck,Peawanuck Airport,CA
+YPR,CA-BC,Prince Rupert,Prince Rupert Airport,CA
+YPW,CA-BC,Powell River,Powell River Airport,CA
+YPY,CA-AB,Fort Chipewyan,Fort Chipewyan Airport,CA
+YQB,CA-QC,Quebec,Quebec Jean Lesage International Airport,CA
+YQD,CA-MB,The Pas,The Pas Airport,CA
+YQG,CA-ON,Windsor,Windsor Airport,CA
+YQK,CA-ON,Kenora,Kenora Airport,CA
+YQL,CA-AB,Lethbridge,Lethbridge County Airport,CA
+YQM,CA-NB,Moncton,Greater Moncton International Airport,CA
+YQN,CA-ON,Nakina,Nakina Airport,CA
+YQQ,CA-BC,Comox,Comox Airport,CA
+YQR,CA-SK,Regina,Regina International Airport,CA
+YQT,CA-ON,Thunder Bay,Thunder Bay Airport,CA
+YQU,CA-AB,Grande Prairie,Grande Prairie Airport,CA
+YQX,CA-NL,Gander,Gander International Airport,CA
+YQY,CA-NS,Sydney,Sydney / J.A. Douglas McCurdy Airport,CA
+YQZ,CA-BC,Quesnel,Quesnel Airport,CA
+YRA,CA-NT,Gamètì,Rae Lakes Airport,CA
+YRB,CA-NU,Resolute Bay,Resolute Bay Airport,CA
+YRJ,CA-QC,Roberval,Roberval Airport,CA
+YRL,CA-ON,Red Lake,Red Lake Airport,CA
+YRT,CA-NU,Rankin Inlet,Rankin Inlet Airport,CA
+YSB,CA-ON,Sudbury,Sudbury Airport,CA
+YSF,CA-SK,Stony Rapids,Stony Rapids Airport,CA
+YSJ,CA-NB,Saint John,Saint John Airport,CA
+YSK,CA-NU,Sanikiluaq,Sanikiluaq Airport,CA
+YSM,CA-NT,Fort Smith,Fort Smith Airport,CA
+YST,CA-MB,St. Theresa Point,St. Theresa Point Airport,CA
+YSY,CA-NT,Sachs Harbour,Sachs Harbour (David Nasogaluak Jr. Saaryuaq) Airport,CA
+YTE,CA-NU,Cape Dorset,Cape Dorset Airport,CA
+YTF,CA-QC,Alma,Alma Airport,CA
+YTH,CA-MB,Thompson,Thompson Airport,CA
+YTL,CA-ON,Big Trout Lake,Big Trout Lake Airport,CA
+YTS,CA-ON,Timmins,Timmins/Victor M. Power,CA
+YTZ,CA-ON,Toronto,Billy Bishop Toronto City Centre Airport,CA
+YUB,CA-NT,Tuktoyaktuk,Tuktoyaktuk Airport,CA
+YUL,CA-QC,Montréal,Montreal / Pierre Elliott Trudeau International Airport,CA
+YUT,CA-NU,Repulse Bay,Repulse Bay Airport,CA
+YUX,CA-NU,Hall Beach,Hall Beach Airport,CA
+YUY,CA-QC,Rouyn-Noranda,Rouyn Noranda Airport,CA
+YVC,CA-SK,La Ronge,La Ronge Airport,CA
+YVM,CA-NU,Qikiqtarjuaq,Qikiqtarjuaq Airport,CA
+YVO,CA-QC,Val-d'Or,Val-d'Or Airport,CA
+YVP,CA-QC,Kuujjuaq,Kuujjuaq Airport,CA
+YVQ,CA-NT,Norman Wells,Norman Wells Airport,CA
+YVR,CA-BC,Vancouver,Vancouver International Airport,CA
+YVZ,CA-ON,Deer Lake,Deer Lake Airport,CA
+YWG,CA-MB,Winnipeg,Winnipeg / James Armstrong Richardson International Airport,CA
+YWJ,CA-NT,Déline,Déline Airport,CA
+YWK,CA-NL,Wabush,Wabush Airport,CA
+YWL,CA-BC,Williams Lake,Williams Lake Airport,CA
+YWP,CA-ON,Webequie,Webequie Airport,CA
+YXC,CA-BC,Cranbrook,Cranbrook/Canadian Rockies International Airport,CA
+YXE,CA-SK,Saskatoon,Saskatoon John G. Diefenbaker International Airport,CA
+YXH,CA-AB,Medicine Hat,Medicine Hat Airport,CA
+YXJ,CA-BC,Fort St.John,Fort St John Airport,CA
+YXL,CA-ON,Sioux Lookout,Sioux Lookout Airport,CA
+YXN,CA-NU,Whale Cove,Whale Cove Airport,CA
+YXP,CA-NU,Pangnirtung,Pangnirtung Airport,CA
+YXS,CA-BC,Prince George,Prince George Airport,CA
+YXT,CA-BC,Terrace,Northwest Regional Airport Terrace-Kitimat,CA
+YXU,CA-ON,London,London Airport,CA
+YXX,CA-BC,Abbotsford,Abbotsford Airport,CA
+YXY,CA-YT,Whitehorse,Whitehorse / Erik Nielsen International Airport,CA
+YYB,CA-ON,North Bay,North Bay Airport,CA
+YYC,CA-AB,Calgary,Calgary International Airport,CA
+YYD,CA-BC,Smithers,Smithers Airport,CA
+YYE,CA-BC,Fort Nelson,Fort Nelson Airport,CA
+YYF,CA-BC,Penticton,Penticton Airport,CA
+YYG,CA-PE,Charlottetown,Charlottetown Airport,CA
+YYH,CA-NU,Taloyoak,Taloyoak Airport,CA
+YYJ,CA-BC,Victoria,Victoria International Airport,CA
+YYL,CA-MB,Lynn Lake,Lynn Lake Airport,CA
+YYQ,CA-MB,Churchill,Churchill Airport,CA
+YYR,CA-NL,Goose Bay,Goose Bay Airport,CA
+YYT,CA-NL,St. John's,St. John's International Airport,CA
+YYU,CA-ON,Kapuskasing,Kapuskasing Airport,CA
+YYY,CA-QC,Mont-Joli,Mont Joli Airport,CA
+YYZ,CA-ON,Toronto,Lester B. Pearson International Airport,CA
+YZF,CA-NT,Yellowknife,Yellowknife Airport,CA
+YZG,CA-QC,Salluit,Salluit Airport,CA
+YZP,CA-BC,Sandspit,Sandspit Airport,CA
+YZR,CA-ON,Sarnia,Chris Hadfield Airport,CA
+YZS,CA-NU,Coral Harbour,Coral Harbour Airport,CA
+YZT,CA-BC,Port Hardy,Port Hardy Airport,CA
+YZV,CA-QC,Sept-Îles,Sept-Îles Airport,CA
+ZAC,CA-MB,York Landing,York Landing Airport,CA
+ILF,CA-MB,Ilford,Ilford Airport,CA
+ZBF,CA-NB,Bathurst,Bathurst Airport,CA
+ZEM,CA-QC,Eastmain River,Eastmain River Airport,CA
+ZFD,CA-SK,Fond-Du-Lac,Fond-Du-Lac Airport,CA
+ZFM,CA-NT,Fort Mcpherson,Fort Mcpherson Airport,CA
+ZFN,CA-NT,Tulita,Tulita Airport,CA
+ZGI,CA-MB,Gods River,Gods River Airport,CA
+ZJN,CA-MB,Swan River,Swan River Airport,CA
+ZKE,CA-ON,Kashechewan,Kashechewan Airport,CA
+MSA,CA-ON,Muskrat Dam,Muskrat Dam Airport,CA
+ZMT,CA-BC,Masset,Masset Airport,CA
+ZPB,CA-ON,Sachigo Lake,Sachigo Lake Airport,CA
+ZRJ,CA-ON,Round Lake,Round Lake (Weagamow Lake) Airport,CA
+ZSJ,CA-ON,Sandy Lake,Sandy Lake Airport,CA
+ZTM,CA-MB,Shamattawa,Shamattawa Airport,CA
+ZWL,CA-SK,Wollaston Lake,Wollaston Lake Airport,CA
+BJA,DZ-06,Béjaïa,Soummam Airport,DZ
+ALG,DZ-35,Algiers,Houari Boumediene Airport,DZ
+DJG,DZ-33,Djanet,Djanet Inedbirene Airport,DZ
+VVZ,DZ-33,Illizi,Illizi Takhamalt Airport,DZ
+QSF,DZ-19,Sétif,Ain Arnat Airport,DZ
+TMR,DZ-11,Tamanrasset,Aguenar – Hadj Bey Akhamok Airport,DZ
+GJL,DZ-18,Jijel,Jijel Ferhat Abbas Airport,DZ
+AAE,DZ-36,Annabah,Annaba Airport,DZ
+CZL,DZ-25,Constantine,Mohamed Boudiaf International Airport,DZ
+TEE,DZ-12,Tébessi,Cheikh Larbi Tébessi Airport,DZ
+BLJ,DZ-05,Batna,Batna Airport,DZ
+HRM,DZ-03,,Hassi R'Mel Airport,DZ
+TIN,DZ-37,Tindouf,Tindouf Airport,DZ
+TLM,DZ-13,Tlemcen,Zenata – Messali El Hadj Airport,DZ
+ORN,DZ-31,Oran,Es Senia Airport,DZ
+CBH,DZ-08,Béchar,Béchar Boudghene Ben Ali Lotfi Airport,DZ
+AZR,DZ-01,,Touat Cheikh Sidi Mohamed Belkebir Airport,DZ
+BSK,DZ-07,Biskra,Biskra Airport,DZ
+ELG,DZ-47,,El Golea Airport,DZ
+GHA,DZ-47,Ghardaïa,Noumérat - Moufdi Zakaria Airport,DZ
+HME,DZ-30,Hassi Messaoud,Oued Irara Airport,DZ
+INZ,DZ-11,In Salah,In Salah Airport,DZ
+TGR,DZ-30,Touggourt,Touggourt Sidi Madhi Airport,DZ
+ELU,DZ-39,Guemar,Guemar Airport,DZ
+TMX,DZ-01,Timimoun,Timimoun Airport,DZ
+OGX,DZ-30,Ouargla,Ain el Beida Airport,DZ
+IAM,DZ-33,Aménas,In Aménas Airport,DZ
+COO,BJ-AQ,Cotonou,Cadjehoun Airport,BJ
+OUA,BF-KAD,Ouagadougou,Ouagadougou Airport,BF
+BOY,BF-HOU,Bobo Dioulasso,Bobo Dioulasso Airport,BF
+ACC,GH-AA,Accra,Kotoka International Airport,GH
+TML,GH-NP,Tamale,Tamale Airport,GH
+KMS,GH-AH,Kumasi,Kumasi Airport,GH
+NYI,GH-BA,Sunyani,Sunyani Airport,GH
+TKD,GH-WP,Sekondi-Takoradi,Takoradi Airport,GH
+ABJ,CI-01,Abidjan,Port Bouet Airport,CI
+BYK,CI-04,,Bouaké Airport,CI
+ABV,NG-FC,Abuja,Nnamdi Azikiwe International Airport,NG
+QUO,NG-AK,Uyo,Akwa Ibom International Airport,NG
+AKR,NG-ON,Akure,Akure Airport,NG
+BNI,NG-ED,Benin,Benin Airport,NG
+CBQ,NG-CR,Calabar,Margaret Ekpo International Airport,NG
+ENU,NG-EN,Enegu,Akanu Ibiam International Airport,NG
+IBA,NG-OY,Ibadan,Ibadan Airport,NG
+ILR,NG-KW,Ilorin,Ilorin International Airport,NG
+QOW,NG-IM,Owerri,Sam Mbakwe International Airport,NG
+JOS,NG-PL,Jos,Yakubu Gowon Airport,NG
+KAD,NG-KD,Kaduna,Kaduna Airport,NG
+KAN,NG-KN,Kano,Mallam Aminu International Airport,NG
+MIU,NG-BO,Maiduguri,Maiduguri International Airport,NG
+LOS,NG-LA,Lagos,Murtala Muhammed International Airport,NG
+PHC,NG-RI,Port Harcourt,Port Harcourt International Airport,NG
+SKO,NG-SO,Sokoto,Sadiq Abubakar III International Airport,NG
+YOL,NG-AD,Yola,Yola Airport,NG
+NIM,NE-8,Niamey,Diori Hamani International Airport,NE
+AJY,NE-1,Agadez,Mano Dayak International Airport,NE
+ZND,NE-7,Zinder,Zinder Airport,NE
+TBJ,TN-32,Tabarka,Tabarka 7 Novembre Airport,TN
+MIR,TN-52,Monastir,Monastir Habib Bourguiba International Airport,TN
+TUN,TN-11,Tunis,Tunis Carthage International Airport,TN
+GAF,TN-71,Gafsa,Gafsa Ksar International Airport,TN
+GAE,TN-81,Gabès,Gabès Matmata International Airport,TN
+DJE,TN-82,Djerba,Djerba Zarzis International Airport,TN
+SFA,TN-61,Sfax,Sfax Thyna International Airport,TN
+TOE,TN-72,Tozeur,Tozeur Nefta International Airport,TN
+LFW,TG-M,Lomé,Lomé-Tokoin Airport,TG
+ANR,BE-VAN,Antwerp,Antwerp International Airport (Deurne),BE
+BRU,BE-BRU,Brussels,Brussels Airport,BE
+CRL,BE-WHT,Brussels,Brussels South Charleroi Airport,BE
+LGG,BE-WLG,Liège,Liège Airport,BE
+OST,BE-VWV,Ostend,Ostend-Bruges International Airport,BE
+AOC,DE-TH,Altenburg,Altenburg-Nobitz Airport,DE
+HDF,DE-MV,Heringsdorf,Heringsdorf Airport,DE
+SXF,DE-BR,Berlin,Berlin-Schönefeld International Airport,DE
+DRS,DE-SN,Dresden,Dresden Airport,DE
+ERF,DE-TH,Erfurt,Erfurt Airport,DE
+FRA,DE-HE,Frankfurt-am-Main,Frankfurt am Main International Airport,DE
+FMO,DE-NW,Münster,Münster Osnabrück Airport,DE
+HAM,DE-HH,Hamburg,Hamburg Airport,DE
+CGN,DE-NW,Cologne,Cologne Bonn Airport,DE
+DUS,DE-NW,Düsseldorf,Düsseldorf International Airport,DE
+MUC,DE-BY,Munich,Munich International Airport,DE
+NUE,DE-BY,Nuremberg,Nuremberg Airport,DE
+LEJ,DE-SN,Leipzig,Leipzig Halle Airport,DE
+SCN,DE-SL,Saarbrücken,Saarbrücken Airport,DE
+STR,DE-BW,Stuttgart,Stuttgart Airport,DE
+TXL,DE-BE,Berlin,Berlin-Tegel International Airport,DE
+HAJ,DE-NI,Hannover,Hannover Airport,DE
+BRE,DE-HB,Bremen,Bremen Airport,DE
+HHN,DE-RP,Hahn,Frankfurt-Hahn Airport,DE
+MHG,DE-BW,Mannheim,Mannheim-City Airport,DE
+KEL,DE-SH,Kiel,Kiel-Holtenau Airport,DE
+LBC,DE-SH,Lübeck,Lübeck Blankensee Airport,DE
+FMM,DE-BY,Memmingen,Memmingen Allgau Airport,DE
+PAD,DE-NW,Paderborn,Paderborn Lippstadt Airport,DE
+NRN,DE-NW,Weeze,Weeze Airport,DE
+DTM,DE-NW,Dortmund,Dortmund Airport,DE
+AGB,DE-BY,Augsburg,Augsburg Airport,DE
+FDH,DE-BW,Friedrichshafen,Friedrichshafen Airport,DE
+HOQ,DE-BY,Hof,Hof-Plauen Airport,DE
+FKB,DE-BW,Baden-Baden,Karlsruhe Baden-Baden Airport,DE
+BWE,DE-NI,,Braunschweig Wolfsburg Airport,DE
+KSF,DE-HE,Kassel,Kassel-Calden Airport,DE
+GWT,DE-SH,Westerland,Westerland Sylt Airport,DE
+KDL,EE-39,Kärdla,Kärdla Airport,EE
+URE,EE-74,Kuressaare,Kuressaare Airport,EE
+EPU,EE-67,Pärnu,Pärnu Airport,EE
+TLL,EE-37,Tallinn,Lennart Meri Tallinn Airport,EE
+TAY,EE-7B,Tartu,Tartu Airport,EE
+ENF,FI-LL,Enontekio,Enontekio Airport,FI
+HEL,FI-ES,Helsinki,Helsinki Vantaa Airport,FI
+IVL,FI-LL,Ivalo,Ivalo Airport,FI
+JOE,FI-IS,Joensuu / Liperi,Joensuu Airport,FI
+JYV,FI-LS,Jyväskylän Maalaiskunta,Jyvaskyla Airport,FI
+KEM,FI-LL,Kemi / Tornio,Kemi-Tornio Airport,FI
+KAJ,FI-OL,Kajaani,Kajaani Airport,FI
+KOK,FI-LS,Kokkola / Kruunupyy,Kokkola-Pietarsaari Airport,FI
+KAO,FI-OL,Kuusamo,Kuusamo Airport,FI
+KTT,FI-LL,Kittilä,Kittilä Airport,FI
+KUO,FI-IS,Kuopio / Siilinjärvi,Kuopio Airport,FI
+MHQ,FI-AL,,Mariehamn Airport,FI
+OUL,FI-OL,Oulu / Oulunsalo,Oulu Airport,FI
+POR,FI-LS,Pori,Pori Airport,FI
+RVN,FI-LL,Rovaniemi,Rovaniemi Airport,FI
+SVL,FI-IS,Savonlinna,Savonlinna Airport,FI
+SJY,FI-LS,Seinäjoki / Ilmajoki,Seinäjoki Airport,FI
+TMP,FI-LS,Tampere / Pirkkala,Tampere-Pirkkala Airport,FI
+TKU,FI-LS,Turku,Turku Airport,FI
+VAA,FI-LS,Vaasa,Vaasa Airport,FI
+VRK,FI-IS,Varkaus / Joroinen,Varkaus Airport,FI
+BFS,GB-NIR,Belfast,Belfast International Airport,GB
+BHD,GB-NIR,Belfast,George Best Belfast City Airport,GB
+LDY,GB-NIR,Derry,City of Derry Airport,GB
+BHX,GB-ENG,Birmingham,Birmingham International Airport,GB
+NQT,GB-ENG,Nottingham,Nottingham Airport,GB
+MAN,GB-ENG,Manchester,Manchester Airport,GB
+DSA,GB-ENG,Doncaster,Robin Hood Doncaster Sheffield Airport,GB
+CAL,GB-SCT,Campbeltown,Campbeltown Airport,GB
+EOI,GB-SCT,Eday,Eday Airport,GB
+FIE,GB-SCT,Fair Isle,Fair Isle Airport,GB
+CWL,GB-WLS,Cardiff,Cardiff International Airport,GB
+BRS,GB-ENG,Bristol,Bristol Airport,GB
+LPL,GB-ENG,Liverpool,Liverpool John Lennon Airport,GB
+LTN,GB-ENG,London,London Luton Airport,GB
+LEQ,GB-ENG,Land's End,Land's End Airport,GB
+ISC,GB-ENG,St. Mary's,St. Mary's Airport,GB
+BOH,GB-ENG,Bournemouth,Bournemouth Airport,GB
+SOU,GB-ENG,Southampton,Southampton Airport,GB
+NQY,GB-ENG,Newquay,Newquay Cornwall Airport,GB
+ACI,GG-U-A,Saint Anne,Alderney Airport,GG
+GCI,GG-U-A,Saint Peter Port,Guernsey Airport,GG
+JER,JE-U-A,Saint Helier,Jersey Airport,JE
+LGW,GB-ENG,London,London Gatwick Airport,GB
+LCY,GB-ENG,London,London City Airport,GB
+LHR,GB-ENG,London,London Heathrow Airport,GB
+SEN,GB-ENG,Southend,Southend Airport,GB
+LYX,GB-ENG,"Lydd, Ashford",Lydd Airport,GB
+BLK,GB-ENG,Blackpool,Blackpool International Airport,GB
+HUY,GB-ENG,Grimsby,Humberside Airport,GB
+LBA,GB-ENG,Leeds,Leeds Bradford Airport,GB
+CEG,GB-WLS,Hawarden,Hawarden Airport,GB
+IOM,IM-U-A,Castletown,Isle of Man Airport,IM
+NCL,GB-ENG,Newcastle,Newcastle Airport,GB
+MME,GB-ENG,Durham,Durham Tees Valley Airport,GB
+EMA,GB-ENG,Nottingham,East Midlands Airport,GB
+VLY,GB-WLS,Angelsey,Anglesey Airport,GB
+KOI,GB-SCT,Orkney Islands,Kirkwall Airport,GB
+LSI,GB-SCT,Lerwick,Sumburgh Airport,GB
+WIC,GB-SCT,Wick,Wick Airport,GB
+ABZ,GB-SCT,Aberdeen,Aberdeen Dyce Airport,GB
+INV,GB-SCT,Inverness,Inverness Airport,GB
+GLA,GB-SCT,Glasgow,Glasgow International Airport,GB
+EDI,GB-SCT,Edinburgh,Edinburgh Airport,GB
+ILY,GB-SCT,Port Ellen,Islay Airport,GB
+PIK,GB-SCT,Glasgow,Glasgow Prestwick Airport,GB
+BEB,GB-SCT,Balivanich,Benbecula Airport,GB
+DND,GB-SCT,Dundee,Dundee Airport,GB
+SYY,GB-SCT,Stornoway,Stornoway Airport,GB
+BRR,GB-SCT,Eoligarry,Barra Airport,GB
+TRE,GB-SCT,Balemartine,Tiree Airport,GB
+NWI,GB-ENG,Norwich,Norwich International Airport,GB
+STN,GB-ENG,London,London Stansted Airport,GB
+EXT,GB-ENG,Exeter,Exeter International Airport,GB
+LKZ,GB-ENG,Lakenheath,RAF Lakenheath,GB
+MHZ,GB-ENG,Mildenhall,RAF Mildenhall,GB
+FFD,GB-ENG,Fairford,RAF Fairford,GB
+BZZ,GB-ENG,Brize Norton,RAF Brize Norton,GB
+MPN,FK-U-A,Mount Pleasant,Mount Pleasant Airport,FK
+AMS,NL-NH,Amsterdam,Amsterdam Airport Schiphol,NL
+MST,NL-LI,Maastricht,Maastricht Aachen Airport,NL
+EIN,NL-NB,Eindhoven,Eindhoven Airport,NL
+GRQ,NL-DR,Groningen,Eelde Airport,NL
+RTM,NL-ZH,Rotterdam,Rotterdam The Hague Airport,NL
+ORK,IE-C,Cork,Cork Airport,IE
+GWY,IE-G,Galway,Galway Airport,IE
+CFN,IE-DL,Donegal,Donegal Airport,IE
+DUB,IE-D,Dublin,Dublin Airport,IE
+NOC,IE-MO,Charleston,Ireland West Knock Airport,IE
+KIR,IE-KY,Killarney,Kerry Airport,IE
+SNN,IE-CE,Limerick,Shannon Airport,IE
+WAT,IE-WD,Waterford,Waterford Airport,IE
+AAR,DK-82,Aarhus,Aarhus Airport,DK
+BLL,DK-83,Billund,Billund Airport,DK
+CPH,DK-84,Copenhagen,Copenhagen Kastrup Airport,DK
+EBJ,DK-83,Esbjerg,Esbjerg Airport,DK
+KRP,DK-82,Karup,Karup Airport,DK
+ODE,DK-83,Odense,Odense Airport,DK
+RNN,DK-84,Rønne,Bornholm Airport,DK
+SGD,DK-83,Sønderborg,Sønderborg Airport,DK
+CNL,DK-81,Sindal,Sindal Airport,DK
+FAE,FO-U-A,Vagar,Vagar Airport,FO
+AAL,DK-81,Aalborg,Aalborg Airport,DK
+LUX,LU-L,Luxembourg,Luxembourg-Findel International Airport,LU
+AES,NO-15,Ålesund,Ålesund Airport,NO
+ANX,NO-18,Andenes,Andøya Airport,NO
+ALF,NO-20,Alta,Alta Airport,NO
+BNN,NO-18,Brønnøy,Brønnøysund Airport,NO
+BOO,NO-18,Bodø,Bodø Airport,NO
+BGO,NO-12,Bergen,Bergen Airport Flesland,NO
+BJF,NO-20,Båtsfjord,Båtsfjord Airport,NO
+BVG,NO-20,Berlevåg,Berlevåg Airport,NO
+KRS,NO-10,Kjevik,Kristiansand Airport,NO
+BDU,NO-19,Målselv,Bardufoss Airport,NO
+EVE,NO-18,Evenes,"Harstad/Narvik Airport, Evenes",NO
+VDB,NO-05,,Leirin Airport,NO
+FRO,NO-14,Florø,Florø Airport,NO
+OSL,NO-02,Oslo,Oslo Gardermoen Airport,NO
+HAU,NO-11,Karmøy,Haugesund Airport,NO
+HFT,NO-20,Hammerfest,Hammerfest Airport,NO
+HVG,NO-20,Honningsvåg,Valan Airport,NO
+KSU,NO-15,Kvernberget,Kristiansund Airport (Kvernberget),NO
+KKN,NO-20,Kirkenes,Kirkenes Airport (Høybuktmoen),NO
+LKN,NO-18,Leknes,Leknes Airport,NO
+MEH,NO-20,Mehamn,Mehamn Airport,NO
+MOL,NO-15,Årø,Molde Airport,NO
+MJF,NO-18,,Mosjøen Airport (Kjærstad),NO
+LKL,NO-20,Lakselv,Banak Airport,NO
+NVK,NO-18,Narvik,Narvik Framnes Airport,NO
+NTB,NO-08,Notodden,Notodden Airport,NO
+OLA,NO-16,Ørland,Ørland Airport,NO
+HOV,NO-15,Ørsta,"Ørsta-Volda Airport, Hovden",NO
+MQN,NO-18,Mo i Rana,"Mo i Rana Airport, Røssvoll",NO
+RVK,NO-17,Rørvik,"Rørvik Airport, Ryum",NO
+RRS,NO-16,Røros,Røros Airport,NO
+RYG,NO-01,Oslo,Moss-Rygge Airport,NO
+LYR,NO-21,Longyearbyen,"Svalbard Airport, Longyear",NO
+SVJ,NO-18,Svolvær,Svolvær Helle Airport,NO
+SKN,NO-18,Hadsel,Stokmarknes Skagen Airport,NO
+SRP,NO-12,Leirvik,Stord Airport,NO
+SOJ,NO-19,Sørkjosen,Sørkjosen Airport,NO
+VAW,NO-20,Vardø,"Vardø Airport, Svartnes",NO
+SSJ,NO-18,Alstahaug,Sandnessjøen Airport (Stokka),NO
+TOS,NO-19,Tromsø,Tromsø Airport,NO
+TRF,NO-07,Torp,"Sandefjord Airport, Torp",NO
+TRD,NO-17,Trondheim,Trondheim Airport Værnes,NO
+VDS,NO-20,Vadsø,Vadsø Airport,NO
+SVG,NO-11,Stavanger,Stavanger Airport Sola,NO
+BZG,PL-KP,Bydgoszcz,Bydgoszcz Ignacy Jan Paderewski Airport,PL
+GDN,PL-PM,Gdańsk,Gdańsk Lech Wałęsa Airport,PL
+KRK,PL-MA,Kraków,John Paul II International Airport Kraków-Balice Airport,PL
+KTW,PL-SL,Katowice,Katowice International Airport,PL
+LCJ,PL-LD,Łódź,Łódź Władysław Reymont Airport,PL
+WMI,PL-MZ,Warsaw,Modlin Airport,PL
+POZ,PL-WP,Poznań,Poznań-Ławica Airport,PL
+RDO,PL-MZ,Radom,Radom Airport,PL
+RZE,PL-PK,Rzeszów,Rzeszów-Jasionka Airport,PL
+SZZ,PL-ZP,Goleniow,"Szczecin-Goleniów ""Solidarność"" Airport",PL
+WAW,PL-MZ,Warsaw,Warsaw Chopin Airport,PL
+WRO,PL-DS,Wrocław,Copernicus Wrocław Airport,PL
+IEG,PL-LB,Babimost,Zielona Góra-Babimost Airport,PL
+RNB,SE-K,,Ronneby Airport,SE
+GOT,SE-Q,Gothenburg,Gothenburg-Landvetter Airport,SE
+JKG,SE-F,Jönköping,Jönköping Airport,SE
+GSE,SE-Q,Gothenburg,Gothenburg City Airport,SE
+THN,SE-Q,Trollhättan,Trollhättan-Vänersborg Airport,SE
+MXX,SE-W,,Mora Airport,SE
+NYO,SE-D,Stockholm / Nyköping,Stockholm Skavsta Airport,SE
+KID,SE-M,Kristianstad,Kristianstad Airport,SE
+KLR,SE-H,,Kalmar Airport,SE
+MMX,SE-M,Malmö,Malmö Sturup Airport,SE
+HAD,SE-N,Halmstad,Halmstad Airport,SE
+VXO,SE-G,Växjö,Växjö Kronoberg Airport,SE
+EVG,SE-Z,,Sveg Airport,SE
+GEV,SE-BD,Gällivare,Gällivare Airport,SE
+KRF,SE-Y,Kramfors / Sollefteå,Kramfors Sollefteå Airport,SE
+LYC,SE-AC,,Lycksele Airport,SE
+SDL,SE-Y,Sundsvall/ Härnösand,Sundsvall-Härnösand Airport,SE
+OER,SE-Y,Örnsköldsvik,Örnsköldsvik Airport,SE
+KRN,SE-BD,Kiruna,Kiruna Airport,SE
+SFT,SE-AC,Skellefteå,Skellefteå Airport,SE
+UME,SE-AC,Umeå,Umeå Airport,SE
+VHM,SE-AC,,Vilhelmina Airport,SE
+AJR,SE-BD,Arvidsjaur,Arvidsjaur Airport,SE
+OSD,SE-Z,Östersund,Åre Östersund Airport,SE
+ORB,SE-T,Örebro,Örebro Airport,SE
+HFS,SE-S,,Hagfors Airport,SE
+KSD,SE-S,Karlstad,Karlstad Airport,SE
+VST,SE-U,Stockholm / Västerås,Stockholm Västerås Airport,SE
+LLA,SE-BD,Luleå,Luleå Airport,SE
+ARN,SE-AB,Stockholm,Stockholm-Arlanda Airport,SE
+BMA,SE-AB,Stockholm,Stockholm-Bromma Airport,SE
+BLE,SE-W,,Borlange Airport,SE
+LPI,SE-E,Linköping,Linköping City Airport,SE
+NRK,SE-E,Norrköping,Norrköping Airport,SE
+TYF,SE-S,,Torsby Airport,SE
+VBY,SE-I,Visby,Visby Airport,SE
+AGH,SE-M,Ängelholm,Ängelholm-Helsingborg Airport,SE
+SQO,SE-AC,,Storuman Airport,SE
+HMV,SE-AC,,Hemavan Airport,SE
+RMS,DE-RP,Ramstein,Ramstein Air Base,DE
+RLG,DE-MV,Rostock,Rostock-Laage Airport,DE
+LPX,LV-LE,Liepāja,Liepāja International Airport,LV
+RIX,LV-RIX,Riga,Riga International Airport,LV
+VNT,LV-VEN,Ventspils,Ventspils International Airport,LV
+KUN,LT-KU,Kaunas,Kaunas International Airport,LT
+PLQ,LT-KL,Palanga,Palanga International Airport,LT
+VNO,LT-VL,Vilnius,Vilnius International Airport,LT
+BFN,ZA-FS,Bloemfontain,Bram Fischer International Airport,ZA
+CPT,ZA-WC,Cape Town,Cape Town International Airport,ZA
+ELS,ZA-EC,East London,Ben Schoeman Airport,ZA
+GRJ,ZA-WC,George,George Airport,ZA
+QRA,ZA-GT,Johannesburg,Rand Airport,ZA
+JNB,ZA-GT,Johannesburg,OR Tambo International Airport,ZA
+KIM,ZA-NC,Kimberley,Kimberley Airport,ZA
+MQP,ZA-MP,Mpumalanga,Kruger Mpumalanga International Airport,ZA
+HLA,ZA-GT,Johannesburg,Lanseria Airport,ZA
+DUR,ZA-NL,Durban,King Shaka International Airport,ZA
+AAM,ZA-NP,Malamala,Malamala Airport,ZA
+MGH,ZA-NL,Margate,Margate Airport,ZA
+MBD,ZA-NW,Mafeking,Mmabatho International Airport,ZA
+PLZ,ZA-EC,Port Elizabeth,Port Elizabeth Airport,ZA
+PHW,ZA-NP,Phalaborwa,Hendrik Van Eck Airport,ZA
+,ZA-NP,Polokwane,Pietersburg Municipal Airport,ZA
+PZB,ZA-NL,Pietermaritzburg,Pietermaritzburg Airport,ZA
+PTG,ZA-NP,Polokwane,Polokwane International Airport,ZA
+RCB,ZA-NL,Richards Bay,Richards Bay Airport,ZA
+UTN,ZA-NC,Upington,Pierre Van Ryneveld Airport,ZA
+UTT,ZA-EC,Mthatha,K. D. Matanzima Airport,ZA
+PRY,ZA-GT,Pretoria,Wonderboom Airport,ZA
+FRW,BW-NE,Francistown,Francistown Airport,BW
+JWA,BW-SO,,Jwaneng Airport,BW
+BBK,BW-NW,Kasane,Kasane Airport,BW
+MUB,BW-NW,Maun,Maun Airport,BW
+GBE,BW-SE,Gaborone,Sir Seretse Khama International Airport,BW
+PKW,BW-CE,,Selebi Phikwe Airport,BW
+BZV,CG-12,Brazzaville,Maya-Maya Airport,CG
+DIS,CG-9,Dolisie,Ngot Nzoungou Airport,CG
+PNR,CG-5,Pointe Noire,Pointe Noire Airport,CG
+MTS,SZ-MA,Manzini,Matsapha Airport,SZ
+BGF,CF-MP,Bangui,Bangui M'Poko International Airport,CF
+BSG,GQ-LI,,Bata Airport,GQ
+SSG,GQ-BN,Malabo,Malabo Airport,GQ
+MRU,MU-GP,Port Louis,Sir Seewoosagur Ramgoolam International Airport,MU
+RRG,MU-RO,Port Mathurin,Sir Charles Gaetan Duval Airport,MU
+DLA,CM-LT,Douala,Douala International Airport,CM
+MVR,CM-EN,Maroua,Salak Airport,CM
+NGE,CM-AD,N'Gaoundéré,N'Gaoundéré Airport,CM
+GOU,CM-NO,Garoua,Garoua International Airport,CM
+YAO,CM-CE,Yaoundé,Yaoundé Airport,CM
+NSI,CM-CE,Yaoundé,Yaoundé Nsimalen International Airport,CM
+LVI,ZM-07,Livingstone,Livingstone Airport,ZM
+LUN,ZM-09,Lusaka,Kenneth Kaunda International Airport Lusaka,ZM
+MFU,ZM-03,Mfuwe,Mfuwe Airport,ZM
+NLA,ZM-08,Ndola,Simon Mwansa Kapwepwe International Airport,ZM
+HAH,KM-G,Moroni,Prince Said Ibrahim International Airport,KM
+NWA,KM-M,,Mohéli Bandar Es Eslam Airport,KM
+AJN,KM-A,Ouani,Ouani Airport,KM
+DZA,YT-U-A,Dzaoudzi,Dzaoudzi Pamandzi International Airport,YT
+RUN,RE-U-A,St Denis,Roland Garros Airport,RE
+ZSE,RE-U-A,St Pierre,Pierrefonds Airport,RE
+TNR,MG-T,Antananarivo,Ivato Airport,MG
+ZVA,MG-U,,Miandrivazo Airport,MG
+SMS,MG-A,,Sainte Marie Airport,MG
+TMM,MG-A,,Toamasina Airport,MG
+MOQ,MG-U,,Morondava Airport,MG
+DIE,MG-D,,Arrachart Airport,MG
+WMR,MG-A,Mananara Nord,Mananara Nord Airport,MG
+ANM,MG-D,,Antsirabato Airport,MG
+HVA,MG-M,,Analalava Airport,MG
+MJN,MG-M,,Amborovy Airport,MG
+NOS,MG-D,Nosy Be,Fascene Airport,MG
+BPY,MG-M,,Besalampy Airport,MG
+WMN,MG-A,,Maroantsetra Airport,MG
+SVB,MG-D,,Sambava Airport,MG
+VOH,MG-D,,Vohimarina Airport,MG
+WAI,MG-M,Antsohihy,Ambalabe Airport,MG
+FTU,MG-U,Tôlanaro,Tôlanaro Airport,MG
+WFI,MG-F,,Fianarantsoa Airport,MG
+WVK,MG-F,,Manakara Airport,MG
+MNJ,MG-F,,Mananjary Airport,MG
+MXM,MG-U,,Morombe Airport,MG
+TLE,MG-U,,Toliara Airport,MG
+SSY,AO-ZAI,Mbanza Congo,Mbanza Congo Airport,AO
+CAB,AO-CAB,Cabinda,Cabinda Airport,AO
+CBT,AO-BGU,Catumbela,Catumbela Airport,AO
+DUE,AO-LNO,Chitato,Dundo Airport,AO
+VPE,AO-CNN,Ngiva,Ngjiva Pereira Airport,AO
+NOV,AO-HUA,Huambo,Nova Lisboa Airport,AO
+LAD,AO-LUA,Luanda,Quatro de Fevereiro Airport,AO
+MEG,AO-MAL,Malanje,Malanje Airport,AO
+SPP,AO-CCU,Menongue,Menongue Airport,AO
+MSZ,AO-NAM,Namibe,Namibe Airport,AO
+GXG,AO-UIG,Negage,Negage Airport,AO
+SZA,AO-ZAI,Soyo,Soyo Airport,AO
+SDD,AO-HUI,Lubango,Lubango Airport,AO
+KOU,GA-7,Koulamoutou,Koulamoutou Mabimbi Airport,GA
+MJL,GA-4,Mouila,Mouilla Ville Airport,GA
+OYE,GA-9,Oyem,Oyem Airport,GA
+POG,GA-8,Port Gentil,Port Gentil Airport,GA
+MKU,GA-6,Makokou,Makokou Airport,GA
+LBV,GA-1,Libreville,Libreville Leon M'ba International Airport,GA
+MVB,GA-2,Franceville,M'Vengue El Hadj Omar Bongo Ondimba International Airport,GA
+PCP,ST-P,,Principe Airport,ST
+TMS,ST-S,São Tomé,São Tomé International Airport,ST
+BEW,MZ-S,Beira,Beira Airport,MZ
+VPY,MZ-B,Chimoio,Chimoio Airport,MZ
+INH,MZ-I,Inhambabe,Inhambane Airport,MZ
+VXC,MZ-A,Lichinga,Lichinga Airport,MZ
+MPM,MZ-MPM,Maputo,Maputo Airport,MZ
+APL,MZ-N,Nampula,Nampula Airport,MZ
+POL,MZ-P,Pemba / Porto Amelia,Pemba Airport,MZ
+UEL,MZ-Q,Quelimane,Quelimane Airport,MZ
+TET,MZ-T,Tete,Chingozi Airport,MZ
+VNX,MZ-I,Vilanculo,Vilankulo Airport,MZ
+BVE,FR-L,,Brive Souillac Airport,FR
+SEZ,SC-20,Mahe Island,Seychelles International Airport,SC
+PRI,SC-14,Praslin Island,Praslin Airport,SC
+AEH,TD-OD,,Abeche Airport,TD
+MQQ,TD-LO,,Moundou Airport,TD
+NDJ,TD-CB,N'Djamena,N'Djamena International Airport,TD
+BUQ,ZW-BU,Bulawayo,Joshua Mqabuko Nkomo International Airport,ZW
+VFA,ZW-MN,Victoria Falls,Victoria Falls International Airport,ZW
+HRE,ZW-HA,Harare,Harare International Airport,ZW
+BLZ,MW-BL,Blantyre,Chileka International Airport,MW
+LLW,MW-LI,Lilongwe,Lilongwe International Airport,MW
+ZZU,MW-MZ,Mzuzu,Mzuzu Airport,MW
+MSU,LS-A,Maseru,Moshoeshoe I International Airport,LS
+LUD,NA-KA,Luderitz,Luderitz Airport,NA
+OND,NA-ON,Ondangwa,Ondangwa Airport,NA
+OMD,NA-KA,Oranjemund,Oranjemund Airport,NA
+NDU,NA-KE,Rundu,Rundu Airport,NA
+ERS,NA-KH,Windhoek,Eros Airport,NA
+WDH,NA-KH,Windhoek,Hosea Kutako International Airport,NA
+FIH,CD-KN,Kinshasa,Ndjili International Airport,CD
+FDU,CD-BN,,Bandundu Airport,CD
+KKW,CD-BN,,Kikwit Airport,CD
+MDK,CD-EQ,Mbandaka,Mbandaka Airport,CD
+BDT,CD-EQ,,Gbadolite Airport,CD
+GMA,CD-EQ,Gemena,Gemena Airport,CD
+FKI,CD-OR,Kisangani,Bangoka International Airport,CD
+IRP,CD-OR,,Matari Airport,CD
+BUX,CD-OR,,Bunia Airport,CD
+GOM,CD-NK,Goma,Goma International Airport,CD
+KND,CD-MA,Kindu,Kindu Airport,CD
+FBM,CD-KA,Lubumbashi,Lubumbashi International Airport,CD
+KWZ,CD-KA,,Kolwezi Airport,CD
+FMI,CD-KA,,Kalemie Airport,CD
+KGA,CD-KW,Kananga,Kananga Airport,CD
+MJM,CD-KE,Mbuji Mayi,Mbuji Mayi Airport,CD
+BKO,ML-2,Senou,Senou Airport,ML
+GAQ,ML-7,,Gao Airport,ML
+KYS,ML-1,,Kayes Dag Dag Airport,ML
+MZI,ML-5,,Mopti Airport,ML
+TOM,ML-7,Timbuktu,Timbuktu Airport,ML
+,GB-SCT,Prestwick,[Duplicate] Pic,GB
+OUK,GB-SCT,Grunay Island,Outer Skerries Airport,GB
+BJL,GM-W,Banjul,Banjul International Airport,GM
+FUE,ES-CN,Fuerteventura Island,Fuerteventura Airport,ES
+VDE,ES-CN,El Hierro Island,Hierro Airport,ES
+SPC,ES-CN,"Sta Cruz de la Palma, La Palma Island",La Palma Airport,ES
+LPA,ES-CN,Gran Canaria Island,Gran Canaria Airport,ES
+ACE,ES-CN,Lanzarote Island,Lanzarote Airport,ES
+TFS,ES-CN,Tenerife Island,Tenerife South Airport,ES
+TFN,ES-CN,Tenerife Island,Tenerife Norte Airport,ES
+MLN,ES-ML,Melilla,Melilla Airport,ES
+BTE,SL-S,Bonthe,Sherbro International Airport,SL
+KBS,SL-S,Bo,Bo Airport,SL
+KEN,SL-E,Kenema,Kenema Airport,SL
+FNA,SL-N,Freetown,Lungi International Airport,SL
+WYE,SL-E,Yengema,Yengema Airport,SL
+OXB,GW-BS,Bissau,Osvaldo Vieira International Airport,GW
+MLW,LR-MO,Monrovia,Spriggs Payne Airport,LR
+ROB,LR-MG,Monrovia,Roberts International Airport,LR
+AGA,MA-AGD,Agadir,Al Massira Airport,MA
+TTA,MA-TNT,Tan Tan,Tan Tan Airport,MA
+FEZ,MA-FES,Fes,Saïss Airport,MA
+ERH,MA-ERR,Errachidia,Moulay Ali Cherif Airport,MA
+OUD,MA-OUJ,Oujda,Angads Airport,MA
+SMW,EH-U-A,Smara,Smara Airport,EH
+RBA,MA-RBA,Rabat,Rabat-Salé Airport,MA
+VIL,EH-U-A,Dakhla,Dakhla Airport,EH
+EUN,EH-U-A,El Aaiún,Hassan I Airport,EH
+CMN,MA-CAS,Casablanca,Mohammed V International Airport,MA
+NDR,MA-NAD,Nador,Nador International Airport,MA
+RAK,MA-MAR,Marrakech,Menara Airport,MA
+OZZ,MA-OUA,Ouarzazate,Ouarzazate Airport,MA
+GMQ,CN-63,Golog,Golog Maqin Airport,CN
+AHU,MA-HOC,Al Hoceima,Cherif Al Idrissi Airport,MA
+TNG,MA-TNG,Tangier,Ibn Batouta Airport,MA
+ZIG,SN-ZG,Ziguinchor,Ziguinchor Airport,SN
+CSK,SN-ZG,Cap Skirring,Cap Skirring Airport,SN
+DKR,SN-DK,Dakar,Léopold Sédar Senghor International Airport,SN
+MAX,SN-SL,Matam,Ouro Sogui Airport,SN
+XLS,SN-SL,Saint Louis,Saint Louis Airport,SN
+TUD,SN-TC,Tambacounda,Tambacounda Airport,SN
+NKC,MR-NKC,Nouakchott,Nouakchott International Airport,MR
+NDB,MR-08,Nouadhibou,Nouadhibou International Airport,MR
+CKY,GN-C,Conakry,Conakry International Airport,GN
+SID,CV-B,Espargos,Amílcar Cabral International Airport,CV
+BVC,CV-B,Rabil,Rabil Airport,CV
+MMO,CV-S,Vila do Maio,Maio Airport,CV
+RAI,CV-S,Praia,Praia International Airport,CV
+SNE,CV-B,Preguiça,Preguiça Airport,CV
+ADD,ET-AA,Addis Ababa,Addis Ababa Bole International Airport,ET
+AMH,ET-SN,,Arba Minch Airport,ET
+AXU,ET-TI,,Axum Airport,ET
+BJR,ET-AM,Bahir Dar,Bahir Dar Airport,ET
+DIR,ET-DD,Dire Dawa,Aba Tenna Dejazmach Yilma International Airport,ET
+GMB,ET-GA,Gambela,Gambella Airport,ET
+GDQ,ET-AM,Gondar,Gonder Airport,ET
+GDE,ET-SO,Gode,Gode Airport,ET
+JIJ,ET-SO,Jijiga,Wilwal International Airport,ET
+JIM,ET-OR,Jimma,Jimma Airport,ET
+ASO,ET-BE,Asosa,Asosa Airport,ET
+BJM,BI-BJ,Bujumbura,Bujumbura International Airport,BI
+HGA,SO-WO,Hargeisa,Egal International Airport,SO
+BBO,SO-WO,Berbera,Berbera Airport,SO
+MGQ,SO-BN,Mogadishu,Aden Adde International Airport,SO
+JIB,DJ-DJ,Djibouti City,Djibouti-Ambouli Airport,DJ
+AAC,EG-SIN,El Arish,El Arish International Airport,EG
+ATZ,EG-WAD,Assiut,Assiut International Airport,EG
+ALY,EG-ALX,Alexandria,El Nouzha Airport,EG
+HBE,EG-ALX,Alexandria,Borg El Arab International Airport,EG
+ABS,EG-ASN,Abu Simbel,Abu Simbel Airport,EG
+CAI,EG-C,Cairo,Cairo International Airport,EG
+HRG,EG-BA,Hurghada,Hurghada International Airport,EG
+LXR,EG-KN,Luxor,Luxor International Airport,EG
+RMF,EG-BA,Marsa Alam,Marsa Alam International Airport,EG
+HMB,EG-SHG,Sohag,Sohag International Airport,EG
+SSH,EG-JS,Sharm el-Sheikh,Sharm El Sheikh International Airport,EG
+ASW,EG-ASN,Aswan,Aswan International Airport,EG
+ASM,ER-SK,Asmara,Asmara International Airport,ER
+MSW,ER-SK,Massawa,Massawa International Airport,ER
+ASA,ER-DK,Asab,Assab International Airport,ER
+ASV,KE-700,Amboseli National Park,Amboseli Airport,KE
+EDL,KE-700,Eldoret,Eldoret International Airport,KE
+NBO,KE-110,Nairobi,Jomo Kenyatta International Airport,KE
+KIS,KE-600,Kisumu,Kisumu Airport,KE
+LKG,KE-700,Lokichoggio,Lokichoggio Airport,KE
+LAU,KE-300,Lamu,Manda Airstrip,KE
+MYD,KE-300,Malindi,Malindi Airport,KE
+MBA,KE-300,Mombasa,Mombasa Moi International Airport,KE
+MRE,KE-700,Masai Mara,Mara Serena Lodge Airstrip,KE
+WIL,KE-110,Nairobi,Nairobi Wilson Airport,KE
+NYK,KE-200,Nanyuki,Nanyuki Airport,KE
+WJR,KE-500,Wajir,Wajir Airport,KE
+SRX,LY-SR,Sirt,Gardabya Airport,LY
+GHT,LY-GT,Ghat,Ghat Airport,LY
+AKF,LY-KF,Kufra,Kufra Airport,LY
+BEN,LY-BA,Benghazi,Benina International Airport,LY
+MJI,LY-TB,Tripoli,Mitiga Airport,LY
+LAQ,LY-JA,Al Bayda',La Abraq Airport,LY
+SEB,LY-SB,Sabha,Sabha Airport,LY
+TIP,LY-TB,Tripoli,Tripoli International Airport,LY
+LTD,LY-NL,Ghadames,Ghadames East Airport,LY
+KGL,RW-01,Kigali,Kigali International Airport,RW
+KME,RW-04,Kamembe,Kamembe Airport,RW
+DOG,SD-01,Dongola,Dongola Airport,SD
+ELF,SD-02,El Fasher,El Fasher Airport,SD
+KSL,SD-05,Kassala,Kassala Airport,SD
+EBD,SD-09,Al-Ubayyid,El Obeid Airport,SD
+PZU,SD-26,Port Sudan,Port Sudan New International Airport,SD
+JUB,SS-17,Juba,Juba International Airport,SS
+MAK,SS-23,Malakal,Malakal Airport,SS
+KRT,SD-03,Khartoum,Khartoum International Airport,SD
+WUU,SS-14,Wau,Wau Airport,SS
+ARK,TZ-01,Arusha,Arusha Airport,TZ
+DAR,TZ-02,Dar es Salaam,Julius Nyerere International Airport,TZ
+JRO,TZ-26,Arusha,Kilimanjaro International Airport,TZ
+MYW,TZ-17,Mtwara,Mtwara Airport,TZ
+MWZ,TZ-18,Mwanza,Mwanza Airport,TZ
+TGT,TZ-25,Tanga,Tanga Airport,TZ
+ZNZ,TZ-07,Zanzibar,Abeid Amani Karume International Airport,TZ
+RUA,UG-303,Arua,Arua Airport,UG
+EBB,UG-102,Kampala,Entebbe International Airport,UG
+ULU,UG-304,Gulu,Gulu Airport,UG
+SRT,UG-211,Soroti,Soroti Airport,UG
+,ID-KI,Samarinda,Sungai Siring International Airport,ID
+UGU,ID-PA,Sugapa-Papua Island,Bilogai-Sugapa Airport,ID
+,IQ-BA,,Jalibah Southeast Air Base,IQ
+JIQ,CN-50,Qianjiang,Qianjiang Wulingshan Airport,CN
+ABE,US-PA,Allentown,Lehigh Valley International Airport,US
+ABI,US-TX,Abilene,Abilene Regional Airport,US
+ABQ,US-NM,Albuquerque,Albuquerque International Sunport Airport,US
+ABR,US-SD,Aberdeen,Aberdeen Regional Airport,US
+ABY,US-GA,Albany,Southwest Georgia Regional Airport,US
+ACK,US-MA,Nantucket,Nantucket Memorial Airport,US
+ACT,US-TX,Waco,Waco Regional Airport,US
+ACV,US-CA,Arcata/Eureka,Arcata Airport,US
+ACY,US-NJ,Atlantic City,Atlantic City International Airport,US
+ADW,US-MD,Camp Springs,Andrews Air Force Base,US
+AEX,US-LA,Alexandria,Alexandria International Airport,US
+AFW,US-TX,Fort Worth,Fort Worth Alliance Airport,US
+AGS,US-GA,Augusta,Augusta Regional At Bush Field,US
+AHN,US-GA,Athens,Athens Ben Epps Airport,US
+ALB,US-NY,Albany,Albany International Airport,US
+ALO,US-IA,Waterloo,Waterloo Regional Airport,US
+ALS,US-CO,Alamosa,San Luis Valley Regional Bergman Field,US
+ALW,US-WA,Walla Walla,Walla Walla Regional Airport,US
+AMA,US-TX,Amarillo,Rick Husband Amarillo International Airport,US
+AOO,US-PA,Altoona,Altoona Blair County Airport,US
+APN,US-MI,Alpena,Alpena County Regional Airport,US
+ART,US-NY,Watertown,Watertown International Airport,US
+ASE,US-CO,Aspen,Aspen-Pitkin Co/Sardy Field,US
+ATL,US-GA,Atlanta,Hartsfield Jackson Atlanta International Airport,US
+ATY,US-SD,Watertown,Watertown Regional Airport,US
+AUG,US-ME,Augusta,Augusta State Airport,US
+AUS,US-TX,Austin,Austin Bergstrom International Airport,US
+AVL,US-NC,Asheville,Asheville Regional Airport,US
+AVP,US-PA,Wilkes-Barre/Scranton,Wilkes Barre Scranton International Airport,US
+AZO,US-MI,Kalamazoo,Kalamazoo Battle Creek International Airport,US
+BAB,US-CA,Marysville,Beale Air Force Base,US
+BAD,US-LA,Bossier City,Barksdale Air Force Base,US
+BDL,US-CT,Hartford,Bradley International Airport,US
+BDR,US-CT,Bridgeport,Igor I Sikorsky Memorial Airport,US
+BFD,US-PA,Bradford,Bradford Regional Airport,US
+BFF,US-NE,Scottsbluff,Western Neb. Rgnl/William B. Heilig Airport,US
+BFI,US-WA,Seattle,Boeing Field King County International Airport,US
+BGM,US-NY,Binghamton,Greater Binghamton/Edwin A Link field,US
+BGR,US-ME,Bangor,Bangor International Airport,US
+BHB,US-ME,Bar Harbor,Hancock County-Bar Harbor Airport,US
+BHM,US-AL,Birmingham,Birmingham-Shuttlesworth International Airport,US
+BIL,US-MT,Billings,Billings Logan International Airport,US
+BIS,US-ND,Bismarck,Bismarck Municipal Airport,US
+BKW,US-WV,Beckley,Raleigh County Memorial Airport,US
+BLF,US-WV,Bluefield,Mercer County Airport,US
+BLI,US-WA,Bellingham,Bellingham International Airport,US
+BLV,US-IL,Belleville,Scott AFB/Midamerica Airport,US
+BMI,US-IL,Bloomington/Normal,Central Illinois Regional Airport at Bloomington-Normal,US
+BNA,US-TN,Nashville,Nashville International Airport,US
+BOI,US-ID,Boise,Boise Air Terminal/Gowen field,US
+BOS,US-MA,Boston,General Edward Lawrence Logan International Airport,US
+BPT,US-TX,Beaumont/Port Arthur,Southeast Texas Regional Airport,US
+BQK,US-GA,Brunswick,Brunswick Golden Isles Airport,US
+BRD,US-MN,Brainerd,Brainerd Lakes Regional Airport,US
+BRL,US-IA,Burlington,Southeast Iowa Regional Airport,US
+BRO,US-TX,Brownsville,Brownsville South Padre Island International Airport,US
+BTM,US-MT,Butte,Bert Mooney Airport,US
+BTR,US-LA,Baton Rouge,"Baton Rouge Metropolitan, Ryan Field",US
+BTV,US-VT,Burlington,Burlington International Airport,US
+BUF,US-NY,Buffalo,Buffalo Niagara International Airport,US
+BUR,US-CA,Burbank,Bob Hope Airport,US
+BWI,US-MD,Baltimore,Baltimore/Washington International Thurgood Marshall Airport,US
+BZN,US-MT,Bozeman,Gallatin Field,US
+CAE,US-SC,Columbia,Columbia Metropolitan Airport,US
+CAK,US-OH,Akron,Akron Canton Regional Airport,US
+CBM,US-MS,Columbus,Columbus Air Force Base,US
+CDC,US-UT,Cedar City,Cedar City Regional Airport,US
+CEC,US-CA,Crescent City,Jack Mc Namara Field Airport,US
+CGI,US-MO,Cape Girardeau,Cape Girardeau Regional Airport,US
+CHA,US-TN,Chattanooga,Lovell Field,US
+CHO,US-VA,Charlottesville,Charlottesville Albemarle Airport,US
+CHS,US-SC,Charleston,Charleston Air Force Base-International Airport,US
+CID,US-IA,Cedar Rapids,The Eastern Iowa Airport,US
+CIU,US-MI,Sault Ste Marie,Chippewa County International Airport,US
+CKB,US-WV,Clarksburg,North Central West Virginia Airport,US
+CLE,US-OH,Cleveland,Cleveland Hopkins International Airport,US
+CLL,US-TX,College Station,Easterwood Field,US
+CLM,US-WA,Port Angeles,William R Fairchild International Airport,US
+CLT,US-NC,Charlotte,Charlotte Douglas International Airport,US
+CMH,US-OH,Columbus,Port Columbus International Airport,US
+CMI,US-IL,Champaign/Urbana,University of Illinois Willard Airport,US
+CMX,US-MI,Hancock,Houghton County Memorial Airport,US
+CNM,US-NM,Carlsbad,Cavern City Air Terminal,US
+COS,US-CO,Colorado Springs,City of Colorado Springs Municipal Airport,US
+COU,US-MO,Columbia,Columbia Regional Airport,US
+CPR,US-WY,Casper,Casper-Natrona County International Airport,US
+CRP,US-TX,Corpus Christi,Corpus Christi International Airport,US
+CRW,US-WV,Charleston,Yeager Airport,US
+CSG,US-GA,Columbus,Columbus Metropolitan Airport,US
+CVG,US-KY,Cincinnati,Cincinnati Northern Kentucky International Airport,US
+CVS,US-NM,Clovis,Cannon Air Force Base,US
+CYS,US-WY,Cheyenne,Cheyenne Regional Jerry Olson Field,US
+DAB,US-FL,Daytona Beach,Daytona Beach International Airport,US
+DAL,US-TX,Dallas,Dallas Love Field,US
+DAY,US-OH,Dayton,James M Cox Dayton International Airport,US
+DBQ,US-IA,Dubuque,Dubuque Regional Airport,US
+DCA,US-DC,Washington,Ronald Reagan Washington National Airport,US
+DDC,US-KS,Dodge City,Dodge City Regional Airport,US
+DEC,US-IL,Decatur,Decatur Airport,US
+DEN,US-CO,Denver,Denver International Airport,US
+DFW,US-TX,Dallas-Fort Worth,Dallas Fort Worth International Airport,US
+DHN,US-AL,Dothan,Dothan Regional Airport,US
+DLF,US-TX,Del Rio,Laughlin Air Force Base,US
+DLH,US-MN,Duluth,Duluth International Airport,US
+DOV,US-DE,Dover,Dover Air Force Base,US
+DSM,US-IA,Des Moines,Des Moines International Airport,US
+DTW,US-MI,Detroit,Detroit Metropolitan Wayne County Airport,US
+DUJ,US-PA,Dubois,DuBois Regional Airport,US
+DYS,US-TX,Abilene,Dyess Air Force Base,US
+EAU,US-WI,Eau Claire,Chippewa Valley Regional Airport,US
+ECP,US-FL,Panama City Beach,Northwest Florida Beaches International Airport,US
+EDW,US-CA,Edwards,Edwards Air Force Base,US
+EGE,US-CO,Eagle,Eagle County Regional Airport,US
+EKO,US-NV,Elko,Elko Regional Airport,US
+ELD,US-AR,El Dorado,South Arkansas Regional At Goodwin Field,US
+ELM,US-NY,Elmira/Corning,Elmira Corning Regional Airport,US
+ELP,US-TX,El Paso,El Paso International Airport,US
+END,US-OK,Enid,Vance Air Force Base,US
+ERI,US-PA,Erie,Erie International Tom Ridge Field,US
+EUG,US-OR,Eugene,Mahlon Sweet Field,US
+EVV,US-IN,Evansville,Evansville Regional Airport,US
+EWB,US-MA,New Bedford,New Bedford Regional Airport,US
+EWN,US-NC,New Bern,Coastal Carolina Regional Airport,US
+EWR,US-NJ,Newark,Newark Liberty International Airport,US
+EYW,US-FL,Key West,Key West International Airport,US
+FAR,US-ND,Fargo,Hector International Airport,US
+FAT,US-CA,Fresno,Fresno Yosemite International Airport,US
+FAY,US-NC,Fayetteville,Fayetteville Regional Grannis Field,US
+FFO,US-OH,Dayton,Wright-Patterson Air Force Base,US
+FHU,US-AZ,Fort Huachuca Sierra Vista,Sierra Vista Municipal Libby Army Air Field,US
+FLG,US-AZ,Flagstaff,Flagstaff Pulliam Airport,US
+FLL,US-FL,Fort Lauderdale,Fort Lauderdale Hollywood International Airport,US
+FLO,US-SC,Florence,Florence Regional Airport,US
+FNT,US-MI,Flint,Bishop International Airport,US
+FOD,US-IA,Fort Dodge,Fort Dodge Regional Airport,US
+FSD,US-SD,Sioux Falls,Joe Foss Field Airport,US
+FSM,US-AR,Fort Smith,Fort Smith Regional Airport,US
+FTW,US-TX,Fort Worth,Fort Worth Meacham International Airport,US
+FWA,US-IN,Fort Wayne,Fort Wayne International Airport,US
+,KG-J,Jalal-Abad,Jalal-Abad Airport,KG
+GCC,US-WY,Gillette,Gillette Campbell County Airport,US
+GCK,US-KS,Garden City,Garden City Regional Airport,US
+GCN,US-AZ,Grand Canyon,Grand Canyon National Park Airport,US
+GEG,US-WA,Spokane,Spokane International Airport,US
+GFK,US-ND,Grand Forks,Grand Forks International Airport,US
+GGG,US-TX,Longview,East Texas Regional Airport,US
+GGW,US-MT,Glasgow,Wokal Field Glasgow International Airport,US
+GJT,US-CO,Grand Junction,Grand Junction Regional Airport,US
+GLH,US-MS,Greenville,Mid Delta Regional Airport,US
+GNV,US-FL,Gainesville,Gainesville Regional Airport,US
+FCA,US-MT,Kalispell,Glacier Park International Airport,US
+GPT,US-MS,Gulfport,Gulfport Biloxi International Airport,US
+GRB,US-WI,Green Bay,Austin Straubel International Airport,US
+GRI,US-NE,Grand Island,Central Nebraska Regional Airport,US
+GRK,US-TX,Fort Hood/Killeen,Robert Gray  Army Air Field Airport,US
+GRR,US-MI,Grand Rapids,Gerald R. Ford International Airport,US
+GSB,US-NC,Goldsboro,Seymour Johnson Air Force Base,US
+GSO,US-NC,Greensboro,Piedmont Triad International Airport,US
+GSP,US-SC,Greenville,Greenville Spartanburg International Airport,US
+GTF,US-MT,Great Falls,Great Falls International Airport,US
+GTR,US-MS,Columbus/W Point/Starkville,Golden Triangle Regional Airport,US
+GUS,US-IN,Peru,Grissom Air Reserve Base,US
+HIB,US-MN,Hibbing,Range Regional Airport,US
+HLN,US-MT,Helena,Helena Regional Airport,US
+HMN,US-NM,Alamogordo,Holloman Air Force Base,US
+HON,US-SD,Huron,Huron Regional Airport,US
+HOT,US-AR,Hot Springs,Memorial Field,US
+HOU,US-TX,Houston,William P Hobby Airport,US
+HPN,US-NY,White Plains,Westchester County Airport,US
+HRL,US-TX,Harlingen,Valley International Airport,US
+HRO,US-AR,Harrison,Boone County Airport,US
+HSV,US-AL,Huntsville,Huntsville International Carl T Jones Field,US
+HTS,US-WV,Huntington,Tri-State/Milton J. Ferguson Field,US
+HVN,US-CT,New Haven,Tweed New Haven Airport,US
+HYA,US-MA,Hyannis,Barnstable Municipal Boardman Polando Field,US
+IAD,US-DC,Washington,Washington Dulles International Airport,US
+IAH,US-TX,Houston,George Bush Intercontinental Houston Airport,US
+ICT,US-KS,Wichita,Wichita Mid Continent Airport,US
+IDA,US-ID,Idaho Falls,Idaho Falls Regional Airport,US
+ILG,US-DE,Wilmington,New Castle Airport,US
+ILM,US-NC,Wilmington,Wilmington International Airport,US
+IND,US-IN,Indianapolis,Indianapolis International Airport,US
+INL,US-MN,International Falls,Falls International Airport,US
+IPT,US-PA,Williamsport,Williamsport Regional Airport,US
+IRK,US-MO,Kirksville,Kirksville Regional Airport,US
+ISP,US-NY,Islip,Long Island Mac Arthur Airport,US
+ITH,US-NY,Ithaca,Ithaca Tompkins Regional Airport,US
+JAC,US-WY,Jackson,Jackson Hole Airport,US
+JAN,US-MS,Jackson,Jackson-Medgar Wiley Evers International Airport,US
+JAX,US-FL,Jacksonville,Jacksonville International Airport,US
+JBR,US-AR,Jonesboro,Jonesboro Municipal Airport,US
+JFK,US-NY,New York,John F Kennedy International Airport,US
+JLN,US-MO,Joplin,Joplin Regional Airport,US
+JMS,US-ND,Jamestown,Jamestown Regional Airport,US
+JST,US-PA,Johnstown,John Murtha Johnstown Cambria County Airport,US
+LAN,US-MI,Lansing,Capital City Airport,US
+LAR,US-WY,Laramie,Laramie Regional Airport,US
+LAS,US-NV,Las Vegas,McCarran International Airport,US
+LAX,US-CA,Los Angeles,Los Angeles International Airport,US
+LBB,US-TX,Lubbock,Lubbock Preston Smith International Airport,US
+LBE,US-PA,Latrobe,Arnold Palmer Regional Airport,US
+LBF,US-NE,North Platte,North Platte Regional Airport Lee Bird Field,US
+LBL,US-KS,Liberal,Liberal Mid-America Regional Airport,US
+LCH,US-LA,Lake Charles,Lake Charles Regional Airport,US
+LCK,US-OH,Columbus,Rickenbacker International Airport,US
+LEB,US-NH,Lebanon,Lebanon Municipal Airport,US
+LEX,US-KY,Lexington,Blue Grass Airport,US
+LFI,US-VA,Hampton,Langley Air Force Base,US
+LFT,US-LA,Lafayette,Lafayette Regional Airport,US
+LGA,US-NY,New York,La Guardia Airport,US
+LGB,US-CA,Long Beach,Long Beach /Daugherty Field/ Airport,US
+LIT,US-AR,Little Rock,Bill & Hillary Clinton National Airport/Adams Field,US
+LMT,US-OR,Klamath Falls,Klamath Falls Airport,US
+LNK,US-NE,Lincoln,Lincoln Airport,US
+LNS,US-PA,Lancaster,Lancaster Airport,US
+LRD,US-TX,Laredo,Laredo International Airport,US
+LSE,US-WI,La Crosse,La Crosse Municipal Airport,US
+LTS,US-OK,Altus,Altus Air Force Base,US
+LUF,US-AZ,Glendale,Luke Air Force Base,US
+LWS,US-ID,Lewiston,Lewiston Nez Perce County Airport,US
+LWT,US-MT,Lewistown,Lewistown Municipal Airport,US
+LYH,US-VA,Lynchburg,Lynchburg Regional Preston Glenn Field,US
+MAF,US-TX,Midland,Midland International Airport,US
+MBS,US-MI,Saginaw,MBS International Airport,US
+MCF,US-FL,Tampa,Mac Dill Air Force Base,US
+MCI,US-MO,Kansas City,Kansas City International Airport,US
+MCN,US-GA,Macon,Middle Georgia Regional Airport,US
+MCO,US-FL,Orlando,Orlando International Airport,US
+MDT,US-PA,Harrisburg,Harrisburg International Airport,US
+MDW,US-IL,Chicago,Chicago Midway International Airport,US
+MEI,US-MS,Meridian,Key Field,US
+MEM,US-TN,Memphis,Memphis International Airport,US
+MFE,US-TX,Mc Allen,Mc Allen Miller International Airport,US
+MFR,US-OR,Medford,Rogue Valley International Medford Airport,US
+MGE,US-GA,Marietta,Dobbins Air Reserve Base,US
+MGM,US-AL,Montgomery,Montgomery Regional (Dannelly Field) Airport,US
+MGW,US-WV,Morgantown,Morgantown Municipal Walter L. Bill Hart Field,US
+MHK,US-KS,Manhattan,Manhattan Regional Airport,US
+MHT,US-NH,Manchester,Manchester Airport,US
+MIA,US-FL,Miami,Miami International Airport,US
+MKE,US-WI,Milwaukee,General Mitchell International Airport,US
+MKL,US-TN,Jackson,Mc Kellar Sipes Regional Airport,US
+MLB,US-FL,Melbourne,Melbourne International Airport,US
+MLI,US-IL,Moline,Quad City International Airport,US
+MLS,US-MT,Miles City,Frank Wiley Field,US
+MLU,US-LA,Monroe,Monroe Regional Airport,US
+MOB,US-AL,Mobile,Mobile Regional Airport,US
+MOD,US-CA,Modesto,Modesto City Co-Harry Sham Field,US
+MOT,US-ND,Minot,Minot International Airport,US
+MRY,US-CA,Monterey,Monterey Peninsula Airport,US
+MSL,US-AL,Muscle Shoals,Northwest Alabama Regional Airport,US
+MSN,US-WI,Madison,Dane County Regional Truax Field,US
+MSO,US-MT,Missoula,Missoula International Airport,US
+MSP,US-MN,Minneapolis,Minneapolis-St Paul International/Wold-Chamberlain Airport,US
+MSS,US-NY,Massena,Massena International Richards Field,US
+MSY,US-LA,New Orleans,Louis Armstrong New Orleans International Airport,US
+MUO,US-ID,Mountain Home,Mountain Home Air Force Base,US
+MYR,US-SC,Myrtle Beach,Myrtle Beach International Airport,US
+YUM,US-AZ,Yuma,Yuma MCAS/Yuma International Airport,US
+OAK,US-CA,Oakland,Metropolitan Oakland International Airport,US
+OGD,US-UT,Ogden,Ogden Hinckley Airport,US
+OKC,US-OK,Oklahoma City,Will Rogers World Airport,US
+OMA,US-NE,Omaha,Eppley Airfield,US
+ONT,US-CA,Ontario,Ontario International Airport,US
+ORD,US-IL,Chicago,Chicago O'Hare International Airport,US
+ORF,US-VA,Norfolk,Norfolk International Airport,US
+OTH,US-OR,North Bend,Southwest Oregon Regional Airport,US
+OWB,US-KY,Owensboro,Owensboro Daviess County Airport,US
+RGO,KP-09,Chongjin,Orang Airport,KP
+PAH,US-KY,Paducah,Barkley Regional Airport,US
+PAM,US-FL,Panama City,Tyndall Air Force Base,US
+PBG,US-NY,Plattsburgh,Plattsburgh International Airport,US
+PBI,US-FL,West Palm Beach,Palm Beach International Airport,US
+PDX,US-OR,Portland,Portland International Airport,US
+PHF,US-VA,Newport News,Newport News Williamsburg International Airport,US
+PHL,US-PA,Philadelphia,Philadelphia International Airport,US
+PHX,US-AZ,Phoenix,Phoenix Sky Harbor International Airport,US
+PIA,US-IL,Peoria,General Wayne A. Downing Peoria International Airport,US
+PIB,US-MS,Hattiesburg/Laurel,Hattiesburg Laurel Regional Airport,US
+PIE,US-FL,St Petersburg-Clearwater,St Petersburg Clearwater International Airport,US
+PIH,US-ID,Pocatello,Pocatello Regional Airport,US
+PIR,US-SD,Pierre,Pierre Regional Airport,US
+PIT,US-PA,Pittsburgh,Pittsburgh International Airport,US
+PKB,US-WV,Parkersburg,Mid Ohio Valley Regional Airport,US
+PLN,US-MI,Pellston,Pellston Regional Airport of Emmet County Airport,US
+PMD,US-CA,Palmdale,Palmdale Regional/USAF Plant 42 Airport,US
+PNS,US-FL,Pensacola,Pensacola Regional Airport,US
+PQI,US-ME,Presque Isle,Northern Maine Regional Airport at Presque Isle,US
+PRC,US-AZ,Prescott,Ernest A. Love Field,US
+PSC,US-WA,Pasco,Tri Cities Airport,US
+PSM,US-NH,Portsmouth,Portsmouth International at Pease Airport,US
+PSP,US-CA,Palm Springs,Palm Springs International Airport,US
+PUW,US-WA,Pullman/Moscow,Pullman Moscow Regional Airport,US
+PVD,US-RI,Providence,Theodore Francis Green State Airport,US
+PVU,US-UT,Provo,Provo Municipal Airport,US
+PWM,US-ME,Portland,Portland International Jetport Airport,US
+RAP,US-SD,Rapid City,Rapid City Regional Airport,US
+RDD,US-CA,Redding,Redding Municipal Airport,US
+RDG,US-PA,Reading,Reading Regional Carl A Spaatz Field,US
+RDM,US-OR,Redmond,Roberts Field,US
+RDU,US-NC,Raleigh/Durham,Raleigh Durham International Airport,US
+RFD,US-IL,Chicago/Rockford,Chicago Rockford International Airport,US
+RHI,US-WI,Rhinelander,Rhinelander Oneida County Airport,US
+RIC,US-VA,Richmond,Richmond International Airport,US
+RKS,US-WY,Rock Springs,Rock Springs Sweetwater County Airport,US
+RND,US-TX,Universal City,Randolph Air Force Base,US
+RNO,US-NV,Reno,Reno Tahoe International Airport,US
+ROA,US-VA,Roanoke,Roanoke–Blacksburg Regional Airport,US
+ROC,US-NY,Rochester,Greater Rochester International Airport,US
+ROW,US-NM,Roswell,Roswell International Air Center Airport,US
+RST,US-MN,Rochester,Rochester International Airport,US
+RSW,US-FL,Fort Myers,Southwest Florida International Airport,US
+RUT,US-VT,Rutland,Rutland - Southern Vermont Regional Airport,US
+SAN,US-CA,San Diego,San Diego International Airport,US
+SAT,US-TX,San Antonio,San Antonio International Airport,US
+SAV,US-GA,Savannah,Savannah Hilton Head International Airport,US
+SBA,US-CA,Santa Barbara,Santa Barbara Municipal Airport,US
+SBN,US-IN,South Bend,South Bend Regional Airport,US
+SBP,US-CA,San Luis Obispo,San Luis County Regional Airport,US
+SBY,US-MD,Salisbury,Salisbury Ocean City Wicomico Regional Airport,US
+SDF,US-KY,Louisville,Louisville International Standiford Field,US
+SEA,US-WA,Seattle,Seattle Tacoma International Airport,US
+SFB,US-FL,Orlando,Orlando Sanford International Airport,US
+SFO,US-CA,San Francisco,San Francisco International Airport,US
+SGF,US-MO,Springfield,Springfield Branson National Airport,US
+SHR,US-WY,Sheridan,Sheridan County Airport,US
+SHV,US-LA,Shreveport,Shreveport Regional Airport,US
+SJC,US-CA,San Jose,Norman Y. Mineta San Jose International Airport,US
+SJT,US-TX,San Angelo,San Angelo Regional Mathis Field,US
+SKA,US-WA,Spokane,Fairchild Air Force Base,US
+SLC,US-UT,Salt Lake City,Salt Lake City International Airport,US
+SLK,US-NY,Saranac Lake,Adirondack Regional Airport,US
+SLN,US-KS,Salina,Salina Municipal Airport,US
+SMF,US-CA,Sacramento,Sacramento International Airport,US
+SMX,US-CA,Santa Maria,Santa Maria Pub/Capt G Allan Hancock Field,US
+SNA,US-CA,Santa Ana,John Wayne Airport-Orange County Airport,US
+SPI,US-IL,Springfield,Abraham Lincoln Capital Airport,US
+SPS,US-TX,Wichita Falls,Sheppard Air Force Base-Wichita Falls Municipal Airport,US
+SRQ,US-FL,Sarasota/Bradenton,Sarasota Bradenton International Airport,US
+SSC,US-SC,Sumter,Shaw Air Force Base,US
+STC,US-MN,St Cloud,St Cloud Regional Airport,US
+STL,US-MO,St Louis,Lambert St Louis International Airport,US
+STS,US-CA,Santa Rosa,Charles M. Schulz Sonoma County Airport,US
+SUN,US-ID,Hailey,Friedman Memorial Airport,US
+SUS,US-MO,St Louis,Spirit of St Louis Airport,US
+SUU,US-CA,Fairfield,Travis Air Force Base,US
+SUX,US-IA,Sioux City,Sioux Gateway Col. Bud Day Field,US
+SWF,US-NY,Newburgh,Stewart International Airport,US
+SYR,US-NY,Syracuse,Syracuse Hancock International Airport,US
+SZL,US-MO,Knob Noster,Whiteman Air Force Base,US
+TBN,US-MO,Fort Leonard Wood,Waynesville-St. Robert Regional Forney field,US
+TCM,US-WA,Tacoma,McChord Air Force Base,US
+TIK,US-OK,Oklahoma City,Tinker Air Force Base,US
+TLH,US-FL,Tallahassee,Tallahassee Regional Airport,US
+TOL,US-OH,Toledo,Toledo Express Airport,US
+TPA,US-FL,Tampa,Tampa International Airport,US
+TRI,US-TN,Bristol/Johnson/Kingsport,Tri Cities Regional Tn Va Airport,US
+TTN,US-NJ,Trenton,Trenton Mercer Airport,US
+TUL,US-OK,Tulsa,Tulsa International Airport,US
+TUP,US-MS,Tupelo,Tupelo Regional Airport,US
+TUS,US-AZ,Tucson,Tucson International Airport,US
+TVC,US-MI,Traverse City,Cherry Capital Airport,US
+TWF,US-ID,Twin Falls,Joslin Field Magic Valley Regional Airport,US
+TXK,US-AR,Texarkana,Texarkana Regional Webb Field,US
+TYR,US-TX,Tyler,Tyler Pounds Regional Airport,US
+TYS,US-TN,Knoxville,McGhee Tyson Airport,US
+UIN,US-IL,Quincy,Quincy Regional Baldwin Field,US
+SCE,US-PA,State College,University Park Airport,US
+VBG,US-CA,Lompoc,Vandenberg Air Force Base,US
+VCT,US-TX,Victoria,Victoria Regional Airport,US
+VLD,US-GA,Valdosta,Valdosta Regional Airport,US
+VPS,US-FL,Valparaiso,Destin-Ft Walton Beach Airport,US
+WRB,US-GA,Warner Robins,Robins Air Force Base,US
+WRL,US-WY,Worland,Worland Municipal Airport,US
+KWY,KE-300,Kiwayu,Kiwayu Airport,KE
+XNA,US-AR,Fayetteville/Springdale,Northwest Arkansas Regional Airport,US
+YKM,US-WA,Yakima,Yakima Air Terminal McAllister Field,US
+TIA,AL-11,Tirana,Tirana International Airport Mother Teresa,AL
+BOJ,BG-02,Burgas,Burgas Airport,BG
+PDV,BG-16,Plovdiv,Plovdiv International Airport,BG
+SOF,BG-23,Sofia,Sofia Airport,BG
+VAR,BG-03,Varna,Varna Airport,BG
+ECN,CY-02,Nicosia,Ercan International Airport,CY
+LCA,CY-04,Larnarca,Larnaca International Airport,CY
+PFO,CY-06,Paphos,Paphos International Airport,CY
+AKT,GB-U-A,Akrotiri,RAF Akrotiri,GB
+DBV,HR-19,Dubrovnik,Dubrovnik Airport,HR
+PUY,HR-18,Pula,Pula Airport,HR
+RJK,HR-08,Rijeka,Rijeka Airport,HR
+BWK,HR-17,Brač Island,Bol Airport,HR
+SPU,HR-17,Split,Split Airport,HR
+ZAG,HR-21,Zagreb,Zagreb Airport,HR
+ZAD,HR-13,Zadar,Zemunik Airport,HR
+ABC,ES-CM,Albacete,Albacete-Los Llanos Airport,ES
+ALC,ES-V,Alicante,Alicante International Airport,ES
+LEI,ES-AN,Almería,Almería International Airport,ES
+OVD,ES-O,Ranón,Asturias Airport,ES
+BIO,ES-PV,Bilbao,Bilbao Airport,ES
+BCN,ES-CT,Barcelona,Barcelona International Airport,ES
+BJZ,ES-EX,Badajoz,Badajoz Airport,ES
+LCG,ES-GA,Culleredo,A Coruña Airport,ES
+ILD,ES-CT,Lleida,Lleida-Alguaire Airport,ES
+CDT,ES-CS,Castellón de la Plana,Castellón-Costa Azahar Airport,ES
+GRO,ES-GE,Girona,Girona Airport,ES
+GRX,ES-AN,Granada,Federico Garcia Lorca Airport,ES
+IBZ,ES-PM,Ibiza,Ibiza Airport,ES
+XRY,ES-AN,Jerez de la Forntera,Jerez Airport,ES
+MJV,ES-MU,San Javier,San Javier Airport,ES
+MAD,ES-M,Madrid,Adolfo Suárez Madrid–Barajas Airport,ES
+AGP,ES-AN,Málaga,Málaga Airport,ES
+MAH,ES-PM,Menorca Island,Menorca Airport,ES
+PMI,ES-PM,Palma De Mallorca,Palma De Mallorca Airport,ES
+PNA,ES-NA,Pamplona,Pamplona Airport,ES
+REU,ES-CT,Reus,Reus Air Base,ES
+SLM,ES-CL,Salamanca,Salamanca Airport,ES
+EAS,ES-PV,Hondarribia,San Sebastian Airport,ES
+SCQ,ES-GA,Santiago de Compostela,Santiago de Compostela Airport,ES
+VLC,ES-V,Valencia,Valencia Airport,ES
+VLL,ES-CL,Valladolid,Valladolid Airport,ES
+VIT,ES-PV,Alava,Vitoria/Foronda Airport,ES
+VGO,ES-GA,Vigo,Vigo Airport,ES
+SDR,ES-S,Santander,Santander Airport,ES
+ZAZ,ES-AR,Zaragoza,Zaragoza Air Base,ES
+SVQ,ES-AN,Sevilla,Sevilla Airport,ES
+AGF,FR-B,Agen/La Garenne,Agen-La Garenne Airport,FR
+BOD,FR-B,Bordeaux/Mérignac,Bordeaux-Mérignac Airport,FR
+EGC,FR-B,Bergerac/Roumanière,Bergerac-Roumanière Airport,FR
+LRH,FR-T,La Rochelle/Île de Ré,La Rochelle-Île de Ré Airport,FR
+PIS,FR-T,Poitiers/Biard,Poitiers-Biard Airport,FR
+LIG,FR-L,Limoges/Bellegarde,Limoges Airport,FR
+TLS,FR-N,Toulouse/Blagnac,Toulouse-Blagnac Airport,FR
+PUF,FR-B,Pau/Pyrénées (Uzein),Pau Pyrénées Airport,FR
+LDE,FR-N,Tarbes/Lourdes/Pyrénées,Tarbes-Lourdes-Pyrénées Airport,FR
+ANG,FR-T,Angoulême/Brie/Champniers,Angoulême-Brie-Champniers Airport,FR
+BIQ,FR-B,Biarritz/Anglet/Bayonne,Biarritz-Anglet-Bayonne Airport,FR
+DCM,FR-N,Castres/Mazamet,Castres-Mazamet Airport,FR
+RDZ,FR-N,Rodez/Marcillac,Rodez-Marcillac Airport,FR
+IDY,FR-R,Île d'Yeu,Île d'Yeu Airport,FR
+LPY,FR-C,Le Puy/Loudes,Le Puy-Loudes Airport,FR
+ETZ,FR-M,Metz / Nancy,Metz-Nancy-Lorraine Airport,FR
+ANE,FR-R,Angers/Marcé,Angers-Loire Airport,FR
+BIA,FR-H,Bastia/Poretta,Bastia-Poretta Airport,FR
+CLY,FR-H,Calvi/Sainte-Catherine,Calvi-Sainte-Catherine Airport,FR
+FSC,FR-H,Figari Sud-Corse,Figari Sud-Corse Airport,FR
+AJA,FR-H,Ajaccio/Napoléon Bonaparte,Ajaccio-Napoléon Bonaparte Airport,FR
+CMF,FR-V,Chambéry/Aix-les-Bains,Chambéry-Savoie Airport,FR
+CFE,FR-C,Clermont-Ferrand/Auvergne,Clermont-Ferrand Auvergne Airport,FR
+LYS,FR-V,Lyon,Lyon Saint-Exupéry Airport,FR
+NCY,FR-V,Annecy/Meythet,Annecy-Haute-Savoie-Mont Blanc Airport,FR
+GNB,FR-V,Grenoble/Saint-Geoirs,Grenoble-Isère Airport,FR
+AUR,FR-C,Aurillac,Aurillac Airport,FR
+CEQ,FR-U,Cannes/Mandelieu,Cannes-Mandelieu Airport,FR
+EBU,FR-V,Saint-Étienne/Bouthéon,Saint-Étienne-Bouthéon Airport,FR
+CCF,FR-K,Carcassonne/Salvaza,Carcassonne Airport,FR
+MRS,FR-U,Marseille,Marseille Provence Airport,FR
+NCE,FR-U,Nice,Nice-Côte d'Azur Airport,FR
+PGF,FR-K,Perpignan/Rivesaltes,Perpignan-Rivesaltes (Llabanère) Airport,FR
+MPL,FR-K,Montpellier/Méditerranée,Montpellier-Méditerranée Airport,FR
+BZR,FR-K,Béziers/Vias,Béziers-Vias Airport,FR
+AVN,FR-U,Avignon/Caumont,Avignon-Caumont Airport,FR
+,FR-F,Avord,Avord (BA 702) Air Base,FR
+BVA,FR-S,Beauvais/Tillé,Paris Beauvais Tillé Airport,FR
+LEH,FR-Q,Le Havre/Octeville,Le Havre Octeville Airport,FR
+URO,FR-Q,Rouen/Vallée de Seine,Rouen Airport,FR
+TUF,FR-F,Tours/Val de Loire (Loire Valley),Tours-Val-de-Loire Airport,FR
+CDG,FR-J,Paris,Charles de Gaulle International Airport,FR
+ORY,FR-J,Paris,Paris-Orly Airport,FR
+POX,FR-J,Cormeilles-en-Vexin,Pontoise - Cormeilles-en-Vexin Airport,FR
+LIL,FR-O,Lille/Lesquin,Lille-Lesquin Airport,FR
+BES,FR-E,Brest/Guipavas,Brest Bretagne Airport,FR
+CER,FR-P,Cherbourg/Maupertus,Cherbourg-Maupertus Airport,FR
+DNR,FR-E,Dinard/Pleurtuit/Saint-Malo,Dinard-Pleurtuit-Saint-Malo Airport,FR
+LRT,FR-E,Lorient/Lann/Bihoué,Lorient South Brittany (Bretagne Sud) Airport,FR
+CFR,FR-P,Caen/Carpiquet,Caen-Carpiquet Airport,FR
+RNS,FR-E,Rennes/Saint-Jacques,Rennes-Saint-Jacques Airport,FR
+LAI,FR-E,Lannion,Lannion-Côte de Granit Airport,FR
+UIP,FR-E,Quimper/Pluguffan,Quimper-Cornouaille Airport,FR
+NTE,FR-R,Nantes,Nantes Atlantique Airport,FR
+BSL,FR-A,Bâle/Mulhouse,EuroAirport Basel-Mulhouse-Freiburg Airport,FR
+DIJ,FR-D,Dijon/Longvic,Dijon-Bourgogne Airport,FR
+EPL,FR-M,Épinal/Mirecourt,Épinal-Mirecourt Airport,FR
+SXB,FR-A,Strasbourg,Strasbourg Airport,FR
+TLN,FR-U,Toulon/Hyères/Le Palyvestre,Toulon-Hyères Airport,FR
+FNI,FR-K,Nîmes/Garons,Nîmes-Arles-Camargue Airport,FR
+FSP,PM-SP,Saint-Pierre,St Pierre Airport,PM
+AXD,GR-71,Alexandroupolis,Dimokritos Airport,GR
+ATH,GR-A1,Athens,Eleftherios Venizelos International Airport,GR
+JKH,GR-85,Chios Island,Chios Island National Airport,GR
+IOA,GR-33,Ioannina,Ioannina Airport,GR
+HER,GR-91,Heraklion,Heraklion International Nikos Kazantzakis Airport,GR
+EFL,GR-23,Kefallinia Island,Kefallinia Airport,GR
+KLX,GR-17,Kalamata,Kalamata Airport,GR
+KGS,GR-81,Kos Island,Kos Airport,GR
+AOK,GR-81,Karpathos Island,Karpathos Airport,GR
+CFU,GR-22,Kerkyra Island,Ioannis Kapodistrias International Airport,GR
+KVA,GR-55,Kavala,Alexander the Great International Airport,GR
+KZI,GR-58,Kozani,Filippos Airport,GR
+JMK,GR-82,Mykonos Island,Mikonos Airport,GR
+MJT,GR-83,Mytilene,Mytilene International Airport,GR
+PVK,GR-34,Preveza/Lefkada,Aktion National Airport,GR
+RHO,GR-81,Rodes Island,Diagoras Airport,GR
+GPA,GR-13,Patras,Araxos Airport,GR
+CHQ,GR-94,Souda,Chania International Airport,GR
+JSI,GR-43,Skiathos,Skiathos Island National Airport,GR
+SMI,GR-84,Samos Island,Samos Airport,GR
+JTR,GR-82,Santorini Island,Santorini Airport,GR
+JSH,GR-92,Crete Island,Sitia Airport,GR
+SKG,GR-54,Thessaloniki,Thessaloniki Macedonia International Airport,GR
+ZTH,GR-21,Zakynthos Island,Dionysios Solomos Airport,GR
+BUD,HU-PE,Budapest,Budapest Ferenc Liszt International Airport,HU
+DEB,HU-HB,Debrecen,Debrecen International Airport,HU
+PEV,HU-BA,Pécs-Pogány,Pécs-Pogány Airport,HU
+,HU-GS,Győr,Győr-Pér International Airport,HU
+SOB,HU-ZA,Sármellék,Sármellék International Airport,HU
+CRV,IT-78,Crotone,Crotone Airport,IT
+BRI,IT-75,Bari,Bari Karol Wojtyła Airport,IT
+FOG,IT-75,Foggia,"Foggia ""Gino Lisa"" Airport",IT
+PSR,IT-65,Pescara,Pescara International Airport,IT
+BDS,IT-75,Brindisi,Brindisi – Salento Airport,IT
+SUF,IT-78,Lamezia Terme (CZ),Lamezia Terme Airport,IT
+CTA,IT-82,Catania,Catania-Fontanarossa Airport,IT
+LMP,IT-82,Lampedusa,Lampedusa Airport,IT
+PNL,IT-82,Pantelleria (TP),Pantelleria Airport,IT
+PMO,IT-82,Palermo,Falcone–Borsellino Airport,IT
+REG,IT-78,Reggio Calabria,Reggio Calabria Airport,IT
+TPS,IT-82,Trapani (TP),Vincenzo Florio Airport Trapani-Birgi,IT
+AHO,IT-88,Alghero,Alghero-Fertilia Airport,IT
+CAG,IT-88,Cagliari,Cagliari Elmas Airport,IT
+OLB,IT-88,Olbia (SS),Olbia Costa Smeralda Airport,IT
+TTB,IT-88,Arbatax,Tortolì Airport,IT
+MXP,IT-25,Milan,Malpensa International Airport,IT
+BGY,IT-25,Bergamo,Il Caravaggio International Airport,IT
+TRN,IT-21,Torino,Turin Airport,IT
+ALL,IT-42,Albenga (SV),Villanova D'Albenga International Airport,IT
+GOA,IT-42,Genova,Genoa Cristoforo Colombo Airport,IT
+LIN,IT-25,Milan,Milano Linate Airport,IT
+PMF,IT-45,Parma,Parma Airport,IT
+AOT,IT-23,Aosta,Aosta Airport,IT
+CUF,IT-21,Cuneo,Cuneo International Airport,IT
+BZO,IT-32,Bolzano,Bolzano Airport,IT
+BLQ,IT-45,Bologna,Bologna Guglielmo Marconi Airport,IT
+TSF,IT-34,Treviso,Treviso-Sant'Angelo Airport,IT
+FRL,IT-45,Forlì (FC),Forlì Airport,IT
+VBS,IT-25,Montichiari (BS),Brescia Airport,IT
+TRS,IT-36,Trieste,Trieste–Friuli Venezia Giulia Airport,IT
+RMI,IT-45,Rimini,Federico Fellini International Airport,IT
+VRN,IT-34,Verona,Verona Villafranca Airport,IT
+AOI,IT-57,Ancona,Ancona Falconara Airport,IT
+VCE,IT-34,Venice,Venice Marco Polo Airport,IT
+CIA,IT-62,Roma,Ciampino–G. B. Pastine International Airport,IT
+FCO,IT-62,Rome,Leonardo da Vinci–Fiumicino Airport,IT
+QSR,IT-72,Salerno,Salerno Costa d'Amalfi Airport,IT
+EBA,IT-52,Marina  Di Campo,Marina Di Campo Airport,IT
+NAP,IT-72,Nápoli,Naples International Airport,IT
+PSA,IT-52,Pisa,Pisa International Airport,IT
+FLR,IT-52,Firenze,Peretola Airport,IT
+PEG,IT-55,Perugia,Perugia San Francesco d'Assisi – Umbria International Airport,IT
+LJU,SI-061,Ljubljana,Ljubljana Jože Pučnik Airport,SI
+MBX,SI-070,,Maribor Airport,SI
+KLV,CZ-KA,Karlovy Vary,Karlovy Vary International Airport,CZ
+OSR,CZ-MO,Ostrava,Ostrava Leos Janáček Airport,CZ
+PED,CZ-PA,Pardubice,Pardubice Airport,CZ
+PRG,CZ-PR,Prague,Václav Havel Airport Prague,CZ
+BRQ,CZ-JM,Brno,Brno-Tuřany Airport,CZ
+TLV,IL-M,Tel Aviv,Ben Gurion International Airport,IL
+ETH,IL-D,Eilat,Eilat Airport,IL
+HFA,IL-HA,Haifa,Haifa International Airport,IL
+RPN,IL-Z,Rosh Pina,Ben Ya'akov Airport,IL
+VDA,IL-D,Eilat,Ovda International Airport,IL
+SDV,IL-TA,Tel Aviv,Sde Dov Airport,IL
+MLA,MT-25,Luqa,Malta International Airport,MT
+GRZ,AT-6,Graz,Graz Airport,AT
+INN,AT-7,Innsbruck,Innsbruck Airport,AT
+KLU,AT-2,Klagenfurt am Wörthersee,Klagenfurt Airport,AT
+LNZ,AT-4,Linz,Linz Hörsching Airport,AT
+SZG,AT-5,Salzburg,Salzburg Airport,AT
+VIE,AT-9,Vienna,Vienna International Airport,AT
+SMA,PT-20,Vila do Porto,Santa Maria Airport,PT
+FLW,PT-20,Santa Cruz das Flores,Flores Airport,PT
+FAO,PT-08,Faro,Faro Airport,PT
+GRW,PT-20,Santa Cruz da Graciosa,Graciosa Airport,PT
+HOR,PT-20,Horta,Horta Airport,PT
+TER,PT-20,Lajes,Lajes Field,PT
+FNC,PT-30,Funchal,Madeira Airport,PT
+PDL,PT-20,Ponta Delgada,João Paulo II Airport,PT
+OPO,PT-13,Porto,Francisco de Sá Carneiro Airport,PT
+PXO,PT-30,Vila Baleira,Porto Santo Airport,PT
+LIS,PT-11,Lisbon,Lisbon Portela Airport,PT
+SJZ,PT-20,Velas,São Jorge Airport,PT
+BNX,BA-SRP,Banja Luka,Banja Luka International Airport,BA
+OMO,BA-BIH,Mostar,Mostar International Airport,BA
+SJJ,BA-BIH,Sarajevo,Sarajevo International Airport,BA
+ARW,RO-AR,Arad,Arad International Airport,RO
+BCM,RO-BC,Bacău,Bacău Airport,RO
+BAY,RO-MM,Baia Mare,Tautii Magheraus Airport,RO
+BBU,RO-B,Bucharest,Băneasa International Airport,RO
+CND,RO-CT,Constanţa,Mihail Kogălniceanu International Airport,RO
+CLJ,RO-CJ,Cluj-Napoca,Cluj-Napoca International Airport,RO
+IAS,RO-IS,Iaşi,Iaşi Airport,RO
+OMR,RO-BH,Oradea,Oradea International Airport,RO
+OTP,RO-B,Bucharest,Henri Coandă International Airport,RO
+SBZ,RO-SB,Sibiu,Sibiu International Airport,RO
+SUJ,RO-SM,Satu Mare,Satu Mare Airport,RO
+SCV,RO-SV,Suceava,Suceava Stefan cel Mare Airport,RO
+TGM,RO-MS,Târgu Mureş,Transilvania Târgu Mureş International Airport,RO
+TSR,RO-TM,Timişoara,Timişoara Traian Vuia Airport,RO
+GVA,CH-GE,Geneva,Geneva Cointrin International Airport,CH
+LUG,CH-TI,Lugano,Lugano Airport,CH
+BRN,CH-BE,Bern,Bern Belp Airport,CH
+ZRH,CH-ZH,Zurich,Zürich Airport,CH
+ACH,CH-SG,Altenrhein,St Gallen Altenrhein Airport,CH
+ESB,TR-06,Ankara,Esenboğa International Airport,TR
+ADA,TR-01,Adana,Adana Airport,TR
+AYT,TR-07,Antalya,Antalya International Airport,TR
+GZT,TR-27,Gaziantep,Gaziantep International Airport,TR
+KYA,TR-42,Konya,Konya Airport,TR
+MLX,TR-44,Malatya,Malatya Erhaç Airport,TR
+ASR,TR-38,Kayseri,Kayseri Erkilet Airport,TR
+TJK,TR-60,Tokat,Tokat Airport,TR
+DNZ,TR-20,Denizli,Çardak Airport,TR
+IST,TR-34,Istanbul,Atatürk International Airport,TR
+BZI,TR-10,,Balıkesir Merkez Airport,TR
+CKZ,TR-17,Çanakkale,Çanakkale Airport,TR
+ADB,TR-35,İzmir,Adnan Menderes International Airport,TR
+YEI,TR-16,Bursa,Bursa Yenişehir Airport,TR
+DLM,TR-48,Dalaman,Dalaman International Airport,TR
+TEQ,TR-59,Çorlu,Tekirdağ Çorlu Airport,TR
+AOE,TR-26,Eskişehir,Anadolu Airport,TR
+EZS,TR-23,Elazığ,Elazığ Airport,TR
+DIY,TR-21,Diyarbakir,Diyarbakir Airport,TR
+ERC,TR-24,Erzincan,Erzincan Airport,TR
+ERZ,TR-25,Erzurum,Erzurum International Airport,TR
+KSY,TR-36,Kars,Kars Airport,TR
+TZX,TR-61,Trabzon,Trabzon International Airport,TR
+SFQ,TR-63,Şanlıurfa,Şanlıurfa Airport,TR
+VAN,TR-65,Van,Van Ferit Melen Airport,TR
+BAL,TR-72,Batman,Batman Airport,TR
+MSR,TR-49,Muş,Muş Airport,TR
+KCM,TR-46,Kahramanmaraş,Kahramanmaraş Airport,TR
+AJI,TR-04,,Ağrı Airport,TR
+ADF,TR-02,Adıyaman,Adıyaman Airport,TR
+MQM,TR-47,Mardin,Mardin Airport,TR
+GNY,TR-63,Şanlıurfa,Şanlıurfa GAP Airport,TR
+NKT,TR-73,Şırnak,Şırnak Şerafettin Elçi Airport,TR
+YKO,TR-30,Hakkari,Hakkari Yüksekova Airport,TR
+HTY,TR-31,Hatay,Hatay Airport,TR
+ISE,TR-32,Isparta,Süleyman Demirel International Airport,TR
+EDO,TR-10,Edremit,Balıkesir Körfez Airport,TR
+BJV,TR-48,Bodrum,Milas Bodrum International Airport,TR
+SAW,TR-34,Istanbul,Sabiha Gökçen International Airport,TR
+GZP,TR-07,Gazipaşa,Gazipaşa Airport,TR
+KIV,MD-C,Chişinău,Chişinău International Airport,MD
+LUZ,PL-LU,Lublin,Lublin Airport,PL
+OHD,MK-003,Ohrid,Ohrid St. Paul the Apostle Airport,MK
+SKP,MK-004,Skopje,Skopje Alexander the Great Airport,MK
+GIB,GI-U-A,Gibraltar,Gibraltar Airport,GI
+BEG,RS-00,Belgrade,Belgrade Nikola Tesla Airport,RS
+INI,RS-20,Nis,Nis Airport,RS
+TGD,ME-16,Podgorica,Podgorica Airport,ME
+TIV,ME-19,Tivat,Tivat Airport,ME
+BTS,SK-BL,Bratislava,M. R. Štefánik Airport,SK
+KSC,SK-KI,Košice,Košice Airport,SK
+SLD,SK-BC,Sliač,Sliač Airport,SK
+TAT,SK-KI,Poprad,Poprad-Tatry Airport,SK
+ILZ,SK-ZI,Žilina,Žilina Airport,SK
+GDT,TC-GT,Cockburn Town,JAGS McCartney International Airport,TC
+NCA,TC-NC,,North Caicos Airport,TC
+PLS,TC-PR,Providenciales Island,Providenciales Airport,TC
+XSC,TC-SC,,South Caicos Airport,TC
+,MD-BL,Bălţi,Bălţi City Airport,MD
+BRX,DO-04,Barahona,Maria Montez International Airport,DO
+AZS,DO-20,Samana,Samaná El Catey International Airport,DO
+JBQ,DO-01,La Isabela,La Isabela International Airport,DO
+LRM,DO-12,La Romana,Casa De Campo International Airport,DO
+PUJ,DO-11,Punta Cana,Punta Cana International Airport,DO
+POP,DO-18,Puerto Plata,Gregorio Luperon International Airport,DO
+SDQ,DO-01,Santo Domingo,Las Américas International Airport,DO
+STI,DO-25,Santiago,Cibao International Airport,DO
+GUA,GT-GU,Guatemala City,La Aurora Airport,GT
+PBR,GT-IZ,Puerto Barrios,Puerto Barrios Airport,GT
+GSJ,GT-ES,Puerto San José,San José Airport,GT
+FRS,GT-PE,San Benito,Mundo Maya International Airport,GT
+LCE,HN-AT,La Ceiba,Goloson International Airport,HN
+SAP,HN-CR,La Mesa,Ramón Villeda Morales International Airport,HN
+GJA,HN-IB,Guanaja,La Laguna Airport,HN
+RTB,HN-IB,Roatan Island,Juan Manuel Galvez International Airport,HN
+TGU,HN-FM,Tegucigalpa,Toncontín International Airport,HN
+OCJ,JM-05,Ocho Rios,Boscobel Aerodrome,JM
+KIN,JM-01,Kingston,Norman Manley International Airport,JM
+MBJ,JM-08,Montego Bay,Sangster International Airport,JM
+KTP,JM-02,Tinson Pen,Tinson Pen Airport,JM
+ACA,MX-GRO,Acapulco,General Juan N Alvarez International Airport,MX
+AGU,MX-AGU,Aguascalientes,Jesús Terán Paredo International Airport,MX
+HUX,MX-OAX,Huatulco,Bahías de Huatulco International Airport,MX
+CVJ,MX-MOR,,General Mariano Matamoros Airport,MX
+CME,MX-CAM,Ciudad del Carmen,Ciudad del Carmen International Airport,MX
+CUL,MX-SIN,Culiacán,Bachigualato Federal International Airport,MX
+CTM,MX-ROO,Chetumal,Chetumal International Airport,MX
+CEN,MX-SON,Ciudad Obregón,Ciudad Obregón International Airport,MX
+CPE,MX-CAM,Campeche,Ingeniero Alberto Acuña Ongay International Airport,MX
+CJS,MX-CHH,Ciudad Juárez,Abraham González International Airport,MX
+CUU,MX-CHH,Chihuahua,General Roberto Fierro Villalobos International Airport,MX
+CVM,MX-TAM,Ciudad Victoria,General Pedro Jose Mendez International Airport,MX
+CYW,MX-GUA,Celaya,Captain Rogelio Castillo National Airport,MX
+CZM,MX-ROO,Cozumel,Cozumel International Airport,MX
+CUA,MX-BCS,Ciudad Constitución,Ciudad Constitución Airport,MX
+DGO,MX-DUR,Durango,General Guadalupe Victoria International Airport,MX
+TPQ,MX-NAY,Tepic,Amado Nervo National Airport,MX
+GDL,MX-JAL,Guadalajara,Don Miguel Hidalgo Y Costilla International Airport,MX
+GYM,MX-SON,Guaymas,General José María Yáñez International Airport,MX
+HMO,MX-SON,Hermosillo,General Ignacio P. Garcia International Airport,MX
+CLQ,MX-COL,Colima,Licenciado Miguel de la Madrid Airport,MX
+SLW,MX-COA,Saltillo,Plan De Guadalupe International Airport,MX
+JAL,MX-VER,Xalapa,El Lencero Airport,MX
+LZC,MX-MIC,Lázaro Cárdenas,Lázaro Cárdenas Airport,MX
+LMM,MX-SIN,Los Mochis,Valle del Fuerte International Airport,MX
+BJX,MX-GUA,Silao,Del Bajío International Airport,MX
+LAP,MX-BCS,La Paz,Manuel Márquez de León International Airport,MX
+LTO,MX-BCS,Loreto,Loreto International Airport,MX
+MAM,MX-TAM,Matamoros,General Servando Canales International Airport,MX
+MID,MX-YUC,Mérida,Licenciado Manuel Crescencio Rejon Int Airport,MX
+MXL,MX-BCN,Mexicali,General Rodolfo Sánchez Taboada International Airport,MX
+MLM,MX-MIC,Morelia,General Francisco J. Mujica International Airport,MX
+MTT,MX-VER,Minatitlán,Minatitlán/Coatzacoalcos National Airport,MX
+LOV,MX-COA,,Monclova International Airport,MX
+MEX,MX-DIF,Mexico City,Licenciado Benito Juarez International Airport,MX
+MTY,MX-NLE,Monterrey,General Mariano Escobedo International Airport,MX
+MZT,MX-SIN,Mazatlán,General Rafael Buelna International Airport,MX
+NLD,MX-TAM,Nuevo Laredo,Quetzalcóatl International Airport,MX
+OAX,MX-OAX,Oaxaca,Xoxocotlán International Airport,MX
+PAZ,MX-VER,Poza Rica,El Tajín National Airport,MX
+PBC,MX-PUE,Puebla,Hermanos Serdán International Airport,MX
+PDS,MX-COA,,Piedras Negras International Airport,MX
+UPN,MX-MIC,,Licenciado y General Ignacio Lopez Rayon Airport,MX
+PVR,MX-JAL,Puerto Vallarta,Licenciado Gustavo Díaz Ordaz International Airport,MX
+PXM,MX-OAX,Puerto Escondido,Puerto Escondido International Airport,MX
+QRO,MX-QUE,Querétaro,Querétaro Intercontinental Airport,MX
+REX,MX-TAM,Reynosa,General Lucio Blanco International Airport,MX
+SJD,MX-BCS,San José del Cabo,Los Cabos International Airport,MX
+SLP,MX-SLP,San Luis Potosí,Ponciano Arriaga International Airport,MX
+TRC,MX-COA,Torreón,Francisco Sarabia International Airport,MX
+TGZ,MX-CHP,Tuxtla Gutiérrez,Angel Albino Corzo International Airport,MX
+TIJ,MX-BCN,Tijuana,General Abelardo L. Rodríguez International Airport,MX
+TAM,MX-TAM,Tampico,General Francisco Javier Mina International Airport,MX
+TLC,MX-MEX,Toluca,Licenciado Adolfo Lopez Mateos International Airport,MX
+TAP,MX-CHP,Tapachula,Tapachula International Airport,MX
+CUN,MX-ROO,Cancún,Cancún International Airport,MX
+VSA,MX-TAB,Villahermosa,Carlos Rovirosa Pérez International Airport,MX
+VER,MX-VER,Veracruz,General Heriberto Jara International Airport,MX
+ZCL,MX-ZAC,Zacatecas,General Leobardo C. Ruiz International Airport,MX
+ZIH,MX-GRO,Ixtapa,Ixtapa Zihuatanejo International Airport,MX
+ZLO,MX-COL,Manzanillo,Playa De Oro International Airport,MX
+BEF,NI-AS,Bluefileds,Bluefields Airport,NI
+MGA,NI-MN,Managua,Augusto C. Sandino (Managua) International Airport,NI
+PUZ,NI-AN,Puerto Cabezas,Puerto Cabezas Airport,NI
+BOC,PA-1,Isla Colón,Bocas Del Toro International Airport,PA
+CTD,PA-6,Chitré,Alonso Valderrama Airport,PA
+CHX,PA-1,Changuinola,Cap Manuel Niño International Airport,PA
+DAV,PA-4,David,Enrique Malek International Airport,PA
+ONX,PA-3,Colón,Enrique Adolfo Jimenez Airport,PA
+PAC,PA-8,Albrook,Marcos A. Gelabert International Airport,PA
+PTY,PA-8,Tocumen,Tocumen International Airport,PA
+TTQ,CR-L,Roxana,Aerotortuguero Airport,CR
+BCL,CR-L,Pococi,Barra del Colorado Airport,CR
+OTR,CR-P,Corredores,Coto 47 Airport,CR
+GLF,CR-P,Golfito,Golfito Airport,CR
+LIR,CR-G,Liberia,Daniel Oduber Quiros International Airport,CR
+LIO,CR-L,Puerto Limon,Limon International Airport,CR
+NOB,CR-G,Nicoya,Nosara Airport,CR
+SJO,CR-A,San Jose,Juan Santamaria International Airport,CR
+PJM,CR-P,Puerto Jimenez,Puerto Jimenez Airport,CR
+PMZ,CR-P,Palmar Sur,Palmar Sur Airport,CR
+SYQ,CR-SJ,San Jose,Tobias Bolanos International Airport,CR
+XQP,CR-P,Quepos,Quepos Managua Airport,CR
+SAL,SV-PA,Santa Clara,El Salvador International Airport,SV
+CYA,HT-SD,Les Cayes,Les Cayes Airport,HT
+CAP,HT-ND,Cap Haitien,Cap Haitien International Airport,HT
+JAK,HT-SE,Jacmel,Jacmel Airport,HT
+JEE,HT-GA,Jeremie,Jérémie Airport,HT
+PAP,HT-OU,Port-au-Prince,Toussaint Louverture International Airport,HT
+PAX,HT-NO,Port-de-Paix,Port-de-Paix Airport,HT
+BCA,CU-14,Baracoa,Gustavo Rizo Airport,CU
+BYM,CU-12,Bayamo,Carlos Manuel de Cespedes Airport,CU
+AVI,CU-08,Ciego de Avila,Maximo Gomez Airport,CU
+CCC,CU-08,Cayo Coco,Jardines Del Rey Airport,CU
+CFG,CU-06,Cienfuegos,Jaime Gonzalez Airport,CU
+CYO,CU-99,Cayo Largo del Sur,Vilo Acuña International Airport,CU
+CMW,CU-09,Camaguey,Ignacio Agramonte International Airport,CU
+SCU,CU-13,Santiago,Antonio Maceo International Airport,CU
+GAO,CU-14,Guantánamo,Mariana Grajales Airport,CU
+HAV,CU-03,Havana,José Martí International Airport,CU
+HOG,CU-11,Holguin,Frank Pais International Airport,CU
+MZO,CU-12,Manzanillo,Sierra Maestra Airport,CU
+GER,CU-99,Nueva Gerona,Rafael Cabrera Airport,CU
+UPB,CU-02,Havana,Playa Baracoa Airport,CU
+TND,CU-07,Trinidad,Alberto Delgado Airport,CU
+VRA,CU-04,Varadero,Juan Gualberto Gomez International Airport,CU
+VTU,CU-10,Las Tunas,Hermanos Ameijeiras Airport,CU
+CYB,KY-U-A,Cayman Brac,Gerrard Smith International Airport,KY
+GCM,KY-U-A,Georgetown,Owen Roberts International Airport,KY
+COX,BS-KB,Andros,Congo Town Airport,BS
+MHH,BS-MH,Marsh Harbour,Marsh Harbour International Airport,BS
+SAQ,BS-NB,Andros Island,San Andros Airport,BS
+AXP,BS-AC,Spring Point,Spring Point Airport,BS
+TCB,BS-MH,Treasure Cay,Treasure Cay Airport,BS
+CCZ,BS-NB,,Chub Cay Airport,BS
+BIM,BS-BI,South Bimini,South Bimini Airport,BS
+ATC,BS-CI,Arthur's Town,Arthur's Town Airport,BS
+CAT,BS-CI,Cat Island,New Bight Airport,BS
+CRI,BS-AC,Colonel Hill,Colonel Hill Airport,BS
+GGT,BS-EX,George Town,Exuma International Airport,BS
+ELH,BS-HI,North Eleuthera,North Eleuthera Airport,BS
+GHB,BS-GH,Governor's Harbour,Governor's Harbour Airport,BS
+FPO,BS-FP,Freeport,Grand Bahama International Airport,BS
+IGA,BS-IN,Matthew Town,Inagua Airport,BS
+LGI,BS-LI,Deadman's Cay,Deadman's Cay Airport,BS
+SML,BS-LI,Stella Maris,Stella Maris Airport,BS
+MYG,BS-MG,Mayaguana,Mayaguana Airport,BS
+NAS,BS-NP,Nassau,Lynden Pindling International Airport,BS
+ZSA,BS-SR,San Salvador,San Salvador Airport,BS
+BZE,BZ-BZ,Belize City,Philip S. W. Goldson International Airport,BZ
+NBS,CN-22,Baishan,Changbaishan Airport,CN
+RAR,CK-U-A,Avarua,Rarotonga International Airport,CK
+NAN,FJ-W,Nadi,Nadi International Airport,FJ
+SUV,FJ-C,Nausori,Nausori International Airport,FJ
+LBS,FJ-N,,Labasa Airport,FJ
+TBU,TO-04,Nuku'alofa,Fua'amotu International Airport,TO
+HPA,TO-02,Lifuka,Lifuka Island Airport,TO
+VAV,TO-05,Vava'u Island,Vava'u International Airport,TO
+GMO,NG-GO,Gombe,Gombe Lawanti International Airport,NG
+QRW,NG-DE,Warri,Warri Airport,NG
+FUN,TV-FUN,Funafuti,Funafuti International Airport,TV
+TRW,KI-G,Tarawa,Bonriki International Airport,KI
+IUE,NU-U-A,Alofi,Niue International Airport,NU
+FUT,WF-U-A,Futuna Island,Pointe Vele Airport,WF
+WLS,WF-U-A,Wallis Island,Hihifo Airport,WF
+APW,WS-AA,Apia,Faleolo International Airport,WS
+FTI,AS-U-A,Fitiuta Village,Fitiuta Airport,AS
+PPG,AS-U-A,Pago Pago,Pago Pago International Airport,AS
+PPT,PF-U-A,Papeete,Faa'a International Airport,PF
+RUR,PF-U-A,,Rurutu Airport,PF
+TUB,PF-U-A,,Tubuai Airport,PF
+AAA,PF-U-A,,Anaa Airport,PF
+TIH,PF-U-A,,Tikehau Airport,PF
+FAV,PF-U-A,,Fakarava Airport,PF
+XMH,PF-U-A,,Manihi Airport,PF
+GMR,PF-U-A,,Totegegie Airport,PF
+KKR,PF-U-A,,Kaukura Airport,PF
+MKP,PF-U-A,,Makemo Airport,PF
+TKP,PF-U-A,,Takapoto Airport,PF
+AXR,PF-U-A,,Arutua Airport,PF
+MVT,PF-U-A,,Mataiva Airport,PF
+AHE,PF-U-A,Ahe Atoll,Ahe Airport,PF
+TKX,PF-U-A,,Takaroa Airport,PF
+NHV,PF-U-A,,Nuku Hiva Airport,PF
+AUQ,PF-U-A,Hiva Oa Island,Hiva Oa-Atuona Airport,PF
+BOB,PF-U-A,Motu Mute,Bora Bora Airport,PF
+RGI,PF-U-A,,Rangiroa Airport,PF
+HUH,PF-U-A,Fare,Huahine-Fare Airport,PF
+MOZ,PF-U-A,,Moorea Airport,PF
+HOI,PF-U-A,,Hao Airport,PF
+MAU,PF-U-A,,Maupiti Airport,PF
+RFP,PF-U-A,Uturoa,Raiatea Airport,PF
+ZGU,VU-TOB,Gaua Island,Gaua Island Airport,VU
+SON,VU-SAM,Luganville,Santo Pekoa International Airport,VU
+VLI,VU-SEE,Port Vila,Bauerfield International Airport,VU
+TAH,VU-TAE,,Tanna Airport,VU
+TGJ,NC-U-A,Tiga,Tiga Airport,NC
+BMY,NC-U-A,Waala,Île Art - Waala Airport,NC
+KNQ,NC-U-A,Koné,Koné Airport,NC
+ILP,NC-U-A,Île des Pins,Île des Pins Airport,NC
+KOC,NC-U-A,Koumac,Koumac Airport,NC
+LIF,NC-U-A,Lifou,Lifou Airport,NC
+GEA,NC-U-A,Nouméa,Nouméa Magenta Airport,NC
+MEE,NC-U-A,Maré,Maré Airport,NC
+TOU,NC-U-A,Touho,Touho Airport,NC
+UVE,NC-U-A,Ouvéa,Ouvéa Airport,NC
+NOU,NC-U-A,Nouméa,La Tontouta International Airport,NC
+AKL,NZ-AUK,Auckland,Auckland International Airport,NZ
+TUO,NZ-WKO,Taupo,Taupo Airport,NZ
+CHC,NZ-CAN,Christchurch,Christchurch International Airport,NZ
+CHT,NZ-WGN,Waitangi,Chatham Islands-Tuuta Airport,NZ
+DUD,NZ-OTA,Dunedin,Dunedin Airport,NZ
+GIS,NZ-GIS,Gisborne,Gisborne Airport,NZ
+HKK,NZ-WTC,,Hokitika Airfield,NZ
+HLZ,NZ-WKO,Hamilton,Hamilton International Airport,NZ
+KKE,NZ-NTL,Kerikeri,Kerikeri Airport,NZ
+KAT,NZ-NTL,Kaitaia,Kaitaia Airport,NZ
+NPL,NZ-TKI,New Plymouth,New Plymouth Airport,NZ
+NPE,NZ-HKB,Napier,Hawke's Bay Airport,NZ
+NSN,NZ-NSN,Nelson,Nelson Airport,NZ
+IVC,NZ-STL,Invercargill,Invercargill Airport,NZ
+OAM,NZ-OTA,,Oamaru Airport,NZ
+PMR,NZ-MWT,,Palmerston North Airport,NZ
+ZQN,NZ-OTA,Queenstown,Queenstown International Airport,NZ
+ROT,NZ-BOP,Rotorua,Rotorua Regional Airport,NZ
+TRG,NZ-BOP,Tauranga,Tauranga Airport,NZ
+TIU,NZ-CAN,,Timaru Airport,NZ
+BHE,NZ-MBH,Blenheim,Woodbourne Airport,NZ
+WKA,NZ-OTA,,Wanaka Airport,NZ
+WHK,NZ-BOP,,Whakatane Airport,NZ
+WLG,NZ-WGN,Wellington,Wellington International Airport,NZ
+WRE,NZ-NTL,,Whangarei Airport,NZ
+WSZ,NZ-WTC,,Westport Airport,NZ
+WAG,NZ-MWT,Wanganui,Wanganui Airport,NZ
+HEA,AF-HER,,Herat Airport,AF
+KBL,AF-KAB,Kabul,Kabul International Airport,AF
+MZR,AF-BAL,,Mazar I Sharif Airport,AF
+BAH,BH-15,Manama,Bahrain International Airport,BH
+AHB,SA-14,Abha,Abha Regional Airport,SA
+HOF,SA-04,,Al Ahsa Airport,SA
+ABT,SA-11,,Al Baha Airport,SA
+BHH,SA-14,,Bisha Airport,SA
+DMM,SA-04,Ad Dammam,King Fahd International Airport,SA
+DHA,SA-04,,King Abdulaziz Air Base,SA
+DWD,SA-01,Dawadmi,Dawadmi Domestic Airport,SA
+GIZ,SA-09,Jizan,Jizan Regional Airport,SA
+ELQ,SA-05,,Gassim Airport,SA
+URY,SA-08,Gurayat,Gurayat Domestic Airport,SA
+HAS,SA-06,Ha'il,Ha'il Airport,SA
+JED,SA-02,Jeddah,King Abdulaziz International Airport,SA
+KMC,SA-04,King Khaled Military City,King Khaled Military City Airport,SA
+MED,SA-03,Medina,Prince Mohammad Bin Abdulaziz Airport,SA
+EAM,SA-10,,Nejran Airport,SA
+AQI,SA-04,Qaisumah,Al Qaisumah/Hafr Al Batin Airport,SA
+RAH,SA-08,Rafha,Rafha Domestic Airport,SA
+RUH,SA-01,Riyadh,King Khaled International Airport,SA
+RAE,SA-08,Arar,Arar Domestic Airport,SA
+SHW,SA-10,,Sharurah Airport,SA
+AJF,SA-12,Al-Jawf,Al-Jawf Domestic Airport,SA
+TUU,SA-07,Tabuk,Tabuk Airport,SA
+TIF,SA-02,Ta’if,Ta’if Regional Airport,SA
+TUI,SA-08,Turaif,Turaif Domestic Airport,SA
+WAE,SA-01,,Wadi Al Dawasir Airport,SA
+EJH,SA-07,Al Wajh,Al Wajh Domestic Airport,SA
+YNB,SA-03,Yanbu,Prince Abdulmohsin Bin Abdulaziz Airport,SA
+ABD,IR-10,Abadan,Abadan Airport,IR
+MRX,IR-10,,Mahshahr Airport,IR
+AWZ,IR-10,Ahwaz,Ahwaz Airport,IR
+BUZ,IR-06,Bushehr,Bushehr Airport,IR
+KIH,IR-23,Kish Island,Kish International Airport,IR
+BDH,IR-23,Bandar Lengeh,Bandar Lengeh Airport,IR
+PGU,IR-06,Asalouyeh,Persian Gulf International Airport,IR
+KSH,IR-17,Kermanshah,Shahid Ashrafi Esfahani Airport,IR
+KHD,IR-20,,Khoram Abad Airport,IR
+SDG,IR-16,,Sanandaj Airport,IR
+IFN,IR-04,Isfahan,Esfahan Shahid Beheshti International Airport,IR
+RAS,IR-19,Rasht,Sardar-e-Jangal Airport,IR
+IKA,IR-07,Tehran,Imam Khomeini International Airport,IR
+THR,IR-07,Tehran,Mehrabad International Airport,IR
+PYK,IR-U-A,Karaj,Payam International Airport,IR
+BND,IR-23,Bandar Abbas,Bandar Abbas International Airport,IR
+KER,IR-15,Kerman,Kerman Airport,IR
+BXR,IR-15,,Bam Airport,IR
+RJN,IR-15,,Rafsanjan Airport,IR
+XBJ,IR-29,Birjand,Birjand Airport,IR
+MHD,IR-30,Mashhad,Mashhad International Airport,IR
+BJB,IR-31,Bojnord,Bojnord Airport,IR
+AFZ,IR-30,Sabzevar,Sabzevar National Airport,IR
+NSH,IR-21,,Noshahr Airport,IR
+RZR,IR-21,,Ramsar Airport,IR
+SRY,IR-21,Sari,Dasht-e Naz Airport,IR
+LRR,IR-14,Lar,Lar Airport,IR
+SYZ,IR-14,Shiraz,Shiraz Shahid Dastghaib International Airport,IR
+ADU,IR-03,Ardabil,Ardabil Airport,IR
+OMH,IR-02,Urmia,Urmia Airport,IR
+TBZ,IR-01,Tabriz,Tabriz International Airport,IR
+AZD,IR-25,Yazd,Shahid Sadooghi Airport,IR
+ZBR,IR-13,Chabahar,Konarak Airport,IR
+ZAH,IR-13,Zahedan,Zahedan International Airport,IR
+AMM,JO-AM,Amman,Queen Alia International Airport,JO
+ADJ,JO-AM,Amman,Amman-Marka International Airport,JO
+AQJ,JO-AQ,Aqaba,Aqaba King Hussein International Airport,JO
+KWI,KW-FA,Kuwait City,Kuwait International Airport,KW
+BEY,LB-JL,Beirut,Beirut Rafic Hariri International Airport,LB
+JNJ,OM-WU,Duqm,Duqm Jaaluni Airport,OM
+MNH,OM-BA,Al Masna'ah,Rustaq Airport,OM
+AUH,AE-AZ,Abu Dhabi,Abu Dhabi International Airport,AE
+AAN,AE-AZ,Al Ain,Al Ain International Airport,AE
+DXB,AE-DU,Dubai,Dubai International Airport,AE
+DWC,AE-DU,Jebel Ali,Al Maktoum International Airport,AE
+FJR,AE-FU,,Fujairah International Airport,AE
+RKT,AE-RK,Ras Al Khaimah,Ras Al Khaimah International Airport,AE
+SHJ,AE-SH,Sharjah,Sharjah International Airport,AE
+KHS,OM-MU,Khasab,Khasab Air Base,OM
+MCT,OM-MA,Muscat,Muscat International Airport,OM
+SLL,OM-ZU,Salalah,Salalah Airport,OM
+BHV,PK-PB,Bahawalpur,Bahawalpur Airport,PK
+CJL,PK-NW,Chitral,Chitral Airport,PK
+DEA,PK-PB,Dera Ghazi Khan,Dera Ghazi Khan Airport,PK
+DSK,PK-NW,Dera Ismael Khan,Dera Ismael Khan Airport,PK
+LYP,PK-PB,Faisalabad,Faisalabad International Airport,PK
+GWD,PK-BA,Gwadar,Gwadar International Airport,PK
+GIL,PK-NA,Gilgit,Gilgit Airport,PK
+KHI,PK-SD,Karachi,Jinnah International Airport,PK
+LHE,PK-PB,Lahore,Alama Iqbal International Airport,PK
+MFG,PK-JK,Muzaffarabad,Muzaffarabad Airport,PK
+MJD,PK-SD,Moenjodaro,Moenjodaro Airport,PK
+MUX,PK-PB,Multan,Multan International Airport,PK
+WNS,PK-SD,Nawabashah,Shaheed Benazirabad Airport,PK
+PJG,PK-BA,Panjgur,Panjgur Airport,PK
+PSI,PK-BA,Pasni,Pasni Airport,PK
+PEW,PK-NW,Peshawar,Peshawar International Airport,PK
+UET,PK-BA,Quetta,Quetta International Airport,PK
+RYK,PK-PB,Rahim Yar Khan,Shaikh Zaid Airport,PK
+ISB,PK-IS,Islamabad,Benazir Bhutto International Airport,PK
+RAZ,PK-JK,Rawalakot,Rawalakot Airport,PK
+KDU,PK-NA,Skardu,Skardu Airport,PK
+SKZ,PK-SD,Mirpur Khas,Sukkur Airport,PK
+SYW,PK-SD,Sehwan Sharif,Sehwan Sharif Airport,PK
+SDT,PK-NW,Saidu Sharif,Saidu Sharif Airport,PK
+SKT,PK-PB,Sialkot,Sialkot Airport,PK
+TUK,PK-BA,Turbat,Turbat International Airport,PK
+PZH,PK-BA,Fort Sandeman,Zhob Airport,PK
+BGW,IQ-BG,Baghdad,Baghdad International Airport,IQ
+EBL,IQ-AR,Arbil,Erbil International Airport,IQ
+BSR,IQ-BA,Basrah,Basrah International Airport,IQ
+ISU,IQ-SW,Sulaymaniyah,Sulaymaniyah International Airport,IQ
+ALP,SY-HL,Aleppo,Aleppo International Airport,SY
+DAM,SY-DI,Damascus,Damascus International Airport,SY
+DEZ,SY-DY,Deir ez-Zor,Deir ez-Zor Airport,SY
+KAC,SY-HA,Kamishly,Kamishly Airport,SY
+LTK,SY-LA,Latakia,Bassel Al-Assad International Airport,SY
+ADE,YE-AD,Aden,Aden International Airport,YE
+AAY,YE-MR,,Al Ghaidah International Airport,YE
+HOD,YE-HU,Hodeida,Hodeidah International Airport,YE
+RIY,YE-HD,Riyan,Mukalla International Airport,YE
+SAH,YE-SN,Sana'a,Sana'a International Airport,YE
+SCT,YE-HD,Socotra Islands,Socotra International Airport,YE
+GXF,YE-HD,Sayun,Sayun International Airport,YE
+TAI,YE-TA,Ta'izz,Ta'izz International Airport,YE
+BET,US-AK,Bethel,Bethel Airport,US
+BRW,US-AK,Utqiaġvik,Wiley Post Will Rogers Memorial Airport,US
+CDV,US-AK,Cordova,Merle K (Mudhole) Smith Airport,US
+ADK,US-AK,Adak Island,Adak Airport,US
+DLG,US-AK,Dillingham,Dillingham Airport,US
+MLL,US-AK,Marshall,Marshall Don Hunter Sr Airport,US
+ADQ,US-AK,Kodiak,Kodiak Airport,US
+DUT,US-AK,Unalaska,Unalaska Airport,US
+EMK,US-AK,Emmonak,Emmonak Airport,US
+FAI,US-AK,Fairbanks,Fairbanks International Airport,US
+GST,US-AK,Gustavus,Gustavus Airport,US
+HCR,US-AK,Holy Cross,Holy Cross Airport,US
+HNS,US-AK,Haines,Haines Airport,US
+EGX,US-AK,Egegik,Egegik Airport,US
+JNU,US-AK,Juneau,Juneau International Airport,US
+AKN,US-AK,King Salmon,King Salmon Airport,US
+KTN,US-AK,Ketchikan,Ketchikan International Airport,US
+MCG,US-AK,McGrath,McGrath Airport,US
+ANC,US-AK,Anchorage,Ted Stevens Anchorage International Airport,US
+ANI,US-AK,Aniak,Aniak Airport,US
+ANN,US-AK,Annette,Annette Island Airport,US
+ANV,US-AK,Anvik,Anvik Airport,US
+OME,US-AK,Nome,Nome Airport,US
+OTZ,US-AK,Kotzebue,Ralph Wien Memorial Airport,US
+PSG,US-AK,Petersburg,Petersburg James A Johnson Airport,US
+ARC,US-AK,Arctic Village,Arctic Village Airport,US
+SCC,US-AK,Deadhorse,Deadhorse Airport,US
+SIT,US-AK,Sitka,Sitka Rocky Gutierrez Airport,US
+WRG,US-AK,Wrangell,Wrangell Airport,US
+YAK,US-AK,Yakutat,Yakutat Airport,US
+OPU,PG-WPD,Balimo,Balimo Airport,PG
+VMU,PG-GPK,Baimuru,Baimuru Airport,PG
+ROP,MP-U-A,Rota Island,Rota International Airport,MP
+SPN,MP-U-A,Saipan Island,Saipan International Airport,MP
+GUM,GU-U-A,"Hagåtña, Guam International Airport",Antonio B. Won Pat International Airport,GU
+CGY,PH-MSR,Cagayan de Oro City,Laguindingan Airport,PH
+HNM,US-HI,Hana,Hana Airport,US
+JHM,US-HI,Lahaina,Kapalua Airport,US
+KOA,US-HI,Kailua/Kona,Kona International At Keahole Airport,US
+LIH,US-HI,Lihue,Lihue Airport,US
+MKK,US-HI,Kaunakakai,Molokai Airport,US
+MUE,US-HI,Kamuela,Waimea Kohala Airport,US
+HNL,US-HI,Honolulu,Honolulu International Airport,US
+LNY,US-HI,Lanai City,Lanai Airport,US
+OGG,US-HI,Kahului,Kahului Airport,US
+ITO,US-HI,Hilo,Hilo International Airport,US
+,PK-PB,Islamabad,(Under construction) New Islamabad International Airport,PK
+MAJ,MH-MAJ,Majuro Atoll,Marshall Islands International Airport,MH
+KAI,GY-PT,Kaieteur Falls,Kaieteur International Airport,GY
+KWA,MH-KWA,Kwajalein,Bucholz Army Air Field,MH
+CXI,KI-L,Banana,Cassidy International Airport,KI
+TKK,FM-TRK,Weno Island,Chuuk International Airport,FM
+PNI,FM-PNI,Pohnpei Island,Pohnpei International Airport,FM
+KSA,FM-KSA,Okat,Kosrae International Airport,FM
+YAP,FM-YAP,Yap Island,Yap International Airport,FM
+DOH,QA-DA,Doha,Hamad International Airport,QA
+KNH,TW-X-KM,Shang-I,Kinmen Airport,TW
+LZN,TW-X-LK,Nangang Island,Matsu Nangan Airport,TW
+TTT,TW-TTT,Taitung City,Taitung Airport,TW
+KHH,TW-KHH,Kaohsiung City,Kaohsiung International Airport,TW
+CYI,TW-CYQ,Chiayi City,Chiayi Airport,TW
+HCN,TW-PIF,Hengchung,Hengchun Airport,TW
+KYD,TW-TTT,Orchid Island,Lanyu Airport,TW
+RMQ,TW-TXG,Taichung City,Taichung Ching Chuang Kang Airport,TW
+MFK,TW-X-LK,Beigan Island,Matsu Beigan Airport,TW
+TNN,TW-TNN,Tainan City,Tainan Airport,TW
+MZG,TW-PEN,Makung City,Makung Airport,TW
+PIF,TW-PIF,Pingtung,Pingtung North Airport,TW
+TSA,TW-TPE,Taipei City,Taipei Songshan Airport,TW
+TPE,TW-TAO,Taipei,Taiwan Taoyuan International Airport,TW
+HUN,TW-HUA,Hualien City,Hualien Airport,TW
+NRT,JP-12,Tokyo,Narita International Airport,JP
+MMJ,JP-20,Matsumoto,Matsumoto Airport,JP
+IBR,JP-08,Omitama,Hyakuri Airport,JP
+KIX,JP-27,Osaka,Kansai International Airport,JP
+SHM,JP-30,Shirahama,Nanki Shirahama Airport,JP
+UKB,JP-28,Kobe,Kobe Airport,JP
+OBO,JP-01,Obihiro,Tokachi-Obihiro Airport,JP
+CTS,JP-01,Chitose / Tomakomai,New Chitose Airport,JP
+HKD,JP-01,Hakodate,Hakodate Airport,JP
+KUH,JP-01,Kushiro,Kushiro Airport,JP
+MMB,JP-01,Ōzora,Memanbetsu Airport,JP
+SHB,JP-01,Nakashibetsu,Nakashibetsu Airport,JP
+OKD,JP-01,Sapporo,Okadama Airport,JP
+WKJ,JP-01,Wakkanai,Wakkanai Airport,JP
+IKI,JP-42,Iki,Iki Airport,JP
+UBJ,JP-35,Ube,Yamaguchi Ube Airport,JP
+TSJ,JP-42,Tsushima,Tsushima Airport,JP
+MBE,JP-01,Monbetsu,Monbetsu Airport,JP
+AKJ,JP-01,Asahikawa / Hokkaidō,Asahikawa Airport,JP
+OIR,JP-01,Okushiri Island,Okushiri Airport,JP
+RIS,JP-01,Rishiri,Rishiri Airport,JP
+FUJ,JP-42,Goto,Fukue Airport,JP
+FUK,JP-40,Fukuoka,Fukuoka Airport,JP
+TNE,JP-46,Tanegashima,New Tanegashima Airport,JP
+KOJ,JP-46,Kagoshima,Kagoshima Airport,JP
+KMI,JP-45,Miyazaki,Miyazaki Airport,JP
+OIT,JP-44,Oita,Oita Airport,JP
+KKJ,JP-40,Kitakyūshū,Kitakyūshū Airport,JP
+HSG,JP-41,Saga,Saga Airport,JP
+KMJ,JP-43,Kumamoto,Kumamoto Airport,JP
+NGS,JP-42,Nagasaki,Nagasaki Airport,JP
+NGO,JP-23,Tokoname,Chubu Centrair International Airport,JP
+ASJ,JP-46,Amami,Amami Airport,JP
+OKE,JP-46,Okinoerabujima,Okierabu Airport,JP
+KKX,JP-46,Kikai,Kikai Airport,JP
+TKN,JP-46,Tokunoshima,Tokunoshima Airport,JP
+NKM,JP-23,Nagoya,Nagoya Airport,JP
+KMQ,JP-17,Kanazawa,Komatsu Airport,JP
+OKI,JP-32,Okinoshima,Oki Airport,JP
+FSZ,JP-22,Makinohara / Shimada,Mt. Fuji Shizuoka Airport,JP
+TOY,JP-16,Toyama,Toyama Airport,JP
+NTQ,JP-17,Wajima,Noto Airport,JP
+HIJ,JP-34,Hiroshima,Hiroshima Airport,JP
+OKJ,JP-33,Okayama City,Okayama Airport,JP
+IZO,JP-32,Izumo,Izumo Airport,JP
+YGJ,JP-32,Yonago,Miho Yonago Airport,JP
+IWK,JP-35,Iwakuni,Iwakuni Marine Corps Air Station,JP
+KCZ,JP-39,Nankoku,Kōchi Ryōma Airport,JP
+MYJ,JP-38,Matsuyama,Matsuyama Airport,JP
+ITM,JP-27,Osaka,Osaka International Airport,JP
+TTJ,JP-31,Tottori,Tottori Airport,JP
+TKS,JP-36,Tokushima,Tokushima Airport,JP
+TAK,JP-37,Takamatsu,Takamatsu Airport,JP
+IWJ,JP-32,Masuda,Iwami Airport,JP
+AOJ,JP-02,Aomori,Aomori Airport,JP
+GAJ,JP-06,Yamagata,Yamagata Airport,JP
+SDS,JP-15,Sado,Sado Airport,JP
+FKS,JP-07,Sukagawa,Fukushima Airport,JP
+HNA,JP-03,,Hanamaki Airport,JP
+AXT,JP-05,Akita,Akita Airport,JP
+MSJ,JP-02,Misawa,Misawa Air Base,JP
+KIJ,JP-15,Niigata,Niigata Airport,JP
+ONJ,JP-05,Odate,Odate Noshiro Airport,JP
+SDJ,JP-04,Sendai,Sendai Airport,JP
+SYO,JP-06,Shonai,Shonai Airport,JP
+,JP-13,Tokyo,Chofu Airport,JP
+HAC,JP-13,Hachijojima,Hachijojima Airport,JP
+OIM,JP-13,Izu Oshima,Oshima Airport,JP
+MYE,JP-13,Miyakejima,Miyakejima Airport,JP
+HND,JP-13,Tokyo,Tokyo Haneda International Airport,JP
+OKO,JP-13,Fussa,Yokota Air Base,JP
+MWX,KR-46,Muan,Muan International Airport,KR
+KWJ,KR-29,Gwangju,Gwangju Airport,KR
+KUV,KR-45,Kunsan,Kunsan Air Base,KR
+RSU,KR-46,Yeosu,Yeosu Airport,KR
+WJU,KR-42,Wonju,Wonju Airport,KR
+YNY,KR-42,Sokcho / Gangneung,Yangyang International Airport,KR
+CJU,KR-49,Jeju City,Jeju International Airport,KR
+PUS,KR-26,Busan,Gimhae International Airport,KR
+HIN,KR-48,Sacheon,Sacheon Air Base,KR
+USN,KR-31,Ulsan,Ulsan Airport,KR
+ICN,KR-28,Seoul,Incheon International Airport,KR
+OSN,KR-41,,Osan Air Base,KR
+GMP,KR-11,Seoul,Gimpo International Airport,KR
+KPO,KR-47,Pohang,Pohang Airport,KR
+TAE,KR-27,Daegu,Daegu Airport,KR
+CJJ,KR-43,Cheongju,Cheongju International Airport,KR
+OKA,JP-47,Naha,Naha Airport,JP
+DNA,JP-47,,Kadena Air Base,JP
+ISG,JP-47,Ishigaki,Ishigaki Airport,JP
+UEO,JP-47,,Kumejima Airport,JP
+MMD,JP-47,Minamidaitō,Minami-Daito Airport,JP
+MMY,JP-47,Miyako City,Miyako Airport,JP
+KTD,JP-47,Kitadaitōjima,Kitadaito Airport,JP
+TRA,JP-47,Tarama,Tarama Airport,JP
+RNJ,JP-46,Yoronjima,Yoron Airport,JP
+OGN,JP-47,,Yonaguni Airport,JP
+SFS,PH-ZMB,Olongapo City,Subic Bay International Airport,PH
+CRK,PH-PAM,Angeles City,Clark International Airport,PH
+LAO,PH-ILN,Laoag City,Laoag International Airport,PH
+MNL,PH-U-A,Manila,Ninoy Aquino International Airport,PH
+LGP,PH-ALB,Legazpi City,Legazpi City International Airport,PH
+CBO,PH-MAG,Cotabato City,Awang Airport,PH
+DVO,PH-DAV,Davao City,Francisco Bangoy International Airport,PH
+BXU,PH-AGN,Butuan City,Bancasi Airport,PH
+DPL,PH-ZAN,Dipolog City,Dipolog Airport,PH
+CGM,PH-CAM,,Camiguin Airport,PH
+JOL,PH-SLU,,Jolo Airport,PH
+SGS,PH-TAW,,Sanga Sanga Airport,PH
+PAG,PH-ZAS,Pagadian City,Pagadian Airport,PH
+GES,PH-SCO,General Santos,General Santos International Airport,PH
+SUG,PH-SUN,Surigao City,Surigao Airport,PH
+TDG,PH-SUR,,Tandag Airport,PH
+ZAM,PH-ZAS,Zamboanga City,Zamboanga International Airport,PH
+BAG,PH-BEN,Baguio City,Loakan Airport,PH
+SJI,PH-MDC,San Jose,San Jose Airport,PH
+WNP,PH-CAS,Naga,Naga Airport,PH
+BSO,PH-CAG,Basco,Basco Airport,PH
+BQA,PH-AUR,Baler,Dr.Juan C. Angara Airport,PH
+SFE,PH-LUN,,San Fernando Airport,PH
+TUG,PH-CAG,Tuguegarao City,Tuguegarao Airport,PH
+VRC,PH-CAT,Virac,Virac Airport,PH
+CYZ,PH-ISA,Cauayan City,Cauayan Airport,PH
+TAC,PH-LEY,Tacloban City,Daniel Z. Romualdez Airport,PH
+BCD,PH-NEC,Bacolod City,Bacolod-Silay City International Airport,PH
+CYP,PH-WSA,Calbayog City,Calbayog Airport,PH
+DGT,PH-NER,Dumaguete City,Sibulan Airport,PH
+MPH,PH-AKL,Malay,Godofredo P. Ramos Airport,PH
+CRM,PH-NSA,Catarman,Catarman National Airport,PH
+ILO,PH-ILI,Iloilo City,Iloilo International Airport,PH
+MBT,PH-MAS,Masbate,Moises R. Espinosa Airport,PH
+KLO,PH-AKL,Kalibo,Kalibo International Airport,PH
+CEB,PH-CEB,Lapu-Lapu City,Mactan Cebu International Airport,PH
+PPS,PH-PLW,Puerto Princesa City,Puerto Princesa Airport,PH
+RXS,PH-CAP,Roxas City,Roxas Airport,PH
+TAG,PH-BOH,Tagbilaran City,Tagbilaran Airport,PH
+TBH,PH-ROM,Tablas Island,Tugdan Airport,PH
+USU,PH-PLW,Coron,Francisco B. Reyes Airport,PH
+,RU-LIP,Lipetsk,Lipetsk Air Base,RU
+GRV,RU-CE,Grozny,Grozny North Airport,RU
+,RU-YAN,Yamburg,Yamburg Airport,RU
+,RU-KR,Kostomuksha,Kostomuksha Airport,RU
+,RU-AMU,Belogorsk,Ukrainka Air Base,RU
+,RU-MUR,Olenegorsk,Olenya Air Base,RU
+PRA,AR-E,Parana,General Urquiza Airport,AR
+ROS,AR-S,Rosario,Islas Malvinas Airport,AR
+SFN,AR-S,Santa Fe,Sauce Viejo Airport,AR
+AEP,AR-C,Buenos Aires,Jorge Newbery Airpark,AR
+COR,AR-X,Cordoba,Ingeniero Ambrosio Taravella Airport,AR
+EZE,AR-B,Buenos Aires,Ministro Pistarini International Airport,AR
+MDZ,AR-M,Mendoza,El Plumerillo Airport,AR
+AFA,AR-M,San Rafael,Suboficial Ay Santiago Germano Airport,AR
+CTC,AR-K,Catamarca,Catamarca Airport,AR
+SDE,AR-G,Santiago del Estero,Vicecomodoro Angel D. La Paz Aragonés Airport,AR
+IRJ,AR-F,La Rioja,Capitan V A Almonacid Airport,AR
+RHD,AR-G,Termas de Río Hondo,Termas de Río Hondo international Airport,AR
+TUC,AR-T,San Miguel de Tucumán,Teniente Benjamin Matienzo Airport,AR
+UAQ,AR-J,San Juan,Domingo Faustino Sarmiento Airport,AR
+LUQ,AR-D,San Luis,Brigadier Mayor D Cesar Raul Ojeda Airport,AR
+,AR-X,Villa Maria,Presidente Néstor Kirchner Regionsl Airport,AR
+CNQ,AR-W,Corrientes,Corrientes Airport,AR
+RES,AR-H,Resistencia,Resistencia International Airport,AR
+FMA,AR-P,Formosa,Formosa Airport,AR
+IGR,AR-N,Puerto Iguazu,Cataratas Del Iguazú International Airport,AR
+PSS,AR-N,Posadas,Libertador Gral D Jose De San Martin Airport,AR
+SLA,AR-A,Salta,Martin Miguel De Guemes International Airport,AR
+JUJ,AR-Y,San Salvador de Jujuy,Gobernador Horacio Guzman International Airport,AR
+TTG,AR-A,Tartagal,General Enrique Mosconi Airport,AR
+CRD,AR-U,Comodoro Rivadavia,General E. Mosconi Airport,AR
+EQS,AR-U,Esquel,Brigadier Antonio Parodi Airport,AR
+LHS,AR-Z,Las Heras,Las Heras Airport,AR
+REL,AR-U,Rawson,Almirante Marco Andres Zar Airport,AR
+VDM,AR-R,Viedma / Carmen de Patagones,Gobernador Castello Airport,AR
+PMY,AR-U,Puerto Madryn,El Tehuelche Airport,AR
+FTE,AR-Z,El Calafate,El Calafate Airport,AR
+PUD,AR-Z,Puerto Deseado,Puerto Deseado Airport,AR
+RGL,AR-Z,Rio Gallegos,Piloto Civil N. Fernández Airport,AR
+USH,AR-V,Ushuahia,Malvinas Argentinas Airport,AR
+ULA,AR-Z,San Julian,Capitan D Daniel Vazquez Airport,AR
+PMQ,AR-Z,Perito Moreno,Perito Moreno Airport,AR
+RZA,AR-Z,Santa Cruz,Santa Cruz Airport,AR
+BHI,AR-B,Bahia Blanca,Comandante Espora Airport,AR
+SST,AR-B,Santa Teresita,Santa Teresita Airport,AR
+MDQ,AR-B,Mar del Plata,Ástor Piazzola International Airport,AR
+NQN,AR-Q,Neuquen,Presidente Peron Airport,AR
+NEC,AR-B,Necochea,Necochea Airport,AR
+RSA,AR-L,Santa Rosa,Santa Rosa Airport,AR
+BRC,AR-R,San Carlos de Bariloche,San Carlos De Bariloche Airport,AR
+CPC,AR-Q,Chapelco/San Martin de los Andes,Aviador C. Campos Airport,AR
+AQA,BR-SP,Araraquara,Araraquara Airport,BR
+AJU,BR-SE,Aracaju,Santa Maria Airport,BR
+AFL,BR-MT,Alta Floresta,Piloto Osvaldo Marques Dias Airport,BR
+ARU,BR-SP,Araçatuba,Araçatuba Airport,BR
+BEL,BR-PA,Belém,Val de Cans/Júlio Cezar Ribeiro International Airport,BR
+PLU,BR-MG,Belo Horizonte,Pampulha - Carlos Drummond de Andrade Airport,BR
+BSB,BR-DF,Brasília,Presidente Juscelino Kubistschek International Airport,BR
+BAU,BR-SP,Bauru,Bauru Airport,BR
+BVB,BR-RR,Boa Vista,Atlas Brasil Cantanhede Airport,BR
+CAC,BR-PR,Cascavel,Cascavel Airport,BR
+CNF,BR-MG,Belo Horizonte,Tancredo Neves International Airport,BR
+CGR,BR-MS,Campo Grande,Campo Grande Airport,BR
+XAP,BR-SC,Chapecó,Serafin Enoss Bertaso Airport,BR
+CKS,BR-PA,Parauapebas,Carajás Airport,BR
+CCM,BR-SC,Criciúma,Diomício Freitas Airport,BR
+CAW,BR-RJ,Campos Dos Goytacazes,Bartolomeu Lisandro Airport,BR
+CMG,BR-MS,Corumbá,Corumbá International Airport,BR
+CWB,BR-PR,Curitiba,Afonso Pena Airport,BR
+CXJ,BR-RS,Caxias Do Sul,Hugo Cantergiani Regional Airport,BR
+CGB,BR-MT,Cuiabá,Marechal Rondon Airport,BR
+CZS,BR-AC,Cruzeiro Do Sul,Cruzeiro do Sul Airport,BR
+PPB,BR-SP,Presidente Prudente,Presidente Prudente Airport,BR
+MAO,BR-AM,Manaus,Eduardo Gomes International Airport,BR
+IGU,BR-PR,Foz Do Iguaçu,Cataratas International Airport,BR
+FLN,BR-SC,Florianópolis,Hercílio Luz International Airport,BR
+FEN,BR-PE,Fernando De Noronha,Fernando de Noronha Airport,BR
+FOR,BR-CE,Fortaleza,Pinto Martins International Airport,BR
+GIG,BR-RJ,Rio De Janeiro,Rio Galeão – Tom Jobim International Airport,BR
+GYN,BR-GO,Goiânia,Santa Genoveva Airport,BR
+GRU,BR-SP,São Paulo,Guarulhos - Governador André Franco Montoro International Airport,BR
+ATM,BR-PA,Altamira,Altamira Airport,BR
+ITB,BR-PA,Itaituba,Itaituba Airport,BR
+IOS,BR-BA,Ilhéus,Bahia - Jorge Amado Airport,BR
+IPN,BR-MG,Ipatinga,Usiminas Airport,BR
+IMP,BR-MA,Imperatriz,Prefeito Renato Moreira Airport,BR
+JDF,BR-MG,Juiz De Fora,Francisco de Assis Airport,BR
+JPA,BR-PB,João Pessoa,Presidente Castro Pinto International Airport,BR
+JOI,BR-SC,Joinville,Lauro Carneiro de Loyola Airport,BR
+CPV,BR-PB,Campina Grande,Presidente João Suassuna Airport,BR
+VCP,BR-SP,Campinas,Viracopos International Airport,BR
+LDB,BR-PR,Londrina,Governador José Richa Airport,BR
+MAB,BR-PA,Marabá,João Correa da Rocha Airport,BR
+MEU,BR-PA,Almeirim,Monte Dourado Airport,BR
+MEA,BR-RJ,Macaé,Macaé Airport,BR
+MGF,BR-PR,Maringá,Regional de Maringá - Sílvio Nane Junior Airport,BR
+MOC,BR-MG,Montes Claros,Mário Ribeiro Airport,BR
+MII,BR-SP,Marília,Frank Miloye Milenkowichi–Marília State Airport,BR
+MCZ,BR-AL,Maceió,Zumbi dos Palmares Airport,BR
+MCP,BR-AP,Macapá,Alberto Alcolumbre Airport,BR
+MNX,BR-AM,Manicoré,Manicoré Airport,BR
+NVT,BR-SC,Navegantes,Ministro Victor Konder International Airport,BR
+GEL,BR-RS,Santo Ângelo,Santo Ângelo Airport,BR
+POA,BR-RS,Porto Alegre,Salgado Filho Airport,BR
+PFB,BR-RS,Passo Fundo,Lauro Kurtz Airport,BR
+PMW,BR-TO,Palmas,Brigadeiro Lysias Rodrigues Airport,BR
+PET,BR-RS,Pelotas,João Simões Lopes Neto International Airport,BR
+PNZ,BR-PE,Petrolina,Senador Nilo Coelho Airport,BR
+PMG,BR-MS,Ponta Porã,Ponta Porã Airport,BR
+BPS,BR-BA,Porto Seguro,Porto Seguro Airport,BR
+PVH,BR-RO,Porto Velho,Governador Jorge Teixeira de Oliveira Airport,BR
+VDC,BR-BA,Vitória Da Conquista,Vitória da Conquista Airport,BR
+RBR,BR-AC,Rio Branco,Plácido de Castro Airport,BR
+REC,BR-PE,Recife,Guararapes - Gilberto Freyre International Airport,BR
+SDU,BR-RJ,Rio De Janeiro,Santos Dumont Airport,BR
+RAO,BR-SP,Ribeirão Preto,Leite Lopes Airport,BR
+NAT,BR-RN,Natal,Governador Aluízio Alves International Airport,BR
+SJK,BR-SP,São José Dos Campos,Professor Urbano Ernesto Stumpf Airport,BR
+SLZ,BR-MA,São Luís,Marechal Cunha Machado International Airport,BR
+RIA,BR-RS,Santa Maria,Santa Maria Airport,BR
+STM,BR-PA,Santarém,Maestro Wilson Fonseca Airport,BR
+CGH,BR-SP,São Paulo,Congonhas Airport,BR
+SJP,BR-SP,São José Do Rio Preto,Prof. Eribelto Manoel Reino State Airport,BR
+SSA,BR-BA,Salvador,Deputado Luiz Eduardo Magalhães International Airport,BR
+TMT,BR-PA,Oriximiná,Trombetas Airport,BR
+THE,BR-PI,Teresina,Senador Petrônio Portela Airport,BR
+TFF,BR-AM,Tefé,Tefé Airport,BR
+TBT,BR-AM,Tabatinga,Tabatinga Airport,BR
+TUR,BR-PA,Tucuruí,Tucuruí Airport,BR
+SJL,BR-AM,São Gabriel Da Cachoeira,São Gabriel da Cachoeira Airport,BR
+PAV,BR-BA,Paulo Afonso,Paulo Afonso Airport,BR
+URG,BR-RS,Uruguaiana,Rubem Berta Airport,BR
+UDI,BR-MG,Uberlândia,Ten. Cel. Aviador César Bombonato Airport,BR
+UBA,BR-MG,Uberaba,Mário de Almeida Franco Airport,BR
+BVH,BR-RO,Vilhena,Brigadeiro Camarão Airport,BR
+VIX,BR-ES,Vitória,Eurico de Aguiar Salles Airport,BR
+IZA,BR-MG,Juiz de Fora,Presidente Itamar Franco Airport,BR
+ARI,CL-AP,Arica,Chacalluta Airport,CL
+CPO,CL-AT,Copiapo,Desierto de Atacama Airport,CL
+BBA,CL-AI,Balmaceda,Balmaceda Airport,CL
+CJC,CL-AN,Calama,El Loa Airport,CL
+PUQ,CL-MA,Punta Arenas,Pdte. carlos Ibañez del Campo Airport,CL
+IQQ,CL-TA,Iquique,Diego Aracena Airport,CL
+SCL,CL-RM,Santiago,Comodoro Arturo Merino Benítez International Airport,CL
+ESR,CL-AT,El Salvador,Ricardo García Posada Airport,CL
+ANF,CL-AN,Antofagasta,Cerro Moreno Airport,CL
+CCP,CL-BI,Concepcion,Carriel Sur Airport,CL
+IPC,CL-VS,Isla De Pascua,Mataveri Airport,CL
+ZOS,CL-LL,Osorno,Cañal Bajo Carlos - Hott Siebert Airport,CL
+ZCO,CL-AR,Temuco,La Araucanía Airport,CL
+LSC,CL-CO,La Serena-Coquimbo,La Florida Airport,CL
+PMC,CL-LL,Puerto Montt,El Tepual Airport,CL
+ZAL,CL-LR,Valdivia,Pichoy Airport,CL
+IZA,BR-MG,Juiz De Fora,Zona da Mata Regional Airport,BR
+OCC,EC-D,Coca,Francisco De Orellana Airport,EC
+CUE,EC-A,Cuenca,Mariscal Lamar Airport,EC
+GYE,EC-G,Guayaquil,José Joaquín de Olmedo International Airport,EC
+LTX,EC-X,Latacunga,Cotopaxi International Airport,EC
+XMS,EC-S,Macas,Coronel E Carvajal Airport,EC
+MEC,EC-M,Manta,Eloy Alfaro International Airport,EC
+UIO,EC-P,Quito,Mariscal Sucre International Airport,EC
+ETR,EC-O,Santa Rosa,Santa Rosa International Airport,EC
+TUA,EC-C,Tulcán,Teniente Coronel Luis a Mantilla Airport,EC
+PSY,FK-U-A,Stanley,Port Stanley Airport,FK
+ASU,PY-11,Asunción,Silvio Pettirossi International Airport,PY
+AGT,PY-10,Ciudad del Este,Guarani International Airport,PY
+JTC,BR-SP,Bauru,Bauru - Arealva Airport,BR
+AXM,CO-QUI,Armenia,El Eden Airport,CO
+PUU,CO-PUT,Puerto Asís,Tres De Mayo Airport,CO
+BGA,CO-SAN,Bucaramanga,Palonegro Airport,CO
+BOG,CO-CUN,Bogota,El Dorado International Airport,CO
+BAQ,CO-ATL,Barranquilla,Ernesto Cortissoz International Airport,CO
+BSC,CO-CHO,Bahía Solano,José Celestino Mutis Airport,CO
+BUN,CO-VAC,Buenaventura,Gerardo Tobar López Airport,CO
+CUC,CO-NSA,Cúcuta,Camilo Daza International Airport,CO
+CTG,CO-BOL,Cartagena,Rafael Nuñez International Airport,CO
+CLO,CO-VAC,Cali,Alfonso Bonilla Aragon International Airport,CO
+TCO,CO-NAR,Tumaco,La Florida Airport,CO
+CZU,CO-SUC,Corozal,Las Brujas Airport,CO
+EJA,CO-SAN,Barrancabermeja,Yariguíes Airport,CO
+FLA,CO-CAQ,Florencia,Gustavo Artunduaga Paredes Airport,CO
+CRC,CO-VAC,Cartago,Santa Ana Airport,CO
+GPI,CO-CAU,Guapi,Juan Casiano Airport,CO
+IBE,CO-TOL,Ibagué,Perales Airport,CO
+IPI,CO-NAR,Ipiales,San Luis Airport,CO
+APO,CO-ANT,Carepa,Antonio Roldan Betancourt Airport,CO
+LET,CO-AMA,Leticia,Alfredo Vásquez Cobo International Airport,CO
+EOH,CO-ANT,Medellín,Enrique Olaya Herrera Airport,CO
+MTR,CO-COR,Montería,Los Garzones Airport,CO
+MVP,CO-VAU,Mitú,Fabio Alberto Leon Bentley Airport,CO
+MZL,CO-CAL,Manizales,La Nubia Airport,CO
+NVA,CO-HUI,Neiva,Benito Salas Airport,CO
+PCR,CO-VID,Puerto Carreño,German Olano Airport,CO
+PDA,CO-GUA,Puerto Inírida,Obando Airport,CO
+PEI,CO-RIS,Pereira,Matecaña International Airport,CO
+PPN,CO-CAU,Popayán,Guillermo León Valencia Airport,CO
+PSO,CO-NAR,Pasto,Antonio Narino Airport,CO
+PVA,CO-SAP,Providencia,El Embrujo Airport,CO
+MDE,CO-ANT,Rionegro,Jose Maria Córdova International Airport,CO
+RCH,CO-LAG,Riohacha,Almirante Padilla Airport,CO
+SJE,CO-GUV,San José Del Guaviare,Jorge E. Gonzalez Torres Airport,CO
+SMR,CO-MAG,Santa Marta,Simón Bolívar International Airport,CO
+ADZ,CO-SAP,San Andrés,Gustavo Rojas Pinilla International Airport,CO
+SVI,CO-CAQ,San Vicente Del Caguán,Eduardo Falla Solano Airport,CO
+TME,CO-ARA,Tame,Gustavo Vargas Airport,CO
+AUC,CO-ARA,Arauca,Santiago Perez Airport,CO
+UIB,CO-CHO,Quibdó,El Caraño Airport,CO
+VUP,CO-CES,Valledupar,Alfonso López Pumarejo Airport,CO
+VVC,CO-MET,Villavicencio,Vanguardia Airport,CO
+EYP,CO-CAS,El Yopal,El Yopal Airport,CO
+CBB,BO-C,Cochabamba,Jorge Wilsterman International Airport,BO
+CIJ,BO-N,Cobija,Capitán Aníbal Arab Airport,BO
+SRZ,BO-S,Santa Cruz,El Trompillo Airport,BO
+LPB,BO-L,La Paz / El Alto,El Alto International Airport,BO
+SRE,BO-H,Sucre,Juana Azurduy De Padilla Airport,BO
+TJA,BO-T,Tarija,Capitan Oriel Lea Plaza Airport,BO
+VVI,BO-S,Santa Cruz,Viru Viru International Airport,BO
+PBM,SR-PR,Zandery,Johan Adolf Pengel International Airport,SR
+,SO-SH,Mogadishu,K50 International Airport,SO
+CAY,GF-CY,Cayenne / Rochambeau,Cayenne-Rochambeau Airport,GF
+PCL,PE-UCA,Pucallpa,Cap FAP David Abenzur Rengifo International Airport,PE
+CHM,PE-ANC,Chimbote,Teniente FAP Jaime A De Montreuil Morales Airport,PE
+CIX,PE-LAM,Chiclayo,Capitan FAP Jose A Quinones Gonzales International Airport,PE
+AYP,PE-AYA,Ayacucho,Coronel FAP Alfredo Mendivil Duarte Airport,PE
+LIM,PE-LIM,Lima,Jorge Chávez International Airport,PE
+JAE,PE-CAJ,Jaén,Shumba Airport,PE
+JAU,PE-JUN,Jauja,Francisco Carle Airport,PE
+JUL,PE-PUN,Juliaca,Inca Manco Capac International Airport,PE
+CJA,PE-CAJ,Cajamarca,Mayor General FAP Armando Revoredo Iglesias Airport,PE
+TBP,PE-TUM,Tumbes,Capitan FAP Pedro Canga Rodriguez Airport,PE
+YMS,PE-LOR,Yurimaguas,Moises Benzaquen Rengifo Airport,PE
+HUU,PE-HUC,Huánuco,Alferez Fap David Figueroa Fernandini Airport,PE
+IQT,PE-LOR,Iquitos,Coronel FAP Francisco Secada Vignetta International Airport,PE
+AQP,PE-ARE,Arequipa,Rodríguez Ballón International Airport,PE
+TRU,PE-LAL,Trujillo,Capitan FAP Carlos Martinez De Pinillos International Airport,PE
+TPP,PE-SAM,Tarapoto,Cadete FAP Guillermo Del Castillo Paredes Airport,PE
+TCQ,PE-TAC,Tacna,Coronel FAP Carlos Ciriani Santa Rosa International Airport,PE
+PEM,PE-MDD,Puerto Maldonado,Padre Aldamiz International Airport,PE
+PIU,PE-PIU,Piura,Capitán FAP Guillermo Concha Iberico International Airport,PE
+TYL,PE-PIU,Talara,Capitan Montes Airport,PE
+NZC,PE-ICA,Nazca,Maria Reiche Neuman Airport,PE
+CUZ,PE-CUS,Cusco,Alejandro Velasco Astete International Airport,PE
+SQJ,CN-35,Sanming,Shaxian Airport,CN
+MVD,UY-MO,Montevideo,Carrasco International /General C L Berisso Airport,UY
+AGV,VE-P,Acarigua,Oswaldo Guevara Mujica Airport,VE
+BLA,VE-B,Barcelona,General Jose Antonio Anzoategui International Airport,VE
+BNS,VE-E,Barinas,Barinas Airport,VE
+BRM,VE-K,Barquisimeto,Barquisimeto International Airport,VE
+MYC,VE-D,Maracay,Escuela Mariscal Sucre Airport,VE
+CAJ,VE-F,Canaima,Canaima Airport,VE
+CUP,VE-R,Carúpano,General Francisco Bermúdez Airport,VE
+CZE,VE-I,Coro,José Leonardo Chirinos Airport,VE
+CUM,VE-R,,Cumaná (Antonio José de Sucre) Airport,VE
+LSP,VE-I,Paraguaná,Josefa Camejo International Airport,VE
+MAR,VE-V,Maracaibo,La Chinita International Airport,VE
+MRD,VE-L,Mérida,Alberto Carnevalli Airport,VE
+PMV,VE-O,Isla Margarita,Del Caribe Santiago Mariño International Airport,VE
+CCS,VE-X,Caracas,Simón Bolívar International Airport,VE
+MUN,VE-N,,Maturín Airport,VE
+PYH,VE-Z,Puerto Ayacucho,Cacique Aramare Airport,VE
+PZO,VE-F,Puerto Ordaz-Ciudad Guayana,General Manuel Carlos Piar International Airport,VE
+SVZ,VE-S,,San Antonio Del Tachira Airport,VE
+STD,VE-S,Santo Domingo,Mayor Buenaventura Vivas International Airport,VE
+SOM,VE-B,El Tigre,San Tomé Airport,VE
+VLN,VE-G,Valencia,Arturo Michelena International Airport,VE
+VIG,VE-L,El Vigía,Juan Pablo Pérez Alfonso Airport,VE
+VLV,VE-T,Valera,Dr. Antonio Nicolás Briceño Airport,VE
+GEO,GY-DE,Georgetown,Cheddi Jagan International Airport,GY
+OGL,GY-DE,Ogle,Ogle Airport,GY
+LTM,GY-UT,Lethem,Lethem Airport,GY
+ANU,AG-03,St. George,V.C. Bird International Airport,AG
+BGI,BB-01,Bridgetown,Sir Grantley Adams International Airport,BB
+DCF,DM-10,Canefield,Canefield Airport,DM
+DOM,DM-02,Marigot,Melville Hall Airport,DM
+FDF,MQ-U-A,Fort-de-France,Martinique Aimé Césaire International Airport,MQ
+SFG,MF-U-A,Grand Case,L'Espérance Airport,MF
+SBH,BL-U-A,Gustavia,Gustaf III Airport,BL
+GBJ,GP-U-A,Grand Bourg,Les Bases Airport,GP
+PTP,GP-U-A,Pointe-à-Pitre Le Raizet,Pointe-à-Pitre Le Raizet,GP
+GND,GD-GE,Saint George's,Point Salines International Airport,GD
+STT,VI-U-A,"Charlotte Amalie, Harry S. Truman Airport",Cyril E. King Airport,VI
+STX,VI-U-A,Christiansted,Henry E Rohlsen Airport,VI
+BQN,PR-U-A,Aguadilla,Rafael Hernandez Airport,PR
+SIG,PR-U-A,San Juan,Fernando Luis Ribas Dominicci Airport,PR
+MAZ,PR-U-A,Mayaguez,Eugenio Maria De Hostos Airport,PR
+PSE,PR-U-A,Ponce,Mercedita Airport,PR
+SJU,PR-U-A,San Juan,Luis Munoz Marin International Airport,PR
+SKB,KN-U-A,Basseterre,Robert L. Bradshaw International Airport,KN
+NEV,KN-U-A,Charlestown,Vance W. Amory International Airport,KN
+SLU,LC-02,Castries,George F. L. Charles Airport,LC
+UVF,LC-11,Vieux Fort,Hewanorra International Airport,LC
+NBE,TN-51,Enfidha,Enfidha - Hammamet International Airport,TN
+AUA,AW-U-A,Oranjestad,Queen Beatrix International Airport,AW
+BON,BQ-U-A,Kralendijk,Flamingo International Airport,BQ
+CUR,CW-U-A,Willemstad,Hato International Airport,CW
+EUX,BQ-U-A,Sint Eustatius,F. D. Roosevelt Airport,BQ
+SXM,SX-U-A,Saint Martin,Princess Juliana International Airport,SX
+AXA,AI-U-A,The Valley,Wallblake Airport,AI
+IGD,TR-76,Iğdır,Iğdır Airport,TR
+MNI,MS-U-A,Gerald's Park,John A. Osborne Airport,MS
+TAB,TT-WTO,Scarborough,Tobago-Crown Point Airport,TT
+POS,TT-TUP,Port of Spain,Piarco International Airport,TT
+EIS,VG-U-A,Road Town,Terrance B. Lettsome International Airport,VG
+BQU,VC-06,Bequia,J F Mitchell Airport,VC
+CIW,VC-06,Canouan,Canouan Airport,VC
+MQS,VC-06,Mustique Island,Mustique Airport,VC
+UNI,VC-06,Union Island,Union Island International Airport,VC
+SVD,VC-04,Kingstown,E. T. Joshua Airport,VC
+BDA,BM-U-A,Hamilton,L.F. Wade International International Airport,BM
+,KG-B,Batken,Batken Airport,KG
+ALA,KZ-ALM,Almaty,Almaty Airport,KZ
+TSE,KZ-AKM,Astana,Astana International Airport,KZ
+KOV,KZ-AKM,Kokshetau,Kokshetau Airport,KZ
+PPK,KZ-SEV,Petropavlosk,Petropavlosk South Airport,KZ
+DMB,KZ-ZHA,Taraz,Taraz Airport,KZ
+IKU,KG-Y,Tamchy,Issyk-Kul International Airport,KG
+FRU,KG-C,Bishkek,Manas International Airport,KG
+OSS,KG-O,Osh,Osh Airport,KG
+CIT,KZ-YUZ,Shymkent,Shymkent Airport,KZ
+DZN,KZ-KAR,Zhezkazgan,Zhezkazgan Airport,KZ
+KGF,KZ-KAR,Karaganda,Sary-Arka Airport,KZ
+URA,KZ-ZAP,Uralsk,Uralsk Airport,KZ
+UKK,KZ-VOS,Ust Kamenogorsk,Ust-Kamennogorsk Airport,KZ
+PWQ,KZ-PAV,Pavlodar,Pavlodar Airport,KZ
+DLX,KZ-VOS,Semey,Semipalatinsk Airport,KZ
+SCO,KZ-MAN,Aktau,Aktau Airport,KZ
+GUW,KZ-ATY,Atyrau,Atyrau Airport,KZ
+AKX,KZ-AKT,Aktyuinsk,Aktobe Airport,KZ
+KSN,KZ-KUS,Kostanay,Kostanay West Airport,KZ
+GYD,AZ-BA,Baku,Heydar Aliyev International Airport,AZ
+KVD,AZ-GA,Ganja,Ganja Airport,AZ
+NAJ,AZ-NX,Nakhchivan,Nakhchivan Airport,AZ
+GBB,AZ-QAB,Gabala,Gabala International Airport,AZ
+LWN,AM-SH,Gyumri,Gyumri Shirak Airport,AM
+EVN,AM-ER,Yerevan,Zvartnots International Airport,AM
+YKS,RU-SA,Yakutsk,Yakutsk Airport,RU
+NER,RU-SA,Neryungri,Chulman Airport,RU
+,RU-SA,Olyokminsk,Olyokminsk Airport,RU
+USR,RU-SA,Ust-Nera,Ust-Nera Airport,RU
+VYI,RU-SA,Vilyuisk,Vilyuisk Airport,RU
+ULK,RU-SA,Lensk,Lensk Airport,RU
+PYJ,RU-SA,Yakutia,Polyarny Airport,RU
+MJZ,RU-SA,Mirny,Mirny Airport,RU
+SYS,RU-SA,Saskylakh,Saskylakh Airport,RU
+SEK,RU-SA,Srednekolymsk,Srednekolymsk Airport,RU
+CKH,RU-SA,Chokurdah,Chokurdakh Airport,RU
+CYX,RU-SA,Cherskiy,Cherskiy Airport,RU
+IKS,RU-SA,Tiksi,Tiksi Airport,RU
+ZKP,RU-SA,Zyryanka,Zyryanka Airport,RU
+KUT,GE-IM,Kutaisi,Kopitnari Airport,GE
+BUS,GE-AJ,Batumi,Batumi International Airport,GE
+SUI,GE-AB,Sukhumi,Sukhumi Dranda Airport,GE
+TBS,GE-TB,Tbilisi,Tbilisi International Airport,GE
+BQS,RU-AMU,Blagoveschensk,Ignatyevo Airport,RU
+KHV,RU-KHA,Khabarovsk,Khabarovsk-Novy Airport,RU
+,RU-KHA,Komsomolsk-na-Amur,Dzemgi Airport,RU
+KXK,RU-KHA,Komsomolsk-on-Amur,Komsomolsk-on-Amur Airport,RU
+DYR,RU-CHU,Anadyr,Ugolny Airport,RU
+,RU-MAG,Omsukchan,Omsukchan Airport,RU
+,RU-MAG,Chaybukha,Chaybukha Airport,RU
+,RU-CHU,Keperveem,Keperveem Airport,RU
+GDX,RU-MAG,Magadan,Sokol Airport,RU
+NLI,RU-KHA,Nikolayevsk-na-Amure Airport,Nikolayevsk-na-Amure Airport,RU
+OHO,RU-KHA,Okhotsk,Okhotsk Airport,RU
+PKC,RU-KAM,Petropavlovsk-Kamchatsky,Yelizovo Airport,RU
+UUS,RU-SAK,Yuzhno-Sakhalinsk,Yuzhno-Sakhalinsk Airport,RU
+VVO,RU-PRI,Vladivostok,Vladivostok International Airport,RU
+HTA,RU-CHI,Chita,Chita-Kadala Airport,RU
+BTK,RU-IRK,Bratsk,Bratsk Airport,RU
+IKT,RU-IRK,Irkutsk,Irkutsk Airport,RU
+UKX,RU-IRK,Ust-Kut,Ust-Kut Airport,RU
+UUD,RU-BU,Ulan Ude,Ulan-Ude Airport (Mukhino),RU
+KBP,UA-32,Kiev,Boryspil International Airport,UA
+DOK,UA-14,Donetsk,Donetsk International Airport,UA
+MPW,UA-14,Mariupol,Mariupol International Airport,UA
+VSG,UA-09,Luhansk,Luhansk International Airport,UA
+DNK,UA-12,Dnipropetrovsk,Dnipropetrovsk International Airport,UA
+OZH,UA-23,Zaporizhia,Zaporizhzhia International Airport,UA
+KWG,UA-12,Kryvyi Rih,Kryvyi Rih International Airport,UA
+SIP,UA-43,Simferopol,Simferopol International Airport,UA
+HRK,UA-63,Kharkiv,Kharkiv International Airport,UA
+IEV,UA-32,Kiev,Kiev Zhuliany International Airport,UA
+IFO,UA-26,Ivano-Frankivsk,Ivano-Frankivsk International Airport,UA
+LWO,UA-46,Lviv,Lviv International Airport,UA
+CWC,UA-77,Chernivtsi,Chernivtsi International Airport,UA
+RWN,UA-19,Rivne,Rivne International Airport,UA
+UDJ,UA-21,Uzhhorod,Uzhhorod International Airport,UA
+ODS,UA-51,Odessa,Odessa International Airport,UA
+ARH,RU-ARK,Archangelsk,Talagi Airport,RU
+NNM,RU-NEN,Naryan Mar,Naryan Mar Airport,RU
+CEE,RU-VLG,Cherepovets,Cherepovets Airport,RU
+AMV,RU-NEN,Amderma,Amderma Airport,RU
+KSZ,RU-ARK,Kotlas,Kotlas Airport,RU
+LED,RU-SPE,St. Petersburg,Pulkovo Airport,RU
+MMK,RU-MUR,Murmansk,Murmansk Airport,RU
+PKV,RU-PSK,Pskov,Pskov Airport,RU
+PES,RU-KR,Petrozavodsk,Petrozavodsk Airport,RU
+BQT,BY-BR,Brest,Brest Airport,BY
+GME,BY-HO,Gomel,Gomel Airport,BY
+KGD,RU-KGD,Kaliningrad,Khrabrovo Airport,RU
+GNA,BY-HR,Hrodna,Hrodna Airport,BY
+MHP,BY-MI,Minsk,Minsk 1 Airport,BY
+MSQ,BY-MI,Minsk,Minsk National Airport,BY
+MVQ,BY-MA,Mogilev,Mogilev Airport,BY
+ABA,RU-KK,Abakan,Abakan Airport,RU
+BAX,RU-ALT,Barnaul,Barnaul Airport,RU
+KEJ,RU-KEM,Kemerovo,Kemerovo Airport,RU
+EIE,RU-KYA,Yeniseysk,Yeniseysk Airport,RU
+,RU-KYA,Severo-Eniseysk,Severo-Eniseysk Airport,RU
+,RU-KYA,Vanavara,Vanavara Airport,RU
+KJA,RU-KYA,Krasnoyarsk,Yemelyanovo Airport,RU
+,RU-KYA,Krasnoyarsk,Cheremshanka Airport,RU
+KYZ,RU-TY,Kyzyl,Kyzyl Airport,RU
+OVB,RU-NVS,Novosibirsk,Tolmachevo Airport,RU
+OMS,RU-OMS,Omsk,Omsk Central Airport,RU
+TOF,RU-TOM,Tomsk,Bogashevo Airport,RU
+NOZ,RU-KEM,Novokuznetsk,Spichenkovo Airport,RU
+HTG,RU-KYA,Khatanga,Khatanga Airport,RU
+IAA,RU-KYA,Igarka,Igarka Airport,RU
+NSK,RU-KYA,Norilsk,Norilsk-Alykel Airport,RU
+AAQ,RU-KDA,Anapa,Anapa Vityazevo Airport,RU
+EIK,RU-KDA,Yeysk,Yeysk Airport,RU
+GDZ,RU-KDA,Gelendzhik,Gelendzhik Airport,RU
+KRR,RU-KDA,Krasnodar,Krasnodar Pashkovsky International Airport,RU
+MCX,RU-DA,Makhachkala,Uytash Airport,RU
+MRV,RU-STA,Mineralnyye Vody,Mineralnyye Vody Airport,RU
+NAL,RU-KB,Nalchik,Nalchik Airport,RU
+OGZ,RU-SE,Beslan,Beslan Airport,RU
+IGT,RU-IN,Magas,Magas Airport,RU
+STW,RU-STA,Stavropol,Stavropol Shpakovskoye Airport,RU
+ROV,RU-ROS,Rostov-on-Don,Rostov-on-Don Airport,RU
+TGK,RU-ROS,Taganrog,Taganrog Yuzhny Airport,RU
+AER,RU-KDA,Sochi,Sochi International Airport,RU
+ASF,RU-AST,Astrakhan,Astrakhan Airport,RU
+ESL,RU-KL,Elista,Elista Airport,RU
+VOG,RU-VGG,Volgograd,Volgograd International Airport,RU
+,US-U-A,,atl,US
+CEK,RU-CHE,Chelyabinsk,Chelyabinsk Balandino Airport,RU
+MQF,RU-BA,Magnitogorsk,Magnitogorsk International Airport,RU
+SLY,RU-YAN,Salekhard,Salekhard Airport,RU
+HMA,RU-KHM,Khanty-Mansiysk,Khanty Mansiysk Airport,RU
+NYA,RU-KHM,Nyagan,Nyagan Airport,RU
+OVS,RU-KHM,Sovetskiy,Sovetskiy Airport,RU
+URJ,RU-KHM,Uray,Uray Airport,RU
+EYK,RU-KHM,,Beloyarskiy Airport,RU
+IJK,RU-UD,Izhevsk,Izhevsk Airport,RU
+KVX,RU-KIR,Kirov,Pobedilovo Airport,RU
+NYM,RU-YAN,Nadym,Nadym Airport,RU
+NUX,RU-YAN,Novy Urengoy,Novy Urengoy Airport,RU
+NJC,RU-KHM,Nizhnevartovsk,Nizhnevartovsk Airport,RU
+PEE,RU-PER,Perm,Bolshoye Savino Airport,RU
+KGP,RU-KHM,Kogalym,Kogalym International Airport,RU
+NFG,RU-KHM,Nefteyugansk,Nefteyugansk Airport,RU
+NOJ,RU-YAN,Noyabrsk,Noyabrsk Airport,RU
+SGC,RU-KHM,Surgut,Surgut Airport,RU
+SVX,RU-SVE,Yekaterinburg,Koltsovo Airport,RU
+TJM,RU-TYU,Tyumen,Roshchino International Airport,RU
+KRO,RU-KGN,Kurgan,Kurgan Airport,RU
+ASB,TM-A,Ashgabat,Ashgabat Airport,TM
+KRW,TM-B,Krasnovodsk,Turkmenbashi Airport,TM
+MYP,TM-M,Mary,Mary Airport,TM
+TAZ,TM-D,Daşoguz,Daşoguz Airport,TM
+CRZ,TM-L,Türkmenabat,Turkmenabat Airport,TM
+DYU,TJ-RR,Dushanbe,Dushanbe Airport,TJ
+TJU,TJ-KT,Kulyab,Kulob Airport,TJ
+LBD,TJ-SU,Khudzhand,Khudzhand Airport,TJ
+KQT,TJ-KT,Kurgan-Tyube,Qurghonteppa International Airport,TJ
+UGC,UZ-XO,Urgench,Urgench Airport,UZ
+BHK,UZ-BU,Bukhara,Bukhara Airport,UZ
+SKD,UZ-SA,Samarkand,Samarkand Airport,UZ
+TMJ,UZ-SU,Termez,Termez Airport,UZ
+,UZ-TO,Tashkent,Tashkent East Airport,UZ
+TAS,UZ-TO,Tashkent,Tashkent International Airport,UZ
+KMW,RU-KOS,Kostroma,Kostroma Sokerkino Airport,RU
+IWA,RU-IVA,Ivanovo,Ivanovo South Airport,RU
+RYB,RU-YAR,Rybinsk,Staroselye Airport,RU
+BZK,RU-BRY,Bryansk,Bryansk Airport,RU
+ZIA,RU-MOS,Zhukovsky,Zhukovsky International Airport,RU
+DME,RU-MOS,Moscow,Domodedovo International Airport,RU
+SVO,RU-MOS,Moscow,Sheremetyevo International Airport,RU
+,RU-MOS,Moscow,Ostafyevo International Airport,RU
+CKL,RU-MOS,Moscow,Chkalovskiy Airport,RU
+EGO,RU-BEL,Belgorod,Belgorod International Airport,RU
+URS,RU-KRS,Kursk,Kursk East Airport,RU
+LPK,RU-LIP,Lipetsk,Lipetsk Airport,RU
+VOZ,RU-VOR,Voronezh,Voronezh International Airport,RU
+VKO,RU-MOS,Moscow,Vnukovo International Airport,RU
+UCT,RU-KO,Ukhta,Ukhta Airport,RU
+PEX,RU-KO,Pechora,Pechora Airport,RU
+USK,RU-KO,Usinsk,Usinsk Airport,RU
+VKT,RU-KO,Vorkuta,Vorkuta Airport,RU
+SCW,RU-KO,Syktyvkar,Syktyvkar Airport,RU
+GOJ,RU-NIZ,Nizhny Novgorod,Nizhny Novgorod Strigino International Airport,RU
+UUA,RU-TA,Bugulma,Bugulma Airport,RU
+KZN,RU-TA,Kazan,Kazan International Airport,RU
+NBC,RU-TA,Nizhnekamsk,Begishevo Airport,RU
+,RU-TA,Kazan,Borisoglebskoye Airport,RU
+JOK,RU-ME,Yoshkar-Ola,Yoshkar-Ola Airport,RU
+CSY,RU-CU,Cheboksary,Cheboksary Airport,RU
+ZIX,RU-SA,Zhigansk,Zhigansk Airport,RU
+ULV,RU-ULY,Ulyanovsk,Ulyanovsk Baratayevka Airport,RU
+ULY,RU-ULY,Ulyanovsk,Ulyanovsk East Airport,RU
+REN,RU-ORE,Orenburg,Orenburg Central Airport,RU
+OSW,RU-ORE,Orsk,Orsk Airport,RU
+PEZ,RU-PNZ,Penza,Penza Airport,RU
+SKX,RU-MO,Saransk,Saransk Airport,RU
+BWO,RU-SAR,Balakovo,Balakovo Airport,RU
+RTW,RU-SAR,Saratov,Saratov Central Airport,RU
+UFA,RU-BA,Ufa,Ufa International Airport,RU
+KUF,RU-SAM,Samara,Kurumoch International Airport,RU
+AMD,IN-GJ,Ahmedabad,Sardar Vallabhbhai Patel International Airport,IN
+IXU,IN-MM,Aurangabad,Aurangabad Airport,IN
+BOM,IN-MM,Mumbai,Chhatrapati Shivaji International Airport,IN
+BHJ,IN-GJ,Bhuj,Bhuj Airport,IN
+IXG,IN-KA,Belgaum,Belgaum Airport,IN
+BDQ,IN-GJ,Vadodara,Vadodara Airport,IN
+BHO,IN-MP,Bhopal,Raja Bhoj International Airport,IN
+BHU,IN-GJ,Bhavnagar,Bhavnagar Airport,IN
+GOI,IN-GA,Vasco da Gama,Dabolim Airport,IN
+HBX,IN-KA,Hubli,Hubli Airport,IN
+IDR,IN-MP,Indore,Devi Ahilyabai Holkar Airport,IN
+JLR,IN-MP,,Jabalpur Airport,IN
+JGA,IN-GJ,Jamnagar,Jamnagar Airport,IN
+HJR,IN-MP,Khajuraho,Khajuraho Airport,IN
+KLH,IN-MM,,Kolhapur Airport,IN
+NDC,IN-MM,Nanded,Nanded Airport,IN
+NAG,IN-MM,Naqpur,Dr. Babasaheb Ambedkar International Airport,IN
+PNQ,IN-MM,Pune,Pune Airport,IN
+PBD,IN-GJ,Porbandar,Porbandar Airport,IN
+RAJ,IN-GJ,Rajkot,Rajkot Airport,IN
+STV,IN-GJ,,Surat Airport,IN
+UDR,IN-RJ,Udaipur,Maharana Pratap Airport,IN
+CMB,LK-1,Colombo,Bandaranaike International Colombo Airport,LK
+BTC,LK-5,Batticaloa,Batticaloa Airport,LK
+RML,LK-1,Colombo,Colombo Ratmalana Airport,LK
+JAF,LK-4,Jaffna,Kankesanturai Airport,LK
+KCT,LK-3,Galle,Koggala Airport,LK
+TRR,LK-5,Trincomalee,China Bay Airport,LK
+HRI,LK-3,,Mattala Rajapaksa International Airport,LK
+BBM,KH-2,Battambang,Battambang Airport,KH
+PNH,KH-8,Phnom Penh,Phnom Penh International Airport,KH
+REP,KH-17,Siem Reap,Siem Reap International Airport,KH
+TNX,KH-19,Stung Treng,Stung Treng Airport,KH
+IXA,IN-TR,Agartala,Agartala Airport,IN
+IXB,IN-WB,Siliguri,Bagdogra Airport,IN
+SHL,IN-ML,Shillong,Shillong Airport,IN
+BBI,IN-OR,Bhubaneswar,Biju Patnaik Airport,IN
+CCU,IN-WB,Kolkata,Netaji Subhash Chandra Bose International Airport,IN
+RDP,IN-WB,Durgapur,Kazi Nazrul Islam Airport,IN
+GOP,IN-UP,Gorakhpur,Gorakhpur Airport,IN
+GAU,IN-AS,Guwahati,Lokpriya Gopinath Bordoloi International Airport,IN
+GAY,IN-BR,,Gaya Airport,IN
+IMF,IN-MN,Imphal,Imphal Airport,IN
+JRH,IN-AS,Jorhat,Jorhat Airport,IN
+IXS,IN-AS,Silchar,Silchar Airport,IN
+AJL,IN-MZ,Aizawl,Lengpui Airport,IN
+IXI,IN-AS,Lilabari,North Lakhimpur Airport,IN
+DIB,IN-AS,Dibrugarh,Dibrugarh Airport,IN
+DMU,IN-NL,Dimapur,Dimapur Airport,IN
+PAT,IN-BR,Patna,Lok Nayak Jayaprakash Airport,IN
+IXR,IN-JH,Ranchi,Birsa Munda Airport,IN
+TEZ,IN-AS,,Tezpur Airport,IN
+BZL,BD-1,Barisal,Barisal Airport,BD
+CXB,BD-2,Cox's Bazar,Cox's Bazar Airport,BD
+CGP,BD-2,Chittagong,Shah Amanat International Airport,BD
+JSR,BD-4,Jashahor,Jessore Airport,BD
+RJH,BD-5,Rajshahi,Shah Mokhdum Airport,BD
+SPD,BD-5,Saidpur,Saidpur Airport,BD
+ZYL,BD-6,Sylhet,Osmany International Airport,BD
+DAC,BD-3,Dhaka,Dhaka / Hazrat Shahjalal International Airport,BD
+HKG,HK-U-A,Hong Kong,Chek Lap Kok International Airport,HK
+ATQ,IN-PB,Amritsar,Sri Guru Ram Dass Jee International Airport,IN
+VNS,IN-UP,Varanasi,Lal Bahadur Shastri Airport,IN
+IXC,IN-CH,Chandigarh,Chandigarh Airport,IN
+DED,IN-UP,Dehradun,Dehradun Airport,IN
+DEL,IN-DL,New Delhi,Indira Gandhi International Airport,IN
+GWL,IN-MP,Gwalior,Gwalior Airport,IN
+JDH,IN-RJ,Jodhpur,Jodhpur Airport,IN
+JAI,IN-RJ,Jaipur,Jaipur International Airport,IN
+IXJ,IN-JK,Jammu,Jammu Airport,IN
+KNU,IN-UP,,Kanpur Airport,IN
+IXL,IN-JK,Leh,Leh Kushok Bakula Rimpochee Airport,IN
+LKO,IN-UP,Lucknow,Chaudhary Charan Singh International Airport,IN
+SXR,IN-JK,Srinagar,Sheikh ul Alam Airport,IN
+TNI,IN-MP,,Satna Airport,IN
+LPQ,LA-LP,Luang Phabang,Luang Phabang International Airport,LA
+PKZ,LA-CH,Pakse,Pakse International Airport,LA
+VTE,LA-VT,Vientiane,Wattay International Airport,LA
+MFM,MO-U-A,Taipa,Macau International Airport,MO
+VDH,VN-24,Dong Hoi,Dong Hoi Airport,VN
+KON,VN-28,Kontum,Kontum Airport,VN
+BWA,NP-LU,Bhairawa,Gautam Buddha Airport,NP
+JKR,NP-JA,Janakpur,Janakpur Airport,NP
+KTM,NP-BA,Kathmandu,Tribhuvan International Airport,NP
+KEP,NP-BH,Nepalgunj,Nepalgunj Airport,NP
+PKR,NP-GA,Pokhara,Pokhara Airport,NP
+TPJ,NP-ME,Taplejung,Taplejung Airport,NP
+BIR,NP-KO,Biratnagar,Biratnagar Airport,NP
+LTU,IN-MM,Latur,Murod Kond Airport,IN
+,IN-KA,Bangalore,HAL Airport,IN
+BLR,IN-KA,Bangalore,Kempegowda International Airport,IN
+VGA,IN-AP,,Vijayawada Airport,IN
+CJB,IN-TN,Coimbatore,Coimbatore International Airport,IN
+COK,IN-KL,Cochin,Cochin International Airport,IN
+CCJ,IN-KL,Calicut,Calicut International Airport,IN
+HYD,IN-TG,Hyderabad,Rajiv Gandhi International Airport,IN
+IXM,IN-TN,Madurai,Madurai Airport,IN
+IXE,IN-KA,Mangalore,Mangalore International Airport,IN
+MAA,IN-TN,Chennai,Chennai International Airport,IN
+IXZ,IN-AN,Port Blair,Vir Savarkar International Airport,IN
+RJA,IN-AP,Rajahmundry,Rajahmundry Airport,IN
+TRZ,IN-TN,Tiruchirappally,Tiruchirapally Civil Airport Airport,IN
+TRV,IN-KL,Thiruvananthapuram,Trivandrum International Airport,IN
+PBH,BT-11,Paro,Paro Airport,BT
+GAN,MV-01,Gan,Gan International Airport,MV
+HAQ,MV-23,Haa Dhaalu Atoll,Hanimaadhoo Airport,MV
+KDO,MV-05,Kadhdhoo,Kadhdhoo Airport,MV
+MLE,MV-MLE,Malé,Malé International Airport,MV
+KDM,MV-28,Huvadhu Atoll,Kaadedhdhoo Airport,MV
+VAM,MV-13,Maamigili,Villa Airport,MV
+DMK,TH-10,Bangkok,Don Mueang International Airport,TH
+TDX,TH-23,,Trat Airport,TH
+BKK,TH-10,Bangkok,Suvarnabhumi Airport,TH
+UTP,TH-21,Rayong,U-Tapao International Airport,TH
+CNX,TH-50,Chiang Mai,Chiang Mai International Airport,TH
+HGN,TH-58,,Mae Hong Son Airport,TH
+LPT,TH-52,,Lampang Airport,TH
+NNT,TH-55,,Nan Airport,TH
+CEI,TH-57,Chiang Rai,Chiang Rai International Airport,TH
+PHY,TH-67,,Phetchabun Airport,TH
+HHQ,TH-76,Hua Hin,Hua Hin Airport,TH
+MAQ,TH-63,,Mae Sot Airport,TH
+THS,TH-64,,Sukhothai Airport,TH
+PHS,TH-65,,Phitsanulok Airport,TH
+URT,TH-84,Surat Thani,Surat Thani Airport,TH
+NAW,TH-96,,Narathiwat Airport,TH
+NST,TH-80,Nakhon Si Thammarat,Nakhon Si Thammarat Airport,TH
+KBV,TH-81,Krabi,Krabi Airport,TH
+USM,TH-80,Na Thon (Ko Samui Island),Samui Airport,TH
+HKT,TH-83,Phuket,Phuket International Airport,TH
+UNN,TH-85,,Ranong Airport,TH
+HDY,TH-90,Hat Yai,Hat Yai International Airport,TH
+TST,TH-92,,Trang Airport,TH
+UTH,TH-41,Udon Thani,Udon Thani Airport,TH
+SNO,TH-47,,Sakon Nakhon Airport,TH
+PXR,TH-32,Surin,Surin Airport,TH
+KKC,TH-40,Khon Kaen,Khon Kaen Airport,TH
+LOE,TH-42,,Loei Airport,TH
+BFV,TH-31,,Buri Ram Airport,TH
+UBP,TH-34,Ubon Ratchathani,Ubon Ratchathani Airport,TH
+ROI,TH-45,,Roi Et Airport,TH
+KOP,TH-48,,Nakhon Phanom Airport,TH
+BMV,VN-33,Buon Ma Thuot,Buon Ma Thuot Airport,VN
+HPH,VN-61,Haiphong,Cat Bi International Airport,VN
+CAH,VN-59,Ca Mau City,Cà Mau Airport,VN
+CXR,VN-34,Nha Trang,Cam Ranh Airport,VN
+VCS,VN-14,Con Ong,Co Ong Airport,VN
+VCA,VN-02,Can Tho,Can Tho International Airport,VN
+DIN,VN-01,Dien Bien Phu,Dien Bien Phu Airport,VN
+DAD,VN-60,Da Nang,Da Nang International Airport,VN
+HAN,VN-15,Hanoi,Noi Bai International Airport,VN
+HUI,VN-56,Hue,Phu Bai Airport,VN
+UIH,VN-31,Quy Nohn,Phu Cat Airport,VN
+PXU,VN-30,Pleiku,Pleiku Airport,VN
+PQC,VN-47,Phu Quoc Island,Phu Quoc International Airport,VN
+VKG,VN-47,Rach Gia,Rach Gia Airport,VN
+TBB,VN-49,Tuy Hoa,Dong Tac Airport,VN
+SGN,VN-23,Ho Chi Minh City,Tan Son Nhat International Airport,VN
+VII,VN-26,Vinh,Vinh Airport,VN
+TVY,MM-05,Dawei,Dawei Airport,MM
+HEH,MM-17,Heho,Heho Airport,MM
+KET,MM-17,Kengtung,Kengtung Airport,MM
+KYP,MM-16,Kyaukpyu,Kyaukpyu Airport,MM
+KAW,MM-05,Kawthoung,Kawthoung Airport,MM
+LIW,MM-12,Loikaw,Loikaw Airport,MM
+LSH,MM-17,Lashio,Lashio Airport,MM
+MDL,MM-04,Mandalay,Mandalay International Airport,MM
+MGZ,MM-05,Mkeik,Myeik Airport,MM
+MYT,MM-11,Myitkyina,Myitkyina Airport,MM
+MOG,MM-17,Mong Hsat,Mong Hsat Airport,MM
+PBU,MM-11,Putao,Putao Airport,MM
+AKY,MM-16,Sittwe,Sittwe Airport,MM
+SNW,MM-16,Thandwe,Thandwe Airport,MM
+THL,MM-17,Tachileik,Tachileik Airport,MM
+RGN,MM-06,Yangon,Yangon International Airport,MM
+UPG,ID-SN,Ujung Pandang-Celebes Island,Hasanuddin International Airport,ID
+BIK,ID-PA,Biak-Supiori Island,Frans Kaisiepo Airport,ID
+NBX,ID-PA,Nabire-Papua Island,Nabire Airport,ID
+TIM,ID-PA,Timika-Papua Island,Moses Kilangin Airport,ID
+DPS,ID-BA,Denpasar-Bali Island,Ngurah Rai (Bali) International Airport,ID
+LOP,ID-NB,Mataram,Lombok International Airport,ID
+DJJ,ID-PA,Jayapura-Papua Island,Sentani Airport,ID
+WMX,ID-PA,Wamena-Papua Island,Wamena Airport,ID
+MKQ,ID-PA,Merauke-Papua Island,Mopah Airport,ID
+TRK,ID-KU,Tarakan Island,Juwata Airport,ID
+SRI,ID-KI,Samarinda,Temindung Airport,ID
+NAH,ID-SA,Tahuna-Sangihe Island,Naha Airport,ID
+PLW,ID-ST,Palu-Celebes Island,Mutiara Airport,ID
+MDC,ID-SA,Manado-Celebes Island,Sam Ratulangi Airport,ID
+TTE,ID-MU,Sango-Ternate Island,Sultan Khairun Babullah Airport,ID
+TJG,ID-KS,Tanta-Tabalong-Borneo Island,Warukin Airport,ID
+LUV,ID-MA,Langgur-Seram Island,Dumatumbun Airport,ID
+AMQ,ID-MA,Ambon,"Pattimura Airport, Ambon",ID
+SUB,ID-JI,Surabaya,Juanda International Airport,ID
+FKQ,ID-PB,Fakfak-Papua Island,Fakfak Airport,ID
+KNG,ID-PB,Kaimana-Papua Island,Kaimana Airport,ID
+MKW,ID-PB,Manokwari-Papua Island,Rendani Airport,ID
+SOQ,ID-PB,Sorong-Papua Island,Dominique Edward Osok Airport,ID
+BTU,MY-13,Bintulu,Bintulu Airport,MY
+KCH,MY-13,Kuching,Kuching International Airport,MY
+LMN,MY-13,Limbang,Limbang Airport,MY
+MUR,MY-13,Marudi,Marudi Airport,MY
+MYY,MY-13,Miri,Miri Airport,MY
+SBW,MY-13,Sibu,Sibu Airport,MY
+BBN,MY-13,Bario,Bario Airport,MY
+LDU,MY-12,Lahad Datu,Lahad Datu Airport,MY
+BKI,MY-12,Kota Kinabalu,Kota Kinabalu International Airport,MY
+LBU,MY-15,Labuan,Labuan Airport,MY
+SDK,MY-12,Sandakan,Sandakan Airport,MY
+TWU,MY-12,Tawau,Tawau Airport,MY
+MZV,MY-13,Mulu,Mulu Airport,MY
+BWN,BN-BM,Bandar Seri Begawan,Brunei International Airport,BN
+TKG,ID-LA,Bandar Lampung-Sumatra Island,Radin Inten II (Branti) Airport,ID
+PKU,ID-RI,Pekanbaru-Sumatra Island,Sultan Syarif Kasim Ii (Simpang Tiga) Airport,ID
+DUM,ID-RI,Dumai-Sumatra Island,Pinang Kampai Airport,ID
+BDO,ID-JB,Bandung-Java Island,Husein Sastranegara International Airport,ID
+BTH,ID-RI,Batam Island,Hang Nadim International Airport,ID
+HLP,ID-JK,Jakarta,Halim Perdanakusuma International Airport,ID
+CXP,ID-JT,Cilacap-Java Island,Tunggul Wulung Airport,ID
+CGK,ID-BT,Jakarta,Soekarno-Hatta International Airport,ID
+GNS,ID-SU,Gunung Sitoli-Nias Island,Binaka Airport,ID
+AEG,ID-SU,Padang Sidempuan-Sumatra Island,Aek Godang Airport,ID
+PDG,ID-SB,Padang-Sumatra Island,Tabing Airport,ID
+KNO,ID-SU,,Kualanamu International Airport,ID
+NPO,ID-KB,Nanga Pinoh-Borneo Island,Nanga Pinoh Airport,ID
+KTG,ID-KB,Ketapang-Borneo Island,Ketapang(Rahadi Usman) Airport,ID
+NTX,ID-RI,Ranai-Natuna Besar Island,Ranai Airport,ID
+PNK,ID-KB,Pontianak-Borneo Island,Supadio Airport,ID
+PSU,ID-KB,Putussibau-Borneo Island,Pangsuma Airport,ID
+SQG,ID-KB,Sintang-Borneo Island,Sintang(Susilo) Airport,ID
+BKS,ID-BE,Bengkulu-Sumatra Island,Fatmawati Soekarno Airport,ID
+PLM,ID-SS,Palembang-Sumatra Island,Sultan Mahmud Badaruddin II Airport,ID
+PDO,ID-SS,Talang Gudang-Sumatra Island,Pendopo Airport,ID
+PDG,ID-SB,Ketaping/Padang-Sumatra Island,Minangkabau Airport,ID
+BTJ,ID-AC,Banda Aceh,Sultan Iskandar Muda International Airport,ID
+TOD,MY-06,Pulau Tioman,Pulau Tioman Airport,MY
+AOR,MY-02,Alor Satar,Sultan Abdul Halim Airport,MY
+KBR,MY-03,Kota Baharu,Sultan Ismail Petra Airport,MY
+KUA,MY-06,Kuantan,Kuantan Airport,MY
+IPH,MY-08,Ipoh,Sultan Azlan Shah Airport,MY
+JHB,MY-01,Senai,Senai International Airport,MY
+KUL,MY-14,Kuala Lumpur,Kuala Lumpur International Airport,MY
+LGK,MY-02,Langkawi,Langkawi International Airport,MY
+TGG,MY-11,Kuala Terengganu,Sultan Mahmud Airport,MY
+PEN,MY-07,Penang,Penang International Airport,MY
+SZB,MY-10,Subang,Sultan Abdul Aziz Shah International Airport,MY
+DIL,TL-DI,Dili,Presidente Nicolau Lobato International Airport,TL
+XSP,SG-02,Seletar,Seletar Airport,SG
+SIN,SG-04,Singapore,Singapore Changi Airport,SG
+ALH,AU-WA,Albany,Albany Airport,AU
+ARM,AU-NSW,Armidale,Armidale Airport,AU
+AYQ,AU-NT,Ayers Rock,Ayers Rock Connellan Airport,AU
+BCI,AU-QLD,Barcaldine,Barcaldine Airport,AU
+ASP,AU-NT,Alice Springs,Alice Springs Airport,AU
+BNE,AU-QLD,Brisbane,Brisbane International Airport,AU
+OOL,AU-QLD,Gold Coast,Gold Coast Airport,AU
+BKQ,AU-QLD,Blackall,Blackall Airport,AU
+CNS,AU-QLD,Cairns,Cairns International Airport,AU
+CTL,AU-QLD,Charleville,Charleville Airport,AU
+BVI,AU-QLD,,Birdsville Airport,AU
+BHQ,AU-NSW,Broken Hill,Broken Hill Airport,AU
+HTI,AU-QLD,Hamilton Island,Hamilton Island Airport,AU
+BEU,AU-QLD,,Bedourie Airport,AU
+BRK,AU-NSW,,Bourke Airport,AU
+ISA,AU-QLD,Mount Isa,Mount Isa Airport,AU
+MCY,AU-QLD,Maroochydore,Sunshine Coast Airport,AU
+MKY,AU-QLD,Mackay,Mackay Airport,AU
+BNK,AU-NSW,Ballina,Ballina Byron Gateway Airport,AU
+OKY,AU-QLD,,Oakey Airport,AU
+BQL,AU-QLD,,Boulia Airport,AU
+PPP,AU-QLD,Proserpine,Proserpine Whitsunday Coast Airport,AU
+ROK,AU-QLD,Rockhampton,Rockhampton Airport,AU
+BME,AU-WA,Broome,Broome International Airport,AU
+BHS,AU-NSW,Bathurst,Bathurst Airport,AU
+TSV,AU-QLD,Townsville,Townsville Airport,AU
+BLT,AU-QLD,,Blackwater Airport,AU
+BDB,AU-QLD,Bundaberg,Bundaberg Airport,AU
+WEI,AU-QLD,Weipa,Weipa Airport,AU
+CVQ,AU-WA,Carnarvon,Carnarvon Airport,AU
+CAZ,AU-NSW,,Cobar Airport,AU
+CPD,AU-SA,,Coober Pedy Airport,AU
+CNJ,AU-QLD,Cloncurry,Cloncurry Airport,AU
+CED,AU-SA,,Ceduna Airport,AU
+CTN,AU-QLD,,Cooktown Airport,AU
+CMA,AU-QLD,,Cunnamulla Airport,AU
+CNB,AU-NSW,,Coonamble Airport,AU
+CUQ,AU-QLD,Coen,Coen Airport,AU
+OOM,AU-NSW,Cooma,Cooma Snowy Mountains Airport,AU
+DPO,AU-TAS,Devonport,Devonport Airport,AU
+ELC,AU-NT,Elcho Island,Elcho Island Airport,AU
+EMD,AU-QLD,Emerald,Emerald Airport,AU
+EPR,AU-WA,Esperance,Esperance Airport,AU
+GET,AU-WA,Geraldton,Geraldton Airport,AU
+GLT,AU-QLD,Gladstone,Gladstone Airport,AU
+GTE,AU-NT,Groote Eylandt,Groote Eylandt Airport,AU
+GFF,AU-NSW,Griffith,Griffith Airport,AU
+HVB,AU-QLD,Hervey Bay,Hervey Bay Airport,AU
+HID,AU-QLD,Horn Island,Horn Island Airport,AU
+MHU,AU-VIC,Mount Hotham,Mount Hotham Airport,AU
+KNS,AU-TAS,,King Island Airport,AU
+KWM,AU-QLD,Kowanyama,Kowanyama Airport,AU
+KGC,AU-SA,,Kingscote Airport,AU
+LNO,AU-WA,Leonora,Leonora Airport,AU
+IRG,AU-QLD,Lockhart River,Lockhart River Airport,AU
+LSY,AU-NSW,Lismore,Lismore Airport,AU
+LHG,AU-NSW,,Lightning Ridge Airport,AU
+LRE,AU-QLD,Longreach,Longreach Airport,AU
+LER,AU-WA,,Leinster Airport,AU
+AVV,AU-VIC,Melbourne,Avalon Airport,AU
+ABX,AU-NSW,Albury,Albury Airport,AU
+MKR,AU-WA,,Meekatharra Airport,AU
+MIM,AU-NSW,Merimbula,Merimbula Airport,AU
+MNG,AU-NT,Maningrida,Maningrida Airport,AU
+HBA,AU-TAS,Hobart,Hobart International Airport,AU
+MQL,AU-VIC,Mildura,Mildura Airport,AU
+LST,AU-TAS,Launceston,Launceston Airport,AU
+MBW,AU-VIC,Melbourne,Melbourne Moorabbin Airport,AU
+MEL,AU-VIC,Melbourne,Melbourne International Airport,AU
+MMG,AU-WA,,Mount Magnet Airport,AU
+MRZ,AU-NSW,Moree,Moree Airport,AU
+MOV,AU-QLD,Moranbah,Moranbah Airport,AU
+MYA,AU-NSW,Moruya,Moruya Airport,AU
+MGB,AU-SA,,Mount Gambier Airport,AU
+NRA,AU-NSW,Narrandera,Narrandera Airport,AU
+NAA,AU-NSW,Narrabri,Narrabri Airport,AU
+NTN,AU-QLD,Normanton,Normanton Airport,AU
+ZNE,AU-WA,Newman,Newman Airport,AU
+ADL,AU-SA,Adelaide,Adelaide International Airport,AU
+PUG,AU-SA,,Port Augusta Airport,AU
+PBO,AU-WA,Paraburdoo,Paraburdoo Airport,AU
+CCK,CC-U-A,Cocos (Keeling) Islands,Cocos (Keeling) Islands Airport,CC
+DRW,AU-NT,Darwin,Darwin International Airport,AU
+GOV,AU-NT,Nhulunbuy,Gove Airport,AU
+KTA,AU-WA,Karratha,Karratha Airport,AU
+KGI,AU-WA,Kalgoorlie,Kalgoorlie Boulder Airport,AU
+PKE,AU-NSW,Parkes,Parkes Airport,AU
+KNX,AU-WA,Kununurra,Kununurra Airport,AU
+PLO,AU-SA,Port Lincoln,Port Lincoln Airport,AU
+LEA,AU-WA,Exmouth,Learmonth Airport,AU
+PQQ,AU-NSW,Port Macquarie,Port Macquarie Airport,AU
+PTJ,AU-VIC,,Portland Airport,AU
+PHE,AU-WA,Port Hedland,Port Hedland International Airport,AU
+PER,AU-WA,Perth,Perth International Airport,AU
+XCH,CX-U-A,Christmas Island,Christmas Island Airport,CX
+ULP,AU-QLD,,Quilpie Airport,AU
+RMA,AU-QLD,Roma,Roma Airport,AU
+CBR,AU-ACT,Canberra,Canberra International Airport,AU
+CFS,AU-NSW,Coffs Harbour,Coffs Harbour Airport,AU
+DBO,AU-NSW,Dubbo,Dubbo City Regional Airport,AU
+MJK,AU-WA,Denham,Shark Bay Airport,AU
+NLK,NF-U-A,Burnt Pine,Norfolk Island International Airport,NF
+SYD,AU-NSW,Sydney,Sydney Kingsford Smith International Airport,AU
+TMW,AU-NSW,Tamworth,Tamworth Airport,AU
+WGA,AU-NSW,Wagga Wagga,Wagga Wagga City Airport,AU
+XTG,AU-QLD,,Thargomindah Airport,AU
+THG,AU-QLD,Biloela,Thangool Airport,AU
+TCA,AU-NT,Tennant Creek,Tennant Creek Airport,AU
+TRO,AU-NSW,Taree,Taree Airport,AU
+YVR,CA-BC,Vancouver,YVR,CA
+WNR,AU-QLD,,Windorah Airport,AU
+WYA,AU-SA,Whyalla,Whyalla Airport,AU
+NTL,AU-NSW,Williamtown,Newcastle Airport,AU
+WUN,AU-WA,,Wiluna Airport,AU
+WOL,AU-NSW,,Wollongong Airport,AU
+WIN,AU-QLD,,Winton Airport,AU
+BWT,AU-TAS,Burnie,Wynyard Airport,AU
+PEK,CN-11,Beijing,Beijing Capital International Airport,CN
+CIF,CN-15,Chifeng,Chifeng Airport,CN
+BPE,CN-13,Qinhuangdao,Qinhuangdao Beidaihe Airport,CN
+DSN,CN-15,Ordos,Ordos Ejin Horo Airport,CN
+ERL,CN-15,Erenhot,Erenhot Saiwusu International Airport,CN
+YIE,CN-15,Arxan,Arxan Yi'ershi Airport,CN
+HDG,CN-42,Handan,Handan Airport,CN
+HET,CN-15,Hohhot,Baita International Airport,CN
+HLD,CN-15,Hailar,Dongshan Airport,CN
+NAY,CN-11,Beijing,Beijing Nanyuan Airport,CN
+BAV,CN-15,Baotou,Baotou Airport,CN
+SJW,CN-13,Shijiazhuang,Shijiazhuang Daguocun International Airport,CN
+TSN,CN-12,Tianjin,Tianjin Binhai International Airport,CN
+TGO,CN-15,Tongliao,Tongliao Airport,CN
+XIL,CN-15,Xilinhot,Xilinhot Airport,CN
+TYN,CN-14,Taiyuan,Taiyuan Wusu Airport,CN
+RLK,CN-15,Bavannur,Bayannur Tianjitai Airport,CN
+CGD,CN-43,Changde,Changde Airport,CN
+HJJ,CN-43,Huaihua,Zhijiang Airport,CN
+CAN,CN-44,Guangzhou,Guangzhou Baiyun International Airport,CN
+CSX,CN-43,Changsha,Changsha Huanghua International Airport,CN
+HCJ,CN-45,Hechi,Hechi Jinchengjiang Airport,CN
+KWL,CN-45,Guilin City,Guilin Liangjiang International Airport,CN
+LLF,CN-43,Yongzhou,Lingling Airport,CN
+NNG,CN-45,Nanning,Nanning Wuxu Airport,CN
+SWA,CN-44,Shantou,Jieyang Chaoshan International Airport,CN
+ZUH,CN-44,Zhuhai,Zhuhai Jinwan Airport,CN
+SZX,CN-44,Shenzhen,Shenzhen Bao'an International Airport,CN
+LZH,CN-45,Liuzhou,Liuzhou Bailian Airport,CN
+ZHA,CN-44,Zhanjiang,Zhanjiang Airport,CN
+CGO,CN-41,Zhengzhou,Zhengzhou Xinzheng International Airport,CN
+WUH,CN-42,Wuhan,Wuhan Tianhe International Airport,CN
+HPG,CN-42,Shennongjia,Shennongjia Hongping Airport,CN
+WDS,CN-42,Shiyan,Shiyan Wudangshan Airport,CN
+YIH,CN-42,Yichang,Yichang Sanxia Airport,CN
+HAK,CN-46,Haikou,Haikou Meilan International Airport,CN
+SYX,CN-46,Sanya,Sanya Phoenix International Airport,CN
+FNJ,KP-01,Pyongyang,Pyongyang Sunan International Airport,KP
+DSO,KP-08,Sŏndŏng-ni,Sondok Airport,KP
+WOS,KP-07,Wonsan,Wonsan Kalma International Airport,KP
+DNH,CN-62,Dunhuang,Dunhuang Airport,CN
+GOQ,CN-63,Golmud,Golmud Airport,CN
+HTT,CN-63,Mengnai,Huatugou Airport,CN
+INC,CN-64,Yinchuan,Yinchuan Airport,CN
+JNG,CN-37,Jining,Jining Qufu Airport,CN
+JGN,CN-62,Jiayuguan,Jiayuguan Airport,CN
+LHW,CN-62,Lanzhou,Lanzhou Zhongchuan Airport,CN
+IQN,CN-62,Qingyang,Qingyang Airport,CN
+GXH,CN-62,Xiahe,Gannan Xiahe Airport,CN
+XNN,CN-63,Xining,Xining Caojiabu Airport,CN
+XIY,CN-61,Xianyang,Xi'an Xianyang International Airport,CN
+ZHY,CN-64,Zhongwei,Zhongwei Shapotou Airport,CN
+AVK,MN-055,Arvaikheer,Arvaikheer Airport,MN
+LTI,MN-065,Altai,Altai Airport,MN
+BYN,MN-069,Bayankhongor,Bayankhongor Airport,MN
+UGA,MN-067,Bulgan,Bulgan Airport,MN
+DLZ,MN-053,Dalanzadgad,Dalanzadgad Airport,MN
+HVD,MN-043,Khovd,Khovd Airport,MN
+MXV,MN-041,Mörön,Mörön Airport,MN
+ULN,MN-1,Ulan Bator,Chinggis Khaan International Airport,MN
+DLU,CN-53,Xiaguan,Dali Airport,CN
+DIG,CN-53,Shangri-La,Diqing Airport,CN
+JHG,CN-53,Jinghong,Xishuangbanna Gasa Airport,CN
+LJG,CN-53,Lijiang,Lijiang Airport,CN
+LUM,CN-53,Luxi,Mangshi Airport,CN
+KMG,CN-53,Kunming,Kunming Changshui International Airport,CN
+XMN,CN-35,Xiamen,Xiamen Gaoqi International Airport,CN
+AQG,CN-34,Anqing,Anqing Tianzhushan Airport,CN
+KHN,CN-36,Nanchang,Nanchang Changbei International Airport,CN
+FUG,CN-U-A,Fuyang,Fuyang Xiguan Airport,CN
+FOC,CN-35,Fuzhou,Fuzhou Changle International Airport,CN
+HGH,CN-33,Hangzhou,Hangzhou Xiaoshan International Airport,CN
+JDZ,CN-36,Jingdezhen,Jingdezhen Airport,CN
+TNA,CN-37,Jinan,Yaoqiang Airport,CN
+JUZ,CN-33,Quzhou,Quzhou Airport,CN
+LCX,CN-35,Longyan,Longyan Guanzhishan Airport,CN
+HYN,CN-33,Huangyan,Huangyan Luqiao Airport,CN
+NGB,CN-33,Ningbo,Ningbo Lishe International Airport,CN
+NKG,CN-32,Nanjing,Nanjing Lukou Airport,CN
+HFE,CN-34,Hefei,Hefei Luogang International Airport,CN
+PVG,CN-31,Shanghai,Shanghai Pudong International Airport,CN
+TAO,CN-37,Qingdao,Liuting Airport,CN
+JJN,CN-35,Quanzhou,Quanzhou Jinjiang International Airport,CN
+SHA,CN-31,Shanghai,Shanghai Hongqiao International Airport,CN
+TXN,CN-34,Huangshan,Tunxi International Airport,CN
+WEF,CN-37,Weifang,Weifang Airport,CN
+WEH,CN-37,Weihai,Weihai Airport,CN
+WUX,CN-32,Wuxi,Sunan Shuofang International Airport,CN
+WUS,CN-35,Wuyishan,Nanping Wuyishan Airport,CN
+WNZ,CN-33,Wenzhou,Wenzhou Yongqiang Airport,CN
+XUZ,CN-32,Xuzhou,Xuzhou Guanyin Airport,CN
+YTY,CN-32,Yangzhou and Taizhou,Yangzhou Taizhou Airport,CN
+YIC,CN-36,Yichun,Yichun Mingyueshan Airport,CN
+YNT,CN-37,Yantai,Yantai Laishan Airport,CN
+YIW,CN-33,Yiwu,Yiwu Airport,CN
+BPX,CN-54,Bangda,Qamdo Bangda Airport,CN
+BFJ,CN-52,Bijie,Bijie Feixiong Airport,CN
+CKG,CN-50,Chongqing,Chongqing Jiangbei International Airport,CN
+GYS,CN-51,Guangyuan,Guangyuan Airport,CN
+KWE,CN-52,Guiyang,Longdongbao Airport,CN
+JZH,CN-51,Jiuzhaigou,Jiuzhai Huanglong Airport,CN
+KJH,CN-52,Huangping,Kaili Airport,CN
+LXA,CN-54,Lhasa,Lhasa Gonggar Airport,CN
+MIG,CN-51,Mianyang,Mianyang Airport,CN
+HZH,CN-52,Liping,Liping Airport,CN
+LZY,CN-54,Nyingchi,Nyingchi Airport,CN
+TCZ,CN-53,Tengchong,Tengchong Tuofeng Airport,CN
+CTU,CN-51,Chengdu,Chengdu Shuangliu International Airport,CN
+XIC,CN-51,Xichang,Xichang Qingshan Airport,CN
+ACX,CN-52,Xingyi,Xingyi Airport,CN
+ZYI,CN-52,Zunyi,Zunyi Xinzhou Airport,CN
+AKU,CN-65,Aksu,Aksu Airport,CN
+IQM,CN-65,Qiemo,Qiemo Airport,CN
+KRL,CN-65,Korla,Korla Airport,CN
+KJI,CN-65,Burqin,Kanas Airport,CN
+KHG,CN-65,Kashgar,Kashgar Airport,CN
+HTN,CN-65,Hotan,Hotan Airport,CN
+URC,CN-65,Ürümqi,Ürümqi Diwopu International Airport,CN
+AOG,CN-21,Anshan,Anshan Air Base,CN
+CGQ,CN-22,Changchun,Longjia Airport,CN
+CHG,CN-21,Chaoyang,Chaoyang Airport,CN
+FYJ,CN-23,Fuyuan,Dongji Aiport,CN
+HRB,CN-23,Harbin,Taiping Airport,CN
+HEK,CN-23,Heihe,Heihe Airport,CN
+JMU,CN-23,Jiamusi,Jiamusi Airport,CN
+JXA,CN-23,Jixi,Jixi Xingkaihu Airport,CN
+JNZ,CN-21,Jinzhou,Jinzhou Airport,CN
+LDS,CN-23,Yichun,Lindu Airport,CN
+MDG,CN-23,Mudanjiang,Mudanjiang Hailang International Airport,CN
+OHE,CN-23,Mohe,Gu-Lian Airport,CN
+NDG,CN-23,Qiqihar,Qiqihar Sanjiazi Airport,CN
+DLC,CN-21,Dalian,Zhoushuizi Airport,CN
+TNH,CN-22,Tonghua,Tonghua Sanyuanpu Airport,CN
+SHE,CN-21,Shenyang,Taoxian Airport,CN
+YNJ,CN-22,Yanji,Yanji Chaoyangchuan Airport,CN
+YKH,CN-21,Yingkou,Yingkou Lanqi Airport,CN
