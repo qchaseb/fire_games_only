@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MBQ-x7-o94">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MBQ-x7-o94">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,6 +99,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signInButtonTapped:" destination="2wO-YJ-46B" eventType="touchUpInside" id="l9n-ew-HZy"/>
+                                                            <segue destination="EnJ-Q2-B5D" kind="show" identifier="signInSegue" id="HzV-Ea-3aF"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6U-0h-L3C">
@@ -169,12 +170,11 @@
                         <outlet property="mainScrollView" destination="gzH-6p-HGb" id="ia4-Fn-3E4"/>
                         <outlet property="passwordTextField" destination="bQx-tB-Kwq" id="axy-fz-8hn"/>
                         <segue destination="bFE-7j-ij4" kind="show" identifier="swipeToSignUp" id="I2e-0F-aje"/>
-                        <segue destination="wlc-an-J5l" kind="show" identifier="signInSegue" id="Ty5-SC-zL6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-8x-cfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2658.4000000000001" y="152.47376311844079"/>
+            <point key="canvasLocation" x="2927" y="220"/>
         </scene>
         <!--Flights Table View Controller-->
         <scene sceneID="rBQ-nC-G7R">
@@ -682,6 +682,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="signUpButtonTapped:" destination="bFE-7j-ij4" eventType="touchUpInside" id="le8-sg-mAH"/>
+                                                    <segue destination="EnJ-Q2-B5D" kind="show" identifier="newUserSignInSegue" id="fWa-ve-Tdn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -736,7 +737,6 @@
                         <outlet property="scrollView" destination="8b7-yT-pOO" id="FEu-io-Edp"/>
                         <outlet property="signUpButton" destination="pwZ-op-yls" id="1Ho-aq-kJH"/>
                         <outlet property="titleLabel" destination="D5s-zn-uDi" id="ccb-Iw-eYb"/>
-                        <segue destination="wlc-an-J5l" kind="show" identifier="newUserSignInSegue" id="4l1-I7-UN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi7-8m-xbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -888,6 +888,32 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="AC0-29-ZVO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<<<<<<< HEAD
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQK-n8-jbZ" userLabel="transparentSideCloseButton">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseMenuClick:" destination="SSX-7l-Mlb" eventType="touchUpInside" id="Ks1-lS-bTf"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cLW-hb-ii5">
+                                <rect key="frame" x="0.0" y="20" width="379" height="647"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="x3Z-LT-fbd" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="379" height="176"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3Z-LT-fbd" id="Ron-lq-b52">
+                                            <rect key="frame" x="0.0" y="0.0" width="379" height="175"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+=======
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="93Y-zW-RUu" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
@@ -899,6 +925,7 @@
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WR1-XH-5Xu">
                                             <rect key="frame" x="8" y="8" width="359" height="106"/>
+>>>>>>> Still need to correctly handle segues. NOT a working version of the app...
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Miw-fF-dwl">
                                                     <rect key="frame" x="0.0" y="0.0" width="210" height="106"/>
@@ -1045,6 +1072,24 @@
                                             <constraints>
                                                 <constraint firstItem="ilN-8i-h95" firstAttribute="width" secondItem="cBr-cO-CjY" secondAttribute="width" multiplier="3:2" id="JRw-2p-0zZ"/>
                                             </constraints>
+<<<<<<< HEAD
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="tn8-ey-f0P" id="Dcd-ch-dIB"/>
+                                            <outlet property="departureAirportLabel" destination="Hwp-7s-MeH" id="XNS-8T-w8c"/>
+                                            <outlet property="destinationAirportLabel" destination="mMi-Aq-90K" id="j4H-dp-chq"/>
+                                            <outlet property="flightLogoImageView" destination="xcs-q0-Lws" id="lIk-ql-8LM"/>
+                                            <outlet property="flightNumberLabel" destination="8aL-HH-s7v" id="lX1-wb-uUa"/>
+                                            <outlet property="timeLabel" destination="PaO-4W-bth" id="eBb-pi-f03"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMenu" id="ecI-zX-iOo">
+                                        <rect key="frame" x="0.0" y="198" width="379" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ecI-zX-iOo" id="xeM-Oq-cyd">
+                                            <rect key="frame" x="0.0" y="0.0" width="379" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+=======
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-cq-jH2">
                                             <rect key="frame" x="8" y="114" width="359" height="53"/>
@@ -1121,6 +1166,7 @@
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="itg-yd-ahz">
                                             <rect key="frame" x="8" y="8" width="359" height="106"/>
+>>>>>>> Still need to correctly handle segues. NOT a working version of the app...
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-cZ-Tuh">
                                                     <rect key="frame" x="0.0" y="0.0" width="209" height="106"/>
@@ -1266,7 +1312,12 @@
         <image name="user_icon_blue" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
+        <segue reference="zip-S0-Kah"/>
+        <segue reference="Ty5-SC-zL6"/>
+=======
         <segue reference="HzV-Ea-3aF"/>
         <segue reference="zip-S0-Kah"/>
+>>>>>>> Still need to correctly handle segues. NOT a working version of the app...
     </inferredMetricsTieBreakers>
 </document>

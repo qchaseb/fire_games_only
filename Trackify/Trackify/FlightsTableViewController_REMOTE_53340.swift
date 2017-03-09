@@ -23,7 +23,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var flights: [Flight]? {
         didSet {
             flights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            flights = flights?.filter({ !self.dateIsBeforeToday(date: $0.getDate()!)})
+            flights = flights?.filter({ $0.getDate()! > yesterday})
             if (!initialFlights) {
                 for flight in flights! {
                     addFlightToCoreData(flight: flight)
@@ -37,7 +37,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var pastFlights: [Flight]? {
         didSet {
             pastFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            pastFlights = pastFlights?.filter({ $0.getDate()! <= yesterday!})
+            pastFlights = pastFlights?.filter({ $0.getDate()! <= yesterday})
             // Need to deal with core data
             if (!initialFlights) {
                 for flight in pastFlights! {
@@ -52,7 +52,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var sharedFlights: [Flight]? {
         didSet {
             sharedFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            sharedFlights = sharedFlights?.filter({ $0.getDate()! > yesterday!})
+            sharedFlights = sharedFlights?.filter({ $0.getDate()! > yesterday})
             if (!initialFlights) {
                 for flight in sharedFlights! {
                     addFlightToCoreData(flight: flight)
@@ -110,15 +110,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
-    fileprivate func dateIsBeforeToday(date: Date) -> Bool {
-        let today = Date()
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        let dateString = df.string(from: date)
-        let todayString = df.string(from: today)
-        return dateString < todayString
-    }
-    
     func scheduleLocalNotifications(flight: Flight) {
         //create notification dates
         let date = flight.getDate()
@@ -132,8 +123,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
 
         //notification content
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = flight.airline! + " #" + flight.flightNumber!
-        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon",
+        notificationContent.title = flight.flightNumber!
+        notificationContent.subtitle = flight.airline!
+        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon.",
                                           flight.departureAirport!, flight.destinationAirport!)
         notificationContent.sound = UNNotificationSound.default()
 
@@ -162,6 +154,14 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             }
             (flight.identifiers)!.insert(identifier)
         }
+
+        //print pending notification request ids
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print("These are pending requests in scheduling after scheduling: ")
+                print(request.identifier)
+            }
+        })
     }
 
     override func willMove(toParentViewController parent: UIViewController?) {
@@ -210,7 +210,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     }
     
     fileprivate func currentFlightsArray() ->[Flight]? {
-        switch self.tabBarItem.title! {
+        switch self.tabBarItem.title {
         case "My Flights" :
             return flights
         case "Past Flights":
@@ -345,6 +345,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             }
             
         }, completion:nil)
+        
+        
     }
     
     func handleRefresh() {
@@ -464,16 +466,14 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             print("Sign Out Tapped")
             removeUserFromCoreData()
             self.navigationController!.popToRootViewController(animated: true)
+            
             break
         case "Edit":
             print("Edit Button Tapped")
             editingFlight = true
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
-        case "Status":
-            print("Status Button Tapped")
-            self.performSegue(withIdentifier: Storyboard.StatusSegue , sender: self)
-            break
+            
         case "Add to Calendar":
             print("Add to Calendar Tapped")
             addFlightToCalendar(flight: (optionsVC?.flight!)!)
@@ -747,10 +747,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                 destinationVC.editableUser = self.user
                 destinationVC.delegate = self
                 destinationVC.removeUserFromCoreData = self.removeUserFromCoreData
-            }
-        } else if segue.identifier == Storyboard.StatusSegue {
-            if let destinationVC = segue.destination as? StatusViewController {
-                destinationVC.flight = optionsVC?.flight
             }
         }
     }

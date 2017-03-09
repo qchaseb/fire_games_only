@@ -23,7 +23,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var flights: [Flight]? {
         didSet {
             flights?.sort(by: { $0.getDate()! < $1.getDate()! })
+<<<<<<< HEAD
             flights = flights?.filter({ !self.dateIsBeforeToday(date: $0.getDate()!)})
+=======
+            flights = flights?.filter({ $0.getDate()! > yesterday})
+>>>>>>> Still need to correctly handle segues. NOT a working version of the app...
             if (!initialFlights) {
                 for flight in flights! {
                     addFlightToCoreData(flight: flight)
@@ -37,7 +41,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var pastFlights: [Flight]? {
         didSet {
             pastFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            pastFlights = pastFlights?.filter({ $0.getDate()! <= yesterday!})
+            pastFlights = pastFlights?.filter({ $0.getDate()! <= yesterday})
             // Need to deal with core data
             if (!initialFlights) {
                 for flight in pastFlights! {
@@ -52,7 +56,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var sharedFlights: [Flight]? {
         didSet {
             sharedFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            sharedFlights = sharedFlights?.filter({ $0.getDate()! > yesterday!})
+            sharedFlights = sharedFlights?.filter({ $0.getDate()! > yesterday})
             if (!initialFlights) {
                 for flight in sharedFlights! {
                     addFlightToCoreData(flight: flight)
@@ -210,7 +214,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     }
     
     fileprivate func currentFlightsArray() ->[Flight]? {
-        switch self.tabBarItem.title! {
+        switch self.tabBarItem.title {
         case "My Flights" :
             return flights
         case "Past Flights":

@@ -18,43 +18,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     // MARK: - Variables
     var user: User?
     fileprivate var initialFlights = true
-    fileprivate let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
     
     var flights: [Flight]? {
         didSet {
             flights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            flights = flights?.filter({ !self.dateIsBeforeToday(date: $0.getDate()!)})
+            flights = flights?.filter({ $0.getDate()! > Date()})
             if (!initialFlights) {
                 for flight in flights! {
-                    addFlightToCoreData(flight: flight)
-                }
-            }
-            self.tableView.reloadData()
-            self.refreshController?.endRefreshing()
-        }
-    }
-    
-    var pastFlights: [Flight]? {
-        didSet {
-            pastFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            pastFlights = pastFlights?.filter({ $0.getDate()! <= yesterday!})
-            // Need to deal with core data
-            if (!initialFlights) {
-                for flight in pastFlights! {
-                    addFlightToCoreData(flight: flight)
-                }
-            }
-            self.tableView.reloadData()
-            self.refreshController?.endRefreshing()
-        }
-    }
-    
-    var sharedFlights: [Flight]? {
-        didSet {
-            sharedFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            sharedFlights = sharedFlights?.filter({ $0.getDate()! > yesterday!})
-            if (!initialFlights) {
-                for flight in sharedFlights! {
                     addFlightToCoreData(flight: flight)
                 }
             }
@@ -66,10 +36,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var menuVC: MenuViewController?
     var optionsVC: FlightOptionsViewController?
     let BOUNDS_OFFSET: CGFloat = 64
-    
-    //for sharing flights
-    fileprivate var enterEmail: UIAlertController?
-    fileprivate var selectedFlight:Flight?
     
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
     var optionsBlurEffectView: UIVisualEffectView?
@@ -98,9 +64,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         setUpNavigationBar()
         
         // query for flights for the logged in user
-        // Currently Crashing here because segue is happening before user is loaded from database and passed to Table View
         loadFlights(email: (user?.email_id)!)
-        loadSharedFlights(email: (user?.email_id)!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,15 +72,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         if flights?.count == 0 {
             displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
         }
-    }
-    
-    fileprivate func dateIsBeforeToday(date: Date) -> Bool {
-        let today = Date()
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        let dateString = df.string(from: date)
-        let todayString = df.string(from: today)
-        return dateString < todayString
     }
     
     func scheduleLocalNotifications(flight: Flight) {
@@ -132,8 +87,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
 
         //notification content
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = flight.airline! + " #" + flight.flightNumber!
-        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon",
+        notificationContent.title = flight.flightNumber!
+        notificationContent.subtitle = flight.airline!
+        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon.",
                                           flight.departureAirport!, flight.destinationAirport!)
         notificationContent.sound = UNNotificationSound.default()
 
@@ -162,6 +118,14 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             }
             (flight.identifiers)!.insert(identifier)
         }
+
+        //print pending notification request ids
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print("These are pending requests in scheduling after scheduling: ")
+                print(request.identifier)
+            }
+        })
     }
 
     override func willMove(toParentViewController parent: UIViewController?) {
@@ -209,17 +173,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    fileprivate func currentFlightsArray() ->[Flight]? {
-        switch self.tabBarItem.title! {
-        case "My Flights" :
-            return flights
-        case "Past Flights":
-            return pastFlights
-        default :
-            return sharedFlights
-        }
-    }
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -227,13 +180,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentFlightsArray()!.count
+        return flights!.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell?
         if let flightCell = tableView.dequeueReusableCell(withIdentifier: Storyboard.FlightCell, for: indexPath) as? FlightTableViewCell {
-            flightCell.flight = currentFlightsArray()?[indexPath.row]
+            flightCell.flight = flights?[indexPath.row]
             cell = flightCell
         }
         return cell!
@@ -345,6 +298,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             }
             
         }, completion:nil)
+        
+        
     }
     
     func handleRefresh() {
@@ -400,49 +355,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         sema.wait()
         if (!errorOccurred) {
             self.flights = resultFlights
-            self.pastFlights = resultFlights
-        } else {
-            DispatchQueue.main.async {
-                self.refreshController?.endRefreshing()
-            }
-        }
-    }
-    
-    // gets all the flights shared with a given user and returns them in an array of flight objects
-    // returns flights in order of date.
-    fileprivate func loadSharedFlights(email:String) {
-        
-        var resultFlights = [Flight]()
-        var errorOccurred = false
-        
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
-        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.filterExpression = "contains (sharedWith, :id)"
-        scanExpression.expressionAttributeValues = [":id": email]
-        let sema = DispatchSemaphore(value: 0)
-        dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
-            .continueWith(block: {(task:AWSTask!) -> AnyObject! in
-                if let error = task.error as? NSError {
-                    errorOccurred = true
-                    if (error.domain == NSURLErrorDomain) {
-                        DispatchQueue.main.async {
-                            self.displayAlert("Poor Network Connection", message: "Couldn't load flights. Please try again.")
-                        }
-                    }
-                } else if let dbResults = task.result {
-                    for flight in dbResults.items as! [Flight] {
-                        resultFlights.append(flight)
-                    }
-                }
-                sema.signal()
-                return nil
-            })
-        
-        sema.wait()
-        if (!errorOccurred) {
-            self.sharedFlights = resultFlights
         } else {
             DispatchQueue.main.async {
                 self.refreshController?.endRefreshing()
@@ -464,23 +376,20 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             print("Sign Out Tapped")
             removeUserFromCoreData()
             self.navigationController!.popToRootViewController(animated: true)
+            
             break
         case "Edit":
             print("Edit Button Tapped")
             editingFlight = true
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
-        case "Status":
-            print("Status Button Tapped")
-            self.performSegue(withIdentifier: Storyboard.StatusSegue , sender: self)
-            break
+            
         case "Add to Calendar":
             print("Add to Calendar Tapped")
             addFlightToCalendar(flight: (optionsVC?.flight!)!)
             break
         case "Share":
             print("Share Button Tapped")
-            handleShare()
             break
         case "Export":
             print("Export Button Tapped")
@@ -598,64 +507,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
-    // For the text field config handler
-    fileprivate func shareFlight(textField: UITextField!) {
-        print(textField.text!)
-    }
-    
-    // Updates the database and actually
-    fileprivate func shareFlight(_ flight: Flight?, withEmail email: String) {
-        if !isValidEmail(testStr: email) {
-            print("invalid email")
-        } else if flight != nil{
-            print(flight ?? "no flight")
-            if (flight?.sharedWith) == nil {
-                flight?.sharedWith = Set<String>()
-            }
-            flight?.sharedWith?.insert(email)
-            //updates flight in the database
-            let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-            let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
-            updateMapperConfig.saveBehavior = .updateSkipNullAttributes
-            
-            dynamoDBObjectMapper.save(flight!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-                if let error = task.error as? NSError {
-                    if (error.domain == NSURLErrorDomain) {
-                        DispatchQueue.main.async {
-                            self.displayAlert("Poor Network Connection", message: "Please try again.")
-                        }
-                    }
-                } else {
-                    // success!
-                    self.displayAlert("Shared!", message: "successfully shared with \(email)")
-                }
-                return nil
-            })
-        }
-    }
-    
-    fileprivate func handleCancel(alertView: UIAlertAction!) {
-        print("User clicked cancelled sharing")
-    }
-    
-    
-    // Adds an alert to share flight
-    fileprivate func handleShare(){
-        enterEmail = UIAlertController(title: "Share Flight", message: "Please enter the email you want to share your flight with", preferredStyle: UIAlertControllerStyle.alert)
-        enterEmail!.addTextField(configurationHandler: shareFlight)
-        enterEmail!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: handleCancel))
-        enterEmail!.addAction(UIAlertAction(title: "Share", style: UIAlertActionStyle.default, handler: { (UIAlertAction)in
-            print("User clicked the share button")
-            print(self.enterEmail!.textFields![0].text!)
-            self.shareFlight(self.selectedFlight,withEmail: self.enterEmail!.textFields![0].text!)
-            
-        }))
-        self.present(enterEmail!, animated: true, completion: {
-            print("Sharing email alert!")
-        })
-    }
-
-    
     // for UpdateAccountDelegate
     func updateUser(newUser: User) {
         self.user = newUser
@@ -747,10 +598,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                 destinationVC.editableUser = self.user
                 destinationVC.delegate = self
                 destinationVC.removeUserFromCoreData = self.removeUserFromCoreData
-            }
-        } else if segue.identifier == Storyboard.StatusSegue {
-            if let destinationVC = segue.destination as? StatusViewController {
-                destinationVC.flight = optionsVC?.flight
             }
         }
     }
