@@ -32,6 +32,7 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         }
     }
     var identifiers: Set<String>?
+    var sharedWith: Set<String>?
 
     class func dynamoDBTableName() -> String {
         return "TrackifyFlightsTable"
