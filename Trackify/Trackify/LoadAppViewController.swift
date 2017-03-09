@@ -85,6 +85,11 @@ class LoadAppViewController: UIViewController {
                 flightsVC.flights = flights
             }
         }
+        if let destinationTabBar  = segue.destination as? FlightsTabBarController {
+            destinationTabBar.user = user
+            destinationTabBar.flights = flights
+        }
+
     }
 
 }

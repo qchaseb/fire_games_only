@@ -191,10 +191,20 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.spinner.stopAnimating()
+        print("in prepare who dis?")
         if segue.identifier == Storyboard.SignInSegue {
+            print("can u hear me???")
             if let destinationVC = segue.destination as? FlightsTableViewController {
                 destinationVC.user = user
+            } else if let destinationTabBar  = segue.destination as? FlightsTabBarController {
+                print("yes???")
+                destinationTabBar.user = user
             }
         }
+        if let destinationTabBar  = segue.destination as? FlightsTabBarController {
+            print("yes???")
+            destinationTabBar.user = user
+        }
+
     }
 }

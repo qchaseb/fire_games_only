@@ -30,9 +30,41 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
         }
     }
     
+    var pastFlights: [Flight]? {
+        didSet {
+            pastFlights?.sort(by: { $0.getDate()! < $1.getDate()! })
+            pastFlights = pastFlights?.filter({ $0.getDate()! < Date()})
+            // Need to deal with core data
+            if (!initialFlights) {
+                for flight in pastFlights! {
+                    addFlightToCoreData(flight: flight)
+                }
+            }
+            self.tableView.reloadData()
+            self.refreshController?.endRefreshing()
+        }
+    }
+    
+    var sharedFlights: [Flight]? {
+        didSet {
+            flights?.sort(by: { $0.getDate()! < $1.getDate()! })
+            flights = flights?.filter({ $0.getDate()! > Date()})
+            if (!initialFlights) {
+                for flight in flights! {
+                    addFlightToCoreData(flight: flight)
+                }
+            }
+            self.tableView.reloadData()
+            self.refreshController?.endRefreshing()
+        }
+    }
+    
+    
     var menuVC: MenuViewController?
     var optionsVC: FlightOptionsViewController?
     let BOUNDS_OFFSET: CGFloat = 64
+    var enterEmail: UIAlertController?
+    var selectedFlight:Flight?
     
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
     var optionsBlurEffectView: UIVisualEffectView?
@@ -48,6 +80,16 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     fileprivate var helpers = Helpers()
 
     override func viewDidLoad() {
+        if let tbc = self.tabBarController as? FlightsTabBarController {
+            user = tbc.user
+            if tbc.flights != nil {
+                flights = tbc.flights
+            }
+            print("Did load")
+            print(self.tabBarItem.title ?? "No dice!")
+        }else {
+            print("Problem with tab bar")
+        }
         super.viewDidLoad()
         self.initialFlights = false
         self.refreshController = UIRefreshControl()
@@ -56,6 +98,16 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if let tbc = self.tabBarController as? FlightsTabBarController {
+            user = tbc.user
+            if tbc.flights != nil {
+                flights = tbc.flights
+            }
+            print(user ?? "No user!")
+            print(self.tabBarItem.title ?? "No dice!")
+        }else {
+            print("Problem with tab bar")
+        }
         super.viewWillAppear(animated)
         setUpNavigationBar()
         
@@ -204,6 +256,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let flight = flights?[indexPath.row]
+        selectedFlight = flight
         addBlurView(forMenu: false)
         tableView.isScrollEnabled = false
         optionsVC = self.storyboard!.instantiateViewController(withIdentifier: "FlightOptionsViewController") as? FlightOptionsViewController
@@ -231,7 +284,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
     
     func handleRefresh() {
         // Reload data and update flights variable
-        loadFlights(email: (user?.email_id)!)
+        loadSharedFlights(email: (user?.email_id)!)
         self.refreshController?.endRefreshing()
     }
     
@@ -281,6 +334,47 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             }
         }
     }
+    // gets all the flights shared with a given user and returns them in an array of flight objects
+    // returns flights in order of date.
+    fileprivate func loadSharedFlights(email:String) {
+        
+        var resultFlights = [Flight]()
+        var errorOccurred = false
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.filterExpression = "contains (sharedWith, :id)"
+        scanExpression.expressionAttributeValues = [":id": email]
+        let sema = DispatchSemaphore(value: 0)
+        dynamoDBObjectMapper.scan(Flight.self, expression: scanExpression)
+            .continueWith(block: {(task:AWSTask!) -> AnyObject! in
+                if let error = task.error as? NSError {
+                    errorOccurred = true
+                    if (error.domain == NSURLErrorDomain) {
+                        DispatchQueue.main.async {
+                            self.displayAlert("Poor Network Connection", message: "Couldn't load flights. Please try again.")
+                        }
+                    }
+                } else if let dbResults = task.result {
+                    for flight in dbResults.items as! [Flight] {
+                        resultFlights.append(flight)
+                    }
+                }
+                sema.signal()
+                return nil
+            })
+        
+        sema.wait()
+        if (!errorOccurred) {
+            self.flights = resultFlights
+        } else {
+            DispatchQueue.main.async {
+                self.refreshController?.endRefreshing()
+            }
+        }
+    }
     
     // MARK: - Slider Menu Delegate Functions
     // Adapted from: https://github.com/ashishkakkad8/AKSwiftSlideMenu
@@ -305,6 +399,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
         case "Share":
+            handleShare()
+            
             print("Share Button Tapped")
             break
         case "Export":
@@ -324,6 +420,63 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
                 print("error saving signed in user: \(error)")
             }
         }
+    }
+    
+    // For the text field config handler
+    fileprivate func shareFlight(textField: UITextField!) {
+        print(textField.text!)
+    }
+    
+    // Updates the database and actually
+    fileprivate func shareFlight(_ flight: Flight?, withEmail email: String) {
+         if !isValidEmail(testStr: email) {
+            print("invalid email")
+         } else if flight != nil{
+            print(flight ?? "no flight")
+            if (flight?.sharedWith) == nil {
+                flight?.sharedWith = Set<String>()
+            }
+            flight?.sharedWith?.insert(email)
+            //updates flight in the database
+            let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+            let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+            updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+            
+            dynamoDBObjectMapper.save(flight!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+                if let error = task.error as? NSError {
+                    if (error.domain == NSURLErrorDomain) {
+                        DispatchQueue.main.async {
+                            self.displayAlert("Poor Network Connection", message: "Please try again.")
+                        }
+                    }
+                } else {
+                    // success!
+                    self.displayAlert("Shared!", message: "successfully shared with \(email)")
+                }
+                return nil
+            })
+         }
+    }
+    
+    fileprivate func handleCancel(alertView: UIAlertAction!) {
+        print("User clicked cancelled sharing")
+    }
+    
+    
+    // Adds an alert tp
+    fileprivate func handleShare(){
+        enterEmail = UIAlertController(title: "Share Flight", message: "Please enter the email you want to share your flight with", preferredStyle: UIAlertControllerStyle.alert)
+        enterEmail!.addTextField(configurationHandler: shareFlight)
+        enterEmail!.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: handleCancel))
+        enterEmail!.addAction(UIAlertAction(title: "Share", style: UIAlertActionStyle.default, handler: { (UIAlertAction)in
+            print("User clicked the share button")
+            print(self.enterEmail!.textFields![0].text!)
+            self.shareFlight(self.selectedFlight,withEmail: self.enterEmail!.textFields![0].text!)
+
+        }))
+        self.present(enterEmail!, animated: true, completion: {
+            print("Sharing email alert!")
+        })
     }
     
     // this function is called when a user signs out
@@ -349,18 +502,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate {
             }
         }
     }
-    
-//    func openViewControllerBasedOnIdentifier(_ strIdentifier:String) {
-//        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-//        
-//        let topViewController : UIViewController = self.navigationController!.topViewController!
-//        
-//        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-//            print("Same VC")
-//        } else {
-//            self.navigationController!.pushViewController(destViewController, animated: true)
-//        }
-//    }
     
     // open or close slider menu with animation
     func menuButtonTapped(_ sender : UIButton) {

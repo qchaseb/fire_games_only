@@ -228,6 +228,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             if let destinationVC = segue.destination as? FlightsTableViewController {
                 destinationVC.user = newUser
             }
+            else if let destinationTabBar  = segue.destination as? FlightsTabBarController {
+                destinationTabBar.user = newUser
+            }
         }
     }
 }

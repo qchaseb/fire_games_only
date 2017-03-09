@@ -21,6 +21,7 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var destinationAirport: String?
     var confirmation: String?
     var email: String?
+    var sharedWith: Set<String>?
     var datetime: String? {
         didSet {
             df.dateFormat = "MM-dd-yyyy HH:mm"
