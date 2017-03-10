@@ -82,7 +82,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
             displayAlert("Missing Password", message: "Please enter a valid password.")
         } else {
             // query AWS DB for login credentials
-            SwiftSpinner.show("Attempting Sign In")
+            SwiftSpinner.show("Signing In")
             attemptLogin(email: emailTextField.text!, password: passwordTextField.text!)
         }
     }

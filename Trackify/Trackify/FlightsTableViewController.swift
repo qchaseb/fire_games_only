@@ -87,9 +87,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
 
         //notification content
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = flight.flightNumber!
-        notificationContent.subtitle = flight.airline!
-        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon.",
+        notificationContent.title = flight.airline! + " #" + flight.flightNumber!
+        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon",
                                           flight.departureAirport!, flight.destinationAirport!)
         notificationContent.sound = UNNotificationSound.default()
 
@@ -120,12 +119,12 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
 
         //print pending notification request ids
-        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
-            for request in requests {
-                print("These are pending requests in scheduling after scheduling: ")
-                print(request.identifier)
-            }
-        })
+//        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+//            for request in requests {
+//                print("These are pending requests in scheduling after scheduling: ")
+//                print(request.identifier)
+//            }
+//        })
     }
 
     override func willMove(toParentViewController parent: UIViewController?) {
