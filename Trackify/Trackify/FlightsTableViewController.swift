@@ -23,7 +23,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var flights: [Flight]? {
         didSet {
             flights?.sort(by: { $0.getDate()! < $1.getDate()! })
-            flights = flights?.filter({ !self.dateIsBeforeToday(date: $0.getDate()!)})
+            flights = flights?.filter({ $0.getDate()! > yesterday!})
             if (!initialFlights) {
                 for flight in flights! {
                     addFlightToCoreData(flight: flight)

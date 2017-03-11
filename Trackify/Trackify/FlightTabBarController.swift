@@ -12,7 +12,15 @@ class FlightTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view.
+        (self.viewControllers![0] as! FlightsTableViewController).title="Upcoming"
+        (self.viewControllers![0] as! FlightsTableViewController).tabBarItem.image=#imageLiteral(resourceName: "user_icon_blue")
+        (self.viewControllers![1] as! FlightsTableViewController).title="Past"
+        (self.viewControllers![1] as! FlightsTableViewController).tabBarItem.image=#imageLiteral(resourceName: "password_icon_blue")
+        (self.viewControllers![2] as! FlightsTableViewController).title="Shared"
+        (self.viewControllers![2] as! FlightsTableViewController).tabBarItem.image=#imageLiteral(resourceName: "share_icon_blue")
     }
 
     override func viewWillAppear(_ animated: Bool) {
