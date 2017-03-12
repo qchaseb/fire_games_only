@@ -226,6 +226,12 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         flight?.destinationAirport = arrivalTextField.text
         flight?.confirmation = confirmationTextField.text
         
+        // Handles 
+        if editFlight != nil {
+            flight?.identifiers = editFlight?.identifiers
+            flight?.sharedWith = editFlight?.sharedWith
+        }
+        
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes
         
