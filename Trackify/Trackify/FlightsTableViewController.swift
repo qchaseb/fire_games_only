@@ -117,6 +117,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     }
     
     fileprivate func currentFlightsArray() ->[Flight]? {
+        // for core data
+        if self.tabBarItem.title == nil {
+            print("how many times")
+            return flights
+        }
         switch (self.tabBarItem.title!) {
         case "Upcoming" :
             return flights
@@ -153,6 +158,37 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             if let flightCell = tableView.cellForRow(at: indexPath) as? FlightTableViewCell {
+                if (self.tabBarItem.title! == "Shared") {
+                    if flightCell.flight!.sharedWith != nil  && (flightCell.flight!.sharedWith?.contains((user?.email_id)!))!{
+                        flightCell.flight!.sharedWith!.remove((user?.email_id)!)
+                        // can't have empty sets in dynamoDB
+                        if flightCell.flight!.sharedWith!.count == 0 {
+                            flightCell.flight!.sharedWith = nil
+                        }
+                        SwiftSpinner.show("Deleting Shared Flight")
+                        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+                        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+                        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+                        let sema = DispatchSemaphore(value: 0)
+                        
+                        dynamoDBObjectMapper.save(flightCell.flight!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+                            if let error = task.error as? NSError {
+                                if (error.domain == NSURLErrorDomain) {
+                                    DispatchQueue.main.async {
+                                        SwiftSpinner.hide()
+                                        self.displayAlert("Poor Network Connection", message: "Please try again.")
+                                    }
+                                }
+                            }
+                            sema.signal()
+                            return nil
+                        })
+                        sema.wait()
+                        SwiftSpinner.hide()
+                        handleRefresh()
+                    }
+                    return
+                }
                 SwiftSpinner.show("Deleting Flight")
                 let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
                 let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
@@ -251,6 +287,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     func handleRefresh() {
         // Reload data and update flights variable
         loadFlights(email: (user?.email_id)!)
+        loadSharedFlights(email: (user?.email_id)!)
         self.refreshController?.endRefreshing()
     }
     
@@ -594,6 +631,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         enterEmail!.addAction(UIAlertAction(title: "Share", style: UIAlertActionStyle.default, handler: { (UIAlertAction)in
             print("User clicked the share button")
             print(self.enterEmail!.textFields![0].text!)
+            if self.enterEmail!.textFields![0].text! == self.selectedFlight?.email! {
+                print("same emails not sharing")
+                self.displayAlert("Not Sharing", message: "Please enter an email other than your own.")
+                return
+            }
             self.shareFlight(self.selectedFlight,withEmail: self.enterEmail!.textFields![0].text!)
             
         }))

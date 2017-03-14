@@ -87,9 +87,13 @@ class LoadAppViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.PreviouslySignedInSegue {
-            if let flightsVC = segue.destination as? FlightsTableViewController {
-                flightsVC.user = user
-                flightsVC.flights = flights
+            if let destinationVC = segue.destination as? FlightTabBarController {
+                for vc in (destinationVC.viewControllers)! {
+                    if let flightTVC = vc as? FlightsTableViewController {
+                        flightTVC.user = user
+                        flightTVC.flights = flights
+                    }
+                }
             }
         }
     }
