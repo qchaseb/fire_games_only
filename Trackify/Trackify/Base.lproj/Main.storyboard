@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MBQ-x7-o94">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MBQ-x7-o94">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -189,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sa-A8-BtV" id="O7t-Oc-UoW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-TX-FW4">
@@ -319,25 +319,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane_blue" translatesAutoresizingMaskIntoConstraints="NO" id="3kD-0l-TN6">
-                                                <rect key="frame" x="0.0" y="73" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="74" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3kD-0l-TN6" secondAttribute="height" id="XLW-Wl-DDj"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_blue" translatesAutoresizingMaskIntoConstraints="NO" id="dge-E0-rnS">
-                                                <rect key="frame" x="0.0" y="314" width="50" height="50.5"/>
+                                                <rect key="frame" x="0.0" y="314.5" width="51" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dge-E0-rnS" secondAttribute="height" id="Xbm-Xd-SPx"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_blue" translatesAutoresizingMaskIntoConstraints="NO" id="24x-q1-uJk">
-                                                <rect key="frame" x="0.0" y="430.5" width="50" height="50.5"/>
+                                                <rect key="frame" x="0.0" y="431.5" width="51" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="24x-q1-uJk" secondAttribute="height" id="YXY-Vn-xEN"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accept_blue" translatesAutoresizingMaskIntoConstraints="NO" id="j6H-uY-Q2G">
-                                                <rect key="frame" x="0.0" y="529" width="50" height="49.5"/>
+                                                <rect key="frame" x="0.0" y="529" width="51" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="j6H-uY-Q2G" secondAttribute="height" id="R4W-dS-9J9"/>
                                                 </constraints>
@@ -346,13 +346,13 @@
                                                 <rect key="frame" x="60" y="39.5" width="283" height="538.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cS3-Zh-P6J">
-                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="118.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="119"/>
                                                         <subviews>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOz-Lj-ITO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="118.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="119"/>
                                                             </pickerView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wZ-5N-Tmx">
-                                                                <rect key="frame" x="173.5" y="35" width="109.5" height="48"/>
+                                                                <rect key="frame" x="173.5" y="35.5" width="109.5" height="47.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -363,23 +363,23 @@
                                                         </constraints>
                                                     </stackView>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="5P8-7m-mac">
-                                                        <rect key="frame" x="0.0" y="120" width="283" height="118.5"/>
+                                                        <rect key="frame" x="0.0" y="120" width="283" height="119"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="508231699.79842597">
                                                             <!--2017-02-08 07:28:19 +0000-->
                                                         </date>
                                                     </datePicker>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EGG-8j-4T0">
-                                                        <rect key="frame" x="0.0" y="239.5" width="283" height="119"/>
+                                                        <rect key="frame" x="0.0" y="240" width="283" height="119.5"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="508231699.79842597">
                                                             <!--2017-02-08 07:28:19 +0000-->
                                                         </date>
                                                     </datePicker>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoh-vo-w7V">
-                                                        <rect key="frame" x="0.0" y="359.5" width="261" height="32"/>
+                                                        <rect key="frame" x="0.0" y="360.5" width="261" height="32.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-XW-H4o">
-                                                        <rect key="frame" x="0.0" y="392.5" width="283" height="47.5"/>
+                                                        <rect key="frame" x="0.0" y="394" width="283" height="47.5"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="manualDepartureTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="8S7-Ja-TpH">
                                                                 <rect key="frame" x="0.0" y="0.0" width="107.5" height="47.5"/>
@@ -405,11 +405,11 @@
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmI-Pn-Xet">
-                                                        <rect key="frame" x="0.0" y="441.5" width="283" height="48"/>
+                                                        <rect key="frame" x="0.0" y="442.5" width="283" height="47.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="manualConfirmationTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWF-Z9-iW4">
-                                                        <rect key="frame" x="0.0" y="490.5" width="283" height="48"/>
+                                                        <rect key="frame" x="0.0" y="491" width="283" height="47.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
@@ -429,7 +429,7 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_blue" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-fL-bKR">
-                                                <rect key="frame" x="0.0" y="193" width="50" height="50"/>
+                                                <rect key="frame" x="0.0" y="193" width="50" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="SaO-fL-bKR" secondAttribute="height" id="eLh-jf-XoU"/>
                                                 </constraints>
@@ -547,13 +547,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="56.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="8eU-eu-nAJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="56.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="8eU-eu-nAJ" secondAttribute="height" id="p4l-9M-1Nt"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="firstNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-Oi-ROj">
-                                                                <rect key="frame" x="72" y="9.5" width="271" height="37.5"/>
+                                                                <rect key="frame" x="72.5" y="9.5" width="270.5" height="37.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -577,7 +577,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="lastNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaI-te-9sG">
-                                                                <rect key="frame" x="71.5" y="10" width="271.5" height="37.5"/>
+                                                                <rect key="frame" x="71.5" y="10" width="271.5" height="37"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -591,16 +591,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="m6C-uM-qHW">
-                                                        <rect key="frame" x="0.0" y="133.5" width="343" height="57"/>
+                                                        <rect key="frame" x="0.0" y="133.5" width="343" height="56.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-TV-qZY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="6oK-TV-qZY" secondAttribute="height" id="Yhy-Q0-huD"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-iA-bVj">
-                                                                <rect key="frame" x="72" y="9.5" width="271" height="38"/>
+                                                                <rect key="frame" x="72" y="9.5" width="271" height="37.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
@@ -614,7 +614,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wkc-YA-R6J">
-                                                        <rect key="frame" x="0.0" y="200.5" width="343" height="57"/>
+                                                        <rect key="frame" x="0.0" y="200" width="343" height="57"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="3e0-h0-Oil">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56.5" height="57"/>
@@ -637,16 +637,16 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YN3-fs-Kab">
-                                                        <rect key="frame" x="0.0" y="267.5" width="343" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="267" width="343" height="57"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="confirm_pass_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="BVh-LW-TbI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="56.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="BVh-LW-TbI" secondAttribute="height" id="UkZ-FC-Jj9"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="confirmPasswordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVq-bo-FwA">
-                                                                <rect key="frame" x="71.5" y="9" width="271.5" height="38.5"/>
+                                                                <rect key="frame" x="72" y="9" width="271" height="39"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
@@ -776,7 +776,7 @@
                                         <rect key="frame" x="0.0" y="22" width="383" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyR-zb-hcp" id="pI8-2e-eW7">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="53.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-bI-YKh">
@@ -842,7 +842,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi7-kJ-6TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4150" y="1951"/>
+            <point key="canvasLocation" x="1628" y="1153"/>
         </scene>
         <!--Flight Tab Bar Controller-->
         <scene sceneID="3ka-7y-DMz">
@@ -900,8 +900,8 @@
         <image name="user_icon_blue" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uz7-C0-AOZ"/>
-        <segue reference="zRy-ol-Xgx"/>
         <segue reference="O14-dg-DcF"/>
+        <segue reference="zRy-ol-Xgx"/>
+        <segue reference="uz7-C0-AOZ"/>
     </inferredMetricsTieBreakers>
 </document>

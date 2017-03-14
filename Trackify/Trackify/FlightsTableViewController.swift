@@ -105,8 +105,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if flights?.count == 0 {
-            displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
+        if currentFlightsArray()?.count == 0 {
+            switch (self.tabBarItem.title!) {
+            case "Upcoming" :
+                displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
+            default :
+                return
+            }
         }
     }
     
@@ -211,12 +216,12 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     
     fileprivate func currentFlightsArray() ->[Flight]? {
         switch (self.tabBarItem.title!) {
-        case "My Flights" :
+        case "Upcoming" :
             return flights
-        case "Past Flights":
-            return pastFlights
-        default :
+        case "Shared":
             return sharedFlights
+        default :
+            return pastFlights
         }
     }
     
@@ -227,7 +232,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentFlightsArray()!.count
+        return currentFlightsArray()?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
