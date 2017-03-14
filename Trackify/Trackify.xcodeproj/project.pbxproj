@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A205AA21E77613D00F3F48F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A205AA11E77613D00F3F48F /* StatusViewController.swift */; };
 		0A3374F11E43DFE60026265E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3374F01E43DFE60026265E /* User.swift */; };
 		0A4633CE1E5AA6A200E4DFFA /* LoadAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */; };
 		0A743C2A1E495B65006A33F4 /* FlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A743C291E495B65006A33F4 /* FlightsTableViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A205AA11E77613D00F3F48F /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		0A3374F01E43DFE60026265E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadAppViewController.swift; sourceTree = "<group>"; };
 		0A743C291E495B65006A33F4 /* FlightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsTableViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		0A9736A41E49B95B006B945C /* Flight Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0A205AA11E77613D00F3F48F /* StatusViewController.swift */,
 				0A9736A51E4A8114006B945C /* ManualEntryViewController.swift */,
 				0A743C291E495B65006A33F4 /* FlightsTableViewController.swift */,
 				0AA556DB1E5144FF00D69AE2 /* MenuViewController.swift */,
@@ -309,6 +312,7 @@
 				0A743C2A1E495B65006A33F4 /* FlightsTableViewController.swift in Sources */,
 				0AA8ADD11E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift in Sources */,
 				0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */,
+				0A205AA21E77613D00F3F48F /* StatusViewController.swift in Sources */,
 				0A9736A61E4A8114006B945C /* ManualEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
