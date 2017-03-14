@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MBQ-x7-o94">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MBQ-x7-o94">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,7 +99,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="signInButtonTapped:" destination="2wO-YJ-46B" eventType="touchUpInside" id="l9n-ew-HZy"/>
-                                                            <segue destination="EnJ-Q2-B5D" kind="show" identifier="signInSegue" id="HzV-Ea-3aF"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6U-0h-L3C">
@@ -170,11 +169,12 @@
                         <outlet property="mainScrollView" destination="gzH-6p-HGb" id="ia4-Fn-3E4"/>
                         <outlet property="passwordTextField" destination="bQx-tB-Kwq" id="axy-fz-8hn"/>
                         <segue destination="bFE-7j-ij4" kind="show" identifier="swipeToSignUp" id="I2e-0F-aje"/>
+                        <segue destination="wlc-an-J5l" kind="show" identifier="signInSegue" id="Ty5-SC-zL6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z81-8x-cfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2927" y="220"/>
+            <point key="canvasLocation" x="2658.4000000000001" y="152.47376311844079"/>
         </scene>
         <!--Flights Table View Controller-->
         <scene sceneID="rBQ-nC-G7R">
@@ -289,7 +289,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpm-lM-ZSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2342" y="1066"/>
+            <point key="canvasLocation" x="4119" y="1103"/>
         </scene>
         <!--Manual Entry View Controller-->
         <scene sceneID="fBO-FD-OEn">
@@ -304,10 +304,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBy-rK-C1d">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="20" width="343" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSM-Zg-8vs">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="598"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Flight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="022-vS-Tu7">
                                                 <rect key="frame" x="0.0" y="10" width="343" height="34.5"/>
@@ -319,40 +319,40 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane_blue" translatesAutoresizingMaskIntoConstraints="NO" id="3kD-0l-TN6">
-                                                <rect key="frame" x="0.0" y="76.5" width="54" height="54"/>
+                                                <rect key="frame" x="0.0" y="73.5" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3kD-0l-TN6" secondAttribute="height" id="XLW-Wl-DDj"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_blue" translatesAutoresizingMaskIntoConstraints="NO" id="dge-E0-rnS">
-                                                <rect key="frame" x="0.0" y="339" width="54" height="54"/>
+                                                <rect key="frame" x="0.0" y="315" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dge-E0-rnS" secondAttribute="height" id="Xbm-Xd-SPx"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker_blue" translatesAutoresizingMaskIntoConstraints="NO" id="24x-q1-uJk">
-                                                <rect key="frame" x="0.0" y="467" width="54" height="54"/>
+                                                <rect key="frame" x="0.0" y="431.5" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="24x-q1-uJk" secondAttribute="height" id="YXY-Vn-xEN"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accept_blue" translatesAutoresizingMaskIntoConstraints="NO" id="j6H-uY-Q2G">
-                                                <rect key="frame" x="0.0" y="574" width="54" height="54"/>
+                                                <rect key="frame" x="0.0" y="529" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="j6H-uY-Q2G" secondAttribute="height" id="R4W-dS-9J9"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lDp-1M-iB0">
-                                                <rect key="frame" x="64" y="39.5" width="279" height="587.5"/>
+                                                <rect key="frame" x="60" y="39.5" width="283" height="538.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cS3-Zh-P6J">
-                                                        <rect key="frame" x="0.0" y="0.0" width="279" height="129"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="119"/>
                                                         <subviews>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOz-Lj-ITO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="129"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="119"/>
                                                             </pickerView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wZ-5N-Tmx">
-                                                                <rect key="frame" x="171" y="38.5" width="108" height="51.5"/>
+                                                                <rect key="frame" x="173.5" y="35.5" width="109.5" height="47.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
@@ -363,38 +363,38 @@
                                                         </constraints>
                                                     </stackView>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="5P8-7m-mac">
-                                                        <rect key="frame" x="0.0" y="131" width="279" height="129"/>
+                                                        <rect key="frame" x="0.0" y="120" width="283" height="119.5"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="508231699.79842597">
                                                             <!--2017-02-08 07:28:19 +0000-->
                                                         </date>
                                                     </datePicker>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EGG-8j-4T0">
-                                                        <rect key="frame" x="0.0" y="261.5" width="279" height="129"/>
+                                                        <rect key="frame" x="0.0" y="240.5" width="283" height="119"/>
                                                         <date key="date" timeIntervalSinceReferenceDate="508231699.79842597">
                                                             <!--2017-02-08 07:28:19 +0000-->
                                                         </date>
                                                     </datePicker>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoh-vo-w7V">
-                                                        <rect key="frame" x="0.0" y="392.5" width="261" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="360.5" width="261" height="32"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-XW-H4o">
-                                                        <rect key="frame" x="0.0" y="429" width="279" height="51.5"/>
+                                                        <rect key="frame" x="0.0" y="393.5" width="283" height="47.5"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="manualDepartureTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="center" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="8S7-Ja-TpH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="51.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="47.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4ok-eF-yg4">
-                                                                <rect key="frame" x="113.5" y="0.0" width="52" height="51.5"/>
+                                                                <rect key="frame" x="117.5" y="0.0" width="48" height="47.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="4ok-eF-yg4" secondAttribute="height" id="cqL-Ub-W4i"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="manualArrivalTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZGr-GH-qEg">
-                                                                <rect key="frame" x="175.5" y="0.0" width="103.5" height="51.5"/>
+                                                                <rect key="frame" x="175.5" y="0.0" width="107.5" height="47.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -405,11 +405,11 @@
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmI-Pn-Xet">
-                                                        <rect key="frame" x="0.0" y="482.5" width="279" height="51.5"/>
+                                                        <rect key="frame" x="0.0" y="442.5" width="283" height="47.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="manualConfirmationTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PWF-Z9-iW4">
-                                                        <rect key="frame" x="0.0" y="536" width="279" height="51.5"/>
+                                                        <rect key="frame" x="0.0" y="491" width="283" height="47.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
@@ -429,7 +429,7 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_blue" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-fL-bKR">
-                                                <rect key="frame" x="0.0" y="207.5" width="54" height="54"/>
+                                                <rect key="frame" x="0.0" y="193.5" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="SaO-fL-bKR" secondAttribute="height" id="eLh-jf-XoU"/>
                                                 </constraints>
@@ -495,7 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mW5-iB-d9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3559" y="1066"/>
+            <point key="canvasLocation" x="5004" y="1177"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="CTA-eT-jZz">
@@ -510,10 +510,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-yT-pOO">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="20" width="343" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKM-v5-TL7">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="598"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FC-Ov-evw">
                                                 <rect key="frame" x="0.0" y="15" width="32.5" height="32.5"/>
@@ -541,19 +541,19 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="stm-K9-QLI">
-                                                <rect key="frame" x="0.0" y="196" width="343" height="367.5"/>
+                                                <rect key="frame" x="0.0" y="196" width="343" height="324"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="brR-Az-2WZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="56.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="8eU-eu-nAJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="65.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="8eU-eu-nAJ" secondAttribute="height" id="p4l-9M-1Nt"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="firstNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-Oi-ROj">
-                                                                <rect key="frame" x="80.5" y="11" width="262.5" height="43.5"/>
+                                                                <rect key="frame" x="72" y="9.5" width="271" height="37.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -568,16 +568,20 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JZu-XH-sha">
-                                                        <rect key="frame" x="0.0" y="75.5" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="66.5" width="343" height="57"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="dTT-RY-oPy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="57"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="dTT-RY-oPy" secondAttribute="height" id="2Sl-aQ-AR3"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="lastNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaI-te-9sG">
-                                                                <rect key="frame" x="80" y="11" width="263" height="43"/>
+<<<<<<< HEAD
+                                                                <rect key="frame" x="71.5" y="10" width="271.5" height="37.5"/>
+=======
+                                                                <rect key="frame" x="71.5" y="9.5" width="271.5" height="38"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -591,16 +595,24 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="m6C-uM-qHW">
-                                                        <rect key="frame" x="0.0" y="151" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="133.5" width="343" height="57"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-TV-qZY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="65.5"/>
+<<<<<<< HEAD
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="57"/>
+=======
+                                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="57"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="6oK-TV-qZY" secondAttribute="height" id="Yhy-Q0-huD"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="emailTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CeY-iA-bVj">
-                                                                <rect key="frame" x="80.5" y="11" width="262.5" height="43.5"/>
+<<<<<<< HEAD
+                                                                <rect key="frame" x="72" y="9.5" width="271" height="38"/>
+=======
+                                                                <rect key="frame" x="72.5" y="9.5" width="270.5" height="38"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
@@ -614,16 +626,20 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wkc-YA-R6J">
-                                                        <rect key="frame" x="0.0" y="226.5" width="343" height="65.5"/>
+<<<<<<< HEAD
+                                                        <rect key="frame" x="0.0" y="200.5" width="343" height="57"/>
+=======
+                                                        <rect key="frame" x="0.0" y="200.5" width="343" height="56.5"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="3e0-h0-Oil">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="56.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="3e0-h0-Oil" secondAttribute="height" id="7p6-i4-NAi"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="passwordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3l-m8-SDn">
-                                                                <rect key="frame" x="80" y="11" width="263" height="43.5"/>
+                                                                <rect key="frame" x="71.5" y="9.5" width="271.5" height="38"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
@@ -637,16 +653,20 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YN3-fs-Kab">
-                                                        <rect key="frame" x="0.0" y="302" width="343" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="267.5" width="343" height="56.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="confirm_pass_icon_blue" translatesAutoresizingMaskIntoConstraints="NO" id="BVh-LW-TbI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="56.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="BVh-LW-TbI" secondAttribute="height" id="UkZ-FC-Jj9"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="confirmPasswordTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVq-bo-FwA">
-                                                                <rect key="frame" x="80" y="10.5" width="263" height="44"/>
+<<<<<<< HEAD
+                                                                <rect key="frame" x="71.5" y="9" width="271.5" height="38.5"/>
+=======
+                                                                <rect key="frame" x="72" y="9.5" width="271" height="38"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
@@ -669,7 +689,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwZ-op-yls">
-                                                <rect key="frame" x="86" y="583.5" width="172" height="43.5"/>
+                                                <rect key="frame" x="86" y="540" width="172" height="38"/>
                                                 <color key="backgroundColor" red="0.0" green="0.35294117650000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <state key="normal" title="Sign Up">
@@ -682,7 +702,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="signUpButtonTapped:" destination="bFE-7j-ij4" eventType="touchUpInside" id="le8-sg-mAH"/>
-                                                    <segue destination="EnJ-Q2-B5D" kind="show" identifier="newUserSignInSegue" id="fWa-ve-Tdn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -737,6 +756,7 @@
                         <outlet property="scrollView" destination="8b7-yT-pOO" id="FEu-io-Edp"/>
                         <outlet property="signUpButton" destination="pwZ-op-yls" id="1Ho-aq-kJH"/>
                         <outlet property="titleLabel" destination="D5s-zn-uDi" id="ccb-Iw-eYb"/>
+                        <segue destination="wlc-an-J5l" kind="show" identifier="newUserSignInSegue" id="4l1-I7-UN5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi7-8m-xbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -842,7 +862,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mi7-kJ-6TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="1066"/>
+            <point key="canvasLocation" x="1628" y="1153"/>
         </scene>
         <!--Flight Tab Bar Controller-->
         <scene sceneID="3ka-7y-DMz">
@@ -854,14 +874,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XvW-ye-nGa" kind="relationship" relationship="viewControllers" id="N2m-Uz-Cb2"/>
-                        <segue destination="ccc-we-F2b" kind="relationship" relationship="viewControllers" id="Ndw-Og-UbW"/>
-                        <segue destination="zDd-0p-3ZE" kind="relationship" relationship="viewControllers" id="v8P-eo-z0B"/>
+                        <segue destination="wlc-an-J5l" kind="relationship" relationship="viewControllers" id="zRy-ol-Xgx"/>
+                        <segue destination="wlc-an-J5l" kind="relationship" relationship="viewControllers" id="I88-nG-x2M"/>
+                        <segue destination="wlc-an-J5l" kind="relationship" relationship="viewControllers" id="sUM-8v-eXE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSq-KR-EXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4983" y="1553"/>
+            <point key="canvasLocation" x="2706" y="1102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DwG-TY-DHg">
@@ -881,198 +901,196 @@
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="219.94002998500753"/>
         </scene>
-        <!--Past Flights-->
-        <scene sceneID="RMk-e2-uo1">
+        <!--Flight Options View Controller-->
+<<<<<<< HEAD
+        <scene sceneID="92O-w7-ETc">
             <objects>
-                <tableViewController id="ccc-we-F2b" customClass="FlightsTableViewController" customModule="Trackify" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="AC0-29-ZVO">
+                <viewController storyboardIdentifier="FlightOptionsViewController" id="SSX-7l-Mlb" customClass="FlightOptionsViewController" customModule="Trackify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jPN-qL-Lci"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZWh-Up-mJG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3k8-Qd-n8w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<<<<<<< HEAD
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQK-n8-jbZ" userLabel="transparentSideCloseButton">
+=======
+        <scene sceneID="yAl-F1-nXC">
+            <objects>
+                <viewController storyboardIdentifier="FlightOptionsViewController" id="8Do-D4-Itp" customClass="FlightOptionsViewController" customModule="Trackify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QiG-Yn-mjU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ofe-JJ-bsd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BGZ-eb-zS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0t-tS-Wi2" userLabel="transparentSideCloseButton">
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+<<<<<<< HEAD
                                     <action selector="onCloseMenuClick:" destination="SSX-7l-Mlb" eventType="touchUpInside" id="Ks1-lS-bTf"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cLW-hb-ii5">
+=======
+                                    <action selector="onCloseMenuClick:" destination="8Do-D4-Itp" eventType="touchUpInside" id="qmt-M8-s1p"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="36R-Tg-c8o">
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                 <rect key="frame" x="0.0" y="20" width="379" height="647"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
+<<<<<<< HEAD
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="x3Z-LT-fbd" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="379" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3Z-LT-fbd" id="Ron-lq-b52">
                                             <rect key="frame" x="0.0" y="0.0" width="379" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dT1-ts-pVc">
+                                                    <rect key="frame" x="8" y="8" width="363" height="107"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-q0-Lws">
+                                                            <rect key="frame" x="0.0" y="0.0" width="212" height="107"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-Ir-623">
+                                                            <rect key="frame" x="222" y="0.0" width="141" height="107"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-4W-bth">
+                                                                    <rect key="frame" x="40.5" y="0.0" width="60.5" height="35.5"/>
 =======
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="93Y-zW-RUu" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="176"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="93Y-zW-RUu" id="NKP-eQ-sdH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WR1-XH-5Xu">
-                                            <rect key="frame" x="8" y="8" width="359" height="106"/>
->>>>>>> Still need to correctly handle segues. NOT a working version of the app...
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="c7w-wc-RbO" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="379" height="176"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c7w-wc-RbO" id="fGV-Nw-qd6">
+                                            <rect key="frame" x="0.0" y="0.0" width="379" height="175"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Miw-fF-dwl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="210" height="106"/>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zP4-1I-fmA">
-                                                    <rect key="frame" x="220" y="0.0" width="139" height="106"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YXV-Ax-tWe">
+                                                    <rect key="frame" x="8" y="8" width="363" height="106"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CWK-EM-ozN">
-                                                            <rect key="frame" x="39" y="0.0" width="61" height="35"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0ci-Ad-k24">
-                                                            <rect key="frame" x="51" y="35" width="36" height="36"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fLm-Oy-FH9">
-                                                            <rect key="frame" x="0.0" y="71" width="139" height="35"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="CWK-EM-ozN" firstAttribute="height" secondItem="0ci-Ad-k24" secondAttribute="height" id="Afc-kK-LRI"/>
-                                                        <constraint firstItem="0ci-Ad-k24" firstAttribute="height" secondItem="fLm-Oy-FH9" secondAttribute="height" id="QRN-et-lWE"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Miw-fF-dwl" firstAttribute="width" secondItem="zP4-1I-fmA" secondAttribute="width" multiplier="3:2" id="FLL-c9-gHl"/>
-                                            </constraints>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7j-OZ-7aO">
-                                            <rect key="frame" x="8" y="114" width="359" height="53"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="krf-pC-g8W">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="53"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mgi-57-cTq">
-                                                    <rect key="frame" x="144" y="0.0" width="72" height="53"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hLa-ih-bih">
-                                                    <rect key="frame" x="216" y="0.0" width="143" height="53"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="hLa-ih-bih" firstAttribute="width" secondItem="mgi-57-cTq" secondAttribute="width" multiplier="2:1" id="I3g-sp-GSP"/>
-                                                <constraint firstItem="hLa-ih-bih" firstAttribute="width" secondItem="krf-pC-g8W" secondAttribute="width" id="Oui-jq-c5x"/>
-                                            </constraints>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="WR1-XH-5Xu" firstAttribute="top" secondItem="NKP-eQ-sdH" secondAttribute="topMargin" id="8s8-ZD-8OO"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="v7j-OZ-7aO" secondAttribute="trailing" id="CnN-UR-sVu"/>
-                                        <constraint firstItem="v7j-OZ-7aO" firstAttribute="height" secondItem="WR1-XH-5Xu" secondAttribute="height" multiplier="1:2" id="EHA-ka-xil"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="WR1-XH-5Xu" secondAttribute="leading" id="NZ3-Q1-GKC"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="WR1-XH-5Xu" secondAttribute="trailing" id="Pnq-Bc-OIn"/>
-                                        <constraint firstItem="v7j-OZ-7aO" firstAttribute="top" secondItem="WR1-XH-5Xu" secondAttribute="bottom" id="Y7R-Pa-TUj"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="v7j-OZ-7aO" secondAttribute="bottom" id="lHh-tg-Rrd"/>
-                                        <constraint firstItem="v7j-OZ-7aO" firstAttribute="leading" secondItem="NKP-eQ-sdH" secondAttribute="leadingMargin" id="nhu-tA-Zjn"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="dateLabel" destination="0ci-Ad-k24" id="AOl-CY-l2X"/>
-                                    <outlet property="departureAirportLabel" destination="krf-pC-g8W" id="2MA-o3-VnV"/>
-                                    <outlet property="destinationAirportLabel" destination="hLa-ih-bih" id="0i3-yp-mid"/>
-                                    <outlet property="flightLogoImageView" destination="Miw-fF-dwl" id="rys-4S-Iab"/>
-                                    <outlet property="flightNumberLabel" destination="fLm-Oy-FH9" id="bwe-v9-yg9"/>
-                                    <outlet property="timeLabel" destination="CWK-EM-ozN" id="87E-YC-nqm"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ccc-we-F2b" id="dgD-Kb-gSh"/>
-                            <outlet property="delegate" destination="ccc-we-F2b" id="2dv-B3-HbH"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Past Flights" id="8NL-1Y-LeE"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I8U-g2-eDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-962" y="906"/>
-        </scene>
-        <!--My Flights-->
-        <scene sceneID="0BS-od-BWr">
-            <objects>
-                <tableViewController id="XvW-ye-nGa" customClass="FlightsTableViewController" customModule="Trackify" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="IH3-NE-IQV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="7ox-nz-7wh" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="176"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ox-nz-7wh" id="XCj-Dh-d4v">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bXY-ed-S7i">
-                                            <rect key="frame" x="8" y="8" width="359" height="106"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ilN-8i-h95">
-                                                    <rect key="frame" x="0.0" y="0.0" width="209" height="106"/>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cBr-cO-CjY">
-                                                    <rect key="frame" x="219" y="0.0" width="140" height="106"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-lI-X9m">
-                                                            <rect key="frame" x="40" y="0.0" width="61" height="35"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8FH-Xl-sCy">
-                                                            <rect key="frame" x="52" y="35" width="36" height="36"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oPZ-f9-djZ">
-                                                            <rect key="frame" x="1" y="71" width="139" height="35"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="8FH-Xl-sCy" firstAttribute="height" secondItem="oPZ-f9-djZ" secondAttribute="height" id="6kH-mQ-2md"/>
-                                                        <constraint firstItem="Awx-lI-X9m" firstAttribute="height" secondItem="8FH-Xl-sCy" secondAttribute="height" id="vds-Pi-EiH"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ilN-8i-h95" firstAttribute="width" secondItem="cBr-cO-CjY" secondAttribute="width" multiplier="3:2" id="JRw-2p-0zZ"/>
-                                            </constraints>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgW-Rd-wHX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="212" height="106"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-bI-p1S">
+                                                            <rect key="frame" x="222" y="0.0" width="141" height="106"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-wk-2L6">
+                                                                    <rect key="frame" x="40" y="0.0" width="61" height="35"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
 <<<<<<< HEAD
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tn8-ey-f0P">
+                                                                    <rect key="frame" x="52.5" y="35.5" width="36" height="36"/>
+=======
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TYa-5g-ht9">
+                                                                    <rect key="frame" x="53" y="35" width="36" height="36"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+<<<<<<< HEAD
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8aL-HH-s7v">
+                                                                    <rect key="frame" x="1" y="71.5" width="139" height="35.5"/>
+=======
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JB0-fh-p5o">
+                                                                    <rect key="frame" x="1" y="71" width="139" height="35"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+<<<<<<< HEAD
+                                                                <constraint firstItem="PaO-4W-bth" firstAttribute="height" secondItem="tn8-ey-f0P" secondAttribute="height" id="Qj9-Lg-LcN"/>
+                                                                <constraint firstItem="tn8-ey-f0P" firstAttribute="height" secondItem="8aL-HH-s7v" secondAttribute="height" id="t6k-q3-h1C"/>
+=======
+                                                                <constraint firstItem="a7l-wk-2L6" firstAttribute="height" secondItem="TYa-5g-ht9" secondAttribute="height" id="P6C-hf-0Bq"/>
+                                                                <constraint firstItem="TYa-5g-ht9" firstAttribute="height" secondItem="JB0-fh-p5o" secondAttribute="height" id="ZQm-3u-tnt"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+<<<<<<< HEAD
+                                                        <constraint firstItem="xcs-q0-Lws" firstAttribute="width" secondItem="vR3-Ir-623" secondAttribute="width" multiplier="3:2" id="3S8-NZ-CSs"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnQ-D9-74Z">
+                                                    <rect key="frame" x="8" y="115" width="363" height="53"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hwp-7s-MeH">
+=======
+                                                        <constraint firstItem="lgW-Rd-wHX" firstAttribute="width" secondItem="Eha-bI-p1S" secondAttribute="width" multiplier="3:2" id="8vr-UR-fjg"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6f-12-hUs">
+                                                    <rect key="frame" x="8" y="114" width="363" height="53"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="G7g-W3-9IX">
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                            <rect key="frame" x="0.0" y="0.0" width="145" height="53"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+<<<<<<< HEAD
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vZ7-6z-J0Z">
+                                                            <rect key="frame" x="145" y="0.0" width="73" height="53"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mMi-Aq-90K">
+=======
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="zg4-Yx-jHK">
+                                                            <rect key="frame" x="145" y="0.0" width="73" height="53"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="C6r-Bf-kdL">
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                            <rect key="frame" x="218" y="0.0" width="145" height="53"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+<<<<<<< HEAD
+                                                        <constraint firstItem="mMi-Aq-90K" firstAttribute="width" secondItem="vZ7-6z-J0Z" secondAttribute="width" multiplier="2:1" id="8BP-Dh-di5"/>
+                                                        <constraint firstItem="mMi-Aq-90K" firstAttribute="width" secondItem="Hwp-7s-MeH" secondAttribute="width" id="FdV-aF-STI"/>
+=======
+                                                        <constraint firstItem="C6r-Bf-kdL" firstAttribute="width" secondItem="G7g-W3-9IX" secondAttribute="width" id="DFI-Og-OYE"/>
+                                                        <constraint firstItem="C6r-Bf-kdL" firstAttribute="width" secondItem="zg4-Yx-jHK" secondAttribute="width" multiplier="2:1" id="Ztc-B1-3sl"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+<<<<<<< HEAD
+                                                <constraint firstAttribute="leadingMargin" secondItem="dT1-ts-pVc" secondAttribute="leading" id="2Gl-ZN-cKa"/>
+                                                <constraint firstItem="xnQ-D9-74Z" firstAttribute="leading" secondItem="Ron-lq-b52" secondAttribute="leadingMargin" id="Bb1-Vd-6VS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xnQ-D9-74Z" secondAttribute="trailing" id="Lkf-41-4Xp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dT1-ts-pVc" secondAttribute="trailing" id="VnR-yd-GL3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xnQ-D9-74Z" secondAttribute="bottom" id="fzF-LO-vaP"/>
+                                                <constraint firstItem="xnQ-D9-74Z" firstAttribute="top" secondItem="dT1-ts-pVc" secondAttribute="bottom" id="lnc-bn-bzc"/>
+                                                <constraint firstItem="xnQ-D9-74Z" firstAttribute="height" secondItem="dT1-ts-pVc" secondAttribute="height" multiplier="1:2" id="vTf-x8-9Gz"/>
+                                                <constraint firstItem="dT1-ts-pVc" firstAttribute="top" secondItem="Ron-lq-b52" secondAttribute="topMargin" id="yhg-oB-9c6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="tn8-ey-f0P" id="Dcd-ch-dIB"/>
@@ -1089,176 +1107,129 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ecI-zX-iOo" id="xeM-Oq-cyd">
                                             <rect key="frame" x="0.0" y="0.0" width="379" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
-=======
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-cq-jH2">
-                                            <rect key="frame" x="8" y="114" width="359" height="53"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kuB-T4-u2I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="53"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="i5F-fC-Tru">
-                                                    <rect key="frame" x="144" y="0.0" width="71" height="53"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eGu-Lr-MZd">
-                                                    <rect key="frame" x="215" y="0.0" width="144" height="53"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="eGu-Lr-MZd" firstAttribute="width" secondItem="i5F-fC-Tru" secondAttribute="width" multiplier="2:1" id="CN4-xa-3Hl"/>
-                                                <constraint firstItem="eGu-Lr-MZd" firstAttribute="width" secondItem="kuB-T4-u2I" secondAttribute="width" id="tms-vf-sWQ"/>
-                                            </constraints>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="bXY-ed-S7i" secondAttribute="trailing" id="4fP-id-9GD"/>
-                                        <constraint firstItem="aI8-cq-jH2" firstAttribute="height" secondItem="bXY-ed-S7i" secondAttribute="height" multiplier="1:2" id="C9U-VS-9ZB"/>
-                                        <constraint firstItem="bXY-ed-S7i" firstAttribute="top" secondItem="XCj-Dh-d4v" secondAttribute="topMargin" id="Fhk-6t-yCX"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="bXY-ed-S7i" secondAttribute="leading" id="GLj-zJ-4rD"/>
-                                        <constraint firstItem="aI8-cq-jH2" firstAttribute="leading" secondItem="XCj-Dh-d4v" secondAttribute="leadingMargin" id="QB1-oQ-HcM"/>
-                                        <constraint firstItem="aI8-cq-jH2" firstAttribute="top" secondItem="bXY-ed-S7i" secondAttribute="bottom" id="UQk-9s-zYV"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="aI8-cq-jH2" secondAttribute="trailing" id="fnw-UC-NLj"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="aI8-cq-jH2" secondAttribute="bottom" id="fyB-Md-LHQ"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="dateLabel" destination="8FH-Xl-sCy" id="G91-EC-N0b"/>
-                                    <outlet property="departureAirportLabel" destination="kuB-T4-u2I" id="wus-2K-TaZ"/>
-                                    <outlet property="destinationAirportLabel" destination="eGu-Lr-MZd" id="vNC-hq-ArV"/>
-                                    <outlet property="flightLogoImageView" destination="ilN-8i-h95" id="QYz-e3-apk"/>
-                                    <outlet property="flightNumberLabel" destination="oPZ-f9-djZ" id="APR-sf-bz3"/>
-                                    <outlet property="timeLabel" destination="Awx-lI-X9m" id="6fh-JA-21G"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="XvW-ye-nGa" id="hBu-UR-LUO"/>
-                            <outlet property="delegate" destination="XvW-ye-nGa" id="Fy5-QB-lsz"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="My Flights" id="zGL-bQ-yeV"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xaW-Tp-sBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-962" y="152"/>
-        </scene>
-        <!--Shared Flights-->
-        <scene sceneID="C4L-Sk-mYm">
-            <objects>
-                <tableViewController id="zDd-0p-3ZE" customClass="FlightsTableViewController" customModule="Trackify" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="176" sectionHeaderHeight="28" sectionFooterHeight="28" id="EEs-3E-Zzy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="flightCell" rowHeight="176" id="tCD-4Y-lUb" customClass="FlightTableViewCell" customModule="Trackify" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="176"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCD-4Y-lUb" id="aud-tY-do7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="itg-yd-ahz">
-                                            <rect key="frame" x="8" y="8" width="359" height="106"/>
->>>>>>> Still need to correctly handle segues. NOT a working version of the app...
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-cZ-Tuh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="209" height="106"/>
-                                                </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="K7P-ri-Jyt">
-                                                    <rect key="frame" x="219" y="0.0" width="140" height="106"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="DOc-ld-oai">
+                                                    <rect key="frame" x="8" y="14" width="350" height="26"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="spD-oh-wRY">
-                                                            <rect key="frame" x="40" y="0.0" width="61" height="35"/>
+                                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2U-A8-g1W">
+                                                            <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="W2U-A8-g1W" secondAttribute="height" multiplier="1:1" id="IaQ-Oi-hyU"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10y-ZT-WfG">
+=======
+                                                <constraint firstItem="L6f-12-hUs" firstAttribute="leading" secondItem="fGV-Nw-qd6" secondAttribute="leadingMargin" id="0OT-ne-lCa"/>
+                                                <constraint firstItem="L6f-12-hUs" firstAttribute="top" secondItem="YXV-Ax-tWe" secondAttribute="bottom" id="1xM-yR-HQJ"/>
+                                                <constraint firstItem="YXV-Ax-tWe" firstAttribute="top" secondItem="fGV-Nw-qd6" secondAttribute="topMargin" id="4Ap-y7-3ns"/>
+                                                <constraint firstItem="L6f-12-hUs" firstAttribute="height" secondItem="YXV-Ax-tWe" secondAttribute="height" multiplier="1:2" id="5GL-0l-oR6"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="YXV-Ax-tWe" secondAttribute="leading" id="C76-wz-rnn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="L6f-12-hUs" secondAttribute="trailing" id="NrK-CD-Xaj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YXV-Ax-tWe" secondAttribute="trailing" id="Yus-9h-TbY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="L6f-12-hUs" secondAttribute="bottom" id="coa-1U-h30"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="TYa-5g-ht9" id="SBb-ME-2Mj"/>
+                                            <outlet property="departureAirportLabel" destination="G7g-W3-9IX" id="Xre-zT-c4L"/>
+                                            <outlet property="destinationAirportLabel" destination="C6r-Bf-kdL" id="RFB-FW-F29"/>
+                                            <outlet property="flightLogoImageView" destination="lgW-Rd-wHX" id="644-FE-nbD"/>
+                                            <outlet property="flightNumberLabel" destination="JB0-fh-p5o" id="Ycu-s9-j14"/>
+                                            <outlet property="timeLabel" destination="a7l-wk-2L6" id="IFY-Oi-ROb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellMenu" id="T4y-iU-Ogq">
+                                        <rect key="frame" x="0.0" y="198" width="379" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T4y-iU-Ogq" id="pnH-e1-jgM">
+                                            <rect key="frame" x="0.0" y="0.0" width="379" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="eAu-5R-dib">
+                                                    <rect key="frame" x="8" y="14" width="350" height="26"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uKR-mE-IPw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="uKR-mE-IPw" secondAttribute="height" multiplier="1:1" id="K7x-L3-Yld"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGz-Z6-WzG">
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                            <rect key="frame" x="51" y="0.0" width="299" height="26"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aNg-PK-YS0">
-                                                            <rect key="frame" x="52" y="35" width="36" height="36"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y9t-jE-42X">
-                                                            <rect key="frame" x="1" y="71" width="139" height="35"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="aNg-PK-YS0" firstAttribute="height" secondItem="y9t-jE-42X" secondAttribute="height" id="1pB-tj-e8H"/>
-                                                        <constraint firstItem="spD-oh-wRY" firstAttribute="height" secondItem="aNg-PK-YS0" secondAttribute="height" id="FWo-Cy-Gog"/>
-                                                    </constraints>
                                                 </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="c3O-cZ-Tuh" firstAttribute="width" secondItem="K7P-ri-Jyt" secondAttribute="width" multiplier="3:2" id="FTo-Sv-2t9"/>
-                                            </constraints>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPV-B6-iOo">
-                                            <rect key="frame" x="8" y="114" width="359" height="53"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2hE-Sb-zPW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="53"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="bLf-Qi-m5R">
-                                                    <rect key="frame" x="144" y="0.0" width="71" height="53"/>
+<<<<<<< HEAD
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_icon_black" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-BR-c1E">
+                                                    <rect key="frame" x="358" y="21" width="13" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Q1y-BR-c1E" secondAttribute="height" id="VCZ-GS-UbQ"/>
+=======
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_icon_black" translatesAutoresizingMaskIntoConstraints="NO" id="tho-nc-SdT">
+                                                    <rect key="frame" x="358" y="20" width="13" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="tho-nc-SdT" secondAttribute="height" id="nC0-4P-cnu"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wp1-gE-YXc">
-                                                    <rect key="frame" x="215" y="0.0" width="144" height="53"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wp1-gE-YXc" firstAttribute="width" secondItem="2hE-Sb-zPW" secondAttribute="width" id="Rxr-qL-uoK"/>
-                                                <constraint firstItem="wp1-gE-YXc" firstAttribute="width" secondItem="bLf-Qi-m5R" secondAttribute="width" multiplier="2:1" id="wHI-1U-4ls"/>
+<<<<<<< HEAD
+                                                <constraint firstItem="W2U-A8-g1W" firstAttribute="height" secondItem="xeM-Oq-cyd" secondAttribute="height" multiplier="1:2" id="SEl-me-bZ1"/>
+                                                <constraint firstItem="DOc-ld-oai" firstAttribute="centerY" secondItem="xeM-Oq-cyd" secondAttribute="centerY" id="W0A-4v-HiW"/>
+                                                <constraint firstItem="Q1y-BR-c1E" firstAttribute="height" secondItem="W2U-A8-g1W" secondAttribute="height" multiplier="1:2" id="YT1-Ri-B4d"/>
+                                                <constraint firstItem="Q1y-BR-c1E" firstAttribute="centerY" secondItem="xeM-Oq-cyd" secondAttribute="centerY" id="azf-ci-vSs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Q1y-BR-c1E" secondAttribute="trailing" id="ftw-Ft-R07"/>
+                                                <constraint firstItem="Q1y-BR-c1E" firstAttribute="leading" secondItem="DOc-ld-oai" secondAttribute="trailing" id="lTD-Cr-yVl"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="DOc-ld-oai" secondAttribute="leading" id="t5W-zo-d8t"/>
+=======
+                                                <constraint firstItem="tho-nc-SdT" firstAttribute="leading" secondItem="eAu-5R-dib" secondAttribute="trailing" id="RSE-eD-blT"/>
+                                                <constraint firstItem="tho-nc-SdT" firstAttribute="height" secondItem="uKR-mE-IPw" secondAttribute="height" multiplier="1:2" id="YOb-CJ-Yex"/>
+                                                <constraint firstItem="eAu-5R-dib" firstAttribute="centerY" secondItem="pnH-e1-jgM" secondAttribute="centerY" id="cfc-G4-hGt"/>
+                                                <constraint firstItem="tho-nc-SdT" firstAttribute="centerY" secondItem="pnH-e1-jgM" secondAttribute="centerY" id="r2N-We-MgH"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="eAu-5R-dib" secondAttribute="leading" id="stM-Kw-pXU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tho-nc-SdT" secondAttribute="trailing" id="uYK-6T-SmC"/>
+                                                <constraint firstItem="uKR-mE-IPw" firstAttribute="height" secondItem="pnH-e1-jgM" secondAttribute="height" multiplier="1:2" id="vNC-0K-ZX0"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                             </constraints>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="itg-yd-ahz" secondAttribute="trailing" id="1Gp-bD-7rW"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="aPV-B6-iOo" secondAttribute="bottom" id="3QK-4U-EoZ"/>
-                                        <constraint firstItem="aPV-B6-iOo" firstAttribute="height" secondItem="itg-yd-ahz" secondAttribute="height" multiplier="1:2" id="QDF-0g-rnN"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="aPV-B6-iOo" secondAttribute="trailing" id="T1b-lS-84Z"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="itg-yd-ahz" secondAttribute="leading" id="dAb-Gl-wVN"/>
-                                        <constraint firstItem="aPV-B6-iOo" firstAttribute="leading" secondItem="aud-tY-do7" secondAttribute="leadingMargin" id="eee-Tb-5iz"/>
-                                        <constraint firstItem="itg-yd-ahz" firstAttribute="top" secondItem="aud-tY-do7" secondAttribute="topMargin" id="hOh-fb-vWm"/>
-                                        <constraint firstItem="aPV-B6-iOo" firstAttribute="top" secondItem="itg-yd-ahz" secondAttribute="bottom" id="kXY-DJ-ehw"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dateLabel" destination="aNg-PK-YS0" id="Wmy-qd-ehs"/>
-                                    <outlet property="departureAirportLabel" destination="2hE-Sb-zPW" id="rjS-r2-NrZ"/>
-                                    <outlet property="destinationAirportLabel" destination="wp1-gE-YXc" id="mJ2-gS-Ybi"/>
-                                    <outlet property="flightLogoImageView" destination="c3O-cZ-Tuh" id="e2F-pZ-BDs"/>
-                                    <outlet property="flightNumberLabel" destination="y9t-jE-42X" id="qtE-o5-WcO"/>
-                                    <outlet property="timeLabel" destination="spD-oh-wRY" id="wgk-mT-Gxa"/>
+<<<<<<< HEAD
+                                    <outlet property="dataSource" destination="SSX-7l-Mlb" id="W92-fh-Xlq"/>
+                                    <outlet property="delegate" destination="SSX-7l-Mlb" id="ptD-94-436"/>
+=======
+                                    <outlet property="dataSource" destination="8Do-D4-Itp" id="X28-dn-Tpc"/>
+                                    <outlet property="delegate" destination="8Do-D4-Itp" id="6wO-LD-Oy0"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zDd-0p-3ZE" id="NEF-NG-0Ij"/>
-                            <outlet property="delegate" destination="zDd-0p-3ZE" id="13N-sT-e7D"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Shared Flights" id="nOx-6Z-Ku0"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bKF-VF-xc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+<<<<<<< HEAD
+                            <constraint firstItem="cLW-hb-ii5" firstAttribute="leading" secondItem="3k8-Qd-n8w" secondAttribute="leading" id="5PZ-D0-Wxn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cLW-hb-ii5" secondAttribute="trailing" constant="-20" id="975-2A-PM6"/>
+                            <constraint firstItem="lQK-n8-jbZ" firstAttribute="top" secondItem="3k8-Qd-n8w" secondAttribute="top" id="9rI-f6-YR4"/>
+                            <constraint firstAttribute="trailing" secondItem="lQK-n8-jbZ" secondAttribute="trailing" id="BiH-JR-tPt"/>
+                            <constraint firstItem="ZWh-Up-mJG" firstAttribute="top" secondItem="lQK-n8-jbZ" secondAttribute="bottom" id="EHj-y4-Ah5"/>
+                            <constraint firstItem="cLW-hb-ii5" firstAttribute="top" secondItem="jPN-qL-Lci" secondAttribute="bottom" id="YCU-RO-Cs1"/>
+                            <constraint firstItem="lQK-n8-jbZ" firstAttribute="leading" secondItem="3k8-Qd-n8w" secondAttribute="leading" id="Yx0-gz-bWj"/>
+                            <constraint firstAttribute="bottom" secondItem="cLW-hb-ii5" secondAttribute="bottom" id="lUA-mW-G0R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuTable" destination="cLW-hb-ii5" id="eQ5-DB-cfl"/>
+                        <outlet property="transparentSideButton" destination="lQK-n8-jbZ" id="WIK-zQ-q1k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUY-NX-dXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-962" y="1765"/>
+            <point key="canvasLocation" x="1746" y="1776"/>
         </scene>
         <!--Status View Controller-->
         <scene sceneID="TA5-7H-QZa">
@@ -1292,6 +1263,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9R6-T0-0Rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2924" y="1825"/>
+=======
+                            <constraint firstAttribute="trailing" secondItem="N0t-tS-Wi2" secondAttribute="trailing" id="4Cc-qB-VH6"/>
+                            <constraint firstItem="N0t-tS-Wi2" firstAttribute="leading" secondItem="BGZ-eb-zS6" secondAttribute="leading" id="8it-et-tgj"/>
+                            <constraint firstItem="36R-Tg-c8o" firstAttribute="top" secondItem="QiG-Yn-mjU" secondAttribute="bottom" id="dgg-aw-601"/>
+                            <constraint firstItem="Ofe-JJ-bsd" firstAttribute="top" secondItem="N0t-tS-Wi2" secondAttribute="bottom" id="esa-ZI-5OS"/>
+                            <constraint firstAttribute="bottom" secondItem="36R-Tg-c8o" secondAttribute="bottom" id="hG1-vL-EZX"/>
+                            <constraint firstItem="N0t-tS-Wi2" firstAttribute="top" secondItem="BGZ-eb-zS6" secondAttribute="top" id="kMd-c4-RY4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="36R-Tg-c8o" secondAttribute="trailing" constant="-20" id="lQi-wZ-sHv"/>
+                            <constraint firstItem="36R-Tg-c8o" firstAttribute="leading" secondItem="BGZ-eb-zS6" secondAttribute="leading" id="xvu-mh-P17"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menuTable" destination="36R-Tg-c8o" id="5rW-bf-hSG"/>
+                        <outlet property="transparentSideButton" destination="N0t-tS-Wi2" id="lQq-fv-FhE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWY-Gg-CBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="1833"/>
+>>>>>>> Fixed crash and sharing fligths via options menu now works. Menu View Controller is still not showing up on the tabs.
         </scene>
     </scenes>
     <resources>
@@ -1312,12 +1303,7 @@
         <image name="user_icon_blue" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="zip-S0-Kah"/>
-        <segue reference="Ty5-SC-zL6"/>
-=======
-        <segue reference="HzV-Ea-3aF"/>
-        <segue reference="zip-S0-Kah"/>
->>>>>>> Still need to correctly handle segues. NOT a working version of the app...
+        <segue reference="zRy-ol-Xgx"/>
+        <segue reference="O14-dg-DcF"/>
     </inferredMetricsTieBreakers>
 </document>
