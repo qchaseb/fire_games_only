@@ -75,7 +75,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     var optionsBlurEffectView: UIVisualEffectView?
     var menuBlurEffectView: UIVisualEffectView?
     
-    fileprivate var editingFlight: Bool = false
+    var editingFlight: Bool = false
     
     // get managed object context from delegate
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -89,13 +89,14 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         self.refreshController = UIRefreshControl()
         self.refreshController?.addTarget(self, action: #selector(self.handleRefresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshController!)
+        let tabBarHeight = self.tabBarController?.tabBar.bounds.height
+        self.edgesForExtendedLayout = UIRectEdge.all
+        self.tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: tabBarHeight!, right: 0.0)
         UNUserNotificationCenter.current().delegate = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setUpNavigationBar()
         
         // query for flights for the logged in user
         // Currently Crashing here because segue is happening before user is loaded from database and passed to Table View
@@ -105,117 +106,29 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if flights?.count == 0 {
-            displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
-        }
-    }
-    
-    func scheduleLocalNotifications(flight: Flight) {
-        //create notification dates
-        let date = flight.getDate()
-        let calendar = Calendar(identifier: .gregorian)
-        let flight_components = calendar.dateComponents(in: .current, from: date!)
-        let new_date24 = flight_components.calendar?.date(byAdding: .day, value: -1, to: date!)
-        let new_date12 = flight_components.calendar?.date(byAdding: .hour, value: -12, to: date!)
-        let new_date6 = flight_components.calendar?.date(byAdding: .hour, value: -6, to: date!)
-        let new_date1 = flight_components.calendar?.date(byAdding: .hour, value: -1, to: date!)
-        let arr_Dates = [new_date24, new_date12, new_date6, new_date1]
-
-        //notification content
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = flight.airline! + " #" + flight.flightNumber!
-        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon",
-                                          flight.departureAirport!, flight.destinationAirport!)
-        notificationContent.sound = UNNotificationSound.default()
-
-        //dateformatter
-        let df = DateFormatter()
-        df.dateFormat = ("MM-dd-yyyy HH:mm")
-
-        //make notification for each date and store in UNUserNotificationCenter
-        for time in arr_Dates {
-            let date_string = df.string(from: time!)
-            let components = calendar.dateComponents(in: .current, from: time!)
-            let newComponents = DateComponents(calendar: calendar, timeZone: .current,
-                                               month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-            let calendarTrigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-            let identifier = (user?.email_id)! + date_string
-            let notificationRequest = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: calendarTrigger)
-            UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-                if let error = error {
-                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-                }
+        if currentFlightsArray()?.count == 0 {
+            switch (self.tabBarItem.title!) {
+            case "Upcoming" :
+                displayAlert("No Upcoming Flights", message: "Forward your flight confirmation emails to flights@trackify.biz or manually enter a flight by touching the button above!")
+            default :
+                return
             }
-
-            //save identifier in flight object
-            if(flight.identifiers == nil){
-                flight.identifiers = Set<String>()
-            }
-            (flight.identifiers)!.insert(identifier)
         }
-
-        //print pending notification request ids
-//        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
-//            for request in requests {
-//                print("These are pending requests in scheduling after scheduling: ")
-//                print(request.identifier)
-//            }
-//        })
-    }
-
-    override func willMove(toParentViewController parent: UIViewController?) {
-        super.willMove(toParentViewController: parent)
-        self.navigationController?.isNavigationBarHidden = true
-    }
-    
-    // Set up the UI for the navigation bar
-    fileprivate func setUpNavigationBar() {
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.barTintColor = helpers.themeColor
-        
-        // set up title image
-        let logo = #imageLiteral(resourceName: "trackify_white_title")
-        let imageView = UIImageView(image: logo)
-        imageView.frame = CGRect(x:0, y:0, width:50, height:50)
-        imageView.contentMode = .scaleAspectFit
-        self.navigationItem.titleView = imageView
-        
-        // set up menu button
-        let menuButton = UIBarButtonItem()
-        menuButton.image = #imageLiteral(resourceName: "menu_icon")
-        menuButton.tintColor = UIColor.white
-        menuButton.customView?.contentMode = .scaleAspectFit
-        menuButton.target = self
-        menuButton.action = #selector(self.menuButtonTapped(_:))
-        self.navigationItem.leftBarButtonItem = menuButton
-        
-        // set up manual entry button
-        let addButton = UIBarButtonItem()
-        addButton.image = #imageLiteral(resourceName: "plus_icon")
-        addButton.tintColor = UIColor.white
-        addButton.customView?.contentMode = .scaleAspectFit
-        addButton.target = self
-        addButton.action = #selector(self.manualEntryButtonTapped)
-        self.navigationItem.rightBarButtonItem = addButton
-        
-        // set time and battery logos to be white
-        UIApplication.shared.statusBarStyle = .lightContent
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIApplication.shared.statusBarStyle = .default
-        self.navigationController?.isNavigationBarHidden = true
     }
     
     fileprivate func currentFlightsArray() ->[Flight]? {
-        switch (self.tabBarItem.title!) {
-        case "My Flights" :
+        // for core data
+        if self.tabBarItem.title == nil {
+            print("how many times")
             return flights
-        case "Past Flights":
-            return pastFlights
-        default :
+        }
+        switch (self.tabBarItem.title!) {
+        case "Upcoming" :
+            return flights
+        case "Shared":
             return sharedFlights
+        default :
+            return pastFlights
         }
     }
     
@@ -226,7 +139,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentFlightsArray()!.count
+        return currentFlightsArray()?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -245,6 +158,37 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             if let flightCell = tableView.cellForRow(at: indexPath) as? FlightTableViewCell {
+                if (self.tabBarItem.title! == "Shared") {
+                    if flightCell.flight!.sharedWith != nil  && (flightCell.flight!.sharedWith?.contains((user?.email_id)!))!{
+                        flightCell.flight!.sharedWith!.remove((user?.email_id)!)
+                        // can't have empty sets in dynamoDB
+                        if flightCell.flight!.sharedWith!.count == 0 {
+                            flightCell.flight!.sharedWith = nil
+                        }
+                        SwiftSpinner.show("Deleting Shared Flight")
+                        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+                        let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
+                        updateMapperConfig.saveBehavior = .updateSkipNullAttributes
+                        let sema = DispatchSemaphore(value: 0)
+                        
+                        dynamoDBObjectMapper.save(flightCell.flight!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+                            if let error = task.error as? NSError {
+                                if (error.domain == NSURLErrorDomain) {
+                                    DispatchQueue.main.async {
+                                        SwiftSpinner.hide()
+                                        self.displayAlert("Poor Network Connection", message: "Please try again.")
+                                    }
+                                }
+                            }
+                            sema.signal()
+                            return nil
+                        })
+                        sema.wait()
+                        SwiftSpinner.hide()
+                        handleRefresh()
+                    }
+                    return
+                }
                 SwiftSpinner.show("Deleting Flight")
                 let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
                 let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
@@ -275,6 +219,32 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                 removeNotificationsFromNotificationCenter(flight: flightCell.flight!)
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let flight = currentFlightsArray()?[indexPath.row]//flights?[indexPath.row]
+        selectedFlight = flight
+        addBlurView(forMenu: false)
+        tableView.isScrollEnabled = false
+        optionsVC = self.storyboard!.instantiateViewController(withIdentifier: "FlightOptionsViewController") as? FlightOptionsViewController
+        optionsVC?.delegate = self
+        optionsVC?.flight = flight
+        self.view.addSubview((optionsVC?.view)!)
+        self.addChildViewController(optionsVC!)
+        optionsVC?.view.layoutIfNeeded()
+        
+        optionsVC?.view.frame=CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            if self.view.bounds.minY > 0 {
+                self.optionsVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+            } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
+                self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
+            } else {
+                self.optionsVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            }
+            
+        }, completion:nil)
     }
 
     func removeNotificationsFromNotificationCenter(flight: Flight) {
@@ -314,43 +284,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
-    // move the settings menu if the user scrolls while it is open
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if menuVC != nil {
-            menuVC!.view.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY+BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let flight = flights?[indexPath.row]
-        addBlurView(forMenu: false)
-        tableView.isScrollEnabled = false
-        optionsVC = self.storyboard!.instantiateViewController(withIdentifier: "FlightOptionsViewController") as? FlightOptionsViewController
-        optionsVC?.delegate = self
-        optionsVC?.flight = flight
-        self.view.addSubview((optionsVC?.view)!)
-        self.addChildViewController(optionsVC!)
-        optionsVC?.view.layoutIfNeeded()
-        
-        optionsVC?.view.frame=CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-        
-        UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            if self.view.bounds.minY > 0 {
-                self.optionsVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
-            } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
-                self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
-            } else {
-                self.optionsVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            }
-            
-        }, completion:nil)
-        
-        
-    }
-    
     func handleRefresh() {
         // Reload data and update flights variable
         loadFlights(email: (user?.email_id)!)
+        loadSharedFlights(email: (user?.email_id)!)
         self.refreshController?.endRefreshing()
     }
     
@@ -451,6 +388,52 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
+    fileprivate func scheduleLocalNotifications(flight: Flight) {
+        //create notification dates
+        let date = flight.getDate()
+        let calendar = Calendar(identifier: .gregorian)
+        let flight_components = calendar.dateComponents(in: .current, from: date!)
+        let new_date24 = flight_components.calendar?.date(byAdding: .day, value: -1, to: date!)
+        let new_date12 = flight_components.calendar?.date(byAdding: .hour, value: -12, to: date!)
+        let new_date6 = flight_components.calendar?.date(byAdding: .hour, value: -6, to: date!)
+        let new_date1 = flight_components.calendar?.date(byAdding: .hour, value: -1, to: date!)
+        let arr_Dates = [new_date24, new_date12, new_date6, new_date1]
+        
+        //notification content
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = flight.flightNumber!
+        notificationContent.subtitle = flight.airline!
+        notificationContent.body = String(format: "Your flight from %@ to %@ leaves soon.",
+                                          flight.departureAirport!, flight.destinationAirport!)
+        notificationContent.sound = UNNotificationSound.default()
+        
+        //dateformatter
+        let df = DateFormatter()
+        df.dateFormat = ("MM-dd-yyyy HH:mm")
+        
+        //make notification for each date and store in UNUserNotificationCenter
+        for time in arr_Dates {
+            let date_string = df.string(from: time!)
+            let components = calendar.dateComponents(in: .current, from: time!)
+            let newComponents = DateComponents(calendar: calendar, timeZone: .current,
+                                               month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+            let calendarTrigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+            let identifier = (user?.email_id)! + date_string
+            let notificationRequest = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: calendarTrigger)
+            UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+                if let error = error {
+                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+                }
+            }
+            
+            //save identifier in flight object
+            if(flight.identifiers == nil){
+                flight.identifiers = Set<String>()
+            }
+            (flight.identifiers)!.insert(identifier)
+        }
+    }
+    
     // MARK: - Slider Menu Delegate Functions
     // Adapted from: https://github.com/ashishkakkad8/AKSwiftSlideMenu
     
@@ -465,14 +448,16 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             print("Sign Out Tapped")
             removeUserFromCoreData()
             self.navigationController!.popToRootViewController(animated: true)
-            
             break
         case "Edit":
             print("Edit Button Tapped")
             editingFlight = true
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
-            
+        case "Status":
+            print("Status Button Tapped")
+            self.performSegue(withIdentifier: Storyboard.StatusSegue , sender: self)
+            break
         case "Add to Calendar":
             print("Add to Calendar Tapped")
             addFlightToCalendar(flight: (optionsVC?.flight!)!)
@@ -605,6 +590,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     // Updates the database and actually
     fileprivate func shareFlight(_ flight: Flight?, withEmail email: String) {
         if !isValidEmail(testStr: email) {
+            self.displayAlert("Invalid Email", message: "Please enter a valid email address.")
             print("invalid email")
         } else if flight != nil{
             print(flight ?? "no flight")
@@ -626,7 +612,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                     }
                 } else {
                     // success!
-                    self.displayAlert("Shared!", message: "successfully shared with \(email)")
+                    self.displayAlert("Share Success!", message: "Your flight was successfully shared with \(email)")
                 }
                 return nil
             })
@@ -637,7 +623,6 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         print("User clicked cancelled sharing")
     }
     
-    
     // Adds an alert to share flight
     fileprivate func handleShare(){
         enterEmail = UIAlertController(title: "Share Flight", message: "Please enter the email you want to share your flight with", preferredStyle: UIAlertControllerStyle.alert)
@@ -646,6 +631,11 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         enterEmail!.addAction(UIAlertAction(title: "Share", style: UIAlertActionStyle.default, handler: { (UIAlertAction)in
             print("User clicked the share button")
             print(self.enterEmail!.textFields![0].text!)
+            if self.enterEmail!.textFields![0].text! == self.selectedFlight?.email! {
+                print("same emails not sharing")
+                self.displayAlert("Not Sharing", message: "Please enter an email other than your own.")
+                return
+            }
             self.shareFlight(self.selectedFlight,withEmail: self.enterEmail!.textFields![0].text!)
             
         }))
@@ -660,62 +650,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         self.user = newUser
     }
     
-    // open or close slider menu with animation
-    func menuButtonTapped(_ sender : UIButton) {
-        if menuVC != nil {
-            // hide menu if it is already being displayed
-            self.slideMenuItemSelected("")
-            
-            let settingsMenuView : UIView = view.subviews.last!
-            
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                var frameMenu : CGRect = settingsMenuView.frame
-                frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
-                settingsMenuView.frame = frameMenu
-                settingsMenuView.layoutIfNeeded()
-                settingsMenuView.backgroundColor = UIColor.clear
-            }, completion: { (finished) -> Void in
-                settingsMenuView.removeFromSuperview()
-            })
-            menuVC = nil
-            menuBlurEffectView?.removeFromSuperview()
-            menuBlurEffectView = nil
-            if (optionsVC == nil) {
-                tableView.isScrollEnabled = true
-            }
-        } else {
-            addBlurView(forMenu: true)
-            tableView.isScrollEnabled = false
-            menuVC = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
-            menuVC?.menuButton = sender
-            menuVC?.delegate = self
-            self.view.addSubview((menuVC?.view)!)
-            self.addChildViewController(menuVC!)
-            menuVC?.view.layoutIfNeeded()
-            
-            // make sure the menu appears at the correct y value within the table view
-            // this value changes depending on how far the user has scrolled
-            if self.view.bounds.minY > 0 {
-                self.menuVC?.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
-            } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
-                self.menuVC?.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
-            } else {
-                self.menuVC?.view.frame=CGRect(x: -UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-            }
-            
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                if self.view.bounds.minY > 0 {
-                    self.menuVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
-                } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
-                    self.menuVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
-                } else {
-                    self.menuVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-                }
-            }, completion:nil)
-        }
-    }
-    
-    fileprivate func addBlurView(forMenu: Bool) {
+    func addBlurView(forMenu: Bool) {
         if forMenu {
             menuBlurEffectView = UIVisualEffectView(effect: blurEffect)
             menuBlurEffectView?.frame = view.bounds
@@ -746,6 +681,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                 destinationVC.editableUser = self.user
                 destinationVC.delegate = self
                 destinationVC.removeUserFromCoreData = self.removeUserFromCoreData
+            }
+        } else if segue.identifier == Storyboard.StatusSegue {
+            if let destinationVC = segue.destination as? StatusViewController {
+                destinationVC.flight = optionsVC?.flight
             }
         }
     }

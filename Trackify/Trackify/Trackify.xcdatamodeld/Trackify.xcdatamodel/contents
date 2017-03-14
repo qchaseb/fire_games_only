@@ -7,19 +7,17 @@
         <attribute name="departureAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="destinationAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flightNumber" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SavedUser" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SavedUser" inverseName="flights" inverseEntity="SavedUser" syncable="YES"/>
     </entity>
     <entity name="SavedUser" representedClassName=".SavedUser" syncable="YES">
         <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="flights" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SavedFlight" syncable="YES"/>
-        <relationship name="pastFlights" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SavedFlight" syncable="YES"/>
-        <relationship name="sharedFlights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SavedFlight" syncable="YES"/>
+        <relationship name="flights" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SavedFlight" inverseName="user" inverseEntity="SavedFlight" syncable="YES"/>
     </entity>
     <elements>
         <element name="SavedFlight" positionX="-882" positionY="-270" width="128" height="148"/>
-        <element name="SavedUser" positionX="-1161" positionY="-279" width="128" height="148"/>
+        <element name="SavedUser" positionX="-1161" positionY="-279" width="128" height="118"/>
     </elements>
 </model>
