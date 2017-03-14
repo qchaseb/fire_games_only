@@ -18,7 +18,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     // MARK: - Variables
     var user: User?
     fileprivate var initialFlights = true
-    fileprivate let yesterday = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+    fileprivate let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
     
     var flights: [Flight]? {
         didSet {
