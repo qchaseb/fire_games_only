@@ -116,6 +116,15 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         }
     }
     
+    fileprivate func dateIsBeforeToday(date: Date) -> Bool {
+        let today = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        let dateString = df.string(from: date)
+        let todayString = df.string(from: today)
+        return dateString < todayString
+    }
+    
     fileprivate func currentFlightsArray() ->[Flight]? {
         switch (self.tabBarItem.title!) {
         case "Upcoming" :
