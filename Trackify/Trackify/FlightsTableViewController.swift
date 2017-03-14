@@ -610,6 +610,16 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
 
 extension FlightsTableViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        let notificationRequest = notification.request
+        let length = user?.email_id!.characters.count
+        let check_usr = notificationRequest.identifier
+        let index = check_usr.index(check_usr.startIndex, offsetBy: length!)
+        let res = check_usr.substring(to: index)
+        if (res == user?.email_id!) {
+            completionHandler([.alert, .sound])
+        } else {
+            print("Error with strings\n")
+        }
+        
     }
 }
