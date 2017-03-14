@@ -554,7 +554,8 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     fileprivate func shareFlight(_ flight: Flight?, withEmail email: String) {
         if !isValidEmail(testStr: email) {
             self.displayAlert("Invalid Email", message: "Please enter a valid email address.")
-            print("invalid email")
+            pls
+            rint("invalid email")
         } else if flight != nil{
             print(flight ?? "no flight")
             if (flight?.sharedWith) == nil {
