@@ -13,7 +13,7 @@ import EventKit
 import SwiftSpinner
 import UserNotifications
 
-class FlightsTableViewController: UITableViewController, SlideMenuDelegate, UpdateUserDelegate, UIWebViewDelegate {
+class FlightsTableViewController: UITableViewController, SlideMenuDelegate, UpdateUserDelegate {
     
     // MARK: - Variables
     var user: User?
@@ -286,15 +286,15 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         self.addChildViewController(optionsVC!)
         optionsVC?.view.layoutIfNeeded()
         
-        optionsVC?.view.frame=CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height*2)
+        optionsVC?.view.frame=CGRect(x: 0, y: UIScreen.main.bounds.size.height, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             if self.view.bounds.minY > 0 {
-                self.optionsVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY + UIScreen.main.bounds.size.height)
+                self.optionsVC?.view.frame=CGRect(x: 0, y: (self.navigationController?.navigationBar.bounds.height)!, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
             } else if self.view.bounds.minY > -self.BOUNDS_OFFSET {
-                self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY + UIScreen.main.bounds.size.height)
+                self.optionsVC?.view.frame=CGRect(x: 0, y: self.view.bounds.minY + self.BOUNDS_OFFSET, width: UIScreen.main.bounds.size.width, height: self.view.bounds.maxY)
             } else {
-                self.optionsVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height*2)
+                self.optionsVC?.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
             }
             
         }, completion:nil)
