@@ -165,6 +165,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                         if flightCell.flight!.sharedWith!.count == 0 {
                             flightCell.flight!.sharedWith = nil
                         }
+                        removeNotificationsFromNotificationCenter(flight: flightCell.flight!)
                         SwiftSpinner.show("Deleting Shared Flight")
                         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
                         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
@@ -371,6 +372,13 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
                     }
                 } else if let dbResults = task.result {
                     for flight in dbResults.items as! [Flight] {
+                        if (flight.getDate()! > Date()){
+                            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                                if settings.authorizationStatus == .authorized {
+                                    self.scheduleLocalNotifications(flight: flight)
+                                }
+                            }
+                        }
                         resultFlights.append(flight)
                     }
                 }
