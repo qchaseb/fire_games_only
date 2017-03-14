@@ -619,7 +619,8 @@ extension FlightsTableViewController: UNUserNotificationCenterDelegate {
             completionHandler([.alert, .sound])
         } else {
             print("Error with strings\n")
+            return
         }
-        
+        return
     }
 }
