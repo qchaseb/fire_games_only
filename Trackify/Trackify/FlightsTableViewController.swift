@@ -329,6 +329,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let flight = flights?[indexPath.row]
+        selectedFlight = flight
         addBlurView(forMenu: false)
         tableView.isScrollEnabled = false
         optionsVC = self.storyboard!.instantiateViewController(withIdentifier: "FlightOptionsViewController") as? FlightOptionsViewController
