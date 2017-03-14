@@ -1,20 +1,19 @@
 //
-//  SavedFlight+CoreDataProperties.swift
+//  SharedFlight+CoreDataProperties.swift
 //  Trackify
 //
 //  Created by Scott Buttinger on 3/14/17.
 //  Copyright © 2017 Fire Apps Only. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
 import CoreData
 
 
-extension SavedFlight {
+extension SharedFlight {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<SavedFlight> {
-        return NSFetchRequest<SavedFlight>(entityName: "SavedFlight");
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<SharedFlight> {
+        return NSFetchRequest<SharedFlight>(entityName: "SharedFlight");
     }
 
     @NSManaged public var airline: String?

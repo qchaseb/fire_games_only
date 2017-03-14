@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A046A511E78899100E50881 /* SharedFlight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A046A4F1E78899100E50881 /* SharedFlight+CoreDataClass.swift */; };
+		0A046A521E78899100E50881 /* SharedFlight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A046A501E78899100E50881 /* SharedFlight+CoreDataProperties.swift */; };
+		0A046A551E7889A700E50881 /* PastFlight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A046A531E7889A700E50881 /* PastFlight+CoreDataClass.swift */; };
+		0A046A561E7889A700E50881 /* PastFlight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A046A541E7889A700E50881 /* PastFlight+CoreDataProperties.swift */; };
 		0A205AA21E77613D00F3F48F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A205AA11E77613D00F3F48F /* StatusViewController.swift */; };
 		0A3374F11E43DFE60026265E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3374F01E43DFE60026265E /* User.swift */; };
 		0A4633CE1E5AA6A200E4DFFA /* LoadAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */; };
@@ -32,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A046A4F1E78899100E50881 /* SharedFlight+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SharedFlight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0A046A501E78899100E50881 /* SharedFlight+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SharedFlight+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0A046A531E7889A700E50881 /* PastFlight+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PastFlight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0A046A541E7889A700E50881 /* PastFlight+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PastFlight+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0A205AA11E77613D00F3F48F /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		0A3374F01E43DFE60026265E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0A4633CD1E5AA6A200E4DFFA /* LoadAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadAppViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,10 @@
 		0AA8ADC31E5AB18F0080301B /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				0A046A531E7889A700E50881 /* PastFlight+CoreDataClass.swift */,
+				0A046A541E7889A700E50881 /* PastFlight+CoreDataProperties.swift */,
+				0A046A4F1E78899100E50881 /* SharedFlight+CoreDataClass.swift */,
+				0A046A501E78899100E50881 /* SharedFlight+CoreDataProperties.swift */,
 				0AA8ADCC1E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift */,
 				0AA8ADCD1E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift */,
 				0AA8ADCE1E5AB6CD0080301B /* SavedUser+CoreDataClass.swift */,
@@ -302,6 +314,7 @@
 				0AA8ADD01E5AB6CD0080301B /* SavedFlight+CoreDataClass.swift in Sources */,
 				0A74BDF01E3A8F4900FEE24A /* SignUpViewController.swift in Sources */,
 				0AA8ADD31E5AB6CD0080301B /* SavedUser+CoreDataProperties.swift in Sources */,
+				0A046A551E7889A700E50881 /* PastFlight+CoreDataClass.swift in Sources */,
 				0A74BDEC1E39A8FB00FEE24A /* WelcomeScreenViewController.swift in Sources */,
 				0A4633CE1E5AA6A200E4DFFA /* LoadAppViewController.swift in Sources */,
 				0AA8ADD21E5AB6CD0080301B /* SavedUser+CoreDataClass.swift in Sources */,
@@ -314,7 +327,10 @@
 				3E5BD8C81E70F1CF00BE3F93 /* FlightTabBarController.swift in Sources */,
 				0A74BDEE1E39AB3D00FEE24A /* Helpers.swift in Sources */,
 				0A743C2A1E495B65006A33F4 /* FlightsTableViewController.swift in Sources */,
+				0A046A561E7889A700E50881 /* PastFlight+CoreDataProperties.swift in Sources */,
+				0A046A521E78899100E50881 /* SharedFlight+CoreDataProperties.swift in Sources */,
 				0AA8ADD11E5AB6CD0080301B /* SavedFlight+CoreDataProperties.swift in Sources */,
+				0A046A511E78899100E50881 /* SharedFlight+CoreDataClass.swift in Sources */,
 				0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */,
 				0A205AA21E77613D00F3F48F /* StatusViewController.swift in Sources */,
 				0A9736A61E4A8114006B945C /* ManualEntryViewController.swift in Sources */,

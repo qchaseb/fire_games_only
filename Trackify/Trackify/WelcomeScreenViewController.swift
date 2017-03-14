@@ -54,7 +54,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     fileprivate var user: User? {
         didSet {
             DispatchQueue.main.async {
-//                self.addUserToCoreData()
+                self.addUserToCoreData()
                 self.performSegue(withIdentifier: Storyboard.SignInSegue , sender: self)
             }
         }
