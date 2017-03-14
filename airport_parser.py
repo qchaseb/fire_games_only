@@ -1,7 +1,7 @@
 ' Creates a CSV file containing just large and medium large_airports'
 import csv
 import pprint
-
+"""
 with open('airports.csv', 'rb') as csv_file:
     READER = csv.DictReader(csv_file)
     # fields we want
@@ -23,3 +23,21 @@ with open('airports.csv', 'rb') as csv_file:
         dict_writer = csv.DictWriter(output_file, large_airports[0].keys())
         dict_writer.writeheader()
         dict_writer.writerows(large_airports)
+"""
+with open('large_airports.csv', 'rb') as csv_file:
+    READER = csv.DictReader(csv_file)
+    res = {}
+    for row in READER:
+        if row['name'] in res:
+            print row['name']
+        res[row['name'].lower()] = row['iata_code']
+    print res
+
+with open('large_airports.csv', 'rb') as csv_file:
+    READER = csv.DictReader(csv_file)
+    res = {}
+    for row in READER:
+        # if row['municipality'] in res:
+        #     print row['municipality']
+        res[row['municipality'].lower()] = row['iata_code']
+    print res
