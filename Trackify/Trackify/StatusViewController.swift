@@ -19,6 +19,7 @@ class StatusViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         setUpNavigationBar()
         statusWebView.delegate = self
+        self.automaticallyAdjustsScrollViewInsets = false
 
         let URLstr = "https://flightaware.com/live/flight/" + getAirlineUrlParam((flight?.airline!)!) + (flight?.flightNumber!)!
         
@@ -35,6 +36,11 @@ class StatusViewController: UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         SwiftSpinner.hide()
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        SwiftSpinner.hide()
+        self.displayAlert("Poor Network Connection", message: "Couldn't load flight status. Please try again.")
     }
     
     // Set up the UI for the navigation bar

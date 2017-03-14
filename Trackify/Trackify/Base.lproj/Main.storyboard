@@ -1062,9 +1062,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-5o-hlq">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DzN-5o-hlq">
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1102,7 +1102,7 @@
         <image name="user_icon_blue" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4l1-I7-UN5"/>
-        <segue reference="O14-dg-DcF"/>
+        <segue reference="zip-S0-Kah"/>
+        <segue reference="Ty5-SC-zL6"/>
     </inferredMetricsTieBreakers>
 </document>
