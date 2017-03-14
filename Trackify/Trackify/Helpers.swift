@@ -115,5 +115,6 @@ struct Storyboard {
     static let WelcomeScreenSegue = "welcomeScreenSegue"
     static let PreviouslySignedInSegue = "previouslySignedInSegue"
     static let AccountSettingsSegue = "updateAccountSegue"
+    static let StatusSegue = "statusSegue"
 }
 
