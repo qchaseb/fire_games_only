@@ -99,6 +99,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         super.viewWillAppear(animated)
         
         // query for flights for the logged in user
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         loadFlights(email: (user?.email_id)!, fromRefreshHandler: false)
         loadSharedFlights(email: (user?.email_id)!, fromRefreshHandler: false
         )
@@ -520,6 +521,7 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
         case "Sign Out":
             print("Sign Out Tapped")
             removeUserFromCoreData()
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             self.navigationController!.popToRootViewController(animated: true)
             break
         case "Edit":
