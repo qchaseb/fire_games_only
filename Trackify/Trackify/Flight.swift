@@ -23,7 +23,8 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var email: String?
     var datetime: String? {
         didSet {
-            df.dateFormat = "MM-dd-yyyy HH:mm"
+            datetime = datetime!.replacingOccurrences(of: "T", with: " ")
+            df.dateFormat = "YYYY-MM-dd HH:mm:ss"
             self.date = df.date(from: datetime!)
             df.dateFormat = "h:mm a"
             self.timeString = df.string(from: self.date!)
