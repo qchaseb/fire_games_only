@@ -16,7 +16,14 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     fileprivate var date: Date?
     
     var airline: String?
-    var flightNumber: String?
+    var flightNumber: String? {
+        didSet {
+            if flightNumber!.characters.count > 4 {
+                let index = flightNumber!.index(flightNumber!.startIndex, offsetBy: 2)
+                flightNumber = flightNumber!.substring(from: index)
+            }
+        }
+    }
     var departureAirport: String?
     var destinationAirport: String?
     var confirmation: String?

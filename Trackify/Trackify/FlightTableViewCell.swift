@@ -34,7 +34,7 @@ class FlightTableViewCell: UITableViewCell {
             case "JetBlue": flightLogoImageView.image = #imageLiteral(resourceName: "jetblue_logo")
             case "JetBlue Airways": flightLogoImageView.image = #imageLiteral(resourceName: "jetblue_logo")
             case "Allegiant": flightLogoImageView.image = #imageLiteral(resourceName: "allegiant_logo")
-            case "Allegiant Air": flightLogoImageView.image = #imageLiteral(resourceName: "allegiant_logo")
+            case "Allegiant Travel Company": flightLogoImageView.image = #imageLiteral(resourceName: "allegiant_logo")
             case "Sun Country": flightLogoImageView.image = #imageLiteral(resourceName: "sun_country_logo")
             case "Sun Country Airlines": flightLogoImageView.image = #imageLiteral(resourceName: "sun_country_logo")
             case "Hawaiian": flightLogoImageView.image = #imageLiteral(resourceName: "hawaiian_logo")
