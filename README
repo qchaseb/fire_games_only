@@ -1,1 +1,5 @@
-To run the project in Xcode, open the Trackify.xcworkspace file.
+After pulling from Github, to run the project in Xcode, open the Trackify.xcworkspace file.
+In Xcode, click on "Trackify" in the left-side menu to find the "Trackify" Target in the middle windowpane. 
+Click on "General" to find the "Identity" and "Signing" options.
+Assuming you have a personal developer account, you want to change the "Team" option in "Signing" to your personal account, and change the "Bundle Identifier" in "Identity" to something that's not "com.only.apps.fire.Trackify" (anything should be fine)(changing the bundle identifier only needs to be done if you want to run the app on your physical device)
+You can then choose to run it on your physical device or a simulator
