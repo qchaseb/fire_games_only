@@ -18,7 +18,7 @@ class FlightTableViewCell: UITableViewCell {
             case "Southwest": flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
             case "Southwest Airlines": flightLogoImageView.image = #imageLiteral(resourceName: "southwest_logo")
             case "Delta": flightLogoImageView.image = #imageLiteral(resourceName: "delta_logo")
-            case "Delta Airlines": flightLogoImageView.image = #imageLiteral(resourceName: "delta_logo")
+            case "Delta Air Lines": flightLogoImageView.image = #imageLiteral(resourceName: "delta_logo")
             case "United": flightLogoImageView.image = #imageLiteral(resourceName: "united_logo")
             case "United Airlines": flightLogoImageView.image = #imageLiteral(resourceName: "united_logo")
             case "American": flightLogoImageView.image = #imageLiteral(resourceName: "american_logo")

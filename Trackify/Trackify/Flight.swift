@@ -15,22 +15,31 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     fileprivate var dateString: String?
     fileprivate var date: Date?
     
-    var airline: String?
-    var flightNumber: String? {
+    var airline: String? {
         didSet {
-            if flightNumber!.characters.count > 4 {
-                let index = flightNumber!.index(flightNumber!.startIndex, offsetBy: 2)
-                flightNumber = flightNumber!.substring(from: index)
+            switch (airline!) {
+            case "Southwest Airlines": airline = "Southwest"
+            case "Delta Air Lines": airline = "Delta"
+            case "United Airlines": airline = "United"
+            case "American Airlines": airline = "American"
+            case "Alaska Airlines": airline = "Alaska"
+            case "Spirit Airlines": airline = "Spirit"
+            case "Frontier Airlines": airline = "Frontier"
+            case "JetBlue Airways": airline = "JetBlue"
+            case "Allegiant Travel Company": airline = "Allegiant"
+            case "Sun Country Airlines": airline = "Sun Country"
+            case "Hawaiian Airlines": airline = "Hawaiian"
+            default: break
             }
         }
     }
+    var flightNumber: String?
     var departureAirport: String?
     var destinationAirport: String?
     var confirmation: String?
     var email: String?
     var datetime: String? {
         didSet {
-            datetime = datetime!.replacingOccurrences(of: "T", with: " ")
             df.dateFormat = "YYYY-MM-dd HH:mm:ss"
             self.date = df.date(from: datetime!)
             df.dateFormat = "h:mm a"

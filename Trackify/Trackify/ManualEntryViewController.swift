@@ -187,7 +187,7 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         let timeString = df.string(from: timePicker.date)
         df.dateFormat = "YYYY-MM-dd"
         let dateString = df.string(from: datePicker.date)
-        return dateString + "T" + timeString
+        return dateString + " " + timeString
     }
     
     fileprivate func removeFlightFromDB() {
