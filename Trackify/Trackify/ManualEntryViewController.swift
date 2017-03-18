@@ -183,9 +183,9 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
 
     fileprivate func getDateTimeString() -> String? {
-        df.dateFormat = "HH:mm"
+        df.dateFormat = "HH:mm:ss"
         let timeString = df.string(from: timePicker.date)
-        df.dateFormat = "MM-dd-yyyy"
+        df.dateFormat = "YYYY-MM-dd"
         let dateString = df.string(from: datePicker.date)
         return dateString + " " + timeString
     }
@@ -225,6 +225,12 @@ class ManualEntryViewController: UIViewController, UIPickerViewDataSource, UIPic
         flight?.departureAirport = departureTextField.text
         flight?.destinationAirport = arrivalTextField.text
         flight?.confirmation = confirmationTextField.text
+        
+        // Handles 
+        if editFlight != nil {
+            flight?.identifiers = editFlight?.identifiers
+            flight?.sharedWith = editFlight?.sharedWith
+        }
         
         let updateMapperConfig = AWSDynamoDBObjectMapperConfiguration()
         updateMapperConfig.saveBehavior = .updateSkipNullAttributes

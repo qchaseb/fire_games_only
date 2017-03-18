@@ -278,8 +278,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.NewUserSignInSegue {
-            if let destinationVC = segue.destination as? FlightsTableViewController {
-                destinationVC.user = newUser
+            if let destinationVC = segue.destination as? FlightTabBarController {
+                for vc in (destinationVC.viewControllers)! {
+                    if let flightTVC = vc as? FlightsTableViewController {
+                        flightTVC.user = newUser
+                    }
+                }
             }
         }
     }

@@ -15,7 +15,24 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     fileprivate var dateString: String?
     fileprivate var date: Date?
     
-    var airline: String?
+    var airline: String? {
+        didSet {
+            switch (airline!) {
+            case "Southwest Airlines": airline = "Southwest"
+            case "Delta Air Lines": airline = "Delta"
+            case "United Airlines": airline = "United"
+            case "American Airlines": airline = "American"
+            case "Alaska Airlines": airline = "Alaska"
+            case "Spirit Airlines": airline = "Spirit"
+            case "Frontier Airlines": airline = "Frontier"
+            case "JetBlue Airways": airline = "JetBlue"
+            case "Allegiant Travel Company": airline = "Allegiant"
+            case "Sun Country Airlines": airline = "Sun Country"
+            case "Hawaiian Airlines": airline = "Hawaiian"
+            default: break
+            }
+        }
+    }
     var flightNumber: String?
     var departureAirport: String?
     var destinationAirport: String?
@@ -23,7 +40,7 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var email: String?
     var datetime: String? {
         didSet {
-            df.dateFormat = "MM-dd-yyyy HH:mm"
+            df.dateFormat = "YYYY-MM-dd HH:mm:ss"
             self.date = df.date(from: datetime!)
             df.dateFormat = "h:mm a"
             self.timeString = df.string(from: self.date!)
@@ -32,6 +49,7 @@ class Flight : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         }
     }
     var identifiers: Set<String>?
+    var sharedWith: Set<String>?
 
     class func dynamoDBTableName() -> String {
         return "TrackifyFlightsTable"

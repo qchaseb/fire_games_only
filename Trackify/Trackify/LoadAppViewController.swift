@@ -33,7 +33,10 @@ class LoadAppViewController: UIViewController {
     }
     
     fileprivate var user: User?
-    fileprivate var flights = [Flight]()
+    fileprivate var upcomingFlights = [Flight]()
+    fileprivate var pastFlights = [Flight]()
+    fileprivate var sharedFlights = [Flight]()
+    
     
     // get managed object context from delegate
     var managedObjectContext: NSManagedObjectContext? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -59,7 +62,32 @@ class LoadAppViewController: UIViewController {
                         flight?.datetime = savedFlight.datetime
                         flight?.departureAirport = savedFlight.departureAirport
                         flight?.destinationAirport = savedFlight.destinationAirport
-                        self.flights.append(flight!)
+                        flight?.email = signedInUser.emailAddress
+                        self.upcomingFlights.append(flight!)
+                    }
+                    for userFlight in signedInUser.pastFlights! {
+                        let savedFlight = userFlight as! PastFlight
+                        let flight = Flight()
+                        flight?.airline = savedFlight.airline
+                        flight?.flightNumber = savedFlight.flightNumber
+                        flight?.confirmation = savedFlight.confirmation
+                        flight?.datetime = savedFlight.datetime
+                        flight?.departureAirport = savedFlight.departureAirport
+                        flight?.destinationAirport = savedFlight.destinationAirport
+                        flight?.email = signedInUser.emailAddress
+                        self.pastFlights.append(flight!)
+                    }
+                    for userFlight in signedInUser.sharedFlights! {
+                        let savedFlight = userFlight as! SharedFlight
+                        let flight = Flight()
+                        flight?.airline = savedFlight.airline
+                        flight?.flightNumber = savedFlight.flightNumber
+                        flight?.confirmation = savedFlight.confirmation
+                        flight?.datetime = savedFlight.datetime
+                        flight?.departureAirport = savedFlight.departureAirport
+                        flight?.destinationAirport = savedFlight.destinationAirport
+                        flight?.email = signedInUser.emailAddress
+                        self.sharedFlights.append(flight!)
                     }
                     self.goToFlightsScreen()
                 } else {
@@ -87,9 +115,15 @@ class LoadAppViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.PreviouslySignedInSegue {
-            if let flightsVC = segue.destination as? FlightsTableViewController {
-                flightsVC.user = user
-                flightsVC.flights = flights
+            if let destinationVC = segue.destination as? FlightTabBarController {
+                for vc in (destinationVC.viewControllers)! {
+                    if let flightTVC = vc as? FlightsTableViewController {
+                        flightTVC.user = user
+                        flightTVC.flights = upcomingFlights
+                        flightTVC.pastFlights = pastFlights
+                        flightTVC.sharedFlights = sharedFlights
+                    }
+                }
             }
         }
     }

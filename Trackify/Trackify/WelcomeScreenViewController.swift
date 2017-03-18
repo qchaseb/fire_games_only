@@ -138,7 +138,7 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
+
     // function to check if user exist with email password combination exist
     fileprivate func attemptLogin(email:String, password:String) {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
@@ -190,8 +190,12 @@ class WelcomeScreenViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Storyboard.SignInSegue {
-            if let destinationVC = segue.destination as? FlightsTableViewController {
-                destinationVC.user = user
+            if let destinationVC = segue.destination as? FlightTabBarController {
+                for vc in (destinationVC.viewControllers)! {
+                    if let flightTVC = vc as? FlightsTableViewController {
+                        flightTVC.user = user
+                    }
+                }
             }
         }
     }

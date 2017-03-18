@@ -110,9 +110,9 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return UIScreen.main.bounds.size.height/4
+            return UIScreen.main.bounds.size.height/4.35
         }
-        return UIScreen.main.bounds.size.height/9.25
+        return UIScreen.main.bounds.size.height/10
         
     }
     
