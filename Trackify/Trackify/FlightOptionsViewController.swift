@@ -23,9 +23,9 @@ class FlightOptionsViewController: UIViewController, UITableViewDataSource, UITa
     /**
      *  Arrays containing menu options and images
      */
-    var menuOptions = ["Flight", "Edit", "Status", "Add to Calendar", "Share", "Export", "Cancel"]
+    var menuOptions = ["Flight", "Edit", "PDF", "Status", "Add to Calendar", "Share", "Export", "Cancel"]
     
-    var menuImages = [nil, #imageLiteral(resourceName: "edit_icon_blue"), #imageLiteral(resourceName: "status_blue_icon"),#imageLiteral(resourceName: "calendar_blue"), #imageLiteral(resourceName: "share_icon_blue"), #imageLiteral(resourceName: "export_icon_blue"), #imageLiteral(resourceName: "delete_blue_icon")]
+    var menuImages = [nil, #imageLiteral(resourceName: "edit_icon_blue"), #imageLiteral(resourceName: "document_icon_blue"), #imageLiteral(resourceName: "status_blue_icon"),#imageLiteral(resourceName: "calendar_blue"), #imageLiteral(resourceName: "share_icon_blue"), #imageLiteral(resourceName: "export_icon_blue"), #imageLiteral(resourceName: "delete_blue_icon")]
     
     var flight: Flight?
     

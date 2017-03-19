@@ -529,6 +529,9 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             editingFlight = true
             self.performSegue(withIdentifier: Storyboard.ManualEntrySegue , sender: self)
             break
+        case "PDF":
+            print("PDF Button Tapped")
+            self.performSegue(withIdentifier: Storyboard.PDFSegue, sender: self)
         case "Status":
             print("Status Button Tapped")
             self.performSegue(withIdentifier: Storyboard.StatusSegue , sender: self)
@@ -789,6 +792,10 @@ class FlightsTableViewController: UITableViewController, SlideMenuDelegate, Upda
             }
         } else if segue.identifier == Storyboard.StatusSegue {
             if let destinationVC = segue.destination as? StatusViewController {
+                destinationVC.flight = optionsVC?.flight
+            }
+        } else if segue.identifier == Storyboard.PDFSegue {
+            if let destinationVC = segue.destination as? FlightPDFViewController {
                 destinationVC.flight = optionsVC?.flight
             }
         }

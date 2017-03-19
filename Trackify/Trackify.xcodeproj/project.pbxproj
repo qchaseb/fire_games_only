@@ -32,6 +32,7 @@
 		0AB7310D1E396CC400098F33 /* Trackify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7310B1E396CC400098F33 /* Trackify.xcdatamodeld */; };
 		0AB7310F1E396CC400098F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB7310E1E396CC400098F33 /* Assets.xcassets */; };
 		3E5BD8C81E70F1CF00BE3F93 /* FlightTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5BD8C71E70F1CF00BE3F93 /* FlightTabBarController.swift */; };
+		82A8AC6C1E7E2FA6005D023F /* FlightPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8AC6B1E7E2FA6005D023F /* FlightPDFViewController.swift */; };
 		C3EE5D1E300CB8A52F03B4F9 /* Pods_Trackify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBBDF1D500830BA87A86F4A /* Pods_Trackify.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		0AB7310E1E396CC400098F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB731131E396CC400098F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E5BD8C71E70F1CF00BE3F93 /* FlightTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTabBarController.swift; sourceTree = "<group>"; };
+		82A8AC6B1E7E2FA6005D023F /* FlightPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightPDFViewController.swift; sourceTree = "<group>"; };
 		B447BB61D14DE3C6CFBF7AFB /* Pods-Trackify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trackify/Pods-Trackify.release.xcconfig"; sourceTree = "<group>"; };
 		CEC2F1D3B39EAD21DD827274 /* Pods-Trackify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trackify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trackify/Pods-Trackify.debug.xcconfig"; sourceTree = "<group>"; };
 		FEBBDF1D500830BA87A86F4A /* Pods_Trackify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trackify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				0AA8ADD41E62386E0080301B /* FlightOptionsViewController.swift */,
 				0A743C2B1E495D45006A33F4 /* FlightTableViewCell.swift */,
 				3E5BD8C71E70F1CF00BE3F93 /* FlightTabBarController.swift */,
+				82A8AC6B1E7E2FA6005D023F /* FlightPDFViewController.swift */,
 			);
 			name = "Flight Classes";
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				0A74BDEC1E39A8FB00FEE24A /* WelcomeScreenViewController.swift in Sources */,
 				0A4633CE1E5AA6A200E4DFFA /* LoadAppViewController.swift in Sources */,
 				0AA8ADD21E5AB6CD0080301B /* SavedUser+CoreDataClass.swift in Sources */,
+				82A8AC6C1E7E2FA6005D023F /* FlightPDFViewController.swift in Sources */,
 				0A3374F11E43DFE60026265E /* User.swift in Sources */,
 				0A743C2E1E495D77006A33F4 /* Flight.swift in Sources */,
 				0AA556DC1E5144FF00D69AE2 /* MenuViewController.swift in Sources */,
